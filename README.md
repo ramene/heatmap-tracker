@@ -121,3 +121,6 @@ renderHeatmapTracker(this.container, trackerData)
 
 ```
 ~~~
+
+### Inspired by:
+https://github.com/Richardsl/heatmap-calendar-obsidian
