@@ -1,0 +1,181 @@
+/* Base styles */
+.heatmap-tracker-graph,
+.heatmap-tracker-graph ul,
+.heatmap-tracker-graph>* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.heatmap-tracker-graph {
+  font-size: 0.65em;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    'year months'
+    'days boxes';
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  width: 100%;
+  padding: 12px; /* 0px caused overflow and scrollbars */
+}
+
+/* Months */
+.heatmap-tracker-months {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-area: months;
+  margin: 0.1em 0 0.3em;
+  grid-gap: 0.3em;
+}
+
+/* Days */
+.heatmap-tracker-days {
+  grid-area: days;
+  margin: 0 0.3em 0 0.1em;
+  white-space: nowrap;
+}
+
+/* Boxes */
+.heatmap-tracker-boxes {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(53, minmax(0, 1fr));
+  grid-template-rows: repeat(7, minmax(0, 1fr));
+  grid-area: boxes;
+  grid-gap: 2px;
+}
+
+.heatmap-tracker-boxes li {
+  position: relative;
+  font-size: 0.75em;
+  width: 100%;
+  border-radius: 2px;
+  background-color: #ebedf0;
+  margin-inline-start: auto !important;
+}
+
+.heatmap-tracker-boxes li:hover {
+  transform: scale(1.4);
+  border: solid 1px rgb(61, 61, 61);
+  cursor: pointer;
+}
+
+.heatmap-tracker-arrow {
+  cursor: pointer;
+}
+
+.heatmap-tracker-year-display {
+  margin: 0 12px;
+}
+
+.heatmap-tracker-boxes li:not(.task-list-item)::before {
+  content: unset;
+}
+
+.heatmap-tracker-boxes .internal-link {
+  text-decoration: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.heatmap-tracker-boxes .today {
+  border: solid 1px rgb(61, 61, 61);
+}
+
+.theme-dark .heatmap-tracker-boxes .isEmpty {
+  background: #333;
+}
+
+/* Year */
+.heatmap-tracker-year {
+  grid-area: year;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* Days visibility */
+.heatmap-tracker-days li:nth-child(odd) {
+  visibility: hidden;
+}
+
+/* Settings */
+.heatmap-tracker-settings-colors__color-box {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.heatmap-tracker-settings-colors__color-box:first-child {
+  margin-left: 0;
+}
+
+.heatmap-tracker-settings-colors__color-name {
+  display: inline-block;
+}
+
+.heatmap-tracker-settings-colors__container {
+  align-items: center;
+  border-top: 1px solid var(--background-modifier-border);
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 0;
+}
+
+.heatmap-tracker-settings-colors__container h4 {
+  margin: 0.5em 0;
+}
+
+.heatmap-tracker-settings-colors__new-color-input-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.heatmap-tracker-settings-colors__new-color-input-container input {
+  margin-right: 1em;
+}
+
+.heatmap-tracker-settings-colors__new-color-input-value {
+  flex-grow: 1;
+}
+
+.heatmap-tracker-boxes.separate-months {
+  grid-auto-flow: column;
+  grid-template-columns: repeat(64, minmax(0, 1fr));
+  grid-area: boxes;
+}
+
+.theme-dark .heatmap-tracker-boxes .today {
+  border: solid 1px white;
+}
+
+
+/* ----
+/* ---- DEV Only ---- */
+/* ----
+
+/* for putting the settings window off to the side whilst taking screenshots */
+/*
+.modal-container {
+  justify-content: left !important; 
+  padding-left: 20px !important;
+}
+.modal-bg {
+  opacity: 0% !important;
+}
+.modal-container.mod-dim .modal {
+  box-shadow: var(--shadow-s) !important;
+}
+.modal.mod-sidebar-layout {
+  width: 700px !important;
+}
+.vertical-tab-content::-webkit-scrollbar {
+  display: none;
+}
+*/
+
+/* ----
+/* ---- DEV Only /END ---- */
+/* ----

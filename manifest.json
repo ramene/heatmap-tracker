@@ -1,0 +1,9 @@
+{
+	"id": "heatmap-tracker",
+	"name": "Heatmap Tracker",
+	"version": "1.0.0",
+	"minAppVersion": "0.1.0",
+	"description": "Activity Year Overview for DataviewJS, Github style – Track Goals, Progress, Habits, Tasks, Exercise, Finances, \"Dont Break the Chain\" etc.",
+	"author": "Maksim Rubanau",
+	"isDesktopOnly": false
+}
