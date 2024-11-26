@@ -57,6 +57,59 @@ const DEFAULT_SETTINGS: TrackerSettings = {
   separateMonths: false,
 };
 
+class TrackerBuilder {
+
+  private readonly trackerData: TrackerData;
+
+  constructor(trackerData: TrackerData) {
+    this.trackerData = trackerData;
+  }
+
+  withYear(year: number): TrackerBuilder {
+    this.trackerData.year = year;
+    return this;
+  }
+
+  withColors(colors: { [index: string | number]: string[] } | string): TrackerBuilder {
+    this.trackerData.colors = colors;
+    return this;
+  }
+
+  withEntries(entries: Entry[]): TrackerBuilder {
+    this.trackerData.entries = entries;
+    return this;
+  }
+
+  withShowCurrentDayBorder(showCurrentDayBorder: boolean): TrackerBuilder {
+    this.trackerData.showCurrentDayBorder = showCurrentDayBorder;
+    return this;
+  }
+
+  withDefaultEntryIntensity(defaultEntryIntensity: number): TrackerBuilder {
+    this.trackerData.defaultEntryIntensity = defaultEntryIntensity;
+    return this;
+  }
+
+  withIntensityScaleStart(intensityScaleStart: number): TrackerBuilder {
+    this.trackerData.intensityScaleStart = intensityScaleStart;
+    return this;
+  }
+
+  withIntensityScaleEnd(intensityScaleEnd: number): TrackerBuilder {
+    this.trackerData.intensityScaleEnd = intensityScaleEnd;
+    return this;
+  }
+
+  withSeparateMonths(separateMonths: boolean): TrackerBuilder {
+    this.trackerData.separateMonths = separateMonths;
+    return this;
+  }
+
+  build(): TrackerData {
+    return this.trackerData;
+  }
+}
+
 export default class HeatmapTracker extends Plugin {
   settings: TrackerSettings = DEFAULT_SETTINGS;
 
@@ -114,26 +167,25 @@ export default class HeatmapTracker extends Plugin {
     return trackerData.separateMonths ?? this.settings.separateMonths;
   }
 
-  addYearNavigationListeners(el: HTMLElement, trackerData: TrackerData, currentYear: number, leftArrow: HTMLElement, rightArrow: HTMLElement) {
+  addYearNavigationListeners(parentEl: HTMLElement, el: HTMLElement, trackerData: TrackerData, currentYear: number, leftArrow: HTMLElement, rightArrow: HTMLElement) {
     // Event listener for the left arrow
     leftArrow.addEventListener('click', () => {
       const newTrackerData = { ...trackerData, year: currentYear - 1 };
-      window.renderHeatmapTracker(el, newTrackerData);
+      el.remove();
+
+      this.render(parentEl, newTrackerData);
     });
 
     // Event listener for the right arrow
     rightArrow.addEventListener('click', () => {
       const newTrackerData = { ...trackerData, year: currentYear + 1 };
-      window.renderHeatmapTracker(el, newTrackerData);
+      el.remove();
+
+      this.render(parentEl, newTrackerData);
     });
   }
 
   renderTrackerBoxes(parent: HTMLElement, boxes: Box[]) {
-    const boxesUl = createEl('ul', {
-      cls: 'heatmap-tracker-boxes',
-      parent,
-    });
-
     boxes.forEach((box) => {
       const entry = createEl('li', {
         attr: {
@@ -141,7 +193,7 @@ export default class HeatmapTracker extends Plugin {
           style: `${box.backgroundColor ? `background-color: ${box.backgroundColor};` : ''}`,
         },
         cls: box.classNames,
-        parent: boxesUl,
+        parent,
       });
 
       createSpan({
@@ -150,8 +202,6 @@ export default class HeatmapTracker extends Plugin {
         text: box.content as string,
       });
     });
-
-    return boxesUl;
   }
 
   fillEntriesWithIntensity(entries: Entry[], trackerData: TrackerData, colors: Colors): Entry[] {
@@ -256,6 +306,41 @@ export default class HeatmapTracker extends Plugin {
     return boxes;
   }
 
+  render(el: HTMLElement, trackerData: TrackerData) {
+    // Get the current year from trackerData or default settings
+    const currentYear = this.getCurrentYear(trackerData);
+
+    // Create containers
+    const heatmapTrackerGraphDiv = initializeTrackerContainer(el);
+    const { leftArrow, rightArrow } = renderTrackerHeader(heatmapTrackerGraphDiv, currentYear);
+    // Create the months and days labels
+    renderMonthLabels(heatmapTrackerGraphDiv);
+
+    renderDayLabels(heatmapTrackerGraphDiv, this.settings.weekStartDay);
+
+    const boxesContainer = createEl('ul', {
+      cls: 'heatmap-tracker-boxes',
+      parent: heatmapTrackerGraphDiv,
+    });
+    // Determine colors
+    const colors = this.getColors(trackerData);
+
+    const currentYearEntries = this.getEntriesForYear(trackerData.entries, currentYear);
+
+    const separateMonths = this.getSeparateMonthsSetting(trackerData);
+
+    const entriesWithIntensity = this.fillEntriesWithIntensity(currentYearEntries, trackerData, colors);
+
+    const boxes = this.getBoxes(currentYear, entriesWithIntensity, colors, separateMonths, trackerData);
+
+    this.addYearNavigationListeners(el, heatmapTrackerGraphDiv, trackerData, currentYear, leftArrow, rightArrow);
+    this.renderTrackerBoxes(boxesContainer, boxes);
+
+    if (separateMonths) {
+      boxesContainer.className += " separate-months";
+    }
+  }
+
   async onload() {
     await this.loadSettings();
 
@@ -265,36 +350,12 @@ export default class HeatmapTracker extends Plugin {
       el: HTMLElement,
       trackerData: TrackerData
     ): void => {
-      // Create the main container for the tracker
-      const heatmapTrackerGraphDiv = initializeTrackerContainer(el);
-
-      // Get the current year from trackerData or default settings
-      const currentYear = this.getCurrentYear(trackerData);
-
-      // Determine colors
-      const colors = this.getColors(trackerData);
-
-      const currentYearEntries = this.getEntriesForYear(trackerData.entries, currentYear);
-
-      const separateMonths = this.getSeparateMonthsSetting(trackerData);
-
-      const entriesWithIntensity = this.fillEntriesWithIntensity(currentYearEntries, trackerData, colors);
-
-      const boxes = this.getBoxes(currentYear, entriesWithIntensity, colors, separateMonths, trackerData);
-
-      const { leftArrow, rightArrow } = renderTrackerHeader(heatmapTrackerGraphDiv, currentYear);
-      this.addYearNavigationListeners(el, trackerData, currentYear, leftArrow, rightArrow);
-
-      // Create the months and days labels
-      renderMonthLabels(heatmapTrackerGraphDiv);
-
-      renderDayLabels(heatmapTrackerGraphDiv, this.settings.weekStartDay);
-
-      const heatmapTrackerBoxesUl = this.renderTrackerBoxes(heatmapTrackerGraphDiv, boxes);
-
-      if (separateMonths) {
-        heatmapTrackerBoxesUl.className += " separate-months";
-      }
+      const heatmapTracker = el.createDiv({
+        cls: 'heatmap-tracker',
+        parent: el,
+      });
+  
+      this.render(heatmapTracker, trackerData);
     };
   }
 

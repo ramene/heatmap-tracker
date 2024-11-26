@@ -1,13 +1,7 @@
 import { getWeekdayShort } from "./core";
 
 export function initializeTrackerContainer(el: HTMLElement): HTMLElement {
-  const elContent = el.querySelector('.heatmap-tracker-graph');
-  if (elContent) {
-    // Clear the parent element to prevent duplication
-    elContent.innerHTML = '';
-  }
-
-  return elContent as HTMLDivElement ?? createDiv({
+  return createDiv({
     cls: 'heatmap-tracker-graph',
     parent: el,
   });
