@@ -47,14 +47,14 @@ export function getLastDayOfYear(year: number): Date {
   return new Date(Date.UTC(year, 11, 31));
 }
 
-export function getEntriesForYear(entries: Entry[], year: number, defaultEntries: Entry[]): Entry[] {
+export function getEntriesForYear(entries: Entry[], year: number): Entry[] {
   return entries.filter((e) => {
     if (!isValidDate(e.date)) {
       return false;
     }
 
     return new Date(e.date).getFullYear() === year;
-  }) ?? defaultEntries;
+  });
 }
 
 export function getMinMaxIntensities(intensities: number[], [intensityScaleStart, intensityScaleEnd]: [number, number]): [number, number] {
@@ -68,13 +68,12 @@ export function getMinMaxIntensities(intensities: number[], [intensityScaleStart
   ];
 }
 
-export function   getColors(trackerData: TrackerData, settingsColors: Colors): Colors {
-  const colors =
-    typeof trackerData.colors === 'string'
-      ? settingsColors[trackerData.colors]
-        ? { [trackerData.colors]: settingsColors[trackerData.colors] }
-        : settingsColors
-      : trackerData.colors ?? settingsColors;
+export function getColors(trackerData: TrackerData, settingsColors: Colors): Colors {
+  if (typeof trackerData.colors === 'string') {
+    return settingsColors[trackerData.colors]
+      ? { [trackerData.colors]: settingsColors[trackerData.colors] }
+      : settingsColors;
+  }
 
-  return colors;
+  return trackerData.colors ?? settingsColors;
 }

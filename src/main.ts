@@ -1,6 +1,6 @@
 import { Plugin } from 'obsidian';
 import HeatmapTrackerSettingsTab from './settings';
-import { getColors, getDayOfYear, getEntriesForYear, getLastDayOfYear, getMinMaxIntensities, getNumberOfEmptyDaysBeforeYearStarts, isValidDate, mapRange } from './utils/core';
+import { getColors, getDayOfYear, getEntriesForYear, getLastDayOfYear, getMinMaxIntensities, getNumberOfEmptyDaysBeforeYearStarts, mapRange } from './utils/core';
 import { initializeTrackerContainer, renderTrackerHeader, renderDayLabels, renderMonthLabels } from './utils/rendering';
 import { Colors, Entry, TrackerData } from './types';
 
@@ -212,7 +212,7 @@ export default class HeatmapTracker extends Plugin {
     // Determine colors
     const colors = getColors(trackerData, this.settings.colors);
 
-    const currentYearEntries = getEntriesForYear(trackerData.entries, currentYear, trackerData.entries);
+    const currentYearEntries = getEntriesForYear(trackerData.entries, currentYear);
 
     const entriesWithIntensity = this.fillEntriesWithIntensity(currentYearEntries, trackerData, colors);
 
