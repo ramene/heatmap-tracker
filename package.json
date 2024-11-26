@@ -2,13 +2,14 @@
   "name": "heatmap-tracker",
   "version": "1.0.0",
   "description": "A heatmap tracker plugin for Obsidian",
-  "main": "main.js",
+  "main": "/build/main.js",
   "scripts": {
     "dev": "concurrently \"node esbuild.config.mjs\" \"npm run copyAndWatchMainJS\" \"npm run copyAndWatchStylesJS\" \"npm run copyAndWatchManifestJS\"",
-    "copyAndWatchMainJS": "cpx \"main.js\" \"EXAMPLE_VAULT\\.obsidian\\plugins\\heatmap-tracker\" -w",
+    "copyAndWatchMainJS": "cpx \"./build/main.js\" \"EXAMPLE_VAULT\\.obsidian\\plugins\\heatmap-tracker\" -w",
     "copyAndWatchStylesJS": "cpx \"./src/styles.css\" \"EXAMPLE_VAULT\\.obsidian\\plugins\\heatmap-tracker\" -w",
     "copyAndWatchManifestJS": "cpx \"manifest.json\" \"EXAMPLE_VAULT\\.obsidian\\plugins\\heatmap-tracker\" -w",
-    "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs --production",
+    "build": "rimraf build && tsc -noEmit -skipLibCheck && node esbuild.config.mjs --production && npm run copyToBuild",
+    "copyToBuild": "cpx \"main.js\" \"build\" && cpx \"src/styles.css\" \"build\" && cpx \"manifest.json\" \"build\"",
     "version": "node version-bump.mjs && git add manifest.json versions.json",
     "test": "jest"
   },
@@ -27,10 +28,11 @@
     "cpx": "^1.5.0",
     "esbuild": "0.24.0",
     "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "obsidian": "latest",
+    "rimraf": "^6.0.1",
     "ts-jest": "^29.2.5",
     "tslib": "2.8.1",
-    "typescript": "5.6.3",
-    "jest-environment-jsdom": "^29.7.0"
+    "typescript": "5.6.3"
   }
 }

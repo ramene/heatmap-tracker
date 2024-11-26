@@ -29,11 +29,11 @@ const buildOptions = {
   target: 'es2017',
   external: externalDependencies,
   format: 'cjs',
-  outfile: 'main.js',
   sourcemap: isProd ? false : 'inline',
   minify: isProd,
   banner: { js: banner },
   logLevel: 'info',
+  outfile: 'build/main.js'
 };
 
 async function build() {

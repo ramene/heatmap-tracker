@@ -1,3 +1,5 @@
+import { Colors, Entry, TrackerData } from "src/types";
+
 export function clamp(input: number, min: number, max: number): number {
   return input < min ? min : input > max ? max : input;
 }
@@ -43,4 +45,36 @@ export function getNumberOfEmptyDaysBeforeYearStarts(year: number, weekStartDay:
 
 export function getLastDayOfYear(year: number): Date {
   return new Date(Date.UTC(year, 11, 31));
+}
+
+export function getEntriesForYear(entries: Entry[], year: number, defaultEntries: Entry[]): Entry[] {
+  return entries.filter((e) => {
+    if (!isValidDate(e.date)) {
+      return false;
+    }
+
+    return new Date(e.date).getFullYear() === year;
+  }) ?? defaultEntries;
+}
+
+export function getMinMaxIntensities(intensities: number[], [intensityScaleStart, intensityScaleEnd]: [number, number]): [number, number] {
+  if (!intensities.length) {
+    return [intensityScaleStart, intensityScaleEnd];
+  }
+
+  return [
+    Math.min(...intensities),
+    Math.max(...intensities),
+  ];
+}
+
+export function   getColors(trackerData: TrackerData, settingsColors: Colors): Colors {
+  const colors =
+    typeof trackerData.colors === 'string'
+      ? settingsColors[trackerData.colors]
+        ? { [trackerData.colors]: settingsColors[trackerData.colors] }
+        : settingsColors
+      : trackerData.colors ?? settingsColors;
+
+  return colors;
 }

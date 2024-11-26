@@ -37,3 +37,4 @@ EXAMPLE_VAULT/.obsidian/plugins/heatmap-tracker/*
 !EXAMPLE_VAULT/.obsidian/plugins/heatmap-tracker/.hotreload
 
 coverage
+build
