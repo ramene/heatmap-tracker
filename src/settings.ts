@@ -151,7 +151,7 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
   private displayWeekStartDaySettings() {
     const { containerEl, } = this;
     new Setting(containerEl)
-      .setName("Week Start Day")
+      .setName("Week start day")
       .setDesc("Select the day on which your week starts.")
       .addDropdown(dropdown =>
         dropdown
@@ -175,7 +175,7 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
   private displayseparateMonthsSettings() {
     const { containerEl } = this;
     new Setting(containerEl)
-      .setName("Separate Months")
+      .setName("Separate months")
       .setDesc("Separate months in your tracker views, globally.")
       .addToggle(toggle => toggle
         .setValue(this.plugin.settings.separateMonths)
@@ -186,18 +186,14 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
   }
 
   display() {
-    const { containerEl, } = this;
+    const { containerEl } = this;
 
     containerEl.empty();
-
-    containerEl.createEl("h2", { text: "Heatmap Tracker Settings", });
 
     this.displayWeekStartDaySettings();
 
     this.displayseparateMonthsSettings();
 
     this.displayColorSettings();
-
-    console.log("settings", this.plugin.settings);
   }
 }

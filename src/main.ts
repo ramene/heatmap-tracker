@@ -245,7 +245,6 @@ export default class HeatmapTracker extends Plugin {
   }
 
   onunload() {
-    console.log('Unloading HeatmapTracker plugin');
     if (window.renderHeatmapTracker) {
       delete window.renderHeatmapTracker;
     }
