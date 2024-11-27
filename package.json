@@ -9,7 +9,7 @@
     "copyAndWatchStylesJS": "cpx \"./src/styles.css\" \"EXAMPLE_VAULT\\.obsidian\\plugins\\heatmap-tracker\" -w",
     "copyAndWatchManifestJS": "cpx \"manifest.json\" \"EXAMPLE_VAULT\\.obsidian\\plugins\\heatmap-tracker\" -w",
     "build": "rimraf build && tsc -noEmit -skipLibCheck && node esbuild.config.mjs --production && npm run copyToBuild",
-    "copyToBuild": "cpx \"main.js\" \"build\" && cpx \"src/styles.css\" \"build\" && cpx \"manifest.json\" \"build\"",
+    "copyToBuild": "cpx \"src/styles.css\" \"build\" && cpx \"manifest.json\" \"build\"",
     "version": "node version-bump.mjs && git add manifest.json versions.json",
     "test": "jest"
   },
