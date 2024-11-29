@@ -1,3 +1,4 @@
+import i18n from "./localization/i18n";
 import HeatmapTracker from "./main";
 import { App, PluginSettingTab, setIcon, Setting } from "obsidian";
 
@@ -172,6 +173,23 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
       );
   }
 
+  private displayLanguageSettings() {
+    new Setting(this.containerEl)
+      .setName(i18n.t("settings.language"))
+      .setDesc(i18n.t("settings.chooseYourPreferredLanguage"))
+      .addDropdown((dropdown) => {
+        dropdown
+          .addOptions({ en: 'English', ru: 'Русский', de: 'Deutsch' })
+          .setValue(this.plugin.settings.language)
+          .onChange(async (value) => {
+            i18n.changeLanguage(value);
+            this.plugin.settings.language = value;
+            await this.plugin.saveSettings();
+            this.display(); // Refresh the settings page
+          });
+      });
+  }
+
   private displayseparateMonthsSettings() {
     const { containerEl } = this;
     new Setting(containerEl)
@@ -189,6 +207,8 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
     const { containerEl } = this;
 
     containerEl.empty();
+
+    this.displayLanguageSettings();
 
     this.displayWeekStartDaySettings();
 

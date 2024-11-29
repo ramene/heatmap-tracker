@@ -53,3 +53,17 @@ export interface TrackerData {
    */
   separateMonths: boolean;
 }
+
+export interface TrackerSettings extends TrackerData {
+  colors: { [index: string | number]: string[] };
+  weekStartDay: number;
+  separateMonths: boolean;
+  language: string;
+}
+
+export interface Box {
+  backgroundColor?: string;
+  date?: string;
+  content?: string | HTMLElement;
+  classNames?: string[];
+}

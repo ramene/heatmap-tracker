@@ -1,10 +1,8 @@
-// core.test.ts
 import {
   clamp,
   mapRange,
   isValidDate,
   getDayOfYear,
-  getWeekdayShort,
   getFirstDayOfYear,
   getNumberOfEmptyDaysBeforeYearStarts,
   getLastDayOfYear,
@@ -91,24 +89,6 @@ describe('getDayOfYear', () => {
 
   test('Invalid Date Object', () => {
     expect(getDayOfYear(new Date('invalid date'))).toBeNaN();
-  });
-});
-
-describe('getWeekdayShort', () => {
-  test('Get Weekday Name When Week Starts on Sunday', () => {
-    expect(getWeekdayShort(0, 0)).toBe('Sun');
-  });
-
-  test('Get Weekday Name When Week Starts on Monday', () => {
-    expect(getWeekdayShort(0, 1)).toBe('Mon');
-  });
-
-  test('Middle of the Week', () => {
-    expect(getWeekdayShort(3, 0)).toBe('Wed');
-  });
-
-  test('Day Number Exceeds Week Length', () => {
-    expect(getWeekdayShort(7, 0)).toBe('Sun');
   });
 });
 

@@ -1,0 +1,42 @@
+{
+  "settings": {
+    "title": "Settings",
+    "language": "Язык",
+    "chooseYourPreferredLanguage": "Выберите предпочтительный язык",
+    "theme": "Theme",
+    "dark": "Dark",
+    "light": "Light",
+    "system": "System",
+    "save": "Save",
+    "cancel": "Cancel"
+  },
+  "monthsShort": {
+    "January": "Янв",
+    "February": "Фев",
+    "March": "Мар",
+    "April": "Апр",
+    "May": "Май",
+    "June": "Июн",
+    "July": "Июл",
+    "August": "Авг",
+    "September": "Сен",
+    "October": "Окт",
+    "November": "Ноя",
+    "December": "Дек"
+  },
+  "weekdays": ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+  "weekdaysShort": {
+    "Sunday": "Вс",
+    "Monday": "Пн",
+    "Tuesday": "Вт",
+    "Wednesday": "Ср",
+    "Thursday": "Чт",
+    "Friday": "Пт",
+    "Saturday": "Сб"
+  },
+  "header": {
+    "previousYear": "Предыдущий год",
+    "nextYear": "Следующий год",
+    "yearDisplay": "Год"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "monthsShort": {
+    "January": "Jan",
+    "February": "Feb",
+    "March": "Mär",
+    "April": "Apr",
+    "May": "Mai",
+    "June": "Jun",
+    "July": "Jul",
+    "August": "Aug",
+    "September": "Sep",
+    "October": "Okt",
+    "November": "Nov",
+    "December": "Dez"
+  },
+  "weekdaysShort": {
+    "Sunday": "So",
+    "Monday": "Mo",
+    "Tuesday": "Di",
+    "Wednesday": "Mi",
+    "Thursday": "Do",
+    "Friday": "Fr",
+    "Saturday": "Sa"
+  },
+  "header": {
+    "previousYear": "Vorheriges Jahr",
+    "nextYear": "Nächstes Jahr",
+    "yearDisplay": "Jahr"
+  }
+}

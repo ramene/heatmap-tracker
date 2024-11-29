@@ -36,7 +36,7 @@ const trackerData = {
       entries: Object.values(getInitialData()).map((date) => ({
           date,
           content: ''
-      }))  
+      }))
 };
 
 renderHeatmapTracker(this.container, trackerData)

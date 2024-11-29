@@ -23,7 +23,7 @@ const externalDependencies = [
 
 // Build options common to both development and production
 const buildOptions = {
-  entryPoints: ['./src/main.ts'],
+  entryPoints: ['./src/main.tsx'],
   bundle: true,
   platform: '',
   target: 'es2017',

@@ -1,4 +1,4 @@
-import { Colors, Entry, TrackerData } from "src/types";
+import { Box, Colors, Entry, TrackerData } from "src/types";
 
 export function clamp(input: number, min: number, max: number): number {
   return input < min ? min : input > max ? max : input;
@@ -27,10 +27,12 @@ export function getDayOfYear(date: Date): number {
   return Math.floor(diff / (1000 * 60 * 60 * 24));
 }
 
-export function getWeekdayShort(dayNumber: number, weekStartDay: number): string {
-  return new Date(1970, 0, dayNumber + weekStartDay + 4).toLocaleDateString('en-US', {
-    weekday: 'short',
-  });
+export function getShiftedWeekdays(weekdays: string[], weekStartDay: number): string[] {
+  if (weekStartDay < 0 || weekStartDay > 6) {
+    throw new Error('weekStartDay must be between 0 and 6');
+  }
+
+  return weekdays.slice(weekStartDay).concat(weekdays.slice(0, weekStartDay));
 }
 
 export function getFirstDayOfYear(year: number): Date {
@@ -38,6 +40,14 @@ export function getFirstDayOfYear(year: number): Date {
 }
 
 export function getNumberOfEmptyDaysBeforeYearStarts(year: number, weekStartDay: number): number {
+  if (isNaN(weekStartDay) || weekStartDay < 0 || weekStartDay > 6) {
+    throw new Error('weekStartDay must be a number between 0 and 6');
+  }
+
+  if (isNaN(year)) {
+    throw new Error('year must be a number');
+  }
+
   const firstDayOfYear = getFirstDayOfYear(year);
   const firstWeekday = firstDayOfYear.getUTCDay();
   return (firstWeekday - weekStartDay + 7) % 7;
@@ -76,4 +86,14 @@ export function getColors(trackerData: TrackerData, settingsColors: Colors): Col
   }
 
   return trackerData.colors ?? settingsColors;
+}
+
+export function getPrefilledBoxes(numberOfEmptyDaysBeforeYearBegins: number): Box[] {
+  if (isNaN(numberOfEmptyDaysBeforeYearBegins)) {
+    throw new Error('numberOfEmptyDaysBeforeYearBegins must be a number');
+  }
+
+  return Array(numberOfEmptyDaysBeforeYearBegins).fill({
+    backgroundColor: "transparent",
+  });
 }
