@@ -131,17 +131,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
-### [1.1.2] - 2024-11-30
-#### ✨ Added
-- Since now heatmap tracker is scrollable. It will be displayed better on mobile devices.
+### [1.1.3] - 2024-11-30
+#### 🐛 Fixed
+- Fix styles for mobile devices.
 
+---
+
+### [1.1.2] - 2024-11-30
 #### 🔄 Changed
 - Since now heatmap tracker is scrollable. It will be displayed better on mobile devices.
 - The form of boxes in the heatmap has been changed. Now they are more square.
 - In separate months mode empty spaces between months are not hoverable anymore.
-
-#### 🐛 Fixed
-- *(Bugs or issues resolved in this release.)*
 
 #### ❌ Removed
 - Removed old documentation.
