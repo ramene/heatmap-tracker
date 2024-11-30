@@ -76,8 +76,6 @@ for(let page of dv.pages('"daily notes"').where(p=>p.exercise)){
     });
 }
 
-dv.paragraph("** NAME OF THE HEATMAP **");
-
 renderHeatmapTracker(this.container, trackerData);
 ```
 ~~~
@@ -133,6 +131,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+### [1.1.2] - 2024-11-30
+#### ✨ Added
+- Since now heatmap tracker is scrollable. It will be displayed better on mobile devices.
+
+#### 🔄 Changed
+- Since now heatmap tracker is scrollable. It will be displayed better on mobile devices.
+- The form of boxes in the heatmap has been changed. Now they are more square.
+- In separate months mode empty spaces between months are not hoverable anymore.
+
+#### 🐛 Fixed
+- *(Bugs or issues resolved in this release.)*
+
+#### ❌ Removed
+- Removed old documentation.
+
+---
+
 ### [1.1.1] - 2024-11-30
 #### ✨ Added
 - Add title for the heatmap: `heatmapTitle`.
@@ -143,7 +158,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### [1.1.0] - 2024-11-30
 #### ✨ Added
 - I migrated this plugin to React. This will make it easier to maintain and add new features in the future.
-- I started to translated this plugin and added three languages: English, German and Russian. Plugin is not fully translated yet.
+- I started to translate this plugin and added three languages: English, German and Russian. Plugin is not fully translated yet.
 
 #### 🐛 Fixed
 - Fixed issues related to NaN.

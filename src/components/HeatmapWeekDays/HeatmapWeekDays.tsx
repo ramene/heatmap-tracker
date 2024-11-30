@@ -5,7 +5,7 @@ import { getShiftedWeekdays } from "src/utils/core";
 
 export function HeatmapWeekDays() {
   const { settings } = useHeatmapContext();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const weekDays = useMemo(() => {
     return getShiftedWeekdays(
@@ -20,7 +20,7 @@ export function HeatmapWeekDays() {
       ],
       settings.weekStartDay
     );
-  }, [settings.weekStartDay]);
+  }, [settings.weekStartDay, i18n.language]);
 
   return (
     <div className="heatmap-tracker-days">

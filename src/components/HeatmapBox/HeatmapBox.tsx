@@ -1,9 +1,10 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useEffect, useRef } from "react";
 
 interface HeatmapBoxProps extends PropsWithChildren {
   classNames?: string[];
   backgroundColor?: string;
   date?: string;
+  isToday: boolean;
 }
 
 export function HeatmapBox({
@@ -11,6 +12,7 @@ export function HeatmapBox({
   classNames,
   backgroundColor,
   date,
+  isToday,
 }: HeatmapBoxProps) {
   return (
     <div

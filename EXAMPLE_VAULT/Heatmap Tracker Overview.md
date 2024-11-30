@@ -52,7 +52,9 @@ const trackerData = {
         "hsl(132, 90%, 40%)"] //last one green
     },
     entries: [],
-    separateMonths: true
+    separateMonths: true,
+    heatmapTitle: "🏋️ Exercise Tracker 🏋️",
+    heatmapSubtitle: "Green - if you achieved your exercises goal (45 minutes in this example). separateMonths: true - to add padding between months."
 }
 
 for(let page of dv.pages('"daily notes"').where(p=>p.exercise)){
@@ -63,20 +65,15 @@ for(let page of dv.pages('"daily notes"').where(p=>p.exercise)){
     });
 }
 
-dv.paragraph("**🏋️ Exercises 🏋️**");
-dv.paragraph("**Green** - if you achieved your exercises goal (45 minutes in this example)");
-dv.paragraph("**separateMonths: true** - to add padding between months");
-
 renderHeatmapTracker(this.container, trackerData);
 ```
 
 ```dataviewjs
 
-dv.span("** 👣 Steps 👣 **")
-
 const trackerData = {
     year: 2024, // optional, remove this line to autoswitch year
     entries: [],
+    heatmapTitle: "👣 Steps Tracker 👣",
 }
 
  
@@ -92,8 +89,6 @@ renderHeatmapTracker(this.container, trackerData)
 
 ```
 ```dataviewjs
-
-dv.span("** 👣 Steps 👣 ** (11 intensities instead of 5)")
 
 const trackerData = {
     year: 2024, // optional, remove this line to autoswitch year
@@ -113,6 +108,7 @@ const trackerData = {
             "hsl(132, 59%, 24%)",
         ]
     },
+    heatmapTitle: "👣 Steps Tracker 👣 (11 intensities instead of 5)",
 }
 
  
@@ -127,15 +123,14 @@ for(let page of dv.pages('"daily notes"').where(p=>p.steps)){
 renderHeatmapTracker(this.container, trackerData)
 
 ```
+
 ```dataviewjs
-
-dv.span("** 👣 Steps 👣 ** (custom scale from 1000 to 10000)")
-
 const trackerData = {
     year: 2024, // optional, remove this line to autoswitch year
     entries: [],
     intensityScaleStart: 1000,
-    intensityScaleEnd: 10000
+    intensityScaleEnd: 10000,
+    heatmapTitle: "👣 Steps Tracker 👣 (custom scale from 1000 to 10000)",
 }
 
  
@@ -150,9 +145,8 @@ for(let page of dv.pages('"daily notes"').where(p=>p.steps)){
 renderHeatmapTracker(this.container, trackerData)
 
 ```
-```dataviewjs
 
-dv.span("** 👣 Steps 👣 ** (11 intensities + scale from 2000)")
+```dataviewjs
 
 const trackerData = {
     year: 2022, // optional, remove this line to autoswitch year
@@ -168,6 +162,7 @@ const trackerData = {
             "hsl(132, 59%, 24%)",
         ]
     },
+    heatmapTitle: "👣 Steps Tracker 👣 (11 intensities + scale from 2000)",
 }
 
  
@@ -185,15 +180,14 @@ renderHeatmapTracker(this.container, trackerData)
 
 ```dataviewjs
 
-dv.span("** Learning **")
-
 const trackerData = {
     year: 2024,
     colors: {
         blue: ["#ffdf04","#ffbe04","#ff9a03","#ff6d02","#ff2c01"]
     },
     entries: [],
-    showCurrentDayBorder: false
+    showCurrentDayBorder: false,
+    heatmapTitle: "📚 Learning Tracker 📚",
 }
 
 for(let page of dv.pages('"daily notes"').where(p=>p.learning)){

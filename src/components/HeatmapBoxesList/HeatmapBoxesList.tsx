@@ -5,6 +5,7 @@ import { ReactNode } from "react";
 
 export function HeatmapBoxesList({ boxes }: { boxes: Box[] }) {
   const { mergedTrackerData } = useHeatmapContext();
+
   return (
     <div
       className={`heatmap-tracker-boxes ${
@@ -13,9 +14,11 @@ export function HeatmapBoxesList({ boxes }: { boxes: Box[] }) {
     >
       {boxes.map((box, index) => {
         const content =
-          box.content instanceof HTMLElement
-            ? <span dangerouslySetInnerHTML={{ __html: box.content.outerHTML }} />
-            : (box.content as ReactNode);
+          box.content instanceof HTMLElement ? (
+            <span dangerouslySetInnerHTML={{ __html: box.content.outerHTML }} />
+          ) : (
+            (box.content as ReactNode)
+          );
 
         return (
           <HeatmapBox
@@ -23,6 +26,7 @@ export function HeatmapBoxesList({ boxes }: { boxes: Box[] }) {
             date={box.date}
             backgroundColor={box.backgroundColor}
             classNames={box.classNames}
+            isToday={box.classNames?.contains('today') || false}
           >
             {content}
           </HeatmapBox>

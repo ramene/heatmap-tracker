@@ -40,11 +40,13 @@ export function HeatmapHeader() {
         </div>
         <div className="heatmap-tracker-header__settings"></div>
       </div>
-      <div className="heatmap-tracker-header__sub-row">
-        <div className="heatmap-tracker-header__subtitle">
-          {trackerData?.heatmapSubtitle ?? ""}
+      {trackerData?.heatmapSubtitle ? (
+        <div className="heatmap-tracker-header__sub-row">
+          <div className="heatmap-tracker-header__subtitle">
+            {trackerData?.heatmapSubtitle ?? ""}
+          </div>
         </div>
-      </div>
+      ) : null}
     </div>
   );
 }

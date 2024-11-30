@@ -8,6 +8,9 @@
 }
 
 .heatmap-tracker-graph {
+  min-width: 500px;
+  overflow-x: scroll;
+
   font-size: 0.65em;
   display: grid;
   grid-template-columns: auto 1fr;
@@ -22,7 +25,7 @@
 /* Months */
 .heatmap-tracker-months {
   display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-columns: repeat(12, 1fr);
   grid-area: months;
   margin: 0.1em 0 0.3em;
   grid-gap: 0.3em;
@@ -40,16 +43,18 @@
 .heatmap-tracker-boxes {
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: repeat(53, minmax(0, 1fr));
-  grid-template-rows: repeat(7, minmax(0, 1fr));
+  grid-template-columns: repeat(53, 1fr);
+  grid-template-rows: repeat(7, 1fr);
   grid-area: boxes;
-  grid-gap: 2px;
+  row-gap: 2px;
+  column-gap: 2px;
 }
 
 .heatmap-tracker-boxes .heatmap-tracker-box {
   position: relative;
   font-size: 0.75em;
-  width: 100%;
+  width: 12px;
+  height: 12px;
   border-radius: 2px;
   background-color: #ebedf0;
   margin-inline-start: auto !important;
@@ -59,6 +64,12 @@
   transform: scale(1.4);
   border: solid 1px rgb(61, 61, 61);
   cursor: pointer;
+}
+
+.heatmap-tracker-boxes .space-between:hover {
+  transform: unset;
+  border: unset;
+  cursor: default;
 }
 
 .heatmap-tracker-arrow {
@@ -81,7 +92,9 @@
   text-align: center;
 }
 
-.heatmap-tracker-boxes .today {
+.heatmap-tracker-boxes .today {}
+
+.heatmap-tracker-boxes .with-border {
   border: solid 1px rgb(61, 61, 61);
 }
 
@@ -92,7 +105,7 @@
 .heatmap-tracker-header {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-auto-rows: 1fr;
   align-items: center;
 }
 
@@ -174,7 +187,7 @@
 
 .heatmap-tracker-boxes.separate-months {
   grid-auto-flow: column;
-  grid-template-columns: repeat(64, minmax(0, 1fr));
+  grid-template-columns: repeat(64, 1fr);
   grid-area: boxes;
 }
 

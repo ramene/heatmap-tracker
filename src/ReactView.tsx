@@ -122,7 +122,8 @@ export const ReactView = () => {
         );
         if (dayInMonth === 1) {
           for (let i = 0; i < 7; i++) {
-            boxes.push({ backgroundColor: "transparent" });
+            const emptyBox = { backgroundColor: "transparent", classNames: ["space-between"] };
+            boxes.push(emptyBox);
           }
         }
       }
@@ -130,8 +131,12 @@ export const ReactView = () => {
       const month = currentDate.toLocaleString("en-US", { month: "short" });
       box.classNames?.push(`month-${month.toLowerCase()}`);
 
-      if (day === todaysDayNumberLocal && showCurrentDayBorder) {
+      if (day === todaysDayNumberLocal) {
         box.classNames?.push("today");
+
+        if (showCurrentDayBorder) {
+          box.classNames?.push("with-border");
+        }
       }
 
       if (entriesWithIntensity[day]) {
