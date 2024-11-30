@@ -179,9 +179,8 @@ export const ReactView = () => {
 
   return (
     <div className="heatmap-tracker">
+      <HeatmapHeader />
       <div className="heatmap-tracker-graph">
-        <HeatmapHeader />
-
         <HeatmapMonthsList />
         <HeatmapWeekDays />
 

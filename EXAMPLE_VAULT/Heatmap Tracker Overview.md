@@ -29,14 +29,14 @@ function getInitialData() {
 	return datesByYear;
 }
 
-dv.span("** 🗄️ Example: If you need to prefill your data 🗄️ **")
-
 const trackerData = {
       year: 2024,
       entries: Object.values(getInitialData()).map((date) => ({
           date,
           content: ''
-      }))
+      })),
+      heatmapTitle: "🗄️ Example: If you need to prefill your data 🗄️",
+      heatmapSubtitle: "This heatmap example demonstrates how you can prefill you date in case you want to move to this plugin but you don't want to created hundreds of pages"
 };
 
 renderHeatmapTracker(this.container, trackerData)

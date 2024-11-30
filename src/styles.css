@@ -90,13 +90,38 @@
 }
 
 .heatmap-tracker-header {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+}
+
+.heatmap-tracker-header__main-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-areas: 'navigation title settings';
+  align-items: center;
+  font-size: 0.65em;
+}
+
+.heatmap-tracker-header__sub-row {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-areas: 'navigation subtitle settings';
+  align-items: center;
+}
+
+.heatmap-tracker-header__subtitle {
+  grid-column: 2/3;
+  font-size: 0.7em;
+  text-align: center;
+}
+
+.heatmap-tracker-header__navigation {
   display: flex;
 }
 
-/* Year */
-.heatmap-tracker-year {
-  grid-area: year;
-  font-weight: bold;
+.heatmap-tracker-header__title {
   font-size: 1.2em;
 }
 

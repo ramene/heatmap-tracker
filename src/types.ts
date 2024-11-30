@@ -52,6 +52,8 @@ export interface TrackerData {
    * A flag indicating whether to separate the months in the heatmap.
    */
   separateMonths: boolean;
+  heatmapTitle?: string;
+  heatmapSubtitle?: string;
 }
 
 export interface TrackerSettings extends TrackerData {
