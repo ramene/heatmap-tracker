@@ -2,7 +2,7 @@
 
 ## Watch video to start using this plugin in 30 seconds
 
-In Progress...
+<img src="./public/heatmap-how-to.gif" />
 
 
 ## Start with this code example
@@ -68,11 +68,6 @@ To be used with [Obsidian Dataview](https://blacksmithgu.github.io/obsidian-data
 6. **Current Day Highlight**  
    Optionally display a border around the current day for easy identification.
 
-
-### Preview of Heatmap Tracker component
-
-<img alt="" src="./public/preview.gif">
-
 <img src="./public/mac-mockup-dark.png" />
 
 ## 📖 How to use
@@ -134,6 +129,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), 
 and this project adheres to [Semantic Versioning](https://semver.org/).
+
+---
+
+### [1.1.6] - 2024-11-30
+#### 🔄 Changed
+- Update README.md, add video guide.
 
 ---
 
