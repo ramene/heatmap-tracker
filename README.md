@@ -122,5 +122,45 @@ renderHeatmapTracker(this.container, trackerData)
 ```
 ~~~
 
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), 
+and this project adheres to [Semantic Versioning](https://semver.org/).
+
+## [Version X.Y.Z] - YYYY-MM-DD
+### ✨ Added
+- *(New features or enhancements introduced in this release.)*
+
+### 🔄 Changed
+- *(Modifications to existing features or behavior.)*
+
+### 🐛 Fixed
+- *(Bugs or issues resolved in this release.)*
+
+### ❌ Removed
+- *(Deprecated or removed features.)*
+
+---
+
+## [1.1.0] - 2024-11-30
+### ✨ Added
+- I migrated this plugin to React. This will make it easier to maintain and add new features in the future.
+- I started to translated this plugin and added three languages: English, German and Russian. Plugin is not fully translated yet.
+
+### 🐛 Fixed
+- Fixed issues related to NaN.
+
+### ❌ Removed
+- Removed manual rendering implementation.
+
+---
+
+## [1.0.0] - 2024-11-29
+### ✨ Added
+- This is the initial release of Heatmap Tracker plugin for Obsidian.
+- Plugin is released and available for use.
+
 ### Inspired by:
 https://github.com/Richardsl/heatmap-calendar-obsidian
