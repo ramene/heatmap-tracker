@@ -12,7 +12,6 @@
 }
 
 .heatmap-tracker-graph {
-  min-width: 500px;
   overflow-x: scroll;
 
   font-size: 0.65em;
