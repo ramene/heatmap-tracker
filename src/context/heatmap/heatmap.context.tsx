@@ -2,7 +2,9 @@ import React, { useMemo } from "react";
 import { Entry, TrackerData, TrackerSettings } from "src/types";
 import { getEntriesForYear } from "src/utils/core";
 
-export const HeatmapContext = React.createContext<HeatmapContextProps | null>(null);
+export const HeatmapContext = React.createContext<HeatmapContextProps | null>(
+  null
+);
 
 interface HeatmapProviderProps {
   children: React.ReactNode;
@@ -15,7 +17,10 @@ export function HeatmapProvider({
   trackerData,
   settings,
 }: HeatmapProviderProps) {
-  const defaultYear = useMemo(() => trackerData.year, [trackerData.year]);
+  const defaultYear = useMemo(
+    () => trackerData.year ?? new Date().getFullYear(),
+    [trackerData.year]
+  );
 
   const [currentYear, setCurrentYear] = React.useState(defaultYear);
 
@@ -39,7 +44,7 @@ export function HeatmapProvider({
         currentYearEntries,
         trackerData,
         settings,
-        mergedTrackerData
+        mergedTrackerData,
       }}
     >
       {children}
