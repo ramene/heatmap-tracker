@@ -132,19 +132,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+### [1.1.8] - 2024-12-01
+#### 🐛 Fixed
+- Fix language change.
+
+---
+
 ### [1.1.7] - 2024-12-01
 #### ✨ Added
 - Scroll to the current day by default.
 - Heatmap loading overlay.
 
-#### 🔄 Changed
-- *(Modifications to existing features or behavior.)*
-
 #### 🐛 Fixed
 - Fix React render.
-
-#### ❌ Removed
-- *(Deprecated or removed features.)*
 
 ---
 

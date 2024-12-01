@@ -14,9 +14,11 @@ import { HeatmapBoxesList } from "./components/HeatmapBoxesList/HeatmapBoxesList
 import { HeatmapWeekDays } from "./components/HeatmapWeekDays/HeatmapWeekDays";
 import { HeatmapMonthsList } from "./components/HeatmapMonthsList/HeatmapMonthsList";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import React from "react";
 
 export const ReactView = () => {
+  const { i18n } = useTranslation();
   const {
     currentYear,
     currentYearEntries,
@@ -29,6 +31,10 @@ export const ReactView = () => {
 
   const graphRef = React.useRef<HTMLDivElement>(null);
   const [isLoading, setIsLoading] = React.useState(true);
+
+  useEffect(() => {
+    i18n.changeLanguage(settings.language);
+  }, [settings]);
 
   const colors = getColors(trackerData, settings.colors);
 
