@@ -1,4 +1,4 @@
-import { Box, Colors, Entry, TrackerData } from "./types";
+import { Box, Colors, Entry, TrackerData, View } from "./types";
 import {
   getColors,
   getDayOfYear,
@@ -14,21 +14,21 @@ import { HeatmapBoxesList } from "./components/HeatmapBoxesList/HeatmapBoxesList
 import { HeatmapWeekDays } from "./components/HeatmapWeekDays/HeatmapWeekDays";
 import { HeatmapMonthsList } from "./components/HeatmapMonthsList/HeatmapMonthsList";
 import { useEffect } from "react";
-import { useTranslation } from "react-i18next";
+import React from "react";
 
 export const ReactView = () => {
-  const { i18n } = useTranslation();
   const {
     currentYear,
     currentYearEntries,
     trackerData,
     settings,
     mergedTrackerData,
+    view,
+    setView,
   } = useHeatmapContext();
 
-  useEffect(() => {
-    i18n.changeLanguage(settings.language);
-  }, [settings]);
+  const graphRef = React.useRef<HTMLDivElement>(null);
+  const [isLoading, setIsLoading] = React.useState(true);
 
   const colors = getColors(trackerData, settings.colors);
 
@@ -122,7 +122,10 @@ export const ReactView = () => {
         );
         if (dayInMonth === 1) {
           for (let i = 0; i < 7; i++) {
-            const emptyBox = { backgroundColor: "transparent", classNames: ["space-between"] };
+            const emptyBox = {
+              backgroundColor: "transparent",
+              classNames: ["space-between"],
+            };
             boxes.push(emptyBox);
           }
         }
@@ -170,10 +173,6 @@ export const ReactView = () => {
     colors
   );
 
-  if (!currentYear) {
-    return null;
-  }
-
   const boxes = getBoxes(
     currentYear,
     entriesWithIntensity,
@@ -182,15 +181,43 @@ export const ReactView = () => {
     mergedTrackerData
   );
 
-  return (
-    <div className="heatmap-tracker">
-      <HeatmapHeader />
-      <div className="heatmap-tracker-graph">
-        <HeatmapMonthsList />
-        <HeatmapWeekDays />
+  useEffect(() => {
+    graphRef.current?.scrollTo({
+      top: 0,
+      left:
+        (graphRef.current?.querySelector(".today") as HTMLElement)?.offsetLeft -
+        graphRef.current?.offsetWidth / 2,
+    });
 
-        <HeatmapBoxesList boxes={boxes} />
-      </div>
+    setIsLoading(false);
+  }, [boxes]);
+
+  if (!currentYear) {
+    return null;
+  }
+
+  return (
+    <div>
+      {view === View.HeatmapTracker ? (
+        <div
+          className={`heatmap-tracker ${
+            isLoading ? "heatmap-tracker-loading" : null
+          }`}
+        >
+          <HeatmapHeader />
+          <div className="heatmap-tracker-graph" ref={graphRef}>
+            <HeatmapMonthsList />
+            <HeatmapWeekDays />
+
+            <HeatmapBoxesList boxes={boxes} />
+          </div>
+        </div>
+      ) : (
+        <div>
+          Settings
+          <button onClick={() => setView(View.HeatmapTracker)}>back</button>
+        </div>
+      )}
     </div>
   );
 };

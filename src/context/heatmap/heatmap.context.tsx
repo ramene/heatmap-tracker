@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { Entry, TrackerData, TrackerSettings } from "src/types";
+import { Entry, TrackerData, TrackerSettings, View } from "src/types";
 import { getEntriesForYear } from "src/utils/core";
 
 export const HeatmapContext = React.createContext<HeatmapContextProps | null>(
@@ -17,6 +17,8 @@ export function HeatmapProvider({
   trackerData,
   settings,
 }: HeatmapProviderProps) {
+  const [view, setView] = React.useState(View.HeatmapTracker);
+
   const defaultYear = useMemo(
     () => trackerData.year ?? new Date().getFullYear(),
     [trackerData.year]
@@ -45,6 +47,8 @@ export function HeatmapProvider({
         trackerData,
         settings,
         mergedTrackerData,
+        view,
+        setView,
       }}
     >
       {children}
@@ -59,6 +63,8 @@ interface HeatmapContextProps {
   trackerData: TrackerData;
   settings: TrackerSettings;
   mergedTrackerData: TrackerData;
+  view: View;
+  setView: React.Dispatch<React.SetStateAction<View>>;
 }
 
 export function useHeatmapContext(): HeatmapContextProps {

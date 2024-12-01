@@ -69,3 +69,8 @@ export interface Box {
   content?: string | HTMLElement;
   classNames?: string[];
 }
+
+export enum View {
+  HeatmapTracker = "heatmap-tracker",
+  HeatmapTrackerSettings = "heatmap-tracker-settings",
+}
