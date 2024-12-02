@@ -67,7 +67,11 @@ export interface Box {
   backgroundColor?: string;
   date?: string;
   content?: string | HTMLElement;
-  classNames?: string[];
+  isToday?: boolean;
+  name?: string;
+  showBorder?: boolean;
+  hasData?: boolean;
+  isSpaceBetweenBox?: boolean;
 }
 
 export enum View {

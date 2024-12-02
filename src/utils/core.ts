@@ -67,11 +67,7 @@ export function getEntriesForYear(entries: Entry[], year: number): Entry[] {
   });
 }
 
-export function getMinMaxIntensities(intensities: number[], [intensityScaleStart, intensityScaleEnd]: [number, number]): [number, number] {
-  if (!intensities.length) {
-    return [intensityScaleStart, intensityScaleEnd];
-  }
-
+export function getMinMaxIntensities(intensities: number[]): [number, number] {
   return [
     Math.min(...intensities),
     Math.max(...intensities),

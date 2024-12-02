@@ -79,7 +79,11 @@
   cursor: pointer;
 }
 
-.heatmap-tracker-boxes .space-between:hover {
+.heatmap-tracker-boxes .space-between-box {
+  background-color: transparent;
+}
+
+.heatmap-tracker-boxes .space-between-box:hover {
   transform: unset;
   border: unset;
   cursor: default;

@@ -46,19 +46,25 @@ export const ReactView = () => {
     entries: Entry[],
     trackerData: TrackerData,
     colors: Colors
-  ): Entry[] {
+  ): Record<number, Entry> {
     const intensities = getEntriesIntensities(entries);
 
-    const [minimumIntensity, maximumIntensity] = getMinMaxIntensities(
-      intensities,
-      [trackerData.intensityScaleStart, trackerData.intensityScaleEnd]
-    );
+    // If we can't receive min/max intensities from entries,
+    // try to use them from user's config or use them from default settings.
+    const [minimumIntensity, maximumIntensity] = intensities.length
+      ? getMinMaxIntensities(intensities)
+      : [
+          trackerData.intensityScaleStart ?? settings.intensityScaleStart,
+          trackerData.intensityScaleEnd ?? settings.intensityScaleEnd,
+        ];
 
+    // If user defined intensityScaleStart explicitly use them,
+    // otherwise minimum and maximum from entries will be used.
     const intensityScaleStart =
       trackerData.intensityScaleStart ?? minimumIntensity;
     const intensityScaleEnd = trackerData.intensityScaleEnd ?? maximumIntensity;
 
-    const entriesWithIntensity: Entry[] = [];
+    const entriesByDay: Record<number, Entry> = {};
 
     entries.forEach((e) => {
       const newEntry = {
@@ -91,20 +97,20 @@ export const ReactView = () => {
       }
 
       const day = getDayOfYear(new Date(e.date));
-      entriesWithIntensity[day] = newEntry;
+
+      entriesByDay[day] = newEntry;
     });
 
-    return entriesWithIntensity;
+    return entriesByDay;
   }
 
   function getBoxes(
     currentYear: number,
-    entriesWithIntensity: Entry[],
+    entriesWithIntensity: Record<number, Entry>,
     colors: Colors,
     separateMonths: boolean,
     trackerData: TrackerData
   ): Box[] {
-    const showCurrentDayBorder = trackerData.showCurrentDayBorder;
     const numberOfEmptyDaysBeforeYearStarts =
       getNumberOfEmptyDaysBeforeYearStarts(currentYear, settings.weekStartDay);
 
@@ -115,9 +121,7 @@ export const ReactView = () => {
     const todaysDayNumberLocal = getDayOfYear(new Date());
 
     for (let day = 1; day <= numberOfDaysInYear; day++) {
-      const box: Box = {
-        classNames: [],
-      };
+      const box: Box = {};
 
       const currentDate = new Date(currentYear, 0, day);
 
@@ -129,8 +133,7 @@ export const ReactView = () => {
         if (dayInMonth === 1) {
           for (let i = 0; i < 7; i++) {
             const emptyBox = {
-              backgroundColor: "transparent",
-              classNames: ["space-between"],
+              isSpaceBetweenBox: true,
             };
             boxes.push(emptyBox);
           }
@@ -138,18 +141,15 @@ export const ReactView = () => {
       }
 
       const month = currentDate.toLocaleString("en-US", { month: "short" });
-      box.classNames?.push(`month-${month.toLowerCase()}`);
+      box.name = `month-${month.toLowerCase()}`;
 
       if (day === todaysDayNumberLocal) {
-        box.classNames?.push("today");
-
-        if (showCurrentDayBorder) {
-          box.classNames?.push("with-border");
-        }
+        box.isToday = true;
+        box.showBorder = trackerData.showCurrentDayBorder;
       }
 
       if (entriesWithIntensity[day]) {
-        box.classNames?.push("hasData");
+        box.hasData = true;
         const entry = entriesWithIntensity[day];
 
         box.date = entry.date;
@@ -164,7 +164,7 @@ export const ReactView = () => {
 
         box.backgroundColor = currentDayColors[(entry.intensity as number) - 1];
       } else {
-        box.classNames?.push("isEmpty");
+        box.hasData = false;
       }
 
       boxes.push(box);
@@ -188,7 +188,7 @@ export const ReactView = () => {
   );
 
   useEffect(() => {
-    graphRef.current?.scrollTo({
+    graphRef.current?.scrollTo?.({
       top: 0,
       left:
         (graphRef.current?.querySelector(".today") as HTMLElement)?.offsetLeft -

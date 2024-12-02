@@ -21,13 +21,7 @@ export function HeatmapBoxesList({ boxes }: { boxes: Box[] }) {
           );
 
         return (
-          <HeatmapBox
-            key={index}
-            date={box.date}
-            backgroundColor={box.backgroundColor}
-            classNames={box.classNames}
-            isToday={box.classNames?.contains('today') || false}
-          >
+          <HeatmapBox key={index} box={box}>
             {content}
           </HeatmapBox>
         );

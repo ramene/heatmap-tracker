@@ -1,0 +1,3235 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReactView component renders correctly and matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="heatmap-tracker null"
+    >
+      <div
+        class="heatmap-tracker-header"
+      >
+        <div
+          class="heatmap-tracker-header__main-row"
+        >
+          <div
+            class="heatmap-tracker-header__navigation"
+          >
+            <div
+              aria-label="header.previousYear"
+              class="heatmap-tracker-arrow left"
+              role="button"
+            >
+              ◀
+            </div>
+            <div
+              class="heatmap-tracker-year-display"
+            >
+              2024
+            </div>
+            <div
+              aria-label="header.nextYear"
+              class="heatmap-tracker-arrow right"
+              role="button"
+            >
+              ▶
+            </div>
+          </div>
+          <div
+            class="heatmap-tracker-header__title"
+          />
+          <div
+            class="heatmap-tracker-header__settings"
+          />
+        </div>
+      </div>
+      <div
+        class="heatmap-tracker-graph"
+      >
+        <ul
+          class="heatmap-tracker-months"
+        >
+          <li>
+            monthsShort.January
+          </li>
+          <li>
+            monthsShort.February
+          </li>
+          <li>
+            monthsShort.March
+          </li>
+          <li>
+            monthsShort.April
+          </li>
+          <li>
+            monthsShort.May
+          </li>
+          <li>
+            monthsShort.June
+          </li>
+          <li>
+            monthsShort.July
+          </li>
+          <li>
+            monthsShort.August
+          </li>
+          <li>
+            monthsShort.September
+          </li>
+          <li>
+            monthsShort.October
+          </li>
+          <li>
+            monthsShort.November
+          </li>
+          <li>
+            monthsShort.December
+          </li>
+        </ul>
+        <div
+          class="heatmap-tracker-days"
+        >
+          <div>
+            weekdaysShort.Sunday
+          </div>
+          <div>
+            weekdaysShort.Monday
+          </div>
+          <div>
+            weekdaysShort.Tuesday
+          </div>
+          <div>
+            weekdaysShort.Wednesday
+          </div>
+          <div>
+            weekdaysShort.Thursday
+          </div>
+          <div>
+            weekdaysShort.Friday
+          </div>
+          <div>
+            weekdaysShort.Saturday
+          </div>
+        </div>
+        <div
+          class="heatmap-tracker-boxes separate-months"
+        >
+          <div
+            class="heatmap-tracker-box isEmpty"
+            style="background-color: transparent;"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jan hasData"
+            data-date="2024-01-01"
+            style="background-color: rgb(85, 255, 85);"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jan hasData"
+            data-date="2024-01-02"
+            style="background-color: rgb(85, 255, 85);"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jan isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jan isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jan isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jan isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jan isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jan isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jan isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jan isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jan isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jan isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jan isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jan isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jan isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jan isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jan isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jan isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jan isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jan isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jan isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jan isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jan isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jan isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jan isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jan isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jan isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jan isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jan isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jan isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jan isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-feb isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-feb isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-feb isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-feb isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-feb isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-feb isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-feb isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-feb isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-feb isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-feb isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-feb isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-feb isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-feb isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-feb isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-feb isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-feb isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-feb isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-feb isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-feb isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-feb isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-feb isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-feb isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-feb isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-feb isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-feb isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-feb isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-feb isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-feb isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-feb isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-mar isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-mar isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-mar isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-mar isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-mar isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-mar isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-mar isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-mar isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-mar isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-mar isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-mar isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-mar isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-mar isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-mar isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-mar isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-mar isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-mar isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-mar isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-mar isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-mar isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-mar isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-mar isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-mar isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-mar isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-mar isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-mar isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-mar isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-mar isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-mar isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-mar isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-mar isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-may isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-may isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-may isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-may isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-may isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-may isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-may isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-may isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-may isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-may isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-may isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-may isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-may isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-may isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-may isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-may isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-may isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-may isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-may isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-may isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-may isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-may isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-may isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-may isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-may isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-may isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-may isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-may isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-may isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-may isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-may isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jun isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jun isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jun isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jun isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jun isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jun isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jun isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jun isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jun isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jun isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jun isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jun isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jun isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jun isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jun isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jun isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jun isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jun isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jun isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jun isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jun isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jun isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jun isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jun isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jun isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jun isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jun isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jun isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jun isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jun isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jul isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jul isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jul isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jul isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jul isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jul isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jul isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jul isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jul isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jul isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jul isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jul isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jul isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jul isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jul isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jul isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jul isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jul isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jul isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jul isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jul isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jul isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jul isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jul isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jul isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jul isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jul isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jul isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jul isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jul isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-jul isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-aug isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-aug isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-aug isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-aug isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-aug isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-aug isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-aug isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-aug isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-aug isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-aug isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-aug isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-aug isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-aug isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-aug isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-aug isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-aug isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-aug isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-aug isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-aug isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-aug isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-aug isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-aug isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-aug isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-aug isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-aug isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-aug isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-aug isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-aug isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-aug isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-aug isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-aug isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-sep isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-sep isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-sep isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-sep isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-sep isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-sep isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-sep isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-sep isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-sep isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-sep isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-sep isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-sep isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-sep isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-sep isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-sep isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-sep isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-sep isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-sep isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-sep isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-sep isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-sep isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-sep isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-sep isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-sep isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-sep isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-sep isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-sep isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-sep isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-sep isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-sep isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-oct isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-oct isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-oct isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-oct isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-oct isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-oct isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-oct isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-oct isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-oct isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-oct isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-oct isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-oct isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-oct isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-oct isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-oct isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-oct isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-oct isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-oct isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-oct isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-oct isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-oct isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-oct isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-oct isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-oct isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-oct isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-oct isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-oct isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-oct isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-oct isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-oct isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-oct isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-nov isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-nov isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-nov isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-nov isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-nov isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-nov isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-nov isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-nov isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-nov isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-nov isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-nov isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-nov isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-nov isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-nov isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-nov isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-nov isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-nov isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-nov isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-nov isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-nov isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-nov isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-nov isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-nov isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-nov isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-nov isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-nov isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-nov isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-nov isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-nov isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-nov isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box space-between-box"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-dec isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-dec today isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-dec isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-dec isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-dec isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-dec isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-dec isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-dec isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-dec isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-dec isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-dec isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-dec isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-dec isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-dec isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-dec isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-dec isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-dec isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-dec isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-dec isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-dec isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-dec isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-dec isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-dec isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-dec isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-dec isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-dec isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-dec isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-dec isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-dec isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-dec isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-dec isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

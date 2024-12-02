@@ -33,7 +33,11 @@ const buildOptions = {
   minify: isProd,
   banner: { js: banner },
   logLevel: 'info',
-  outfile: 'build/main.js'
+  outfile: 'build/main.js',
+  resolveExtensions: ['.js', '.jsx', '.ts', '.tsx'], // Ensure extensions are resolved
+  alias: {
+    src: './src', // Add this to map the alias
+  },
 };
 
 async function build() {
