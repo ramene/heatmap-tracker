@@ -1,5 +1,9 @@
 # Heatmap Tracker plugin for Obsidian
 
+<img src="./public/readme-cover.png" />
+
+The **Heatmap Tracker plugin for Obsidian** is a powerful and customizable tool designed to help you **track, visualize, and analyze data** over a calendar year. Perfect for habit tracking, project management, personal development, or any kind of data visualization, this plugin enables you to create beautiful, interactive heatmaps directly within Obsidian. Whether you’re **monitoring progress, visualizing trends, or staying on top of daily goals**, the Heatmap Tracker enhances your productivity and organization. Discover its intuitive features, flexible customization options, and seamless integration with Obsidian in the detailed guide below.
+
 ## Watch video to start using this plugin in 30 seconds
 
 <img src="./public/heatmap-how-to.gif" />
@@ -17,17 +21,6 @@ const trackerData = {
     separateMonths: true,
     heatmapTitle: "This is the title for your heatmap",
     heatmapSubtitle: "This is the subtitle for your heatmap. You can use it as a description.",
-    /**
-      * intensityScaleStart: The minimum intensity value for the heatmap scale.
-      * If you count steps, this could be 0, representing the lowest count (e.g., not achieving step goals).
-      */
-    // intensityScaleStart: 0,
-
-    /**
-      * intensityScaleEnd: The maximum intensity value for the heatmap scale.
-      * If you count steps and have a goal of 10,000 steps per day, this could be 10000.
-      */
-    // intensityScaleEnd: 1,
 }
 
 // Path to the folder with notes
@@ -47,13 +40,88 @@ for(let page of dv.pages(`"${PATH_TO_YOUR_FOLDER}"`).where((p) => p[PARAMETER_NA
 renderHeatmapTracker(this.container, trackerData);
 ```
 
+## Tracker Settings Documentation
 
-The **Heatmap Tracker** plugin is a versatile and visually appealing tool for tracking data over a calendar year. This plugin empowers you to create beautiful heatmaps for various purposes, such as habit tracking, project progress, or data visualization directly within Obsidian. Below is a comprehensive overview of its features, usage, and development opportunities.
+### `year`
+- **Type:** `number`
+- **Default:** Current year (`new Date().getFullYear()`)
+- **Description:** Specifies the year for which the heatmap should display data by default.
+
+---
+
+### `colors`
+- **Type:** `object`
+- **Default:**
+```
+{
+  "default": ["#c6e48b", "#7bc96f", "#49af5d", "#2e8840", "#196127"]
+}
+```
+- **Description:** Defines the color scale used for representing different intensity levels in the heatmap. Each color corresponds to a specific range of data intensity.
+
+---
+
+### `entries`
+- **Type:** `array`
+- **Default:**
+```
+[
+  { "date": "1900-01-01", "color": "#7bc96f", "intensity": 5, "content": "" }
+]
+```
+- **Description:** A list of data entries for the heatmap. Each entry includes:
+  - `date`: The date of the entry (ISO string format).
+  - `color`: The color for that entry.
+  - `intensity`: The data intensity for that date.
+  - `content`: Optional tooltip or note associated with the date.
+
+---
+
+### `showCurrentDayBorder`
+- **Type:** `boolean`
+- **Default:** `true`
+- **Description:** Indicates whether the current day should be highlighted with a border on the heatmap.
+
+---
+
+### `defaultEntryIntensity`
+- **Type:** `number`
+- **Default:** `4`
+- **Description:** The default intensity assigned to new data entries if no intensity is explicitly specified.
+
+---
+
+### `intensityScaleStart`
+- **Type:** `number`
+- **Default:** `1`
+- **Description:** The minimum value for the intensity scale. Used to determine the color mapping for the lowest intensity values in the heatmap.
+
+---
+
+### `intensityScaleEnd`
+- **Type:** `number`
+- **Default:** `5`
+- **Description:** The maximum value for the intensity scale. Represents the highest possible intensity that can be mapped to the color scale.
+
+---
+
+### `weekStartDay`
+- **Type:** `number`
+- **Default:** `1`
+- **Description:** Specifies the first day of the week. Values correspond to:
+  - `0`: Sunday
+  - `1`: Monday
+  - `2`: Tuesday, and so on.
+
+---
+
+### `separateMonths`
+- **Type:** `boolean`
+- **Default:** `false`
+- **Description:** Determines whether months should be visually separated within the heatmap layout.
+
 
 <img src="./public/two-mac-mockup.png" />
-
-
-This plugin is useful for tracking progress for exercise, finances, social time, project progression, passions, learning progress and so on.   
 
 To be used with [Obsidian Dataview](https://blacksmithgu.github.io/obsidian-dataview/), but could be used standalone or with other plugins as well (if you know some javascript).
 
@@ -76,20 +144,10 @@ To be used with [Obsidian Dataview](https://blacksmithgu.github.io/obsidian-data
 5. **Monthly Separation Option**  
    Choose whether to separate months visually within the heatmap.
 
-6. **Current Day Highlight**  
-   Optionally display a border around the current day for easy identification.
+6. **Localization**  
+   Plugin supports multiple languages, including English, German and Russian.
 
 <img src="./public/mac-mockup-dark.png" />
-
-## 📖 How to use
-
-1. Annotate the data you want to track in your daily notes (see [Dataview annotation documentation](https://blacksmithgu.github.io/obsidian-dataview/data-annotation/)) 
-
-2. Create a [DataviewJS block](https://blacksmithgu.github.io/obsidian-dataview/api/intro/) where you want the Heatmap Tracker to display.  
-
-3. Collect the data you want to display using [DataviewJS](https://blacksmithgu.github.io/obsidian-dataview/api/code-reference/)
-
-4. Pass the data into Heatmap Tracker using  **renderHeatmapTracker()** 
 
 <img src="./public/tracker-overview.png">
 
