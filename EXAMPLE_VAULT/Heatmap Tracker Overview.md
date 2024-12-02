@@ -74,6 +74,8 @@ const trackerData = {
     year: 2024, // optional, remove this line to autoswitch year
     entries: [],
     heatmapTitle: "👣 Steps Tracker 👣",
+    intensityScaleStart: 1,
+    intensityScaleEnd: 10000
 }
 
  
@@ -109,6 +111,8 @@ const trackerData = {
         ]
     },
     heatmapTitle: "👣 Steps Tracker 👣 (11 intensities instead of 5)",
+    intensityScaleStart: 1,
+    intensityScaleEnd: 10000
 }
 
  
@@ -183,11 +187,13 @@ renderHeatmapTracker(this.container, trackerData)
 const trackerData = {
     year: 2024,
     colors: {
-        blue: ["#ffdf04","#ffbe04","#ff9a03","#ff6d02","#ff2c01"]
+        red: ["#ffdf04","#ffbe04","#ff9a03","#ff6d02","#ff2c01"]
     },
     entries: [],
     showCurrentDayBorder: false,
     heatmapTitle: "📚 Learning Tracker 📚",
+    intensityScaleStart: "60000",
+    intensityScaleEnd: "6000000"
 }
 
 for(let page of dv.pages('"daily notes"').where(p=>p.learning)){
