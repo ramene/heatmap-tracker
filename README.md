@@ -16,7 +16,18 @@ const trackerData = {
     entries: [],
     separateMonths: true,
     heatmapTitle: "This is the title for your heatmap",
-    heatmapSubtitle: "This is the subtitle for your heatmap. You can use it as a description."
+    heatmapSubtitle: "This is the subtitle for your heatmap. You can use it as a description.",
+    /**
+      * intensityScaleStart: The minimum intensity value for the heatmap scale.
+      * If you count steps, this could be 0, representing the lowest count (e.g., not achieving step goals).
+      */
+    // intensityScaleStart: 0,
+
+    /**
+      * intensityScaleEnd: The maximum intensity value for the heatmap scale.
+      * If you count steps and have a goal of 10,000 steps per day, this could be 10000.
+      */
+    // intensityScaleEnd: 1,
 }
 
 // Path to the folder with notes

@@ -42,6 +42,73 @@ const trackerData = {
 renderHeatmapTracker(this.container, trackerData)
 ```
 
+
+```dataviewjs
+
+const trackerData = {
+    year: 2024, // optional, remove this line to autoswitch year
+    entries: [],
+    colors: {
+            "intensity": [
+            "rgb(255, 0, 0)",
+            "rgb(255, 162, 127)",
+            "rgb(255, 232, 197)",
+            "rgb(151, 190, 90)",
+            ]
+    },
+    heatmapTitle: "🌅 Wake-Up Wellness Heatmap 🌅",
+    heatmapSubtitle: "Track wake-up times against your target. Green means early, red means late. 🌄✨",
+    intensityScaleStart: 0,
+    intensityScaleEnd: 1
+}
+
+// Constants for configuration
+const MAX_DIFF = 120; // Maximum time difference (in minutes) after which intensity is 0
+const TARGET_TIME = "06:00"; // Target wake-up time (HH:MM format)
+
+/**
+ * Calculate the intensity of wake-up time based on the target time.
+ * Intensity is 1 (best) when wake time is before or equal to the target time,
+ * and decreases linearly as wake time gets later.
+ *
+ * @param {string} wakeTimeISO - Wake-up time in ISO format (e.g., "2024-11-18T08:30:00.000+01:00").
+ * @param {string} targetTime - Target wake-up time (HH:MM format, default from constant).
+ * @returns {number} Intensity value between 0 (worst) and 1 (best).
+ */
+function calculateIntensity(wakeTimeISO, targetTime = TARGET_TIME) {
+  // Parse the wake-up time from ISO string to a Date object
+  const wakeDate = new Date(wakeTimeISO);
+
+  // Parse target time into hours and minutes
+  const [targetHour, targetMinute] = targetTime.split(":").map(Number);
+
+  // Convert target time to minutes since midnight
+  const targetMinutes = targetHour * 60 + targetMinute;
+
+  // Get wake-up time in minutes since midnight
+  const wakeMinutes = wakeDate.getHours() * 60 + wakeDate.getMinutes();
+
+  // Calculate the time difference (only if wake time is after the target time)
+  const diffMinutes = Math.max(0, wakeMinutes - targetMinutes);
+
+  // Normalize the intensity value: 1 (best) -> 0 (worst)
+  return Math.max(0, 1 - diffMinutes / MAX_DIFF);
+}
+
+ 
+for(let page of dv.pages('"daily notes"').where(p=>p.woke)){
+    trackerData.entries.push({
+        date: page.file.name,
+        intensity: calculateIntensity(page.woke),
+        content: await dv.span(`[](${page.file.name})`)
+    })  
+}
+
+renderHeatmapTracker(this.container, trackerData)
+
+```
+
+
 ```dataviewjs
 
 const trackerData = {
@@ -120,7 +187,8 @@ for(let page of dv.pages('"daily notes"').where(p=>p.steps)){
 
     trackerData.entries.push({
         date: page.file.name,
-        intensity: page.steps
+        intensity: page.steps,
+        content: await dv.span(`[](${page.file.name})`)
     })  
 }
 
@@ -142,7 +210,8 @@ for(let page of dv.pages('"daily notes"').where(p=>p.steps)){
 
     trackerData.entries.push({
         date: page.file.name,
-        intensity: page.steps
+        intensity: page.steps,
+        content: await dv.span(`[](${page.file.name})`)
     })  
 }
 
@@ -174,7 +243,8 @@ for(let page of dv.pages('"daily notes"').where(p=>p.steps)){
 
     trackerData.entries.push({
         date: page.file.name,
-        intensity: page.steps
+        intensity: page.steps,
+        content: await dv.span(`[](${page.file.name})`)
     })  
 }
 
@@ -199,7 +269,8 @@ const trackerData = {
 for(let page of dv.pages('"daily notes"').where(p=>p.learning)){
     trackerData.entries.push({
         date: page.file.name,
-        intensity: page.learning
+        intensity: page.learning,
+        content: await dv.span(`[](${page.file.name})`)
     })  
 }
 
@@ -207,9 +278,6 @@ renderHeatmapTracker(this.container, trackerData)
 
 ```
 
-### Quick Guide 
-- Install **"Dataview"** and **"Heatmap Tracker"** from the community plugins page.
-- Enable **Settings** -> **Dataview** -> **Enable Javascript Queries**
 
 **On hover preview**
 - Enable **Settings** -> **Core Plugins** -> **Page Preview** for hover preview to work.
