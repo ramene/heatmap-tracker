@@ -42,7 +42,7 @@ export function HeatmapTrackerView() {
   return (
     <div
       className={`heatmap-tracker ${
-        isLoading ? "heatmap-tracker-loading" : null
+        isLoading ? "heatmap-tracker-loading" : ""
       }`}
     >
       <HeatmapHeader />
