@@ -3,7 +3,7 @@ import { createRoot, Root } from "react-dom/client";
 import { createContext, StrictMode } from "react";
 import HeatmapTrackerSettingsTab from "./settings";
 import { TrackerData, TrackerSettings } from "./types";
-import { ReactView } from "./ReactView";
+import { ReactApp } from "./App";
 import { HeatmapProvider } from "./context/heatmap/heatmap.context";
 
 import "./localization/i18n";
@@ -67,7 +67,7 @@ export default class HeatmapTracker extends Plugin {
         <StrictMode>
           <AppContext.Provider value={this.app}>
             <HeatmapProvider trackerData={trackerData} settings={this.settings}>
-              <ReactView />
+              <ReactApp />
             </HeatmapProvider>
           </AppContext.Provider>
         </StrictMode>

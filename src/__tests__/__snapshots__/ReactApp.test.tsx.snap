@@ -1,8 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ReactView component renders correctly and matches snapshot 1`] = `
+exports[`ReactApp component renders correctly and matches snapshot 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="heatmap-tracker__container"
+  >
     <div
       class="heatmap-tracker null"
     >
@@ -37,10 +39,40 @@ exports[`ReactView component renders correctly and matches snapshot 1`] = `
           </div>
           <div
             class="heatmap-tracker-header__title"
-          />
+          >
+            👣 Steps Tracker 👣 (11 intensities instead of 5)
+          </div>
           <div
-            class="heatmap-tracker-header__settings"
-          />
+            class="heatmap-tracker-header__statistics"
+          >
+            <button
+              aria-label="Statistics"
+              class="clickable-icon"
+            >
+              <svg
+                class="lucide lucide-chart-line"
+                fill="none"
+                height="18"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3 3v16a2 2 0 0 0 2 2h16"
+                />
+                <path
+                  d="m19 9-5 5-4-4-3 3"
+                />
+              </svg>
+              <span>
+                (beta)
+              </span>
+            </button>
+          </div>
         </div>
       </div>
       <div
@@ -90,9 +122,6 @@ exports[`ReactView component renders correctly and matches snapshot 1`] = `
           class="heatmap-tracker-days"
         >
           <div>
-            weekdaysShort.Sunday
-          </div>
-          <div>
             weekdaysShort.Monday
           </div>
           <div>
@@ -110,31 +139,15 @@ exports[`ReactView component renders correctly and matches snapshot 1`] = `
           <div>
             weekdaysShort.Saturday
           </div>
+          <div>
+            weekdaysShort.Sunday
+          </div>
         </div>
         <div
-          class="heatmap-tracker-boxes separate-months"
+          class="heatmap-tracker-boxes "
         >
           <div
-            class="heatmap-tracker-box isEmpty"
-            style="background-color: transparent;"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box month-jan hasData"
-            data-date="2024-01-01"
-            style="background-color: rgb(85, 255, 85);"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box month-jan hasData"
-            data-date="2024-01-02"
-            style="background-color: rgb(85, 255, 85);"
+            class="heatmap-tracker-box month-jan isEmpty"
           >
             <span
               class="heatmap-tracker-content"
@@ -344,49 +357,7 @@ exports[`ReactView component renders correctly and matches snapshot 1`] = `
             />
           </div>
           <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
+            class="heatmap-tracker-box month-jan isEmpty"
           >
             <span
               class="heatmap-tracker-content"
@@ -596,55 +567,6 @@ exports[`ReactView component renders correctly and matches snapshot 1`] = `
             />
           </div>
           <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
             class="heatmap-tracker-box month-mar isEmpty"
           >
             <span
@@ -862,53 +784,224 @@ exports[`ReactView component renders correctly and matches snapshot 1`] = `
             />
           </div>
           <div
-            class="heatmap-tracker-box space-between-box"
+            class="heatmap-tracker-box month-apr hasData"
+            data-date="2024-04-01"
+            style="background-color: rgb(139, 139, 139);"
           >
             <span
               class="heatmap-tracker-content"
-            />
+            >
+              some content
+            </span>
           </div>
           <div
-            class="heatmap-tracker-box space-between-box"
+            class="heatmap-tracker-box month-apr hasData"
+            data-date="2024-04-02"
+            style="background-color: rgb(156, 156, 156);"
           >
             <span
               class="heatmap-tracker-content"
-            />
+            >
+              some content
+            </span>
           </div>
           <div
-            class="heatmap-tracker-box space-between-box"
+            class="heatmap-tracker-box month-apr hasData"
+            data-date="2024-04-03"
+            style="background-color: rgb(74, 74, 74);"
           >
             <span
               class="heatmap-tracker-content"
-            />
+            >
+              some content
+            </span>
           </div>
           <div
-            class="heatmap-tracker-box space-between-box"
+            class="heatmap-tracker-box month-apr hasData"
+            data-date="2024-04-04"
+            style="background-color: rgb(34, 34, 34);"
           >
             <span
               class="heatmap-tracker-content"
-            />
+            >
+              some content
+            </span>
           </div>
           <div
-            class="heatmap-tracker-box space-between-box"
+            class="heatmap-tracker-box month-apr hasData"
+            data-date="2024-04-05"
+            style="background-color: rgb(123, 123, 123);"
           >
             <span
               class="heatmap-tracker-content"
-            />
+            >
+              some content
+            </span>
           </div>
           <div
-            class="heatmap-tracker-box space-between-box"
+            class="heatmap-tracker-box month-apr hasData"
+            data-date="2024-04-06"
+            style="background-color: rgb(74, 74, 74);"
           >
             <span
               class="heatmap-tracker-content"
-            />
+            >
+              some content
+            </span>
           </div>
           <div
-            class="heatmap-tracker-box space-between-box"
+            class="heatmap-tracker-box month-apr hasData"
+            data-date="2024-04-07"
+            style="background-color: rgb(111, 111, 111);"
           >
             <span
               class="heatmap-tracker-content"
-            />
+            >
+              some content
+            </span>
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr hasData"
+            data-date="2024-04-08"
+            style="background-color: rgb(139, 139, 139);"
+          >
+            <span
+              class="heatmap-tracker-content"
+            >
+              some content
+            </span>
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr hasData"
+            data-date="2024-04-09"
+            style="background-color: rgb(139, 139, 139);"
+          >
+            <span
+              class="heatmap-tracker-content"
+            >
+              some content
+            </span>
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr hasData"
+            data-date="2024-04-10"
+            style="background-color: rgb(111, 111, 111);"
+          >
+            <span
+              class="heatmap-tracker-content"
+            >
+              some content
+            </span>
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr hasData"
+            data-date="2024-04-11"
+            style="background-color: rgb(95, 95, 95);"
+          >
+            <span
+              class="heatmap-tracker-content"
+            >
+              some content
+            </span>
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr hasData"
+            data-date="2024-04-12"
+            style="background-color: rgb(34, 34, 34);"
+          >
+            <span
+              class="heatmap-tracker-content"
+            >
+              some content
+            </span>
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr hasData"
+            data-date="2024-04-13"
+            style="background-color: rgb(74, 74, 74);"
+          >
+            <span
+              class="heatmap-tracker-content"
+            >
+              some content
+            </span>
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr hasData"
+            data-date="2024-04-14"
+            style="background-color: rgb(74, 74, 74);"
+          >
+            <span
+              class="heatmap-tracker-content"
+            >
+              some content
+            </span>
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr hasData"
+            data-date="2024-04-15"
+            style="background-color: rgb(25, 25, 25);"
+          >
+            <span
+              class="heatmap-tracker-content"
+            >
+              some content
+            </span>
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr hasData"
+            data-date="2024-04-16"
+            style="background-color: rgb(123, 123, 123);"
+          >
+            <span
+              class="heatmap-tracker-content"
+            >
+              some content
+            </span>
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr hasData"
+            data-date="2024-04-17"
+            style="background-color: rgb(47, 47, 47);"
+          >
+            <span
+              class="heatmap-tracker-content"
+            >
+              some content
+            </span>
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr hasData"
+            data-date="2024-04-18"
+            style="background-color: rgb(123, 123, 123);"
+          >
+            <span
+              class="heatmap-tracker-content"
+            >
+              some content
+            </span>
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr hasData"
+            data-date="2024-04-19"
+            style="background-color: rgb(25, 25, 25);"
+          >
+            <span
+              class="heatmap-tracker-content"
+            >
+              some content
+            </span>
+          </div>
+          <div
+            class="heatmap-tracker-box month-apr hasData"
+            data-date="2024-04-20"
+            style="background-color: rgb(95, 95, 95);"
+          >
+            <span
+              class="heatmap-tracker-content"
+            >
+              some content
+            </span>
           </div>
           <div
             class="heatmap-tracker-box month-apr isEmpty"
@@ -981,228 +1074,224 @@ exports[`ReactView component renders correctly and matches snapshot 1`] = `
             />
           </div>
           <div
-            class="heatmap-tracker-box month-apr isEmpty"
+            class="heatmap-tracker-box month-may hasData"
+            data-date="2024-05-01"
+            style="background-color: rgb(123, 123, 123);"
           >
             <span
               class="heatmap-tracker-content"
-            />
+            >
+              some content
+            </span>
           </div>
           <div
-            class="heatmap-tracker-box month-apr isEmpty"
+            class="heatmap-tracker-box month-may hasData"
+            data-date="2024-05-02"
+            style="background-color: rgb(156, 156, 156);"
           >
             <span
               class="heatmap-tracker-content"
-            />
+            >
+              some content
+            </span>
           </div>
           <div
-            class="heatmap-tracker-box month-apr isEmpty"
+            class="heatmap-tracker-box month-may hasData"
+            data-date="2024-05-03"
+            style="background-color: rgb(25, 25, 25);"
           >
             <span
               class="heatmap-tracker-content"
-            />
+            >
+              some content
+            </span>
           </div>
           <div
-            class="heatmap-tracker-box month-apr isEmpty"
+            class="heatmap-tracker-box month-may hasData"
+            data-date="2024-05-04"
+            style="background-color: rgb(25, 25, 25);"
           >
             <span
               class="heatmap-tracker-content"
-            />
+            >
+              some content
+            </span>
           </div>
           <div
-            class="heatmap-tracker-box month-apr isEmpty"
+            class="heatmap-tracker-box month-may hasData"
+            data-date="2024-05-05"
+            style="background-color: rgb(95, 95, 95);"
           >
             <span
               class="heatmap-tracker-content"
-            />
+            >
+              some content
+            </span>
           </div>
           <div
-            class="heatmap-tracker-box month-apr isEmpty"
+            class="heatmap-tracker-box month-may hasData"
+            data-date="2024-05-06"
+            style="background-color: rgb(47, 47, 47);"
           >
             <span
               class="heatmap-tracker-content"
-            />
+            >
+              some content
+            </span>
           </div>
           <div
-            class="heatmap-tracker-box month-apr isEmpty"
+            class="heatmap-tracker-box month-may hasData"
+            data-date="2024-05-07"
+            style="background-color: rgb(111, 111, 111);"
           >
             <span
               class="heatmap-tracker-content"
-            />
+            >
+              some content
+            </span>
           </div>
           <div
-            class="heatmap-tracker-box month-apr isEmpty"
+            class="heatmap-tracker-box month-may hasData"
+            data-date="2024-05-08"
+            style="background-color: rgb(34, 34, 34);"
           >
             <span
               class="heatmap-tracker-content"
-            />
+            >
+              some content
+            </span>
           </div>
           <div
-            class="heatmap-tracker-box month-apr isEmpty"
+            class="heatmap-tracker-box month-may hasData"
+            data-date="2024-05-09"
+            style="background-color: rgb(34, 34, 34);"
           >
             <span
               class="heatmap-tracker-content"
-            />
+            >
+              some content
+            </span>
           </div>
           <div
-            class="heatmap-tracker-box month-apr isEmpty"
+            class="heatmap-tracker-box month-may hasData"
+            data-date="2024-05-10"
+            style="background-color: rgb(34, 34, 34);"
           >
             <span
               class="heatmap-tracker-content"
-            />
+            >
+              some content
+            </span>
           </div>
           <div
-            class="heatmap-tracker-box month-apr isEmpty"
+            class="heatmap-tracker-box month-may hasData"
+            data-date="2024-05-11"
+            style="background-color: rgb(95, 95, 95);"
           >
             <span
               class="heatmap-tracker-content"
-            />
+            >
+              some content
+            </span>
           </div>
           <div
-            class="heatmap-tracker-box month-apr isEmpty"
+            class="heatmap-tracker-box month-may hasData"
+            data-date="2024-05-12"
+            style="background-color: rgb(123, 123, 123);"
           >
             <span
               class="heatmap-tracker-content"
-            />
+            >
+              some content
+            </span>
           </div>
           <div
-            class="heatmap-tracker-box month-apr isEmpty"
+            class="heatmap-tracker-box month-may hasData"
+            data-date="2024-05-13"
+            style="background-color: rgb(74, 74, 74);"
           >
             <span
               class="heatmap-tracker-content"
-            />
+            >
+              some content
+            </span>
           </div>
           <div
-            class="heatmap-tracker-box month-apr isEmpty"
+            class="heatmap-tracker-box month-may hasData"
+            data-date="2024-05-14"
+            style="background-color: rgb(25, 25, 25);"
           >
             <span
               class="heatmap-tracker-content"
-            />
+            >
+              some content
+            </span>
           </div>
           <div
-            class="heatmap-tracker-box month-apr isEmpty"
+            class="heatmap-tracker-box month-may hasData"
+            data-date="2024-05-15"
+            style="background-color: rgb(74, 74, 74);"
           >
             <span
               class="heatmap-tracker-content"
-            />
+            >
+              some content
+            </span>
           </div>
           <div
-            class="heatmap-tracker-box month-apr isEmpty"
+            class="heatmap-tracker-box month-may hasData"
+            data-date="2024-05-16"
+            style="background-color: rgb(156, 156, 156);"
           >
             <span
               class="heatmap-tracker-content"
-            />
+            >
+              some content
+            </span>
           </div>
           <div
-            class="heatmap-tracker-box month-apr isEmpty"
+            class="heatmap-tracker-box month-may hasData"
+            data-date="2024-05-17"
+            style="background-color: rgb(123, 123, 123);"
           >
             <span
               class="heatmap-tracker-content"
-            />
+            >
+              some content
+            </span>
           </div>
           <div
-            class="heatmap-tracker-box month-apr isEmpty"
+            class="heatmap-tracker-box month-may hasData"
+            data-date="2024-05-18"
+            style="background-color: rgb(47, 47, 47);"
           >
             <span
               class="heatmap-tracker-content"
-            />
+            >
+              some content
+            </span>
           </div>
           <div
-            class="heatmap-tracker-box month-apr isEmpty"
+            class="heatmap-tracker-box month-may hasData"
+            data-date="2024-05-19"
+            style="background-color: rgb(111, 111, 111);"
           >
             <span
               class="heatmap-tracker-content"
-            />
+            >
+              some content
+            </span>
           </div>
           <div
-            class="heatmap-tracker-box month-apr isEmpty"
+            class="heatmap-tracker-box month-may hasData"
+            data-date="2024-05-20"
+            style="background-color: rgb(95, 95, 95);"
           >
             <span
               class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box month-may isEmpty"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box month-may isEmpty"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box month-may isEmpty"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box month-may isEmpty"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box month-may isEmpty"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
+            >
+              some content
+            </span>
           </div>
           <div
             class="heatmap-tracker-box month-may isEmpty"
@@ -1276,160 +1365,6 @@ exports[`ReactView component renders correctly and matches snapshot 1`] = `
           </div>
           <div
             class="heatmap-tracker-box month-may isEmpty"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box month-may isEmpty"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box month-may isEmpty"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box month-may isEmpty"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box month-may isEmpty"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box month-may isEmpty"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box month-may isEmpty"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box month-may isEmpty"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box month-may isEmpty"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box month-may isEmpty"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box month-may isEmpty"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box month-may isEmpty"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box month-may isEmpty"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box month-may isEmpty"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box month-may isEmpty"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box month-may isEmpty"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
           >
             <span
               class="heatmap-tracker-content"
@@ -1646,55 +1581,6 @@ exports[`ReactView component renders correctly and matches snapshot 1`] = `
             />
           </div>
           <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
             class="heatmap-tracker-box month-jul isEmpty"
           >
             <span
@@ -1912,55 +1798,6 @@ exports[`ReactView component renders correctly and matches snapshot 1`] = `
             />
           </div>
           <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
             class="heatmap-tracker-box month-aug isEmpty"
           >
             <span
@@ -2172,55 +2009,6 @@ exports[`ReactView component renders correctly and matches snapshot 1`] = `
           </div>
           <div
             class="heatmap-tracker-box month-aug isEmpty"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
           >
             <span
               class="heatmap-tracker-content"
@@ -2437,55 +2225,6 @@ exports[`ReactView component renders correctly and matches snapshot 1`] = `
             />
           </div>
           <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
             class="heatmap-tracker-box month-oct isEmpty"
           >
             <span
@@ -2697,55 +2436,6 @@ exports[`ReactView component renders correctly and matches snapshot 1`] = `
           </div>
           <div
             class="heatmap-tracker-box month-oct isEmpty"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
           >
             <span
               class="heatmap-tracker-content"
@@ -2956,69 +2646,6 @@ exports[`ReactView component renders correctly and matches snapshot 1`] = `
           </div>
           <div
             class="heatmap-tracker-box month-nov isEmpty"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box space-between-box"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box month-dec isEmpty"
-          >
-            <span
-              class="heatmap-tracker-content"
-            />
-          </div>
-          <div
-            class="heatmap-tracker-box month-dec today isEmpty"
           >
             <span
               class="heatmap-tracker-content"
@@ -3040,6 +2667,20 @@ exports[`ReactView component renders correctly and matches snapshot 1`] = `
           </div>
           <div
             class="heatmap-tracker-box month-dec isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-dec isEmpty"
+          >
+            <span
+              class="heatmap-tracker-content"
+            />
+          </div>
+          <div
+            class="heatmap-tracker-box month-dec today with-border isEmpty"
           >
             <span
               class="heatmap-tracker-content"

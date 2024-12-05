@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
-import { Entry, TrackerData, TrackerSettings, View } from "src/types";
-import { getEntriesForYear } from "src/utils/core";
+import { Colors, Entry, TrackerData, TrackerSettings, View } from "src/types";
+import { fillEntriesWithIntensity, getColors, getEntriesForYear } from "src/utils/core";
 
 export const HeatmapContext = React.createContext<HeatmapContextProps | null>(
   null
@@ -38,6 +38,16 @@ export function HeatmapProvider({
     };
   }, [trackerData, settings]);
 
+  const colors = useMemo( () => getColors(trackerData, settings.colors), [trackerData, settings.colors]);
+
+  const entriesWithIntensity = useMemo(() => fillEntriesWithIntensity(
+    currentYearEntries,
+    mergedTrackerData,
+    colors,
+    settings
+  ), [currentYearEntries, mergedTrackerData, colors, settings]);
+
+
   return (
     <HeatmapContext.Provider
       value={{
@@ -49,6 +59,8 @@ export function HeatmapProvider({
         mergedTrackerData,
         view,
         setView,
+        colors,
+        entriesWithIntensity,
       }}
     >
       {children}
@@ -65,6 +77,8 @@ interface HeatmapContextProps {
   mergedTrackerData: TrackerData;
   view: View;
   setView: React.Dispatch<React.SetStateAction<View>>;
+  colors: Colors;
+  entriesWithIntensity: Record<number, Entry>;
 }
 
 export function useHeatmapContext(): HeatmapContextProps {

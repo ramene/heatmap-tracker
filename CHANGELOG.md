@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.3.0] - 2024-12-05
+### ✨ Added
+- Add new Statistics view (still in progress).
+
+### 🔄 Changed
+- Split app to views.
+- Add margin-bottom to the heatmap.
+
+---
+
 ## [1.2.1] - 2024-12-02
 ### ✨ Added
 - React-testing-library added to the project. And first snapshot test added also.

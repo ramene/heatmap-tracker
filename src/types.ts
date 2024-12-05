@@ -76,5 +76,5 @@ export interface Box {
 
 export enum View {
   HeatmapTracker = "heatmap-tracker",
-  HeatmapTrackerSettings = "heatmap-tracker-settings",
+  HeatmapTrackerStatistics = "heatmap-tracker-statistics",
 }
