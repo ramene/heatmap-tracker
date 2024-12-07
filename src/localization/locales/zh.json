@@ -1,0 +1,62 @@
+{
+  "settings": {
+    "title": "设置",
+    "language": "语言",
+    "chooseYourPreferredLanguage": "选择您偏好的语言",
+    "colors": "颜色",
+    "colorName": "颜色名称",
+    "colorsArray": "颜色数组",
+    "pleaseEnterColorName": "请输入颜色的名称",
+    "colorIsNotValidJSON": "颜色不是有效的JSON颜色数组",
+    "addListOfColors": "添加可在您的热图中全局使用的颜色列表。",
+    "colorsUsageNote": "您可以在热图渲染设置中通过名称引用这些颜色。",
+    "weekStartDay": "周起始日",
+    "weekStartDayDescription": "选择一周的起始日。",
+    "separateMonths": "分隔月份",
+    "separateMonthsDescription": "在跟踪视图中全局分隔月份。"
+  },
+  "statistics": {
+    "title": "统计",
+    "backToHeatmap": "返回热图",
+    "totalTrackingDaysThisYear": "今年的总跟踪天数",
+    "totalTrackingDays": "总跟踪天数",
+    "developmentNote": "注意：此统计视图仍在开发中。将添加更多指标，某些指标可能不准确。"
+  },
+  "monthsShort": {
+    "January": "一月",
+    "February": "二月",
+    "March": "三月",
+    "April": "四月",
+    "May": "五月",
+    "June": "六月",
+    "July": "七月",
+    "August": "八月",
+    "September": "九月",
+    "October": "十月",
+    "November": "十一月",
+    "December": "十二月"
+  },
+  "weekdaysShort": {
+    "Sunday": "周日",
+    "Monday": "周一",
+    "Tuesday": "周二",
+    "Wednesday": "周三",
+    "Thursday": "周四",
+    "Friday": "周五",
+    "Saturday": "周六"
+  },
+  "weekdaysLong": {
+    "Sunday": "星期日",
+    "Monday": "星期一",
+    "Tuesday": "星期二",
+    "Wednesday": "星期三",
+    "Thursday": "星期四",
+    "Friday": "星期五",
+    "Saturday": "星期六"
+  },
+  "header": {
+    "previousYear": "上一年",
+    "nextYear": "下一年",
+    "yearDisplay": "年"
+  }
+}

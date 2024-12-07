@@ -98,14 +98,7 @@ export function getEntriesIntensities(entries: Entry[]): number[] {
   return entries.filter((e) => e.intensity).map((e) => e.intensity as number);
 }
 
-export function fillEntriesWithIntensity(
-  entries: Entry[],
-  trackerData: TrackerData,
-  colors: Colors,
-  settings: TrackerSettings,
-): Record<number, Entry> {
-  const intensities = getEntriesIntensities(entries);
-
+function getEntryIntensity(entry: Entry, intensities: number[], trackerData: TrackerData, settings: TrackerSettings, colors: Colors): number {
   // If we can't receive min/max intensities from entries,
   // try to use them from user's config or use them from default settings.
   const [minimumIntensity, maximumIntensity] = intensities.length
@@ -121,37 +114,47 @@ export function fillEntriesWithIntensity(
     trackerData.intensityScaleStart ?? minimumIntensity;
   const intensityScaleEnd = trackerData.intensityScaleEnd ?? maximumIntensity;
 
+  const colorIntensities =
+    typeof colors === "string"
+      ? settings.colors[colors]
+      : colors[entry.color] ?? colors[Object.keys(colors)[0]];
+
+  const numberOfColorIntensities = Object.keys(colorIntensities).length;
+
+  if (
+    minimumIntensity === maximumIntensity &&
+    intensityScaleStart === intensityScaleEnd
+  ) {
+    return numberOfColorIntensities;
+  }
+
+  return Math.round(
+    mapRange(
+      entry.intensity ?? trackerData.defaultEntryIntensity,
+      intensityScaleStart,
+      intensityScaleEnd,
+      1,
+      numberOfColorIntensities
+    )
+  );
+
+}
+
+export function fillEntriesWithIntensity(
+  entries: Entry[],
+  trackerData: TrackerData,
+  colors: Colors,
+  settings: TrackerSettings,
+): Record<number, Entry> {
   const entriesByDay: Record<number, Entry> = {};
+
+  const intensities = getEntriesIntensities(entries);
 
   entries.forEach((e) => {
     const newEntry = {
-      intensity: trackerData.defaultEntryIntensity,
       ...e,
+      intensity: getEntryIntensity(e, intensities, trackerData, settings, colors),
     };
-
-    const colorIntensities =
-      typeof colors === "string"
-        ? settings.colors[colors]
-        : colors[e.color] ?? colors[Object.keys(colors)[0]];
-
-    const numberOfColorIntensities = Object.keys(colorIntensities).length;
-
-    if (
-      minimumIntensity === maximumIntensity &&
-      intensityScaleStart === intensityScaleEnd
-    ) {
-      newEntry.intensity = numberOfColorIntensities;
-    } else {
-      newEntry.intensity = Math.round(
-        mapRange(
-          newEntry.intensity,
-          intensityScaleStart,
-          intensityScaleEnd,
-          1,
-          numberOfColorIntensities
-        )
-      );
-    }
 
     const day = getDayOfYear(new Date(e.date));
 

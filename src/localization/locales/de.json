@@ -1,4 +1,27 @@
 {
+  "settings": {
+    "title": "Einstellungen",
+    "language": "Sprache",
+    "chooseYourPreferredLanguage": "Wählen Sie Ihre bevorzugte Sprache aus",
+    "colors": "Farben",
+    "colorName": "Farbname",
+    "colorsArray": "Farbfeldliste",
+    "pleaseEnterColorName": "Geben Sie einen Namen für die neue Farbe ein",
+    "colorIsNotValidJSON": "Die Farbe ist kein gültiges JSON-Farbfeld",
+    "addListOfColors": "Fügen Sie Farbschemata hinzu, die für Ihre Heatmaps verfügbar sein werden.",
+    "colorsUsageNote": "Nutzen Sie diese Farben, indem Sie ihre Namen in den Anzeigeeinstellungen Ihrer Heatmap angeben.",
+    "weekStartDay": "Erster Wochentag",
+    "weekStartDayDescription": "Wählen Sie, mit welchem Tag Ihre Woche beginnt.",
+    "separateMonths": "Monate trennen",
+    "separateMonthsDescription": "Aktivieren Sie die Trennung von Monaten in den Tracker-Ansichten."
+  },
+  "statistics": {
+    "title": "Statistiken",
+    "backToHeatmap": "Zurück zur Heatmap",
+    "totalTrackingDaysThisYear": "Gesamte Tracking-Tage in diesem Jahr",
+    "totalTrackingDays": "Gesamte Tracking-Tage",
+    "developmentNote": "Hinweis: Diese Statistikansicht wird noch entwickelt. Weitere Metriken werden bald hinzugefügt, und einige Werte könnten ungenau sein."
+  },
   "monthsShort": {
     "January": "Jan",
     "February": "Feb",
@@ -21,6 +44,15 @@
     "Thursday": "Do",
     "Friday": "Fr",
     "Saturday": "Sa"
+  },
+  "weekdaysLong": {
+    "Sunday": "Sonntag",
+    "Monday": "Montag",
+    "Tuesday": "Dienstag",
+    "Wednesday": "Mittwoch",
+    "Thursday": "Donnerstag",
+    "Friday": "Freitag",
+    "Saturday": "Samstag"
   },
   "header": {
     "previousYear": "Vorheriges Jahr",

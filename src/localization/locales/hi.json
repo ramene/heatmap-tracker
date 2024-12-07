@@ -1,0 +1,62 @@
+{
+  "settings": {
+    "title": "सेटिंग्स",
+    "language": "भाषा",
+    "chooseYourPreferredLanguage": "अपनी पसंदीदा भाषा चुनें",
+    "colors": "रंग",
+    "colorName": "रंग का नाम",
+    "colorsArray": "रंगों की सूची",
+    "pleaseEnterColorName": "कृपया अपने रंग का नाम दर्ज करें",
+    "colorIsNotValidJSON": "रंग एक मान्य JSON रंगों की सूची नहीं है",
+    "addListOfColors": "ऐसे रंगों की सूची जोड़ें जो आपके हीटमैप्स पर उपलब्ध हों।",
+    "colorsUsageNote": "इन रंगों का उपयोग उनके नाम का संदर्भ देकर अपने हीटमैप सेटिंग्स में करें।",
+    "weekStartDay": "सप्ताह की शुरुआत का दिन",
+    "weekStartDayDescription": "सप्ताह की शुरुआत के दिन का चयन करें।",
+    "separateMonths": "महीनों को अलग करें",
+    "separateMonthsDescription": "अपने ट्रैकर दृश्य में महीनों को अलग-अलग दिखाएं।"
+  },
+  "statistics": {
+    "title": "सांख्यिकी",
+    "backToHeatmap": "हीटमैप पर वापस जाएं",
+    "totalTrackingDaysThisYear": "इस वर्ष के कुल ट्रैकिंग दिन",
+    "totalTrackingDays": "कुल ट्रैकिंग दिन",
+    "developmentNote": "नोट: यह सांख्यिकी दृश्य अभी विकास में है। जल्द ही और मेट्रिक्स जोड़े जाएंगे। कुछ आंकड़े सटीक नहीं हो सकते।"
+  },
+  "monthsShort": {
+    "January": "जनवरी",
+    "February": "फरवरी",
+    "March": "मार्च",
+    "April": "अप्रैल",
+    "May": "मई",
+    "June": "जून",
+    "July": "जुलाई",
+    "August": "अगस्त",
+    "September": "सितंबर",
+    "October": "अक्टूबर",
+    "November": "नवंबर",
+    "December": "दिसंबर"
+  },
+  "weekdaysShort": {
+    "Sunday": "रवि",
+    "Monday": "सोम",
+    "Tuesday": "मंगल",
+    "Wednesday": "बुध",
+    "Thursday": "गुरु",
+    "Friday": "शुक्र",
+    "Saturday": "शनि"
+  },
+  "weekdaysLong": {
+    "Sunday": "रविवार",
+    "Monday": "सोमवार",
+    "Tuesday": "मंगलवार",
+    "Wednesday": "बुधवार",
+    "Thursday": "गुरुवार",
+    "Friday": "शुक्रवार",
+    "Saturday": "शनिवार"
+  },
+  "header": {
+    "previousYear": "पिछला वर्ष",
+    "nextYear": "अगला वर्ष",
+    "yearDisplay": "वर्ष"
+  }
+}

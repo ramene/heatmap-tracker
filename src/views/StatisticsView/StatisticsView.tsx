@@ -35,7 +35,7 @@ function StatisticsMetric({ label, value }: StatisticsMetricProps) {
 }
 
 export function StatisticsView() {
-  const { i18n } = useTranslation();
+  const { t } = useTranslation();
   const { setView, entriesWithIntensity, trackerData } = useHeatmapContext();
 
   return (
@@ -44,26 +44,26 @@ export function StatisticsView() {
         <button
           className="clickable-icon"
           onClick={() => setView(View.HeatmapTracker)}
-          aria-label="Back to heatmap"
+          aria-label={t("statistics.backToHeatmap")}
         >
           <ArrowLeftIcon />
         </button>
-        <div className="heatmap-statistics__title">Statistics</div>
+        <div className="heatmap-statistics__title">{t("statistics.title")}</div>
         <div></div>
       </div>
       <hr />
       <div className="heatmap-statistics__content">
         <StatisticsMetric
-          label="Total tracking days this year"
+          label={t("statistics.totalTrackingDaysThisYear")}
           value={Object.keys(entriesWithIntensity).length}
         />
         <StatisticsMetric
-          label="Total tracking days"
+          label={t("statistics.totalTrackingDays")}
           value={Object.keys(trackerData.entries).length}
         />
         <hr />
         <div>
-          Note: This stats view is still under development. More metrics will be added soon. Some metrics may not be accurate.
+          {t("statistics.developmentNote")}
         </div>
       </div>
     </div>

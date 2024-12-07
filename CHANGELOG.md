@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.4.0] - 2024-12-07
+### ✨ Added
+- Add new languages: Spanish, French, Mandarin Chinese and Hindi.
+- Translate all texts in the plugin to these languages.
+
+### 🔄 Changed
+- Refactor intensity calculation.
+
+---
+
 ## [1.3.0] - 2024-12-05
 ### ✨ Added
 - Add new Statistics view (still in progress).

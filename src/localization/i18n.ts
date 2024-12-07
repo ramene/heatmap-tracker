@@ -3,6 +3,12 @@ import { initReactI18next } from 'react-i18next';
 import en from './locales/en.json';
 import ru from './locales/ru.json';
 import de from './locales/de.json';
+import es from './locales/es.json';
+import fr from './locales/fr.json';
+import hi from './locales/hi.json';
+import zh from './locales/zh.json';
+
+import languages from './languages.json';
 
 // don't want to use this?
 // have a look at the Quick start guide 
@@ -20,7 +26,7 @@ i18n
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
     },
-    supportedLngs: ['en', 'ru', 'de'],
+    supportedLngs: Object.keys(languages),
     resources: {
       en: {
         translation: en,
@@ -31,8 +37,20 @@ i18n
       de: {
         translation: de,
       },
+      es: {
+        translation: es,
+      },
+      fr: {
+        translation: fr,
+      },
+      hi: {
+        translation: hi,
+      },
+      zh: {
+        translation: zh,
+      },
     },
-    });
+  });
 
 
 export default i18n;

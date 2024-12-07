@@ -1,6 +1,7 @@
 import i18n from "./localization/i18n";
 import HeatmapTracker from "./main";
 import { App, PluginSettingTab, setIcon, Setting } from "obsidian";
+import languages from "./localization/languages.json";
 
 export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
   plugin: HeatmapTracker;
@@ -39,9 +40,9 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
   }
 
   private displayColorSettings() {
-    const { containerEl, } = this;
+    const { containerEl } = this;
 
-    containerEl.createEl("h3", { text: "Colors", });
+    containerEl.createEl("h3", { text: i18n.t('settings.colors'), });
     this.displayColorHelp(containerEl);
 
     for (const [key, colors,] of Object.entries(this.plugin.settings.colors)) {
@@ -53,7 +54,7 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
         cls: "heatmap-tracker-settings-colors__data-container",
       });
 
-      colorDataContainer.createEl("h4", { text: key, });
+      colorDataContainer.createEl("h4", { text: key });
 
       const colorRow = colorDataContainer.createDiv({ cls: "heatmap-tracker-settings-colors__row", });
 
@@ -92,12 +93,12 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
 
     const colorNameInput = inputContainer.createEl("input", {
       cls: "heatmap-tracker-settings-colors__new-color-input-name",
-      attr: { placeholder: "Color name", type: "text", },
+      attr: { placeholder: i18n.t('settings.colorName'), type: "text", },
     });
 
     const colorValueInput = inputContainer.createEl("input", {
       cls: "heatmap-tracker-settings-colors__new-color-input-value",
-      attr: { placeholder: "Colors array", type: "text", },
+      attr: { placeholder: i18n.t('settings.colorsArray'), type: "text", },
     });
 
     const addColorButton = inputContainer.createEl("button", {
@@ -112,17 +113,17 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
         value: colorValueInput.value,
       });
 
-      this.reportInputValidity(colorNameInput, isValid.key, "Please input a name for your color");
-      this.reportInputValidity(colorValueInput, isValid.value, "Color is not a valid JSON array of colors");
+      this.reportInputValidity(colorNameInput, isValid.key, i18n.t('settings.pleaseEnterColorName'));
+      this.reportInputValidity(colorValueInput, isValid.value, i18n.t('settings.colorIsNotValidJSON'));
     });
   }
 
   private displayColorHelp(parent: HTMLElement) {
     parent.createEl("p", {
-      text: "Add lists of colors which will be globally available on your heatmaps.",
+      text: i18n.t('settings.addListOfColors'),
     });
     parent.createEl("p", {
-      text: "You can use those colors by referencing their name in your heatmap render settings.",
+      text: i18n.t('settings.colorsUsageNote'),
     });
   }
 
@@ -152,18 +153,18 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
   private displayWeekStartDaySettings() {
     const { containerEl, } = this;
     new Setting(containerEl)
-      .setName("Week start day")
-      .setDesc("Select the day on which your week starts.")
+      .setName(i18n.t('settings.weekStartDay'))
+      .setDesc(i18n.t('settings.weekStartDayDescription'))
       .addDropdown(dropdown =>
         dropdown
           .addOptions({
-            0: "Sunday",
-            1: "Monday",
-            2: "Tuesday",
-            3: "Wednesday",
-            4: "Thursday",
-            5: "Friday",
-            6: "Saturday",
+            0: i18n.t('weekdaysLong.Sunday'),
+            1: i18n.t('weekdaysLong.Monday'),
+            2: i18n.t('weekdaysLong.Tuesday'),
+            3: i18n.t('weekdaysLong.Wednesday'),
+            4: i18n.t('weekdaysLong.Thursday'),
+            5: i18n.t('weekdaysLong.Friday'),
+            6: i18n.t('weekdaysLong.Saturday'),
           })
           .setValue(this.plugin.settings.weekStartDay.toString())
           .onChange(async value => {
@@ -179,7 +180,7 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
       .setDesc(i18n.t("settings.chooseYourPreferredLanguage"))
       .addDropdown((dropdown) => {
         dropdown
-          .addOptions({ en: 'English', ru: 'Русский', de: 'Deutsch' })
+          .addOptions(languages)
           .setValue(this.plugin.settings.language)
           .onChange(async (value) => {
             i18n.changeLanguage(value);
@@ -193,8 +194,8 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
   private displayseparateMonthsSettings() {
     const { containerEl } = this;
     new Setting(containerEl)
-      .setName("Separate months")
-      .setDesc("Separate months in your tracker views, globally.")
+      .setName(i18n.t('settings.separateMonths'))
+      .setDesc(i18n.t('settings.separateMonthsDescription'))
       .addToggle(toggle => toggle
         .setValue(this.plugin.settings.separateMonths)
         .onChange(async (value) => {

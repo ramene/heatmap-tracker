@@ -1,14 +1,26 @@
 {
   "settings": {
-    "title": "Settings",
+    "title": "Настройки",
     "language": "Язык",
-    "chooseYourPreferredLanguage": "Выберите предпочтительный язык",
-    "theme": "Theme",
-    "dark": "Dark",
-    "light": "Light",
-    "system": "System",
-    "save": "Save",
-    "cancel": "Cancel"
+    "chooseYourPreferredLanguage": "Выберите язык интерфейса",
+    "colors": "Цвета",
+    "colorName": "Название цвета",
+    "colorsArray": "Массив цветов",
+    "pleaseEnterColorName": "Введите название для нового цвета",
+    "colorIsNotValidJSON": "Указанный цвет не является корректным JSON-массивом",
+    "addListOfColors": "Добавьте наборы цветов, которые будут доступны для ваших тепловых карт.",
+    "colorsUsageNote": "Используйте эти цвета, указывая их название в настройках отображения тепловой карты.",
+    "weekStartDay": "Первый день недели",
+    "weekStartDayDescription": "Укажите день, с которого начинается ваша неделя.",
+    "separateMonths": "Разделение месяцев",
+    "separateMonthsDescription": "Включите разделение месяцев в представлениях трекеров."
+  },
+  "statistics": {
+    "title": "Статистика",
+    "backToHeatmap": "Вернуться к тепловой карте",
+    "totalTrackingDaysThisYear": "Всего дней отслеживания в этом году",
+    "totalTrackingDays": "Общее количество дней отслеживания",
+    "developmentNote": "Примечание: Эта статистика находится в стадии разработки. В будущем будут добавлены новые метрики."
   },
   "monthsShort": {
     "January": "Янв",
@@ -24,7 +36,6 @@
     "November": "Ноя",
     "December": "Дек"
   },
-  "weekdays": ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
   "weekdaysShort": {
     "Sunday": "Вс",
     "Monday": "Пн",
@@ -33,6 +44,15 @@
     "Thursday": "Чт",
     "Friday": "Пт",
     "Saturday": "Сб"
+  },
+  "weekdaysLong": {
+    "Sunday": "Воскресенье",
+    "Monday": "Понедельник",
+    "Tuesday": "Вторник",
+    "Wednesday": "Среда",
+    "Thursday": "Четверг",
+    "Friday": "Пятница",
+    "Saturday": "Суббота"
   },
   "header": {
     "previousYear": "Предыдущий год",

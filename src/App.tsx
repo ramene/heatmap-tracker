@@ -14,7 +14,7 @@ export const ReactApp = () => {
     if (view !== View.HeatmapTracker) {
       setView(View.HeatmapTracker);
     }
-  },[]);
+  }, []);
 
   useEffect(() => {
     i18n.changeLanguage(settings.language);

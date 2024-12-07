@@ -1,0 +1,62 @@
+{
+  "settings": {
+    "title": "Configuración",
+    "language": "Idioma",
+    "chooseYourPreferredLanguage": "Elija su idioma preferido",
+    "colors": "Colores",
+    "colorName": "Nombre del color",
+    "colorsArray": "Lista de colores",
+    "pleaseEnterColorName": "Ingrese un nombre para su color",
+    "colorIsNotValidJSON": "El color no es un array JSON válido de colores",
+    "addListOfColors": "Añada listas de colores que estarán disponibles en sus mapas de calor.",
+    "colorsUsageNote": "Use estos colores referenciando su nombre en la configuración de renderización del mapa de calor.",
+    "weekStartDay": "Día de inicio de la semana",
+    "weekStartDayDescription": "Seleccione el día con el que comienza la semana.",
+    "separateMonths": "Separar meses",
+    "separateMonthsDescription": "Separe los meses en las vistas de su rastreador."
+  },
+  "statistics": {
+    "title": "Estadísticas",
+    "backToHeatmap": "Volver al mapa de calor",
+    "totalTrackingDaysThisYear": "Total de días rastreados este año",
+    "totalTrackingDays": "Total de días rastreados",
+    "developmentNote": "Nota: Esta vista de estadísticas aún está en desarrollo. Pronto se agregarán más métricas. Algunas métricas pueden no ser precisas."
+  },
+  "monthsShort": {
+    "January": "Ene",
+    "February": "Feb",
+    "March": "Mar",
+    "April": "Abr",
+    "May": "May",
+    "June": "Jun",
+    "July": "Jul",
+    "August": "Ago",
+    "September": "Sep",
+    "October": "Oct",
+    "November": "Nov",
+    "December": "Dic"
+  },
+  "weekdaysShort": {
+    "Sunday": "Dom",
+    "Monday": "Lun",
+    "Tuesday": "Mar",
+    "Wednesday": "Mié",
+    "Thursday": "Jue",
+    "Friday": "Vie",
+    "Saturday": "Sáb"
+  },
+  "weekdaysLong": {
+    "Sunday": "Domingo",
+    "Monday": "Lunes",
+    "Tuesday": "Martes",
+    "Wednesday": "Miércoles",
+    "Thursday": "Jueves",
+    "Friday": "Viernes",
+    "Saturday": "Sábado"
+  },
+  "header": {
+    "previousYear": "Año anterior",
+    "nextYear": "Siguiente año",
+    "yearDisplay": "Año"
+  }
+}

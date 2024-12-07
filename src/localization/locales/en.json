@@ -3,12 +3,24 @@
     "title": "Settings",
     "language": "Language",
     "chooseYourPreferredLanguage": "Choose your preferred language",
-    "theme": "Theme",
-    "dark": "Dark",
-    "light": "Light",
-    "system": "System",
-    "save": "Save",
-    "cancel": "Cancel"
+    "colors": "Colors",
+    "colorName": "Color name",
+    "colorsArray": "Colors array",
+    "pleaseEnterColorName": "Please input a name for your color",
+    "colorIsNotValidJSON": "Color is not a valid JSON array of colors",
+    "addListOfColors": "Add lists of colors which will be globally available on your heatmaps.",
+    "colorsUsageNote": "You can use those colors by referencing their name in your heatmap render settings.",
+    "weekStartDay": "Week start day",
+    "weekStartDayDescription": "Select the day on which your week starts.",
+    "separateMonths": "Separate months",
+    "separateMonthsDescription": "Separate months in your tracker views, globally."
+  },
+  "statistics": {
+    "title": "Statistics",
+    "backToHeatmap": "Back to Heatmap",
+    "totalTrackingDaysThisYear": "Total tracking days this year",
+    "totalTrackingDays": "Total tracking days",
+    "developmentNote": "Note: This stats view is still under development. More metrics will be added soon. Some metrics may not be accurate."
   },
   "monthsShort": {
     "January": "Jan",
@@ -32,6 +44,15 @@
     "Thursday": "Thu",
     "Friday": "Fri",
     "Saturday": "Sat"
+  },
+  "weekdaysLong": {
+    "Sunday": "Sunday",
+    "Monday": "Monday",
+    "Tuesday": "Tuesday",
+    "Wednesday": "Wednesday",
+    "Thursday": "Thursday",
+    "Friday": "Friday",
+    "Saturday": "Saturday"
   },
   "header": {
     "previousYear": "Previous Year",
