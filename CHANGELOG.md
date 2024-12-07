@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.4.1] - 2024-12-07
+### ✨ Added
+- Add fundingUrl: Buy me a coffee.
+
+---
+
 ## [1.4.0] - 2024-12-07
 ### ✨ Added
 - Add new languages: Spanish, French, Mandarin Chinese and Hindi.
