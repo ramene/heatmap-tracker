@@ -1,12 +1,12 @@
 # Heatmap Tracker plugin for Obsidian
 
-<img src="./public/readme-cover.png" />
+<img src="https://github.com/mokkiebear/heatmap-tracker/blob/main/public/readme-cover.png" />
 
 The **Heatmap Tracker plugin for Obsidian** is a powerful and customizable tool designed to help you **track, visualize, and analyze data** over a calendar year. Perfect for habit tracking, project management, personal development, or any kind of data visualization, this plugin enables you to create beautiful, interactive heatmaps directly within Obsidian. Whether you’re **monitoring progress, visualizing trends, or staying on top of daily goals**, the Heatmap Tracker enhances your productivity and organization. Discover its intuitive features, flexible customization options, and seamless integration with Obsidian in the detailed guide below.
 
 ## Watch video to start using this plugin in 30 seconds
 
-<img src="./public/heatmap-how-to.gif" />
+<img src="https://github.com/mokkiebear/heatmap-tracker/blob/main/public/heatmap-how-to.gif" />
 
 
 ## Start with this code example
@@ -121,7 +121,7 @@ renderHeatmapTracker(this.container, trackerData);
 - **Description:** Determines whether months should be visually separated within the heatmap layout.
 
 
-<img src="./public/two-mac-mockup.png" />
+<img src="https://github.com/mokkiebear/heatmap-tracker/blob/main/public/two-mac-mockup.png" />
 
 To be used with [Obsidian Dataview](https://blacksmithgu.github.io/obsidian-dataview/), but could be used standalone or with other plugins as well (if you know some javascript).
 
@@ -150,9 +150,9 @@ To be used with [Obsidian Dataview](https://blacksmithgu.github.io/obsidian-data
 7. **Statistics View**
    Statictics view where you can see your progress.
 
-<img src="./public/mac-mockup-dark.png" />
+<img src="https://github.com/mokkiebear/heatmap-tracker/blob/main/public/mac-mockup-dark.png" />
 
-<img src="./public/tracker-overview.png">
+<img src="https://github.com/mokkiebear/heatmap-tracker/blob/main/public/tracker-overview.png">
 
 ## Roadmap
 
