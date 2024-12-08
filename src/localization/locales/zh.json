@@ -19,7 +19,9 @@
     "title": "统计",
     "totalTrackingDaysThisYear": "今年的总跟踪天数",
     "totalTrackingDays": "总跟踪天数",
-    "developmentNote": "注意：此统计视图仍在开发中。将添加更多指标，某些指标可能不准确。"
+    "developmentNote": "注意：此统计视图仍在开发中。将添加更多指标，某些指标可能不准确。",
+    "currentStreak": "当前连续天数",
+    "longestStreak": "最长连续天数"
   },
   "monthsShort": {
     "January": "一月",

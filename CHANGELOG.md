@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.6.0] - 2024-12-08
+### ✨ Added
+- Add streak information to statistics view.
+
 ## [1.5.0] - 2024-12-08
 ### ✨ Added
 - Add beautiful tabs and adapt styles.

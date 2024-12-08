@@ -19,7 +19,9 @@
     "title": "Statistiques",
     "totalTrackingDaysThisYear": "Nombre total de jours suivis cette année",
     "totalTrackingDays": "Nombre total de jours suivis",
-    "developmentNote": "Note : Cette vue de statistiques est encore en développement. D'autres métriques seront bientôt ajoutées. Certaines métriques peuvent être inexactes."
+    "developmentNote": "Note : Cette vue de statistiques est encore en développement. D'autres métriques seront bientôt ajoutées. Certaines métriques peuvent être inexactes.",
+    "currentStreak": "Série en cours",
+    "longestStreak": "Plus longue série"
   },
   "monthsShort": {
     "January": "Janv",

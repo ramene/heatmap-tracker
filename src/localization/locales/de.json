@@ -19,7 +19,9 @@
     "title": "Statistiken",
     "totalTrackingDaysThisYear": "Gesamte Tracking-Tage in diesem Jahr",
     "totalTrackingDays": "Gesamte Tracking-Tage",
-    "developmentNote": "Hinweis: Diese Statistikansicht wird noch entwickelt. Weitere Metriken werden bald hinzugefügt, und einige Werte könnten ungenau sein."
+    "developmentNote": "Hinweis: Diese Statistikansicht wird noch entwickelt. Weitere Metriken werden bald hinzugefügt, und einige Werte könnten ungenau sein.",
+    "currentStreak": "Aktuelle Serie",
+    "longestStreak": "Längste Serie"
   },
   "monthsShort": {
     "January": "Jan",

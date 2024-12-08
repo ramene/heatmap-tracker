@@ -1,9 +1,66 @@
 import { useTranslation } from "react-i18next";
 import { useHeatmapContext } from "src/context/heatmap/heatmap.context";
+import { Entry } from "src/types";
 
 interface StatisticsMetricProps {
   label: string;
   value: number;
+}
+
+type StreakResult = {
+  currentStreak: number;
+  longestStreak: number;
+};
+
+function calculateStreaks(entries: Entry[]): StreakResult {
+  if (!entries.length) return { currentStreak: 0, longestStreak: 0 };
+
+  // Sort the data by date in ascending order
+  const sortedData = entries.sort(
+    (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
+  );
+
+  let longestStreak = 1;
+  let currentStreak = 1;
+  let maxStreak = 1;
+  const dayDifference = 1000 * 60 * 60 * 24;
+
+  for (let i = 1; i < sortedData.length; i++) {
+    const currentDate = new Date(sortedData[i].date);
+    const previousDate = new Date(sortedData[i - 1].date);
+
+    // Calculate the difference in days between the current and previous date
+    const differenceInDays = Math.ceil(
+      (currentDate.getTime() - previousDate.getTime()) / dayDifference
+    );
+
+    if (differenceInDays === 1) {
+      // If the dates are consecutive, increase the current streak
+      currentStreak++;
+    } else {
+      // Otherwise, reset the current streak
+      currentStreak = 1;
+    }
+
+    // Update the longest streak
+    maxStreak = Math.max(maxStreak, currentStreak);
+  }
+
+  // Calculate the current streak
+  const today = new Date();
+  const lastDate = new Date(sortedData[sortedData.length - 1].date);
+  const differenceWithToday = Math.ceil(
+    (today.getTime() - lastDate.getTime()) / dayDifference
+  );
+
+  if (differenceWithToday === 0 || differenceWithToday === 1) {
+    longestStreak = maxStreak;
+  } else {
+    longestStreak = maxStreak;
+    currentStreak = 0;
+  }
+
+  return { currentStreak, longestStreak };
 }
 
 function StatisticsMetric({ label, value }: StatisticsMetricProps) {
@@ -19,9 +76,12 @@ export function StatisticsView() {
   const { t } = useTranslation();
   const { entriesWithIntensity, trackerData } = useHeatmapContext();
 
+  const { currentStreak, longestStreak } = calculateStreaks(
+    trackerData.entries
+  );
+
   return (
     <div className="heatmap-statistics">
-      <hr />
       <div className="heatmap-statistics__content">
         <StatisticsMetric
           label={t("statistics.totalTrackingDaysThisYear")}
@@ -31,6 +91,9 @@ export function StatisticsView() {
           label={t("statistics.totalTrackingDays")}
           value={Object.keys(trackerData.entries).length}
         />
+        <br />
+        <StatisticsMetric label="The current streak" value={currentStreak} />
+        <StatisticsMetric label="The longest streak" value={longestStreak} />
         <hr />
         <div>{t("statistics.developmentNote")}</div>
       </div>
