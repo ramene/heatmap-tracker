@@ -92,8 +92,8 @@ export function StatisticsView() {
           value={Object.keys(trackerData.entries).length}
         />
         <br />
-        <StatisticsMetric label="The current streak" value={currentStreak} />
-        <StatisticsMetric label="The longest streak" value={longestStreak} />
+        <StatisticsMetric label={t('statistics.currentStreak')} value={currentStreak} />
+        <StatisticsMetric label={t('statistics.longestStreak')} value={longestStreak} />
         <hr />
         <div>{t("statistics.developmentNote")}</div>
       </div>

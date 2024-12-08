@@ -7,9 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.6.1] - 2024-12-08
+### 🐛 Fixed
+- Fix streak translation
+  
+---
+
 ## [1.6.0] - 2024-12-08
 ### ✨ Added
 - Add streak information to statistics view.
+
+---
 
 ## [1.5.0] - 2024-12-08
 ### ✨ Added
@@ -27,8 +35,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### ✨ Added
 - Add date on hover for Desktop by default.
 
----
-  
 ### 🐛 Fixed
 - Fix loading state.
   
