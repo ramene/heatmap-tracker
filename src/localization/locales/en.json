@@ -17,7 +17,6 @@
   },
   "statistics": {
     "title": "Statistics",
-    "backToHeatmap": "Back to Heatmap",
     "totalTrackingDaysThisYear": "Total tracking days this year",
     "totalTrackingDays": "Total tracking days",
     "developmentNote": "Note: This stats view is still under development. More metrics will be added soon. Some metrics may not be accurate."

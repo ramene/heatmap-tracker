@@ -45,7 +45,6 @@ export function HeatmapTrackerView() {
         isLoading ? "heatmap-tracker-loading" : ""
       }`}
     >
-      <HeatmapHeader />
       <div className="heatmap-tracker-graph" ref={graphRef}>
         <HeatmapMonthsList />
         <HeatmapWeekDays />

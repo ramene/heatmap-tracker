@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { HeatmapTrackerView } from "./views/HeatmapTrackerView/HeatmapTrackerView";
 import { StatisticsView } from "./views/StatisticsView/StatisticsView";
+import { HeatmapHeader } from "./components/HeatmapHeader/HeatmapHeader";
 
 export const ReactApp = () => {
   const { i18n } = useTranslation();
@@ -26,6 +27,7 @@ export const ReactApp = () => {
 
   return (
     <div className="heatmap-tracker__container">
+      <HeatmapHeader />
       {view === View.HeatmapTracker ? (
         <HeatmapTrackerView />
       ) : (

@@ -17,7 +17,6 @@
   },
   "statistics": {
     "title": "统计",
-    "backToHeatmap": "返回热图",
     "totalTrackingDaysThisYear": "今年的总跟踪天数",
     "totalTrackingDays": "总跟踪天数",
     "developmentNote": "注意：此统计视图仍在开发中。将添加更多指标，某些指标可能不准确。"

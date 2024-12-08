@@ -17,7 +17,6 @@
   },
   "statistics": {
     "title": "Statistiques",
-    "backToHeatmap": "Retour à la carte thermique",
     "totalTrackingDaysThisYear": "Nombre total de jours suivis cette année",
     "totalTrackingDays": "Nombre total de jours suivis",
     "developmentNote": "Note : Cette vue de statistiques est encore en développement. D'autres métriques seront bientôt ajoutées. Certaines métriques peuvent être inexactes."

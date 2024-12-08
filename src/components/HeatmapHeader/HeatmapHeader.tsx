@@ -22,10 +22,73 @@ function StatisticsIcon() {
   );
 }
 
+function HeatmapIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="lucide lucide-grid-3x3"
+    >
+      <rect width="18" height="18" x="3" y="3" rx="2" />
+      <path d="M3 9h18" />
+      <path d="M3 15h18" />
+      <path d="M9 3v18" />
+      <path d="M15 3v18" />
+    </svg>
+  );
+}
+
+const IconForView: Record<View, React.ReactNode> = {
+  [View.HeatmapTracker]: <HeatmapIcon />,
+  [View.HeatmapTrackerStatistics]: <StatisticsIcon />,
+};
+
+function HeatmapTab({ view, label }: { view: View; label: string }) {
+  const { view: selectedView, setView } = useHeatmapContext();
+
+  const isSelected = view === selectedView;
+
+  function handleClick() {
+    setView(view);
+  }
+
+  return (
+    <button
+      aria-label={label}
+      className={`heatmap-tracker-tab clickable-icon ${
+        isSelected ? "is-active" : ""
+      }`}
+      onClick={handleClick}
+    >
+      {IconForView[view]}
+    </button>
+  );
+}
+
+function HeatmapTabs() {
+  const { t } = useTranslation();
+
+  return (
+    <div className="heatmap-tracker-header__tabs">
+      <HeatmapTab view={View.HeatmapTracker} label={"Heatmap"} />
+      <HeatmapTab
+        view={View.HeatmapTrackerStatistics}
+        label={t("statistics.title")}
+      />
+    </div>
+  );
+}
+
 export function HeatmapHeader() {
   const { t } = useTranslation();
-  const { currentYear, setCurrentYear, trackerData, setView } =
-    useHeatmapContext();
+  const { currentYear, setCurrentYear, trackerData } = useHeatmapContext();
 
   function onArrowBackClick() {
     setCurrentYear(currentYear - 1);
@@ -39,39 +102,26 @@ export function HeatmapHeader() {
     <div className="heatmap-tracker-header">
       <div className="heatmap-tracker-header__main-row">
         <div className="heatmap-tracker-header__navigation">
-          <div
-            className="heatmap-tracker-arrow left"
+          <button
+            className="heatmap-tracker-arrow left clickable-icon"
             aria-label={t("header.previousYear")}
-            role="button"
             onClick={onArrowBackClick}
           >
             ◀
-          </div>
+          </button>
           <div className="heatmap-tracker-year-display">{currentYear}</div>
-          <div
-            className="heatmap-tracker-arrow right"
+          <button
+            className="heatmap-tracker-arrow right clickable-icon"
             aria-label={t("header.nextYear")}
-            role="button"
             onClick={onArrowForwardClick}
           >
             ▶
-          </div>
+          </button>
         </div>
         <div className="heatmap-tracker-header__title">
           {trackerData?.heatmapTitle ?? ""}
         </div>
-        <div className="heatmap-tracker-header__statistics">
-          <button
-            onClick={() => setView(View.HeatmapTrackerStatistics)}
-            className="clickable-icon"
-            aria-label="Statistics"
-          >
-            <>
-              <StatisticsIcon />
-              <span>(beta)</span>
-            </>
-          </button>
-        </div>
+        <HeatmapTabs />
       </div>
       {trackerData?.heatmapSubtitle ? (
         <div className="heatmap-tracker-header__sub-row">

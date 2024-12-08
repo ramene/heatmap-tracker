@@ -140,9 +140,22 @@
 
 @media screen and (max-width: 750px) {
   .heatmap-tracker-header__main-row {
-    grid-template-columns: 1fr;
-    grid-auto-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     justify-items: center;
+  }
+
+  .heatmap-tracker-header__navigation {
+    grid-row: 2;
+    grid-column: 2;
+  }
+
+  .heatmap-tracker-header__title {
+    grid-column: 1/-1;
+  }
+
+  .heatmap-tracker-header__tabs {
+    grid-row: 2;
+    grid-column: 3;
   }
 }
 
@@ -160,6 +173,7 @@
 
 .heatmap-tracker-header__navigation {
   display: flex;
+  align-items: center;
 }
 
 .heatmap-tracker-header__title {
@@ -167,10 +181,20 @@
   text-align: center;
 }
 
-.heatmap-tracker-header__statistics {
+/* Tabs */
+.heatmap-tracker-header__tabs {
   display: flex;
-  justify-content: flex-end;
+  justify-self: flex-end;
 }
+
+.heatmap-tracker-header__tabs > *:not(:last-child) {
+  margin-right: 0.2em;
+}
+
+.heatmap-tracker-tab {
+  cursor: pointer;
+}
+
 
 /* Days visibility */
 /* UPDATE IT TO DISPLAY NOT ALL WEEK DAYS */

@@ -6,75 +6,107 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
     class="heatmap-tracker__container"
   >
     <div
-      class="heatmap-tracker "
+      class="heatmap-tracker-header"
     >
       <div
-        class="heatmap-tracker-header"
+        class="heatmap-tracker-header__main-row"
       >
         <div
-          class="heatmap-tracker-header__main-row"
+          class="heatmap-tracker-header__navigation"
         >
-          <div
-            class="heatmap-tracker-header__navigation"
+          <button
+            aria-label="header.previousYear"
+            class="heatmap-tracker-arrow left clickable-icon"
           >
-            <div
-              aria-label="header.previousYear"
-              class="heatmap-tracker-arrow left"
-              role="button"
-            >
-              ◀
-            </div>
-            <div
-              class="heatmap-tracker-year-display"
-            >
-              2024
-            </div>
-            <div
-              aria-label="header.nextYear"
-              class="heatmap-tracker-arrow right"
-              role="button"
-            >
-              ▶
-            </div>
+            ◀
+          </button>
+          <div
+            class="heatmap-tracker-year-display"
+          >
+            2024
           </div>
-          <div
-            class="heatmap-tracker-header__title"
+          <button
+            aria-label="header.nextYear"
+            class="heatmap-tracker-arrow right clickable-icon"
           >
-            👣 Steps Tracker 👣 (11 intensities instead of 5)
-          </div>
-          <div
-            class="heatmap-tracker-header__statistics"
+            ▶
+          </button>
+        </div>
+        <div
+          class="heatmap-tracker-header__title"
+        >
+          👣 Steps Tracker 👣 (11 intensities instead of 5)
+        </div>
+        <div
+          class="heatmap-tracker-header__tabs"
+        >
+          <button
+            aria-label="Heatmap"
+            class="heatmap-tracker-tab clickable-icon is-active"
           >
-            <button
-              aria-label="Statistics"
-              class="clickable-icon"
+            <svg
+              class="lucide lucide-grid-3x3"
+              fill="none"
+              height="18"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                class="lucide lucide-chart-line"
-                fill="none"
+              <rect
                 height="18"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                viewBox="0 0 24 24"
+                rx="2"
                 width="18"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M3 3v16a2 2 0 0 0 2 2h16"
-                />
-                <path
-                  d="m19 9-5 5-4-4-3 3"
-                />
-              </svg>
-              <span>
-                (beta)
-              </span>
-            </button>
-          </div>
+                x="3"
+                y="3"
+              />
+              <path
+                d="M3 9h18"
+              />
+              <path
+                d="M3 15h18"
+              />
+              <path
+                d="M9 3v18"
+              />
+              <path
+                d="M15 3v18"
+              />
+            </svg>
+          </button>
+          <button
+            aria-label="statistics.title"
+            class="heatmap-tracker-tab clickable-icon "
+          >
+            <svg
+              class="lucide lucide-chart-line"
+              fill="none"
+              height="18"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3 3v16a2 2 0 0 0 2 2h16"
+              />
+              <path
+                d="m19 9-5 5-4-4-3 3"
+              />
+            </svg>
+          </button>
         </div>
       </div>
+    </div>
+    <div
+      class="heatmap-tracker "
+    >
       <div
         class="heatmap-tracker-graph"
       >
