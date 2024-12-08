@@ -184,7 +184,7 @@ export function getBoxes(
   for (let day = 1; day <= numberOfDaysInYear; day++) {
     const box: Box = {};
 
-    const currentDate = new Date(currentYear, 0, day);
+    const currentDate = new Date(Date.UTC(currentYear, 0, day));
 
     // We don't need to add padding before January.
     if (separateMonths && day > 31) {
