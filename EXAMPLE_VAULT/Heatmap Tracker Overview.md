@@ -150,7 +150,8 @@ for(let page of dv.pages('"daily notes"').where(p=>p.steps)){
 
     trackerData.entries.push({
         date: page.file.name,
-        intensity: page.steps
+        intensity: page.steps,
+        content: await dv.span(`[](${page.file.name})`)
     })  
 }
 
