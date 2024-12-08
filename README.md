@@ -147,9 +147,16 @@ To be used with [Obsidian Dataview](https://blacksmithgu.github.io/obsidian-data
 6. **Localization**  
    Plugin supports multiple languages, including English, German and Russian.
 
+7. **Statistics View**
+   Statictics view where you can see your progress.
+
 <img src="./public/mac-mockup-dark.png" />
 
 <img src="./public/tracker-overview.png">
+
+## Roadmap
+
+📍 Check out the [Roadmap](./ROADMAP.md) to see what's planned for the future!
 
 ## Development (Windows/Mac):
 
