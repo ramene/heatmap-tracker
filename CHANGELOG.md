@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.4.3] - 2024-12-08
+### ✨ Added
+- Add date on hover for Desktop by default.
+  
+### 🐛 Fixed
+- Fix loading state.
+  
+---
+
 ## [1.4.2] - 2024-12-07
 ### 🐛 Fixed
 - Fix loading state.

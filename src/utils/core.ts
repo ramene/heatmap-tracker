@@ -225,6 +225,7 @@ export function getBoxes(
 
       box.backgroundColor = currentDayColors[(entry.intensity as number) - 1];
     } else {
+      box.date = currentDate?.toISOString()?.split('T')[0];
       box.hasData = false;
     }
 

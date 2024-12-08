@@ -37,9 +37,7 @@ git commit -m "chore: bump version to $VERSION"
 echo "Creating git tag for version $VERSION..."
 git tag "$VERSION"
 
-# Step 6: Push changes and tags
-# echo "Pushing changes to the repository..."
-git push
-git push --tags
-
-echo "Version $VERSION updated and pushed successfully!"
+# Step 6: Push changes and tags (optional)
+echo "Review the changes and push manually if satisfied:"
+echo "  git push"
+echo "  git push --tags"

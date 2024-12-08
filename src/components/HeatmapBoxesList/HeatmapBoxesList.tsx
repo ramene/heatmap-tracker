@@ -1,7 +1,6 @@
 import { Box } from "src/types";
 import { HeatmapBox } from "../HeatmapBox/HeatmapBox";
 import { useHeatmapContext } from "src/context/heatmap/heatmap.context";
-import { ReactNode } from "react";
 
 export function HeatmapBoxesList({ boxes }: { boxes: Box[] }) {
   const { mergedTrackerData } = useHeatmapContext();
@@ -13,17 +12,8 @@ export function HeatmapBoxesList({ boxes }: { boxes: Box[] }) {
       }`}
     >
       {boxes.map((box, index) => {
-        const content =
-          box.content instanceof HTMLElement ? (
-            <span dangerouslySetInnerHTML={{ __html: box.content.outerHTML }} />
-          ) : (
-            (box.content as ReactNode)
-          );
-
         return (
-          <HeatmapBox key={index} box={box}>
-            {content}
-          </HeatmapBox>
+          <HeatmapBox key={index} box={box} />
         );
       })}
     </div>

@@ -281,7 +281,6 @@ renderHeatmapTracker(this.container, trackerData)
 
 **On hover preview**
 - Enable **Settings** -> **Core Plugins** -> **Page Preview** for hover preview to work.
-- install **Community plugins** -> **Metatable** in order to preview frontmatter aswell.
 
 ```dataviewjs
 

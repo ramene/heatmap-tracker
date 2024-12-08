@@ -41,7 +41,7 @@ const DEFAULT_SETTINGS: TrackerSettings = {
   intensityScaleEnd: 5,
   weekStartDay: 1,
   separateMonths: false,
-  language: "en",
+  language: "en"
 };
 
 export default class HeatmapTracker extends Plugin {
