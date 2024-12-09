@@ -167,8 +167,8 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
             6: i18n.t('weekdaysLong.Saturday'),
           })
           .setValue(this.plugin.settings.weekStartDay.toString())
-          .onChange(async value => {
-            this.plugin.settings.weekStartDay = +value;
+          .onChange(async (value) => {
+            this.plugin.settings.weekStartDay = Number(value);
             await this.plugin.saveSettings();
           })
       );
@@ -191,7 +191,7 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
       });
   }
 
-  private displayseparateMonthsSettings() {
+  private displaySeparateMonthsSettings() {
     const { containerEl } = this;
     new Setting(containerEl)
       .setName(i18n.t('settings.separateMonths'))
@@ -213,7 +213,7 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
 
     this.displayWeekStartDaySettings();
 
-    this.displayseparateMonthsSettings();
+    this.displaySeparateMonthsSettings();
 
     this.displayColorSettings();
   }

@@ -61,6 +61,13 @@ renderHeatmapTracker(this.container, trackerData);
 
 ---
 
+### `customColor`
+- **Type:** `string`
+- **Default:** `undefined`
+- **Description:** Entry property. Sets the color for specific entry. If you want some entry (based on the condition) to have a different color, you can set it here.
+
+---
+
 ### `entries`
 - **Type:** `array`
 - **Default:**
@@ -148,7 +155,7 @@ To be used with [Obsidian Dataview](https://blacksmithgu.github.io/obsidian-data
    Plugin supports multiple languages, including English, German and Russian.
 
 7. **Statistics View**
-   Statictics view where you can see your progress.
+   Statistics view where you can see your progress.
 
 <img src="https://raw.githubusercontent.com/mokkiebear/heatmap-tracker/refs/heads/main/public/mac-mockup-dark.png" />
 
@@ -173,18 +180,6 @@ To be used with [Obsidian Dataview](https://blacksmithgu.github.io/obsidian-data
 
 Tip: ```ctrl-shift-i``` opens the devtools inside Obsidian.
 
-&nbsp;
-
-
-
-## Technical Explanation
-All the plugin does, is add the function ***renderHeatmapTracker()*** to the global namespace of you vault.
-
-**"this.container"** is passed as the first argument because the plugin needs to know where to render the tracker. You don't have to worry about this.
-
-"renderHeatmapTracker()" then takes **"trackerData"** as the secondary argument. This is the javascript object you have to create yourself in order to give plugin instructions and data. Most of the properties are optional, but you have to supply an entries array as an absolute minimum.  
-
-See the beginning of the readme for the full code example.
 
 ---
 

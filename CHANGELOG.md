@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.6.2] - 2024-12-09
+### ✨ Added
+- Add `customColor` property.
+- Update Statistics Icon.
+  
+---
 ## [1.6.1] - 2024-12-08
 ### 🐛 Fixed
 - Fix streak translation

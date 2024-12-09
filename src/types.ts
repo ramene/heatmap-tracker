@@ -2,6 +2,7 @@ export interface Entry {
   date: string;
   intensity?: number;
   color: string;
+  customColor?: string;
   content: string | HTMLElement;
   separateMonths?: boolean;
 }
