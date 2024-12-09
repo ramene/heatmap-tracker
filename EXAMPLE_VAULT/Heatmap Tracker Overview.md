@@ -115,11 +115,11 @@ const trackerData = {
     entries: [],
     colors: {
             "intensity": [
-            "#f17300",
-            "#dbe4ee",
-            "#81a4cd",
-            "#3e7cb1",
-            "#054a91",
+            "#d63230",
+            "#f39237",
+            "#40bcd8",
+            "#39a9db",
+            "#1c77c3",
             ]
     },
     heatmapTitle: "🌙 Sleep Serenity Heatmap 🌙",
