@@ -111,7 +111,7 @@ function HeatmapTabs() {
         view={View.HeatmapTrackerStatistics}
         label={t("statistics.title")}
       />
-      <HeatmapTab view={View.HeatmapMenu} label={"Menu (in progress)"} disabled />
+      {/* <HeatmapTab view={View.HeatmapMenu} label={"Menu (in progress)"} disabled /> */}
     </div>
   );
 }
