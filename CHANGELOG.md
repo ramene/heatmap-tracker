@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.6.3] - 2024-12-09
+- Add `Menu` icon. Disabled at the moment.
+- Add animations: for box, also animated border for heatmap container.
+- Update example vault: add go to bed time heatmap.
+- Update generate-examples.sh.
+
+---
+
 ## [1.6.2] - 2024-12-09
 ### ✨ Added
 - Add `customColor` property.

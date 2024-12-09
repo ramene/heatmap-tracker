@@ -108,6 +108,71 @@ for(let page of dv.pages('"daily notes"').where(p=>p.woke)){
 renderHeatmapTracker(this.container, trackerData)
 
 ```
+```dataviewjs
+
+const trackerData = {
+    year: 2024, // optional, remove this line to autoswitch year
+    entries: [],
+    colors: {
+            "intensity": [
+            "#f17300",
+            "#dbe4ee",
+            "#81a4cd",
+            "#3e7cb1",
+            "#054a91",
+            ]
+    },
+    heatmapTitle: "🌙 Sleep Serenity Heatmap 🌙",
+    heatmapSubtitle: "Track your sleep patterns: blue for timely bedtimes and orange for late nights. Build better habits and wake up refreshed! 🌌💤",
+    intensityScaleStart: 0,
+    intensityScaleEnd: 1,
+    separateMonths: true
+}
+
+// Constants for configuration
+const MAX_DIFF = 120; // Maximum time difference (in minutes) after which intensity is 0
+const TARGET_BEDTIME = "22:00"; // Target go-to-bed time (HH:MM format)
+
+/**
+ * Calculate the intensity of go-to-bed time based on the target time.
+ * Intensity is 1 (best) when the bedtime is on or before the target time,
+ * and decreases linearly as bedtime gets later.
+ *
+ * @param {string} bedTimeISO - Go-to-bed time in ISO format (e.g., "2024-11-18T22:30:00.000+01:00").
+ * @param {string} targetTime - Target go-to-bed time (HH:MM format, default from constant).
+ * @returns {number} Intensity value between 0 (worst) and 1 (best).
+ */
+function calculateBedtimeIntensity(bedTimeISO, targetTime = TARGET_BEDTIME) {
+  // Parse the go-to-bed time from ISO string to a Date object
+  const bedDate = new Date(bedTimeISO);
+
+  // Parse target time into hours and minutes
+  const [targetHour, targetMinute] = targetTime.split(":").map(Number);
+
+  // Convert target time to minutes since midnight
+  const targetMinutes = targetHour * 60 + targetMinute;
+
+  // Get go-to-bed time in minutes since midnight
+  const bedMinutes = bedDate.getHours() * 60 + bedDate.getMinutes();
+
+  // Calculate the time difference (only if bedtime is after the target time)
+  const diffMinutes = Math.max(0, bedMinutes - targetMinutes);
+
+  // Normalize the intensity value: 1 (best) -> 0 (worst)
+  return Math.max(0, 1 - diffMinutes / MAX_DIFF);
+}
+ 
+for(let page of dv.pages('"daily notes"').where(p=>p.sleep)){
+    trackerData.entries.push({
+        date: page.file.name,
+        intensity: calculateBedtimeIntensity(page.sleep),
+        content: await dv.span(`[](${page.file.name})`)
+    })  
+}
+
+renderHeatmapTracker(this.container, trackerData)
+
+```
 
 
 ```dataviewjs

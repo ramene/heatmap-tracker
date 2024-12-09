@@ -51,12 +51,34 @@ function HeatmapIcon() {
   );
 }
 
+function MenuIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="lucide lucide-ellipsis-vertical"
+    >
+      <circle cx="12" cy="12" r="1" />
+      <circle cx="12" cy="5" r="1" />
+      <circle cx="12" cy="19" r="1" />
+    </svg>
+  );
+}
+
 const IconForView: Record<View, React.ReactNode> = {
   [View.HeatmapTracker]: <HeatmapIcon />,
   [View.HeatmapTrackerStatistics]: <StatisticsIcon />,
+  [View.HeatmapMenu]: <MenuIcon />,
 };
 
-function HeatmapTab({ view, label }: { view: View; label: string }) {
+function HeatmapTab({ view, label, disabled }: { view: View; label: string, disabled?: boolean }) {
   const { view: selectedView, setView } = useHeatmapContext();
 
   const isSelected = view === selectedView;
@@ -71,6 +93,7 @@ function HeatmapTab({ view, label }: { view: View; label: string }) {
       className={`heatmap-tracker-tab clickable-icon ${
         isSelected ? "is-active" : ""
       }`}
+      disabled={disabled}
       onClick={handleClick}
     >
       {IconForView[view]}
@@ -88,6 +111,7 @@ function HeatmapTabs() {
         view={View.HeatmapTrackerStatistics}
         label={t("statistics.title")}
       />
+      <HeatmapTab view={View.HeatmapMenu} label={"Menu (in progress)"} disabled />
     </div>
   );
 }

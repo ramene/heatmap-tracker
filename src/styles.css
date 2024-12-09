@@ -9,7 +9,15 @@
 
 .heatmap-tracker__container {
   position: relative;
-  margin-bottom: 48px;
+  margin: 24px 0;
+  padding: 0.5em;
+  border: var(--border-width) solid transparent;
+  border-radius: var(--radius-s);
+  transition: border 0.2s;
+}
+
+.heatmap-tracker__container:hover {
+  border: var(--border-width) solid var(--background-modifier-border-hover);
 }
 
 .heatmap-tracker {
@@ -76,11 +84,12 @@
   border-radius: 2px;
   background-color: #ebedf0;
   margin-inline-start: auto !important;
+  transition: transform 0.2s, border 0.2s;
 }
 
 .heatmap-tracker-boxes .heatmap-tracker-box:hover {
   transform: scale(1.4);
-  border: solid 1px rgb(61, 61, 61);
+  border: solid var(--border-width) rgb(61, 61, 61);
   cursor: pointer;
 }
 
@@ -117,7 +126,7 @@
 .heatmap-tracker-boxes .today {}
 
 .heatmap-tracker-boxes .with-border {
-  border: solid 1px rgb(61, 61, 61);
+  border: solid var(--border-width) rgb(61, 61, 61);
 }
 
 .theme-dark .heatmap-tracker-boxes .isEmpty {

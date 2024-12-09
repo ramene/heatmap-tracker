@@ -30,8 +30,21 @@ export const ReactApp = () => {
       <HeatmapHeader />
       {view === View.HeatmapTracker ? (
         <HeatmapTrackerView />
-      ) : (
+      ) : view === View.HeatmapTrackerStatistics ? (
         <StatisticsView />
+      ) : (
+        <div>
+          <div>Menu</div>
+          <div>
+            If you find this plugin useful, you can buy me a coffee! Your
+            support helps keep this project alive. ☕💖
+          </div>
+          <div>
+            <a href="https://www.buymeacoffee.com/mrubanau">
+              <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=mrubanau&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" />
+            </a>
+          </div>
+        </div>
       )}
     </div>
   );
