@@ -3,17 +3,20 @@
     "title": "Einstellungen",
     "language": "Sprache",
     "chooseYourPreferredLanguage": "Wählen Sie Ihre bevorzugte Sprache aus",
-    "colors": "Farben",
-    "colorName": "Farbname",
-    "colorsArray": "Farbfeldliste",
-    "pleaseEnterColorName": "Geben Sie einen Namen für die neue Farbe ein",
-    "colorIsNotValidJSON": "Die Farbe ist kein gültiges JSON-Farbfeld",
-    "addListOfColors": "Fügen Sie Farbschemata hinzu, die für Ihre Heatmaps verfügbar sein werden.",
-    "colorsUsageNote": "Nutzen Sie diese Farben, indem Sie ihre Namen in den Anzeigeeinstellungen Ihrer Heatmap angeben.",
     "weekStartDay": "Erster Wochentag",
     "weekStartDayDescription": "Wählen Sie, mit welchem Tag Ihre Woche beginnt.",
     "separateMonths": "Monate trennen",
-    "separateMonthsDescription": "Aktivieren Sie die Trennung von Monaten in den Tracker-Ansichten."
+    "separateMonthsDescription": "Aktivieren Sie die Trennung von Monaten in den Tracker-Ansichten.",
+
+    "palettes": "Paletten",
+    "paletteName": "Palettenname",
+    "addNewColorToPalette": "Fügen Sie der Palette {{paletteName}} eine neue Farbe hinzu:",
+    "addColor": "Farbe hinzufügen",
+    "removeColor": "Farbe entfernen",
+    "addNewPalette": "Neue Palette hinzufügen",
+    "enterPaletteName": "Geben Sie einen Palettennamen ein, um eine neue Palette zu erstellen",
+    "addPaletteNote": "Fügen Sie Farbpaletten hinzu, die in Ihren Heatmap-Anzeigeneinstellungen verfügbar sein werden.",
+    "colorsUsageNote": "Sie können diese Paletten verwenden, indem Sie in Ihren Heatmap-Anzeigeneinstellungen auf ihren Namen verweisen."
   },
   "statistics": {
     "title": "Statistiken",

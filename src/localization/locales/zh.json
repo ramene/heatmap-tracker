@@ -3,17 +3,20 @@
     "title": "设置",
     "language": "语言",
     "chooseYourPreferredLanguage": "选择您偏好的语言",
-    "colors": "颜色",
-    "colorName": "颜色名称",
-    "colorsArray": "颜色数组",
-    "pleaseEnterColorName": "请输入颜色的名称",
-    "colorIsNotValidJSON": "颜色不是有效的JSON颜色数组",
-    "addListOfColors": "添加可在您的热图中全局使用的颜色列表。",
-    "colorsUsageNote": "您可以在热图渲染设置中通过名称引用这些颜色。",
     "weekStartDay": "周起始日",
     "weekStartDayDescription": "选择一周的起始日。",
     "separateMonths": "分隔月份",
-    "separateMonthsDescription": "在跟踪视图中全局分隔月份。"
+    "separateMonthsDescription": "在跟踪视图中全局分隔月份。",
+
+    "palettes": "调色板",
+    "paletteName": "调色板名称",
+    "addNewColorToPalette": "将新颜色添加到{{paletteName}}调色板：",
+    "addColor": "添加颜色",
+    "removeColor": "移除颜色",
+    "addNewPalette": "添加新调色板",
+    "enterPaletteName": "输入调色板名称以创建新调色板",
+    "addPaletteNote": "添加可在您的热图渲染设置中使用的调色板。",
+    "colorsUsageNote": "您可以在热图渲染设置中通过名称引用这些颜色。"
   },
   "statistics": {
     "title": "统计",

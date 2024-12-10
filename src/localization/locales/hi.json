@@ -3,17 +3,20 @@
     "title": "सेटिंग्स",
     "language": "भाषा",
     "chooseYourPreferredLanguage": "अपनी पसंदीदा भाषा चुनें",
-    "colors": "रंग",
-    "colorName": "रंग का नाम",
-    "colorsArray": "रंगों की सूची",
-    "pleaseEnterColorName": "कृपया अपने रंग का नाम दर्ज करें",
-    "colorIsNotValidJSON": "रंग एक मान्य JSON रंगों की सूची नहीं है",
-    "addListOfColors": "ऐसे रंगों की सूची जोड़ें जो आपके हीटमैप्स पर उपलब्ध हों।",
-    "colorsUsageNote": "इन रंगों का उपयोग उनके नाम का संदर्भ देकर अपने हीटमैप सेटिंग्स में करें।",
     "weekStartDay": "सप्ताह की शुरुआत का दिन",
     "weekStartDayDescription": "सप्ताह की शुरुआत के दिन का चयन करें।",
     "separateMonths": "महीनों को अलग करें",
-    "separateMonthsDescription": "अपने ट्रैकर दृश्य में महीनों को अलग-अलग दिखाएं।"
+    "separateMonthsDescription": "अपने ट्रैकर दृश्य में महीनों को अलग-अलग दिखाएं।",
+
+    "palettes": "पैलेट्स",
+    "paletteName": "पैलेट का नाम",
+    "addNewColorToPalette": "{{paletteName}} पैलेट में नया रंग जोड़ें:",
+    "addColor": "रंग जोड़ें",
+    "removeColor": "रंग हटाएं",
+    "addNewPalette": "नया पैलेट जोड़ें",
+    "enterPaletteName": "नया पैलेट बनाने के लिए एक पैलेट नाम दर्ज करें",
+    "addPaletteNote": "उन रंग पैलेट्स को जोड़ें जो आपके हीटमैप रेंडर सेटिंग्स में उपलब्ध होंगे।",
+    "colorsUsageNote": "आप इन पैलेट्स का उपयोग अपने हीटमैप रेंडर सेटिंग्स में उनके नाम का संदर्भ देकर कर सकते हैं।"
   },
   "statistics": {
     "title": "सांख्यिकी",
