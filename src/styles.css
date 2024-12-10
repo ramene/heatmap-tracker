@@ -240,9 +240,10 @@
 .heatmap-tracker-settings-palettes__palette-color {
   display: grid;
   align-items: center;
-  grid-template-columns: auto auto 1fr auto;
+  grid-template-columns: 1fr 1fr 7fr 1fr;
   column-gap: 4px;
   margin: 4px 0;
+  justify-items: flex-start;
 }
 
 .heatmap-tracker-settings-palettes__color-box {
@@ -288,7 +289,7 @@
 .heatmap-tracker-settings-palettes__add-color-preview {
   width: 20px;
   height: 20px;
-  margin: 0 8px;
+  margin-left: 8px;
   border-radius: 4px;
   border: 1px solid #000;
   transition: transform 0.2s;
@@ -296,6 +297,32 @@
 
 .heatmap-tracker-settings-palettes__add-color-preview:hover {
   transform: scale(4);
+}
+
+@media screen and (max-width: 750px) {
+
+  .heatmap-tracker-settings-palettes__add-color-input-container  {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .heatmap-tracker-settings-palettes__add-color-button {
+    grid-row: 2;
+    grid-column: 1/-1;
+    margin: 8px 0;
+  }
+  
+  .heatmap-tracker-settings-palettes__new-palette-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 8px;
+  }
+
+  .heatmap-tracker-settings-palettes__new-palette-button {
+    margin-left: unset;
+  }
 }
 
 .heatmap-tracker-settings-palettes__delete-palette {
