@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.7.2] - 2024-12-10
+- Fix color removal.
+---
+
 ## [1.7.1] - 2024-12-10
 - Fix styles for mobile devices.
 ---

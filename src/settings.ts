@@ -127,7 +127,7 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
 
           setIcon(removeColorButton, "x");
 
-          paletteColor.addEventListener("click", () => {
+          removeColorButton.addEventListener("click", () => {
             const colorIndex = paletteColors.indexOf(color);
 
             paletteColors.splice(colorIndex, 1);
