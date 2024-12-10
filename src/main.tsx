@@ -31,6 +31,7 @@ const DEFAULT_SETTINGS: TrackerSettings = {
   year: new Date().getFullYear(),
   colors: {
     default: ["#c6e48b", "#7bc96f", "#49af5d", "#2e8840", "#196127"],
+    danger: ["#fff33b", "#fdc70c", "#f3903f", "#ed683c", "#e93e3a"]
   },
   entries: [
     { date: "1900-01-01", color: "#7bc96f", intensity: 5, content: "" },
@@ -86,7 +87,16 @@ export default class HeatmapTracker extends Plugin {
   }
 
   async loadSettings() {
-    this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
+    const settingsData = await this.loadData();
+
+    this.settings = {
+      ...DEFAULT_SETTINGS,
+      ...settingsData,
+      colors: {
+        ...DEFAULT_SETTINGS.colors,
+        ...settingsData.colors,
+      }
+    };
   }
 
   async saveSettings() {

@@ -212,45 +212,99 @@
 }
 
 /* Settings */
-.heatmap-tracker-settings-colors__color-box {
-  width: 10px;
-  height: 10px;
-  display: inline-block;
-  margin: 0 5px;
+
+/* Palettes */
+.heatmap-tracker-settings-palettes__container {}
+
+.heatmap-tracker-settings-palettes__palette-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.heatmap-tracker-settings-colors__color-box:first-child {
+.heatmap-tracker-settings-palettes__palette-container {}
+
+.heatmap-tracker-settings-palettes__new-palette-container {
+  margin-top: 24px;
+}
+.heatmap-tracker-settings-palettes__new-palette-input {}
+.heatmap-tracker-settings-palettes__new-palette-button {
+  margin-left: 16px;
+}
+
+.heatmap-tracker-settings-palettes__palette-colors {
+  display: flex;
+  flex-direction: column;
+}
+
+.heatmap-tracker-settings-palettes__palette-color {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto auto 1fr auto;
+  column-gap: 4px;
+  margin: 4px 0;
+}
+
+.heatmap-tracker-settings-palettes__color-box {
+  width: 16px;
+  height: 16px;
+  margin: 0 5px;
+  border-radius: 4px;
+  border: 1px solid #000;
+  transition: transform 0.2s;
+}
+
+.heatmap-tracker-settings-palettes__color-box:hover {
+  transform: scale(4);
+}
+
+.heatmap-tracker-settings-palettes__color-box:first-child {
   margin-left: 0;
 }
 
-.heatmap-tracker-settings-colors__color-name {
-  display: inline-block;
+.heatmap-tracker-settings-palettes__delete-color {
+  cursor: pointer;
 }
 
-.heatmap-tracker-settings-colors__container {
+.heatmap-tracker-settings-palettes__add-color-header {
+  margin: 8px 0;
+}
+
+.heatmap-tracker-settings-palettes__add-color-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.heatmap-tracker-settings-palettes__add-color-input-container {
+  display: flex;
   align-items: center;
-  border-top: 1px solid var(--background-modifier-border);
-  display: flex;
-  justify-content: space-between;
-  padding: 0.5em 0;
 }
 
-.heatmap-tracker-settings-colors__container h4 {
-  margin: 0.5em 0;
+.heatmap-tracker-settings-palettes__add-color-button {
+  cursor: pointer;
+  margin-left: 16px;
 }
 
-.heatmap-tracker-settings-colors__new-color-input-container {
-  display: flex;
-  justify-content: space-between;
+.heatmap-tracker-settings-palettes__add-color-preview {
+  width: 20px;
+  height: 20px;
+  margin: 0 8px;
+  border-radius: 4px;
+  border: 1px solid #000;
+  transition: transform 0.2s;
 }
 
-.heatmap-tracker-settings-colors__new-color-input-container input {
-  margin-right: 1em;
+.heatmap-tracker-settings-palettes__add-color-preview:hover {
+  transform: scale(4);
 }
 
-.heatmap-tracker-settings-colors__new-color-input-value {
-  flex-grow: 1;
+.heatmap-tracker-settings-palettes__delete-palette {
+  cursor: pointer;
 }
+
+.heatmap-tracker-settings-palettes__add-color-input {}
+
+/* Separate Months */
 
 .heatmap-tracker-boxes.separate-months {
   grid-auto-flow: column;

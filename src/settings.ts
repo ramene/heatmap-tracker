@@ -11,27 +11,8 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
     this.plugin = plugin;
   }
 
-  private async addColorMap(color: { key: string, value: string }) {
-    const isValid = { key: true, value: true, };
 
-    if (!color.key) isValid.key = false;
-
-    const validatedArray = this.validateColorInput(color.value);
-
-    if (!validatedArray) isValid.value = false;
-
-    if (isValid.key && isValid.value) {
-      this.plugin.settings.colors[color.key] = validatedArray as string[];
-
-      await this.plugin.saveSettings();
-
-      this.display();
-    }
-
-    return isValid;
-  }
-
-  private async deleteColorMap(key: keyof typeof this.plugin.settings.colors) {
+  private async deletePalette(key: keyof typeof this.plugin.settings.colors) {
     delete this.plugin.settings.colors[key];
 
     await this.plugin.saveSettings();
@@ -39,115 +20,190 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
     this.display();
   }
 
+  private addPaletteHeader(paletteContainer: HTMLElement, paletteName: string) {
+    const paletteHeaderContainer = paletteContainer.createDiv({
+      cls: "heatmap-tracker-settings-palettes__palette-header",
+    });
+    paletteHeaderContainer.createEl("h4", { text: `${i18n.t('settings.paletteName')}: ${paletteName}` });
+    if (paletteName !== "default") {
+      const deleteColorButton = paletteHeaderContainer.createEl("button", {
+        cls: "heatmap-tracker-settings-palettes__delete-palette",
+      });
+
+      setIcon(deleteColorButton, "trash");
+
+      deleteColorButton.addEventListener("click", () => this.deletePalette(paletteName));
+
+    }
+  }
+
+  private renderAddColorSection(container: HTMLElement, paletteName: string, paletteColors: string[]) {
+    container.createDiv({
+      text: i18n.t('settings.addNewColorToPalette', { paletteName }),
+      cls: "heatmap-tracker-settings-palettes__add-color-header",
+    });
+
+    const inputContainer = container.createDiv({
+      cls: "heatmap-tracker-settings-palettes__add-color-input-container",
+    });
+
+    const addColorInput = inputContainer.createEl("input", {
+      cls: "heatmap-tracker-settings-palettes__add-color-input",
+      attr: { placeholder: "#123456 / red / rgba()...", type: "text" },
+    });
+
+    const colorPreview = inputContainer.createDiv({
+      cls: "heatmap-tracker-settings-palettes__add-color-preview",
+    });
+
+    const addColorButton = inputContainer.createEl("button", {
+      cls: "mod-cta heatmap-tracker-settings-palettes__add-color-button",
+      text: i18n.t('settings.addColor'),
+    });
+
+    // Add listeners.
+    addColorInput.addEventListener("input", () => {
+      colorPreview.style.backgroundColor = addColorInput.value;
+    });
+
+    addColorButton.addEventListener("click", () => {
+      this.plugin.settings.colors[paletteName] = [...paletteColors, colorPreview.style.backgroundColor];
+
+      this.plugin.saveSettings();
+
+      this.display();
+    }
+    );
+  }
+
   private displayColorSettings() {
-    const { containerEl } = this;
+    const palettesContainer = this.containerEl.createDiv({
+      cls: "heatmap-tracker-settings-palettes__container"
+    });
 
-    containerEl.createEl("h3", { text: i18n.t('settings.colors'), });
-    this.displayColorHelp(containerEl);
+    palettesContainer.createEl("h3", { text: i18n.t('settings.palettes'), });
+    this.displayColorHelp(palettesContainer);
 
-    for (const [key, colors,] of Object.entries(this.plugin.settings.colors)) {
-      const colorEntryContainer = containerEl.createDiv({
-        cls: "heatmap-tracker-settings-colors__container",
+    for (const [paletteName, paletteColors] of Object.entries(this.plugin.settings.colors)) {
+      const paletteContainer = palettesContainer.createDiv({
+        cls: "heatmap-tracker-settings-palettes__palette-container",
       });
 
-      const colorDataContainer = colorEntryContainer.createDiv({
-        cls: "heatmap-tracker-settings-colors__data-container",
-      });
+      this.addPaletteHeader(paletteContainer, paletteName);
 
-      colorDataContainer.createEl("h4", { text: key });
+      const paletteContent = paletteContainer.createDiv({ cls: "heatmap-tracker-settings-palettes__palette-content", });
 
-      const colorRow = colorDataContainer.createDiv({ cls: "heatmap-tracker-settings-colors__row", });
+      const colorsContainer = paletteContent.createEl('div', { cls: "heatmap-tracker-settings-palettes__palette-colors", });
 
-      const colorsContainer = colorRow.createDiv({ cls: "heatmap-tracker-settings-colors__color-container", });
+      for (const colorIndex in paletteColors) {
+        const color = paletteColors[colorIndex];
 
-      for (const color of colors) {
-        colorsContainer.createEl("div", {
-          cls: "heatmap-tracker-settings-colors__color-box",
+        const paletteColor = colorsContainer.createEl('div', {
+          cls: "heatmap-tracker-settings-palettes__palette-color",
+        });
+
+        paletteColor.createEl("div", {
+          cls: "heatmap-tracker-settings-palettes__index",
+          text: `${Number(colorIndex) + 1}.`,
+        });
+
+        paletteColor.createEl("div", {
+          cls: "heatmap-tracker-settings-palettes__color-box",
           attr: {
             style: `background-color: ${color}`,
           },
         });
 
-        colorsContainer.createEl("pre", {
-          cls: "heatmap-tracker-settings-colors__color-name",
+        paletteColor.createEl("div", {
+          cls: "heatmap-tracker-settings-palettes__color-name",
           text: color,
         });
+
+        if (paletteName !== "default") {
+          const removeColorButton = paletteColor.createEl("button", {
+            cls: "clickable-icon heatmap-tracker-settings-palettes__delete-color",
+            attr: { "aria-label": i18n.t('settings.removeColor') },
+          });
+
+          setIcon(removeColorButton, "x");
+
+          paletteColor.addEventListener("click", () => {
+            const colorIndex = paletteColors.indexOf(color);
+
+            paletteColors.splice(colorIndex, 1);
+
+            this.plugin.settings.colors[paletteName] = paletteColors;
+
+            this.plugin.saveSettings();
+
+            this.display();
+          });
+        }
       }
 
-      if (key !== "default") {
-        const deleteColorButton = colorEntryContainer.createEl("button", {
-          cls: "mod-warning heatmap-tracker-settings-colors__delete",
+      if (paletteName !== "default") {
+        const addColorContainer = paletteContent.createDiv({
+          cls: "heatmap-tracker-settings-palettes__add-color-container",
         });
-
-        setIcon(deleteColorButton, "trash");
-
-        deleteColorButton.addEventListener("click", () => this.deleteColorMap(key));
+        this.renderAddColorSection(addColorContainer, paletteName, paletteColors);
       }
     }
 
-    this.displayColorInput(containerEl);
+    this.addNewPalette(palettesContainer);
   }
 
-  private displayColorInput(parent: HTMLElement) {
-    const inputContainer = parent.createDiv({ cls: "heatmap-tracker-settings-colors__new-color-input-container", });
-
-    const colorNameInput = inputContainer.createEl("input", {
-      cls: "heatmap-tracker-settings-colors__new-color-input-name",
-      attr: { placeholder: i18n.t('settings.colorName'), type: "text", },
+  private addNewPalette(parent: HTMLElement) {
+    const paletteContainer = parent.createDiv({
+      cls: "heatmap-tracker-settings-palettes__new-palette-container",
     });
 
-    const colorValueInput = inputContainer.createEl("input", {
-      cls: "heatmap-tracker-settings-colors__new-color-input-value",
-      attr: { placeholder: i18n.t('settings.colorsArray'), type: "text", },
+    paletteContainer.createEl("h4", {
+      cls: "heatmap-tracker-settings-palettes__new-palette-header",
+      text: i18n.t('settings.enterPaletteName'),
+    });
+    
+    const newPaletteContent = paletteContainer.createDiv({
+      cls: "heatmap-tracker-settings-palettes__new-palette-content"
     });
 
-    const addColorButton = inputContainer.createEl("button", {
-      cls: "mod-cta heatmap-tracker-settings-colors__new-color-button",
+    const newPaletteInput = this.addNewPaletteInput(newPaletteContent);
+    this.addNewPaletteButton(newPaletteContent, newPaletteInput);
+  }
+
+  private addNewPaletteInput(parent: HTMLElement) {
+    const newPaletteInput = parent.createEl("input", {
+      cls: "heatmap-tracker-settings-palettes__new-palette-input",
+      attr: { placeholder: i18n.t('settings.paletteName'), type: "text" },
     });
 
-    setIcon(addColorButton, "plus");
+    return newPaletteInput;
+  }
+
+  private addNewPaletteButton(parent: HTMLElement, newPaletteInput: HTMLInputElement) {
+    const addColorButton = parent.createEl("button", {
+      cls: "mod-cta heatmap-tracker-settings-palettes__new-palette-button",
+      text: i18n.t('settings.addNewPalette'),
+    });
 
     addColorButton.addEventListener("click", async () => {
-      const isValid = await this.addColorMap({
-        key: colorNameInput.value,
-        value: colorValueInput.value,
-      });
+      if (newPaletteInput.value) {
+        this.plugin.settings.colors[newPaletteInput.value] = [];
 
-      this.reportInputValidity(colorNameInput, isValid.key, i18n.t('settings.pleaseEnterColorName'));
-      this.reportInputValidity(colorValueInput, isValid.value, i18n.t('settings.colorIsNotValidJSON'));
+        await this.plugin.saveSettings();
+
+        this.display();
+      }
     });
   }
+
 
   private displayColorHelp(parent: HTMLElement) {
     parent.createEl("p", {
-      text: i18n.t('settings.addListOfColors'),
+      text: i18n.t('settings.addPaletteNote'),
     });
     parent.createEl("p", {
       text: i18n.t('settings.colorsUsageNote'),
     });
-  }
-
-  private reportInputValidity(input: HTMLInputElement, isValid: boolean, msg: string) {
-    if (!isValid) {
-      input.classList.add("has-error");
-      input.setCustomValidity(msg);
-    } else input.setCustomValidity("");
-
-    input.reportValidity();
-  }
-
-  private validateColorInput(value: string) {
-    const colorRegex = /^(#[0-9a-f]{3,6}|rgba?\(\s*\d+%?\s*,\s*\d+%?\s*,\s*\d+%?\s*(,\s*\d+(\.\d+)?%?)?\s*\))$/i;
-
-    try {
-      const data: string[] = JSON.parse(value);
-
-      if (!Array.isArray(data)) return false;
-
-      return data.every(color => colorRegex.test(color)) ? data : false;
-    } catch (e) {
-      return false;
-    }
   }
 
   private displayWeekStartDaySettings() {

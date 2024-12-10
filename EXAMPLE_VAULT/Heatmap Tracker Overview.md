@@ -180,10 +180,7 @@ renderHeatmapTracker(this.container, trackerData)
 const trackerData = {
     year: 2024,
     intensityScaleEnd: 45 * 60 * 1000, //convert 45 minutes to millis
-    colors: {
-        red: ["#ff9e82","#ff7b55","#ff4d1a","#e73400","#bd2a00",
-        "hsl(132, 90%, 40%)"] //last one green
-    },
+    colors: "danger",
     entries: [],
     separateMonths: true,
     heatmapTitle: "🏋️ Exercise Tracker 🏋️",
