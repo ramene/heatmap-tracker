@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.7.1] - 2024-12-10
+- Fix styles for mobile devices.
+---
+
 ## [1.7.0] - 2024-12-10
 - Add a new palette as easy as never. Go to settings, add a new palette name and after that add colors to your palette.
 - Also added a new palette: danger.
