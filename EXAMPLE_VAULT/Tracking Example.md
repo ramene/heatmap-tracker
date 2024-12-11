@@ -1,0 +1,149 @@
+
+```dataviewjs
+// Retrieve all tracking file names from Dataview pages where the "tracking" property is true
+const trackingFiles = dv.pages().where(file => file.tracking).file.name;
+
+// Initialize arrays for legend entries, activity table data, and detailed activity records
+const legendEntries = [];
+let activityTableData = [];
+let activityDetails = [];
+
+// Process each tracking file to extract data
+for (const fileName of trackingFiles) {
+    // Fetch data for the current file where "tracking" is true
+    const fileData = dv.pages().where(file => file.file.name === fileName && file.tracking);
+    const trackColor = fileData.color.values.toString(); // Get the color associated with the track
+    const trackedEvents = fileData.file.lists.values.filter(listItem => 
+        listItem.text.match(/^\[\[([\d-]+)\]\](.+)/) // Filter events that match the pattern [[YYYY-MM-DD]] Description
+    );
+
+    // Add a legend entry for the current track with its associated color
+    legendEntries.push([`<div style="display: inline-flex;"><div style="width: 14px; height: 14px; background-color: ${trackColor};"></div></div>`, fileName]);
+
+    // Transform tracked events into a structured format for further processing
+    const activityRecords = trackedEvents.map(event => {
+        const [_, eventDate, eventDescription] = event.text.match(/^\[\[([\d-]+)\]\](.+)/); // Extract date and description
+        const parsedDate = moment(eventDate); // Parse the event date
+        const durationFromNow = parsedDate.fromNow(); // Calculate relative time (e.g., "2 days ago")
+        return { 
+            Time: durationFromNow, 
+            Event: eventDescription, 
+            Date: parsedDate.format('YYYY-MM-DD'), 
+            Track: fileName, 
+            Color: trackColor 
+        };
+    });
+
+    // Add formatted activity records to the activity table data for display
+    activityTableData = activityTableData.concat(
+        activityRecords.map(record => [
+            record.Time, 
+            `<div style="display: inline-flex; width: 14px; height: 14px; background-color: ${record.Color};"></div>`, 
+            record.Event
+        ])
+    );
+
+    // Append detailed activity records for use in the heatmap
+    activityDetails = activityDetails.concat(activityRecords);
+}
+
+// Sort activity table data by date in descending order
+activityTableData.sort((a, b) => moment(b[2]) - moment(a[2]));
+
+// Generate the legend markdown for display, combining icons and file names
+const legendMarkdown = legendEntries.map(([icon, track]) => `${icon} ${track}.md`).join("\n>");
+const infoBlock = `> [!info]- Data\n>${legendMarkdown}`;
+
+// Render the legend markdown as a paragraph
+dv.paragraph(infoBlock);
+
+// Build a heatmap data structure from the activity details
+const heatmapColors = {}; // Map to store unique colors for each track
+activityDetails.forEach(({ Track, Color }) => {
+    if (!heatmapColors[Track]) {
+        heatmapColors[Track] = [Color]; // Initialize color list for the track
+    } else if (!heatmapColors[Track].includes(Color)) {
+        heatmapColors[Track].push(Color); // Add color if it's not already included
+    }
+});
+
+// Create the heatmap data object with color mapping and activity entries
+const heatmapData = {
+    colors: heatmapColors,
+    showCurrentDayBorder: true, // Highlight the current day
+    entries: activityDetails.map(({ Date, Track }) => ({
+        date: Date, // Event date
+        color: Track // Track name serves as the "color" key
+    }))
+};
+
+// Render the heatmap using the provided tracker rendering function
+renderHeatmapTracker(this.container, heatmapData);
+
+// Display the activities table with columns: Time, Track (as color square), and Event description
+dv.header(1, "Activities");
+dv.table(['Time', 'Track', 'Event'], activityTableData);
+```
+
+# Step-by-Step Guide to Using the Code to Display Activity on a Heatmap
+
+This guide walks you through the steps to use the provided code to visualize your activities on a heatmap.
+
+---
+
+## 1. **Set Up Your Obsidian Environment**
+   - Ensure you have the **Dataview plugin** installed and enabled in your Obsidian vault.
+   - Install the required **Heatmap Tracker Plugin ** (e.g., `renderHeatmapTracker`). This function should be available in your environment or implemented separately.
+
+---
+
+## 2. **Structure Your Notes**
+   - Each note should include a `tracking` field in its front matter to indicate whether the note is trackable.
+   - Example front matter:
+     ```yaml
+     ---
+     tracking: true
+     color: "#FF5733"
+     ---
+     ```
+   - Add a **list of activities** inside your note, formatted as follows:
+     ```
+     - [[2024-01-01]] Activity Description 1
+     - [[2024-01-02]] Activity Description 2
+     ```
+   - Replace `2024-01-01` with your activity dates and `Activity Description` with what you did.
+
+---
+
+## 3. **Customize the Code**
+   - Copy the provided code into a DataviewJS block in an Obsidian note:
+     ```dataviewjs
+     // Paste the code here
+     ```
+   - The code will automatically fetch and process all notes with `tracking: true` in the front matter.
+   - No additional modifications are necessary unless you want to tweak the appearance.
+
+---
+
+## 4. **Render the Heatmap**
+   - Ensure that the `renderHeatmapTracker` function is defined or included in your environment.
+   - If you don’t already have the heatmap rendering function, use a library or script compatible with your Obsidian setup (e.g., a JavaScript function for rendering a heatmap in HTML).
+   - Once the code runs successfully, it will generate:
+     - A **legend** showing the color-coded tracks.
+     - A **heatmap tracker** displaying your activity data.
+     - An **activities table** listing the details of each activity.
+
+---
+
+## 5. **Review the Outputs**
+   - **Legend:** Displays the tracks and their associated colors.
+   - **Heatmap:** A heatmap visualizing your activities.
+   - **Activity Table:** Lists activities with their relative time (e.g., "2 days ago"), color-coded tracks, and descriptions.
+
+---
+
+## 6. **Troubleshooting**
+   - If the heatmap or table doesn't display:
+     - Verify that your notes include the `tracking` field and the correct structure for activities.
+     - Ensure the `renderHeatmapTracker` function is defined in your environment.
+   - If no activities are displayed, check the note file names and ensure they match the `file.name` filter in the code.
