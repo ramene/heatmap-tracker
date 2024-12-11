@@ -93,8 +93,8 @@ export default class HeatmapTracker extends Plugin {
       ...DEFAULT_SETTINGS,
       ...settingsData,
       colors: {
-        ...DEFAULT_SETTINGS.colors,
-        ...settingsData.colors,
+        ...DEFAULT_SETTINGS?.colors,
+        ...settingsData?.colors,
       }
     };
   }
