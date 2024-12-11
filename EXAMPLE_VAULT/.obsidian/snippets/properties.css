@@ -1,0 +1,5 @@
+.metadata-property-value input[type="number"]::-webkit-inner-spin-button,
+.metadata-property-value input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: auto;
+    display: inline;
+}

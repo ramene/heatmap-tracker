@@ -3,7 +3,5 @@
   "theme": "moonstone",
   "translucency": false,
   "accentColor": "",
-  "enabledCssSnippets": [
-    "heatmap_styleAlternatingMonths"
-  ]
+  "enabledCssSnippets": []
 }
