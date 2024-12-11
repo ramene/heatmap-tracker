@@ -93,7 +93,7 @@ This guide walks you through the steps to use the provided code to visualize you
 
 ## 1. **Set Up Your Obsidian Environment**
    - Ensure you have the **Dataview plugin** installed and enabled in your Obsidian vault.
-   - Install the required **Heatmap Tracker Plugin ** (e.g., `renderHeatmapTracker`). This function should be available in your environment or implemented separately.
+   - Install the required **Heatmap Tracker Plugin ** (e.g., `renderHeatmapTracker`). This function should be available in your environment.
 
 ---
 
