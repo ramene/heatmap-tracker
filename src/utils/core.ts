@@ -22,8 +22,8 @@ export function isValidDate(dateString: string): boolean {
 }
 
 export function getDayOfYear(date: Date): number {
-  const startOfYear = new Date(date.getFullYear(), 0, 0);
-  const diff = date.getTime() - startOfYear.getTime();
+  const startOfYear = Date.UTC(date.getFullYear(), 0, 0);
+  const diff = date.getTime() - startOfYear;
   return Math.floor(diff / (1000 * 60 * 60 * 24));
 }
 
