@@ -6,10 +6,12 @@ import { useTranslation } from "react-i18next";
 import { HeatmapTrackerView } from "./views/HeatmapTrackerView/HeatmapTrackerView";
 import { StatisticsView } from "./views/StatisticsView/StatisticsView";
 import { HeatmapHeader } from "./components/HeatmapHeader/HeatmapHeader";
+import { BreakingChangesView } from "./views/MaintenanceView/MaintenanceView";
 
 export const ReactApp = () => {
   const { i18n } = useTranslation();
-  const { currentYear, settings, view, setView } = useHeatmapContext();
+  const { trackerData, currentYear, settings, view, setView } =
+    useHeatmapContext();
 
   useEffect(() => {
     if (view !== View.HeatmapTracker) {
@@ -21,18 +23,29 @@ export const ReactApp = () => {
     i18n.changeLanguage(settings.language);
   }, [settings]);
 
+  useEffect(() => {
+    if (
+      typeof (trackerData as any)?.colors === "string" ||
+      (trackerData as any)?.colors
+    ) {
+      setView(View.Maintenance);
+    }
+  }, [trackerData]);
+
   if (!currentYear) {
     return null;
   }
 
-  return (
-    <div className="heatmap-tracker__container">
-      <HeatmapHeader />
-      {view === View.HeatmapTracker ? (
-        <HeatmapTrackerView />
-      ) : view === View.HeatmapTrackerStatistics ? (
-        <StatisticsView />
-      ) : (
+  let content;
+  switch (view) {
+    case View.HeatmapTracker:
+      content = <HeatmapTrackerView />;
+      break;
+    case View.HeatmapTrackerStatistics:
+      content = <StatisticsView />;
+      break;
+    case View.HeatmapMenu:
+      content = (
         <div>
           <div>Menu</div>
           <div>
@@ -45,6 +58,21 @@ export const ReactApp = () => {
             </a>
           </div>
         </div>
+      );
+      break;
+    default:
+      content = null;
+  }
+
+  return (
+    <div className="heatmap-tracker__container">
+      {view === View.Maintenance ? (
+        <BreakingChangesView />
+      ) : (
+        <>
+          <HeatmapHeader />
+          {content}
+        </>
       )}
     </div>
   );
