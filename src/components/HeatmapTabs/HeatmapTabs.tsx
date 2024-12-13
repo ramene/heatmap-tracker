@@ -12,6 +12,7 @@ export function HeatmapTabs() {
         view={View.HeatmapTrackerStatistics}
         label={t("statistics.title")}
       />
+      <HeatmapTab view={View.Documentation} label="Documentation"/>
       {/* <HeatmapTab view={View.HeatmapMenu} label={"Menu (in progress)"} disabled /> */}
     </div>
   );
