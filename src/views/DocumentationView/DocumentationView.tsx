@@ -25,7 +25,7 @@ export function DocumentationView() {
       <p><strong>Actual Heatmap Tracker API</strong></p>
       <div className="breaking-changes-view__maintenance-border">
         <div className="breaking-changes-view__container">
-          Since version <code>1.8</code> <code>colors</code> property is
+          Since version <code>1.9</code> <code>colors</code> property is
           removed. Please, remove <code>colors</code> and use{" "}
           <code>colorScheme</code> instead (check example below).
         </div>
