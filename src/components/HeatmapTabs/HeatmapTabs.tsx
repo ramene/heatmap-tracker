@@ -7,13 +7,12 @@ export function HeatmapTabs() {
 
   return (
     <div className="heatmap-tracker-header__tabs">
-      {/* <HeatmapTab view={View.BreakingChanges} label="Actions Required. Breaking changes"/> */}
       <HeatmapTab view={View.HeatmapTracker} label={"Heatmap"} />
-      <HeatmapTab view={View.Documentation} label="Documentation"/>
       <HeatmapTab
         view={View.HeatmapTrackerStatistics}
         label={t("statistics.title")}
       />
+      <HeatmapTab view={View.Documentation} label="Documentation"/>
       {/* <HeatmapTab view={View.HeatmapMenu} label={"Menu (in progress)"} disabled /> */}
     </div>
   );
