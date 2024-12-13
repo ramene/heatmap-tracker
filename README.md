@@ -49,12 +49,13 @@ renderHeatmapTracker(this.container, trackerData);
 
 ---
 
-### `colors`
+### `colorScheme`
 - **Type:** `object`
 - **Default:**
 ```
 {
-  "default": ["#c6e48b", "#7bc96f", "#49af5d", "#2e8840", "#196127"]
+  "paletteName": "default",
+  "customColors": []
 }
 ```
 - **Description:** Defines the color scale used for representing different intensity levels in the heatmap. Each color corresponds to a specific range of data intensity.
