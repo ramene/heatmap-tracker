@@ -73,14 +73,14 @@ function HeatmapFooter() {
 
   const [isActionRequired, setIsActionRequired] = useState(false);
 
-  useEffect(() => {
-    if (
-      typeof (trackerData as any)?.colors === "string" ||
-      (trackerData as any)?.colors
-    ) {
-      setIsActionRequired(true);
-    }
-  }, [trackerData]);
+  // useEffect(() => {
+  //   if (
+  //     typeof (trackerData as any)?.colors === "string" ||
+  //     (trackerData as any)?.colors
+  //   ) {
+  //     setIsActionRequired(true);
+  //   }
+  // }, [trackerData]);
 
   return (
     <div className="heatmap-tracker-footer">
