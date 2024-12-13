@@ -6,7 +6,11 @@ import { useTranslation } from "react-i18next";
 import { HeatmapTrackerView } from "./views/HeatmapTrackerView/HeatmapTrackerView";
 import { StatisticsView } from "./views/StatisticsView/StatisticsView";
 import { HeatmapHeader } from "./components/HeatmapHeader/HeatmapHeader";
-import { BreakingChangesView } from "./views/MaintenanceView/MaintenanceView";
+import { BreakingChangesView } from "./views/BreakingChangesView/BreakingChangesView";
+import { DocumentationView } from "./views/DocumentationView/DocumentationView";
+import { DocumentationIcon } from "./components/icons/DocumentationIcon";
+import { HeatmapTab } from "./components/HeatmapTab/HeatmapTab";
+import { ShieldXIcon } from "./components/icons/ShieldXIcon";
 
 export const ReactApp = () => {
   const { i18n } = useTranslation();
@@ -28,7 +32,7 @@ export const ReactApp = () => {
       typeof (trackerData as any)?.colors === "string" ||
       (trackerData as any)?.colors
     ) {
-      setView(View.Maintenance);
+      // setView(View.BreakingChanges);
     }
   }, [trackerData]);
 
@@ -43,6 +47,9 @@ export const ReactApp = () => {
       break;
     case View.HeatmapTrackerStatistics:
       content = <StatisticsView />;
+      break;
+    case View.Documentation:
+      content = <DocumentationView />;
       break;
     case View.HeatmapMenu:
       content = (
@@ -66,14 +73,22 @@ export const ReactApp = () => {
 
   return (
     <div className="heatmap-tracker__container">
-      {view === View.Maintenance ? (
-        <BreakingChangesView />
-      ) : (
-        <>
-          <HeatmapHeader />
-          {content}
-        </>
-      )}
+      <HeatmapHeader />
+      {content}
+      <HeatmapFooter />
     </div>
   );
 };
+
+function HeatmapFooter() {
+  return (
+    <div className="heatmap-tracker-footer">
+      <div className="heatmap-tracker-footer__important">
+        <ShieldXIcon />
+        <strong>Actions Required:</strong>
+        <span>Please check documentation and update heatmapTracker object</span>
+        <HeatmapTab view={View.Documentation} label="Documentation" />
+      </div>
+    </div>
+  );
+}

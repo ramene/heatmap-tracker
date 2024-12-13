@@ -373,6 +373,18 @@
   margin-top: 0.6em;
 }
 
+.heatmap-tracker-footer {
+  padding: 0.2em 0;
+}
+
+.heatmap-tracker-footer__important {
+  font-size: 0.7em;
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
+  justify-content: center;
+}
+
 .breaking-changes-view__maintenance-border {
   background: repeating-linear-gradient(45deg, rgb(151, 190, 90), rgb(151, 190, 90) 35px, rgb(255, 232, 197) 35px, rgb(255, 232, 197) 70px);
   padding: 8px;

@@ -3,11 +3,13 @@ import { View } from "src/types";
 import { HeatmapIcon } from "../icons/HeatmapIcon";
 import { StatisticsIcon } from "../icons/StatisticsIcon";
 import { MenuIcon } from "../icons/MenuIcon";
+import { DocumentationIcon } from "../icons/DocumentationIcon";
 
 const IconForView: Record<View, React.ReactNode> = {
   [View.HeatmapTracker]: <HeatmapIcon />,
   [View.HeatmapTrackerStatistics]: <StatisticsIcon />,
   [View.HeatmapMenu]: <MenuIcon />,
+  [View.Documentation]: <DocumentationIcon />,
 };
 
 export function HeatmapTab({

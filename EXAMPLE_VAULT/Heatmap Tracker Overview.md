@@ -343,30 +343,6 @@ renderHeatmapTracker(this.container, trackerData)
 
 ```
 
-```dataviewjs
-
-const trackerData = {
-    year: 2024,
-    colors: "default",
-    entries: [],
-    showCurrentDayBorder: false,
-    heatmapTitle: "Breaking Change Overlay",
-    intensityScaleStart: "60000",
-    intensityScaleEnd: "6000000"
-}
-
-for(let page of dv.pages('"daily notes"').where(p=>p.learning)){
-    trackerData.entries.push({
-        date: page.file.name,
-        intensity: page.learning,
-        content: await dv.span(`[](${page.file.name})`)
-    })  
-}
-
-renderHeatmapTracker(this.container, trackerData)
-
-```
-
 **On hover preview**
 - Enable **Settings** -> **Core Plugins** -> **Page Preview** for hover preview to work.
 
