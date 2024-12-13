@@ -123,6 +123,42 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
               />
             </svg>
           </button>
+          <button
+            aria-label="Documentation"
+            class="heatmap-tracker-tab clickable-icon "
+          >
+            <svg
+              class="lucide lucide-book-open-text"
+              fill="none"
+              height="18"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 7v14"
+              />
+              <path
+                d="M16 12h2"
+              />
+              <path
+                d="M16 8h2"
+              />
+              <path
+                d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"
+              />
+              <path
+                d="M6 12h2"
+              />
+              <path
+                d="M6 8h2"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </div>
@@ -3418,7 +3454,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
           </div>
           <div
             aria-label="2024-12-10"
-            class="heatmap-tracker-box month-dec today isEmpty"
+            class="heatmap-tracker-box month-dec isEmpty"
             data-date="2024-12-10"
           >
             <span
@@ -3445,7 +3481,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
           </div>
           <div
             aria-label="2024-12-13"
-            class="heatmap-tracker-box month-dec isEmpty"
+            class="heatmap-tracker-box month-dec today isEmpty"
             data-date="2024-12-13"
           >
             <span
@@ -3617,6 +3653,9 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
         </div>
       </div>
     </div>
+    <div
+      class="heatmap-tracker-footer"
+    />
   </div>
 </DocumentFragment>
 `;
