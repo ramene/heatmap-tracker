@@ -1,11 +1,14 @@
 import { View } from "./types";
 import { useHeatmapContext } from "./context/heatmap/heatmap.context";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { HeatmapTrackerView } from "./views/HeatmapTrackerView/HeatmapTrackerView";
 import { StatisticsView } from "./views/StatisticsView/StatisticsView";
 import { HeatmapHeader } from "./components/HeatmapHeader/HeatmapHeader";
+import { DocumentationView } from "./views/DocumentationView/DocumentationView";
+import { HeatmapTab } from "./components/HeatmapTab/HeatmapTab";
+import { ShieldXIcon } from "./components/icons/ShieldXIcon";
 
 export const ReactApp = () => {
   const { i18n } = useTranslation();
@@ -25,14 +28,19 @@ export const ReactApp = () => {
     return null;
   }
 
-  return (
-    <div className="heatmap-tracker__container">
-      <HeatmapHeader />
-      {view === View.HeatmapTracker ? (
-        <HeatmapTrackerView />
-      ) : view === View.HeatmapTrackerStatistics ? (
-        <StatisticsView />
-      ) : (
+  let content;
+  switch (view) {
+    case View.HeatmapTracker:
+      content = <HeatmapTrackerView />;
+      break;
+    case View.HeatmapTrackerStatistics:
+      content = <StatisticsView />;
+      break;
+    case View.Documentation:
+      content = <DocumentationView />;
+      break;
+    case View.HeatmapMenu:
+      content = (
         <div>
           <div>Menu</div>
           <div>
@@ -45,7 +53,47 @@ export const ReactApp = () => {
             </a>
           </div>
         </div>
-      )}
+      );
+      break;
+    default:
+      content = null;
+  }
+
+  return (
+    <div className="heatmap-tracker__container">
+      <HeatmapHeader />
+      {content}
+      <HeatmapFooter />
     </div>
   );
 };
+
+function HeatmapFooter() {
+  const { trackerData } = useHeatmapContext();
+
+  const [isActionRequired, setIsActionRequired] = useState(false);
+
+  // useEffect(() => {
+  //   if (
+  //     typeof (trackerData as any)?.colors === "string" ||
+  //     (trackerData as any)?.colors
+  //   ) {
+  //     setIsActionRequired(true);
+  //   }
+  // }, [trackerData]);
+
+  return (
+    <div className="heatmap-tracker-footer">
+      {isActionRequired && (
+        <div className="heatmap-tracker-footer__important">
+          <ShieldXIcon />
+          <strong>Actions Required:</strong>
+          <span>
+            Please check documentation and update heatmapTracker object
+          </span>
+          <HeatmapTab view={View.Documentation} label="Documentation" />
+        </div>
+      )}
+    </div>
+  );
+}

@@ -102,8 +102,8 @@ export default class HeatmapTracker extends Plugin {
       ...DEFAULT_SETTINGS,
       ...settingsData,
       palettes: {
-        ...DEFAULT_SETTINGS.palettes,
-        ...settingsData.palettes,
+        ...DEFAULT_SETTINGS?.palettes,
+        ...settingsData?.palettes,
       },
     };
   }

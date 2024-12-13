@@ -81,4 +81,5 @@ export enum View {
   HeatmapTracker = "heatmap-tracker",
   HeatmapTrackerStatistics = "heatmap-tracker-statistics",
   HeatmapMenu = "heatmap-menu",
+  Documentation = "documentation"
 }

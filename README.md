@@ -112,16 +112,6 @@ renderHeatmapTracker(this.container, trackerData);
 
 ---
 
-### `weekStartDay`
-- **Type:** `number`
-- **Default:** `1`
-- **Description:** Specifies the first day of the week. Values correspond to:
-  - `0`: Sunday
-  - `1`: Monday
-  - `2`: Tuesday, and so on.
-
----
-
 ### `separateMonths`
 - **Type:** `boolean`
 - **Default:** `false`

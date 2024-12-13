@@ -1,6 +1,5 @@
 {
   "settings": {
-    "title": "Paramètres",
     "language": "Langue",
     "chooseYourPreferredLanguage": "Choisissez votre langue préférée",
     "weekStartDay": "Premier jour de la semaine",
@@ -21,7 +20,6 @@
     "title": "Statistiques",
     "totalTrackingDaysThisYear": "Nombre total de jours suivis cette année",
     "totalTrackingDays": "Nombre total de jours suivis",
-    "developmentNote": "Note : Cette vue de statistiques est encore en développement. D'autres métriques seront bientôt ajoutées. Certaines métriques peuvent être inexactes.",
     "currentStreak": "Série en cours",
     "longestStreak": "Plus longue série"
   },
@@ -59,7 +57,6 @@
   },
   "header": {
     "previousYear": "Année précédente",
-    "nextYear": "Année suivante",
-    "yearDisplay": "Année"
+    "nextYear": "Année suivante"
   }
 }

@@ -100,8 +100,6 @@ export function StatisticsView() {
           label={t("statistics.longestStreak")}
           value={longestStreak}
         />
-        <hr />
-        <div>{t("statistics.developmentNote")}</div>
       </div>
     </div>
   );
