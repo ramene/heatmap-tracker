@@ -1,6 +1,5 @@
 {
   "settings": {
-    "title": "Настройки",
     "language": "Язык",
     "chooseYourPreferredLanguage": "Выберите язык интерфейса",
     "weekStartDay": "Первый день недели",
@@ -22,7 +21,6 @@
     "title": "Статистика",
     "totalTrackingDaysThisYear": "Всего дней отслеживания в этом году",
     "totalTrackingDays": "Общее количество дней отслеживания",
-    "developmentNote": "Примечание: Эта статистика находится в стадии разработки. В будущем будут добавлены новые метрики.",
     "currentStreak": "Текущая серия",
     "longestStreak": "Самая длинная серия"
   },
@@ -60,7 +58,6 @@
   },
   "header": {
     "previousYear": "Предыдущий год",
-    "nextYear": "Следующий год",
-    "yearDisplay": "Год"
+    "nextYear": "Следующий год"
   }
 }

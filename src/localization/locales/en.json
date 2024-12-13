@@ -1,6 +1,5 @@
 {
   "settings": {
-    "title": "Settings",
     "language": "Language",
     "chooseYourPreferredLanguage": "Choose your preferred language",
 
@@ -23,7 +22,6 @@
     "title": "Statistics",
     "totalTrackingDaysThisYear": "Total tracking days this year",
     "totalTrackingDays": "Total tracking days",
-    "developmentNote": "Note: This stats view is still under development. More metrics will be added soon. Some metrics may not be accurate.",
     "currentStreak": "The current streak",
     "longestStreak": "The longest streak"
   },
@@ -61,7 +59,6 @@
   },
   "header": {
     "previousYear": "Previous Year",
-    "nextYear": "Next Year",
-    "yearDisplay": "Year"
+    "nextYear": "Next Year"
   }
 }

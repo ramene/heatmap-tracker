@@ -1,6 +1,5 @@
 {
   "settings": {
-    "title": "Configuración",
     "language": "Idioma",
     "chooseYourPreferredLanguage": "Elija su idioma preferido",
     "weekStartDay": "Día de inicio de la semana",
@@ -21,7 +20,6 @@
     "title": "Estadísticas",
     "totalTrackingDaysThisYear": "Total de días rastreados este año",
     "totalTrackingDays": "Total de días rastreados",
-    "developmentNote": "Nota: Esta vista de estadísticas aún está en desarrollo. Pronto se agregarán más métricas. Algunas métricas pueden no ser precisas.",
     "currentStreak": "Racha actual",
     "longestStreak": "Racha más larga"
   },
@@ -59,7 +57,6 @@
   },
   "header": {
     "previousYear": "Año anterior",
-    "nextYear": "Siguiente año",
-    "yearDisplay": "Año"
+    "nextYear": "Siguiente año"
   }
 }
