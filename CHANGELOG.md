@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.9.6] - 2024-12-17
+- Change snowfall color. Disable by default.
+
 ## [1.9.3] - 2024-12-17
 - Try to add CSS snowfall.
 
