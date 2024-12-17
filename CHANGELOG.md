@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.9.3] - 2024-12-17
+- Try to add CSS snowfall.
+
+---
+
 ## [1.9.2] - 2024-12-17
 - I have to remove snowfall effect :( It was causing performance issues.
 

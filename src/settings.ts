@@ -265,7 +265,7 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
     const { containerEl } = this;
     new Setting(containerEl)
       .setName("🎄 Christmas mood")
-      .setDesc("Enable Santa Claus hat on the heatmap tracker to have Christmas vibes in your Obsidian. Let it snow, let it snow, let it snow!")
+      .setDesc("Enable snowfall and Santa Claus hat on the heatmap tracker to have Christmas vibes in your Obsidian. Let it snow, let it snow, let it snow!")
       .addToggle(toggle => toggle
         .setValue(this.plugin.settings.enableChristmasMood)
         .onChange(async (value) => {

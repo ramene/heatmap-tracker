@@ -60,6 +60,11 @@ export const ReactApp = () => {
 
   return (
     <div className="heatmap-tracker__container">
+      {settings.enableChristmasMood ? (
+        <div className="snow">
+          <div></div>
+        </div>
+      ) : null}
       <HeatmapHeader />
       {content}
       <HeatmapFooter />
