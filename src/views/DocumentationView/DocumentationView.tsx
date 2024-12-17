@@ -31,7 +31,7 @@ export function DocumentationView() {
         </div>
       </div>
 
-      <p>You can disable snowfall effect in plugin settings 🎄</p>
+      <p>You can disable Christmas effect in plugin settings 🎄</p>
       <pre>
         <code>{codeString}</code>
       </pre>

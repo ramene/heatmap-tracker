@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.9.2] - 2024-12-17
+- I have to remove snowfall effect :( It was causing performance issues.
+
+
 ## [1.9.1] - 2024-12-17
 - Add snowfall effect and Santa Claus hat to the heatmap to celebrate Christmas.
 - It can be disabled in the settings.
