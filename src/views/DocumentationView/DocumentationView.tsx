@@ -30,6 +30,8 @@ export function DocumentationView() {
           <code>colorScheme</code> instead (check example below).
         </div>
       </div>
+
+      <p>You can disable snowfall effect in plugin settings 🎄</p>
       <pre>
         <code>{codeString}</code>
       </pre>

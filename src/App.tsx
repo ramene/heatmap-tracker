@@ -1,6 +1,6 @@
 import { View } from "./types";
 import { useHeatmapContext } from "./context/heatmap/heatmap.context";
-
+import Snowfall from "react-snowfall";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { HeatmapTrackerView } from "./views/HeatmapTrackerView/HeatmapTrackerView";
@@ -64,6 +64,9 @@ export const ReactApp = () => {
       <HeatmapHeader />
       {content}
       <HeatmapFooter />
+      {settings.enableChristmasMood ? (
+        <Snowfall speed={[0.1, 0.5]} snowflakeCount={60} wind={[-0.5, 0.5]} />
+      ) : null}
     </div>
   );
 };

@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.9.1] - 2024-12-17
+- Add snowfall effect and Santa Claus hat to the heatmap to celebrate Christmas.
+- It can be disabled in the settings.
+
+---
+
 ## [1.9.0] - 2024-12-13
 - Change colors API.
 - Remove `colors`.

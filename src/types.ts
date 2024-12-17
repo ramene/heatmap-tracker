@@ -64,6 +64,7 @@ export interface TrackerSettings {
   weekStartDay: number;
   separateMonths: boolean;
   language: string;
+  enableChristmasMood: boolean;
 }
 
 export interface Box {

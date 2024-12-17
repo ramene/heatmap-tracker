@@ -42,7 +42,8 @@
   grid-template-columns: auto 1fr;
   grid-template-areas:
     'year months'
-    'days boxes';
+    'days boxes'
+    'none weekNumbers';
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   width: 100%;
   padding: 12px; /* 0px caused overflow and scrollbars */
@@ -69,11 +70,23 @@
 .heatmap-tracker-boxes {
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: repeat(53, 1fr);
-  grid-template-rows: repeat(7, 1fr);
+  grid-template-columns: repeat(53, 12px);
+  grid-template-rows: repeat(7, 12px);
   grid-area: boxes;
   row-gap: 2px;
   column-gap: 2px;
+}
+
+.heatmap-tracker-week-numbers {
+  display: grid;
+    grid-area: weekNumbers;
+    grid-template-columns: repeat(53, 12px);
+    column-gap: 2px;
+    font-size: 8px;
+}
+
+.heatmap-tracker-week-number {
+justify-self: center;
 }
 
 .heatmap-tracker-boxes .heatmap-tracker-box {
@@ -194,6 +207,7 @@
 .heatmap-tracker-header__tabs {
   display: flex;
   justify-self: flex-end;
+  position: relative;
 }
 
 .heatmap-tracker-header__tabs > *:not(:last-child) {
@@ -395,6 +409,14 @@
   padding: 8px;
 }
 
+.santa-claus-hat {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: -14px;
+  left: 13px;
+  transform: rotate(23deg);
+}
 
 /* ----
 /* ---- DEV Only ---- */

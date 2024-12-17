@@ -35,6 +35,7 @@ const DEFAULT_SETTINGS: TrackerSettings = {
   weekStartDay: 1,
   separateMonths: false,
   language: "en",
+  enableChristmasMood: true,
 };
 
 const DEFAULT_TRACKER_DATA: TrackerData = {
@@ -48,7 +49,7 @@ const DEFAULT_TRACKER_DATA: TrackerData = {
   intensityScaleEnd: 5,
   colorScheme: {
     paletteName: "default",
-  }
+  },
 };
 
 export default class HeatmapTracker extends Plugin {
