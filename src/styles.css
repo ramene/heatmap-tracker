@@ -422,11 +422,9 @@
 }
 
 .santa-claus-hat {
-  width: 30px;
-  height: 30px;
   position: absolute;
-  top: -14px;
-  left: 13px;
+  top: -5px;
+  left: 18px;
   transform: rotate(23deg);
 }
 
