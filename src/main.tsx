@@ -35,7 +35,7 @@ const DEFAULT_SETTINGS: TrackerSettings = {
   weekStartDay: 1,
   separateMonths: false,
   language: "en",
-  enableChristmasMood: true,
+  enableChristmasMood: false,
 };
 
 const DEFAULT_TRACKER_DATA: TrackerData = {
