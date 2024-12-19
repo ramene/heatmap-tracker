@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { HeatmapTab } from "../HeatmapTab/HeatmapTab";
+import HeatmapTab from "../HeatmapTab/HeatmapTab";
 import { View } from "src/types";
 import { useHeatmapContext } from "src/context/heatmap/heatmap.context";
 

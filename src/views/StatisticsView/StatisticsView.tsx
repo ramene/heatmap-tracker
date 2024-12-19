@@ -72,7 +72,7 @@ function StatisticsMetric({ label, value }: StatisticsMetricProps) {
   );
 }
 
-export function StatisticsView() {
+function StatisticsView() {
   const { t } = useTranslation();
   const { entriesWithIntensity, trackerData } = useHeatmapContext();
 
@@ -104,6 +104,8 @@ export function StatisticsView() {
     </div>
   );
 }
+
+export default StatisticsView;
 
 /**
  *   const activityByMonth = Object.values(entriesWithIntensity).reduce(

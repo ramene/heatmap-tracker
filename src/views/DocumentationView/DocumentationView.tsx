@@ -1,4 +1,4 @@
-export function DocumentationView() {
+function DocumentationView() {
   const codeString = `
   const trackerData = {
     entries: [{
@@ -38,3 +38,5 @@ export function DocumentationView() {
     </div>
   );
 }
+
+export default DocumentationView;

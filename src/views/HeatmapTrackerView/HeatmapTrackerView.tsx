@@ -4,27 +4,12 @@ import { HeatmapBoxesList } from "src/components/HeatmapBoxesList/HeatmapBoxesLi
 import { HeatmapMonthsList } from "src/components/HeatmapMonthsList/HeatmapMonthsList";
 import { HeatmapWeekDays } from "src/components/HeatmapWeekDays/HeatmapWeekDays";
 import { useHeatmapContext } from "src/context/heatmap/heatmap.context";
-import { getBoxes } from "src/utils/core";
 
-export function HeatmapTrackerView() {
-  const {
-    currentYear,
-    entriesWithIntensity,
-    colorsList,
-    settings,
-    trackerData,
-  } = useHeatmapContext();
+function HeatmapTrackerView() {
+  const { boxes } = useHeatmapContext();
 
   const graphRef = React.useRef<HTMLDivElement>(null);
   const [isLoading, setIsLoading] = React.useState(true);
-
-  const boxes = getBoxes(
-    currentYear,
-    entriesWithIntensity,
-    colorsList,
-    trackerData,
-    settings
-  );
 
   useEffect(() => {
     graphRef.current?.scrollTo?.({
@@ -53,13 +38,13 @@ export function HeatmapTrackerView() {
   );
 }
 
+export default HeatmapTrackerView;
+
 /**
  * IN PROGRESS
  */
 function HeatmapWeekNumbers() {
-  const {
-    trackerData,
-  } = useHeatmapContext();
+  const { trackerData } = useHeatmapContext();
 
   const separateMonths = trackerData.separateMonths;
 

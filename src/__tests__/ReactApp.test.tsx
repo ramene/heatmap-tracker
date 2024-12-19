@@ -1,8 +1,6 @@
-import {
-  HeatmapProvider,
-} from "../context/heatmap/heatmap.context";
-import { ReactApp } from "../App";
-import { render } from "@testing-library/react";
+import { HeatmapProvider } from "../context/heatmap/heatmap.context";
+import ReactApp from "../App";
+import { act, render, waitFor } from "@testing-library/react";
 import trackerDataMock from "./trackerData.mock.json";
 import settingsMock from "./settings.mock.json";
 
@@ -16,8 +14,8 @@ jest.mock("react-i18next", () => ({
 }));
 
 describe("ReactApp component", () => {
-  it("renders correctly and matches snapshot", () => {
-    const { asFragment } = render(
+  it("renders correctly and matches snapshot", async () => {
+    const { asFragment } = await render(
       <HeatmapProvider
         trackerData={trackerDataMock as any}
         settings={settingsMock as any}
@@ -25,6 +23,13 @@ describe("ReactApp component", () => {
         <ReactApp />
       </HeatmapProvider>
     );
+
+    // Wait for all promises inside Suspense to resolve
+    await act(async () => {
+      // Simulate any asynchronous behavior like data fetching
+      await new Promise((resolve) => setTimeout(resolve, 0));
+    });
+
     expect(asFragment()).toMatchSnapshot();
   });
 });

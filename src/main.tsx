@@ -1,9 +1,9 @@
 import { App, Plugin } from "obsidian";
-import { createRoot, Root } from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import { createContext, StrictMode } from "react";
 import HeatmapTrackerSettingsTab from "./settings";
 import { TrackerData, TrackerSettings } from "./types";
-import { ReactApp } from "./App";
+import ReactApp from "./App";
 import { HeatmapProvider } from "./context/heatmap/heatmap.context";
 
 import "./localization/i18n";
@@ -54,7 +54,6 @@ const DEFAULT_TRACKER_DATA: TrackerData = {
 
 export default class HeatmapTracker extends Plugin {
   settings: TrackerSettings = DEFAULT_SETTINGS;
-  roots: Root[] = [];
 
   async onload() {
     await this.loadSettings();
@@ -83,14 +82,10 @@ export default class HeatmapTracker extends Plugin {
           </AppContext.Provider>
         </StrictMode>
       );
-
-      this.roots.push(root);
     };
   }
 
   onunload() {
-    this.roots.forEach((root) => root.unmount());
-
     if (window.renderHeatmapTracker) {
       delete window.renderHeatmapTracker;
     }

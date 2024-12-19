@@ -91,6 +91,7 @@ export function getPrefilledBoxes(numberOfEmptyDaysBeforeYearBegins: number): Bo
 
   return Array(numberOfEmptyDaysBeforeYearBegins).fill({
     backgroundColor: "transparent",
+    isSpaceBetweenBox: true,
   });
 }
 

@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import {
+  Box,
   ColorsList,
   Entry,
   TrackerData,
@@ -8,6 +9,7 @@ import {
 } from "src/types";
 import {
   fillEntriesWithIntensity,
+  getBoxes,
   getColors,
   getEntriesForYear,
 } from "src/utils/core";
@@ -63,6 +65,14 @@ export function HeatmapProvider({
     [currentYearEntries, mergedTrackerData, colorsList]
   );
 
+  const boxes = useMemo(() => getBoxes(
+    currentYear,
+    entriesWithIntensity,
+    colorsList,
+    trackerData,
+    settings
+  ), [currentYear, entriesWithIntensity, colorsList, trackerData, settings]);
+
   return (
     <HeatmapContext.Provider
       value={{
@@ -75,6 +85,7 @@ export function HeatmapProvider({
         setView,
         colorsList,
         entriesWithIntensity,
+        boxes,
       }}
     >
       {children}
@@ -92,6 +103,7 @@ interface HeatmapContextProps {
   setView: React.Dispatch<React.SetStateAction<View>>;
   colorsList: ColorsList;
   entriesWithIntensity: Record<number, Entry>;
+  boxes: Box[];
 }
 
 export function useHeatmapContext(): HeatmapContextProps {

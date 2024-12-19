@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.10.0] - 2024-12-19
+- Add react-window library to render heatmap. It should improve performance (test).
+- Some small fixes: remove hover effect on some boxes.
+- Add lazy loading.
+
 ## [1.9.6] - 2024-12-17
 - Change snowfall color. Disable by default.
 

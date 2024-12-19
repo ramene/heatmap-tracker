@@ -4,6 +4,7 @@ import { HeatmapIcon } from "../icons/HeatmapIcon";
 import { StatisticsIcon } from "../icons/StatisticsIcon";
 import { MenuIcon } from "../icons/MenuIcon";
 import { DocumentationIcon } from "../icons/DocumentationIcon";
+import React from "react";
 
 const IconForView: Record<View, React.ReactNode> = {
   [View.HeatmapTracker]: <HeatmapIcon />,
@@ -12,7 +13,7 @@ const IconForView: Record<View, React.ReactNode> = {
   [View.Documentation]: <DocumentationIcon />,
 };
 
-export function HeatmapTab({
+function HeatmapTab({
   view,
   label,
   disabled,
@@ -42,3 +43,5 @@ export function HeatmapTab({
     </button>
   );
 }
+
+export default React.memo(HeatmapTab);

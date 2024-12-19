@@ -1,31 +1,31 @@
 import { View } from "./types";
 import { useHeatmapContext } from "./context/heatmap/heatmap.context";
-import { useEffect, useState } from "react";
+import React, { lazy, Suspense, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { HeatmapTrackerView } from "./views/HeatmapTrackerView/HeatmapTrackerView";
-import { StatisticsView } from "./views/StatisticsView/StatisticsView";
+
 import { HeatmapHeader } from "./components/HeatmapHeader/HeatmapHeader";
-import { DocumentationView } from "./views/DocumentationView/DocumentationView";
-import { HeatmapTab } from "./components/HeatmapTab/HeatmapTab";
-import { ShieldXIcon } from "./components/icons/ShieldXIcon";
 
-export const ReactApp = () => {
+import HeatmapFooter from "./components/HeatmapFooter/HeatmapFooter";
+
+const HeatmapTrackerView = lazy(
+  () => import("./views/HeatmapTrackerView/HeatmapTrackerView")
+);
+const StatisticsView = lazy(
+  () => import("./views/StatisticsView/StatisticsView")
+);
+const DocumentationView = lazy(
+  () => import("./views/DocumentationView/DocumentationView")
+);
+
+const SnowFall = lazy(() => import("./components/SnowFall/SnowFall"));
+
+function ReactApp() {
   const { i18n } = useTranslation();
-  const { currentYear, settings, view, setView } = useHeatmapContext();
-
-  useEffect(() => {
-    if (view !== View.HeatmapTracker) {
-      setView(View.HeatmapTracker);
-    }
-  }, []);
+  const { currentYear, settings, view } = useHeatmapContext();
 
   useEffect(() => {
     i18n.changeLanguage(settings.language);
   }, [settings]);
-
-  if (!currentYear) {
-    return null;
-  }
 
   let content;
   switch (view) {
@@ -58,46 +58,23 @@ export const ReactApp = () => {
       content = null;
   }
 
+  if (!currentYear) {
+    return null;
+  }
+
   return (
     <div className="heatmap-tracker__container">
       {settings.enableChristmasMood ? (
-        <div className="snow">
-          <div></div>
-        </div>
+        <Suspense fallback={null}>
+          <SnowFall />
+        </Suspense>
       ) : null}
+
       <HeatmapHeader />
-      {content}
+      <Suspense fallback={null}>{content}</Suspense>
       <HeatmapFooter />
     </div>
   );
-};
-
-function HeatmapFooter() {
-  const { trackerData } = useHeatmapContext();
-
-  const [isActionRequired, setIsActionRequired] = useState(false);
-
-  useEffect(() => {
-    if (
-      typeof (trackerData as any)?.colors === "string" ||
-      (trackerData as any)?.colors
-    ) {
-      setIsActionRequired(true);
-    }
-  }, [trackerData]);
-
-  return (
-    <div className="heatmap-tracker-footer">
-      {isActionRequired && (
-        <div className="heatmap-tracker-footer__important">
-          <ShieldXIcon />
-          <strong>Actions Required:</strong>
-          <span>
-            Please check documentation and update heatmapTracker object
-          </span>
-          <HeatmapTab view={View.Documentation} label="Documentation" />
-        </div>
-      )}
-    </div>
-  );
 }
+
+export default React.memo(ReactApp);
