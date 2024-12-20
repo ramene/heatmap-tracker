@@ -39,22 +39,3 @@ function HeatmapTrackerView() {
 }
 
 export default HeatmapTrackerView;
-
-/**
- * IN PROGRESS
- */
-function HeatmapWeekNumbers() {
-  const { trackerData } = useHeatmapContext();
-
-  const separateMonths = trackerData.separateMonths;
-
-  return (
-    <div className="heatmap-tracker-week-numbers">
-      {Array.from({ length: 53 }, (_, i) => (
-        <div key={i} className="heatmap-tracker-week-number">
-          {i + 1}
-        </div>
-      ))}
-    </div>
-  );
-}

@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.10.3] - 2024-12-20
+
+### Changed
+- Added scss. Optimized styles.
+
+
 ## [1.10.1] - 2024-12-20
 
 ### Removed
