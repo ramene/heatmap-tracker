@@ -39,6 +39,8 @@ const buildOptions = {
   resolveExtensions: [".js", ".jsx", ".ts", ".tsx"], // Ensure extensions are resolved
   alias: {
     src: "./src", // Add this to map the alias
+    react: 'preact/compat',
+    'react-dom': 'preact/compat',
   },
 };
 

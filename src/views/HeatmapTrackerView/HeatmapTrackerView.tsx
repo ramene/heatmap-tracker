@@ -1,4 +1,4 @@
-import React from "react";
+import { useRef, useState } from "react";
 import { useEffect } from "react";
 import { HeatmapBoxesList } from "src/components/HeatmapBoxesList/HeatmapBoxesList";
 import { HeatmapMonthsList } from "src/components/HeatmapMonthsList/HeatmapMonthsList";
@@ -8,8 +8,8 @@ import { useHeatmapContext } from "src/context/heatmap/heatmap.context";
 function HeatmapTrackerView() {
   const { boxes } = useHeatmapContext();
 
-  const graphRef = React.useRef<HTMLDivElement>(null);
-  const [isLoading, setIsLoading] = React.useState(true);
+  const graphRef = useRef<HTMLDivElement>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     graphRef.current?.scrollTo?.({

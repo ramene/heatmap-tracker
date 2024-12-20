@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.10.4] - 2024-12-20
+
+### Added
+- Add `preact` to optimize bundle size.
+
 ## [1.10.3] - 2024-12-20
 
 ### Changed

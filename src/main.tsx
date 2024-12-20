@@ -7,7 +7,7 @@ import ReactApp from "./App";
 import { HeatmapProvider } from "./context/heatmap/heatmap.context";
 
 import "./localization/i18n";
-import React from "react";
+import { useContext } from "react";
 
 declare global {
   interface Window {
@@ -18,7 +18,7 @@ declare global {
 export const AppContext = createContext<App | undefined>(undefined);
 
 export const useAppContext = (): App => {
-  const context = React.useContext(AppContext);
+  const context = useContext(AppContext);
 
   if (!context) {
     throw new Error("useAppContext must be used within an AppContextProvider");

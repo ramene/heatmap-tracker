@@ -4,9 +4,9 @@ import { HeatmapIcon } from "../icons/HeatmapIcon";
 import { StatisticsIcon } from "../icons/StatisticsIcon";
 import { MenuIcon } from "../icons/MenuIcon";
 import { DocumentationIcon } from "../icons/DocumentationIcon";
-import React from "react";
+import { ReactNode, memo } from "react";
 
-const IconForView: Record<View, React.ReactNode> = {
+const IconForView: Record<View, ReactNode> = {
   [View.HeatmapTracker]: <HeatmapIcon />,
   [View.HeatmapTrackerStatistics]: <StatisticsIcon />,
   [View.HeatmapMenu]: <MenuIcon />,
@@ -44,4 +44,4 @@ function HeatmapTab({
   );
 }
 
-export default React.memo(HeatmapTab);
+export default memo(HeatmapTab);
