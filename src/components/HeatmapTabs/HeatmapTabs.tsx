@@ -9,6 +9,7 @@ export function HeatmapTabs() {
 
   return (
     <div className="heatmap-tracker-header__tabs">
+      <HeatmapTab view={View.Donation} label={"Donate"} />
       {settings.enableChristmasMood ? <div className="santa-claus-hat">🎄</div> : null}
       <HeatmapTab view={View.HeatmapTracker} label={"Heatmap"} />
       <HeatmapTab

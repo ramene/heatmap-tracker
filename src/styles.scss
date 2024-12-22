@@ -157,27 +157,6 @@
   font-size: 0.65em;
 }
 
-@media screen and (max-width: 750px) {
-  .heatmap-tracker-header__main-row {
-    grid-template-rows: 1fr 1fr;
-    justify-items: center;
-  }
-
-  .heatmap-tracker-header__navigation {
-    grid-row: 2;
-    grid-column: 2;
-  }
-
-  .heatmap-tracker-header__title {
-    grid-column: 1/-1;
-  }
-
-  .heatmap-tracker-header__tabs {
-    grid-row: 2;
-    grid-column: 3;
-  }
-}
-
 .heatmap-tracker-header__sub-row {
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
@@ -198,6 +177,37 @@
 .heatmap-tracker-header__title {
   font-size: 1.2em;
   text-align: center;
+}
+
+
+@media screen and (max-width: 750px) {
+  .heatmap-tracker-header__main-row {
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+  }
+
+  .heatmap-tracker-header__navigation {
+    grid-row: 3;
+    grid-column: 2;
+  }
+
+  .heatmap-tracker-header__title {
+    grid-column: 1/-1;
+    grid-row: 2;
+  }
+
+  .heatmap-tracker-header__tabs {
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+
+  .heatmap-tracker-header__subtitle {
+    grid-column: 1/-1;
+    font-size: 0.7em;
+    text-align: center;
+  }
 }
 
 /* Tabs */
@@ -410,8 +420,9 @@
 .santa-claus-hat {
   position: absolute;
   top: -5px;
-  left: 18px;
+  left: 51px;
   transform: rotate(23deg);
+  pointer-events: none;
 }
 
 
@@ -444,5 +455,68 @@
   }
   100% {
     background-position: 0px 300px;
+  }
+}
+
+/** END SNOW **/
+
+/* DONATION VIEW */
+.donation-view {
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__header {
+    font-size: 16px;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  &__sub-header {
+    font-size: 14px;
+    margin-top: 12px;
+    text-align: center;
+  }
+
+  &__text {
+    font-size: 12px;
+    margin-bottom: 12px;
+    text-align: justify;
+  }
+
+  &__button {
+    margin-top: 12px;
+    height: 60px;
+    width: 217px;
+    align-self: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 12px;
+
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: #aaaaaa 4px 4px 12px 4px;
+    }
+  }
+
+  &__milestone-list {
+    padding-left: 0;
+  }
+
+  &__milestone-item {
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+
+  &__emoji {
+    margin-right: 8px;
+  }
+
+  &__donor-list {
+    padding-left: 0;
+  }
+
+  &__donor-item {
+    font-size: 12px;
   }
 }

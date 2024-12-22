@@ -16,6 +16,9 @@ const StatisticsView = lazy(
 const DocumentationView = lazy(
   () => import("./views/DocumentationView/DocumentationView")
 );
+const DonationView = lazy(
+  () => import("./views/DonationView/DonationView")
+);
 
 const SnowFall = lazy(() => import("./components/SnowFall/SnowFall"));
 
@@ -38,21 +41,8 @@ function ReactApp() {
     case View.Documentation:
       content = <DocumentationView />;
       break;
-    case View.HeatmapMenu:
-      content = (
-        <div>
-          <div>Menu</div>
-          <div>
-            If you find this plugin useful, you can buy me a coffee! Your
-            support helps keep this project alive. ☕💖
-          </div>
-          <div>
-            <a href="https://www.buymeacoffee.com/mrubanau">
-              <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=mrubanau&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" />
-            </a>
-          </div>
-        </div>
-      );
+    case View.Donation:
+      content = <DonationView />;
       break;
     default:
       content = null;
