@@ -1,4 +1,4 @@
-import { View } from "./types";
+import { IHeatmapView } from "./types";
 import { useHeatmapContext } from "./context/heatmap/heatmap.context";
 import React, { lazy, Suspense, useEffect } from "react";
 import { useTranslation } from "react-i18next";
@@ -16,9 +16,7 @@ const StatisticsView = lazy(
 const DocumentationView = lazy(
   () => import("./views/DocumentationView/DocumentationView")
 );
-const DonationView = lazy(
-  () => import("./views/DonationView/DonationView")
-);
+const DonationView = lazy(() => import("./views/DonationView/DonationView"));
 
 const SnowFall = lazy(() => import("./components/SnowFall/SnowFall"));
 
@@ -32,16 +30,16 @@ function ReactApp() {
 
   let content;
   switch (view) {
-    case View.HeatmapTracker:
+    case IHeatmapView.HeatmapTracker:
       content = <HeatmapTrackerView />;
       break;
-    case View.HeatmapTrackerStatistics:
+    case IHeatmapView.HeatmapTrackerStatistics:
       content = <StatisticsView />;
       break;
-    case View.Documentation:
+    case IHeatmapView.Documentation:
       content = <DocumentationView />;
       break;
-    case View.Donation:
+    case IHeatmapView.Donation:
       content = <DonationView />;
       break;
     default:

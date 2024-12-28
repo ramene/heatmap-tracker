@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { ShieldXIcon } from "../icons/ShieldXIcon";
-import { View } from "src/types";
+import { IHeatmapView } from "src/types";
 import HeatmapTab from "../HeatmapTab/HeatmapTab";
 import { useHeatmapContext } from "src/context/heatmap/heatmap.context";
 
@@ -27,7 +27,7 @@ function HeatmapFooter() {
           <span>
             Please check documentation and update heatmapTracker object
           </span>
-          <HeatmapTab view={View.Documentation} label="Documentation" />
+          <HeatmapTab view={IHeatmapView.Documentation} label="Documentation" />
         </div>
       )}
     </div>

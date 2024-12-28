@@ -65,6 +65,7 @@ export interface TrackerSettings {
   separateMonths: boolean;
   language: string;
   enableChristmasMood: boolean;
+  viewTabsVisibility: Partial<Record<IHeatmapView, boolean>>;
 }
 
 export interface Box {
@@ -78,10 +79,10 @@ export interface Box {
   isSpaceBetweenBox?: boolean;
 }
 
-export enum View {
+export enum IHeatmapView {
   HeatmapTracker = "heatmap-tracker",
   HeatmapTrackerStatistics = "heatmap-tracker-statistics",
-  HeatmapMenu = "heatmap-menu",
+  // HeatmapMenu = "heatmap-menu",
   Documentation = "documentation",
   Donation = "donation",
 }

@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import HeatmapTab from "../HeatmapTab/HeatmapTab";
-import { View } from "src/types";
+import { IHeatmapView } from "src/types";
 import { useHeatmapContext } from "src/context/heatmap/heatmap.context";
 
 export function HeatmapTabs() {
@@ -9,14 +9,16 @@ export function HeatmapTabs() {
 
   return (
     <div className="heatmap-tracker-header__tabs">
-      <HeatmapTab view={View.Donation} label={"Donate"} />
-      {settings.enableChristmasMood ? <div className="santa-claus-hat">🎄</div> : null}
-      <HeatmapTab view={View.HeatmapTracker} label={"Heatmap"} />
+      <HeatmapTab view={IHeatmapView.Donation} label={"Donate"} />
+      {settings.enableChristmasMood ? (
+        <div className="santa-claus-hat">🎄</div>
+      ) : null}
+      <HeatmapTab view={IHeatmapView.HeatmapTracker} label={"Heatmap"} />
       <HeatmapTab
-        view={View.HeatmapTrackerStatistics}
+        view={IHeatmapView.HeatmapTrackerStatistics}
         label={t("statistics.title")}
       />
-      <HeatmapTab view={View.Documentation} label="Documentation" />
+      <HeatmapTab view={IHeatmapView.Documentation} label="Documentation" />
       {/* <HeatmapTab view={View.HeatmapMenu} label={"Menu (in progress)"} disabled /> */}
     </div>
   );

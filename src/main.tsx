@@ -8,6 +8,7 @@ import { HeatmapProvider } from "./context/heatmap/heatmap.context";
 
 import "./localization/i18n";
 import { useContext } from "react";
+import { IHeatmapView } from "src/types";
 
 declare global {
   interface Window {
@@ -36,6 +37,12 @@ const DEFAULT_SETTINGS: TrackerSettings = {
   separateMonths: false,
   language: "en",
   enableChristmasMood: false,
+  viewTabsVisibility: {
+    [IHeatmapView.Documentation]: true,
+    [IHeatmapView.Donation]: true,
+    [IHeatmapView.HeatmapTracker]: true,
+    [IHeatmapView.HeatmapTrackerStatistics]: true,
+  },
 };
 
 const DEFAULT_TRACKER_DATA: TrackerData = {

@@ -48,10 +48,10 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
               class="lucide lucide-hand-coins"
               fill="none"
               height="18"
-              stroke="var(--color-yellow)"
+              stroke="currentColor"
               stroke-linecap="round"
               stroke-linejoin="round"
-              stroke-width="1.5"
+              stroke-width="2"
               viewBox="0 0 24 24"
               width="18"
               xmlns="http://www.w3.org/2000/svg"
@@ -3599,7 +3599,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
           </div>
           <div
             aria-label="2024-12-22"
-            class="heatmap-tracker-box month-dec today isEmpty"
+            class="heatmap-tracker-box month-dec isEmpty"
             data-date="2024-12-22"
           >
             <span
@@ -3653,7 +3653,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
           </div>
           <div
             aria-label="2024-12-28"
-            class="heatmap-tracker-box month-dec isEmpty"
+            class="heatmap-tracker-box month-dec today isEmpty"
             data-date="2024-12-28"
           >
             <span

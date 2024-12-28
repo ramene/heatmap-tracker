@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.11.0] - 2024-12-28
+
+### Added
+- Add tabs visibility in settings. In allows users to show/hide specific tabs.
+
+### Changed
+- Other small changes. Refactoring.
+
 ## [1.10.6] - 2024-12-22
 
 ### Fixed

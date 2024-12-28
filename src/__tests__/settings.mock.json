@@ -16,5 +16,11 @@
   "intensityScaleEnd": 5,
   "weekStartDay": 1,
   "separateMonths": false,
-  "language": "en"
+  "language": "en",
+  "viewTabsVisibility": {
+    "heatmap-tracker": true,
+    "heatmap-tracker-statistics": true,
+    "documentation": true,
+    "donation": true
+  }
 }

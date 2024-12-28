@@ -2,7 +2,7 @@ import i18n from "./localization/i18n";
 import HeatmapTracker from "./main";
 import { App, PluginSettingTab, setIcon, Setting } from "obsidian";
 import languages from "./localization/languages.json";
-import { ColorsList } from "./types";
+import { ColorsList, IHeatmapView } from "./types";
 
 export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
   plugin: HeatmapTracker;
@@ -162,7 +162,7 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
       cls: "heatmap-tracker-settings-palettes__new-palette-header",
       text: i18n.t('settings.enterPaletteName'),
     });
-    
+
     const newPaletteContent = paletteContainer.createDiv({
       cls: "heatmap-tracker-settings-palettes__new-palette-content"
     });
@@ -274,19 +274,36 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
         }));
   }
 
+  private displayViewTabsSettings() {
+    const { containerEl } = this;
+
+    containerEl.createEl('h3', {
+      text: "Tabs visibility"
+    });
+
+    for (const [viewKey, view] of Object.entries(IHeatmapView)) {
+      new Setting(containerEl)
+        .setName(`${viewKey} tab`)
+        .setDesc(`Show/Hide a tab for ${viewKey} view`)
+        .addToggle(toggle => toggle
+          .setValue(this.plugin.settings.viewTabsVisibility[view] ?? true)
+          .onChange(async (value) => {
+            this.plugin.settings.viewTabsVisibility[view] = value;
+            await this.plugin.saveSettings();
+          }));
+    }
+  }
+
   display() {
     const { containerEl } = this;
 
     containerEl.empty();
 
     this.displayLanguageSettings();
-
     this.displayWeekStartDaySettings();
-
     this.displaySeparateMonthsSettings();
-
     this.displayChristmasSettings();
-
+    this.displayViewTabsSettings();
     this.displayPaletteSettings();
   }
 }
