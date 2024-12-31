@@ -32,7 +32,7 @@ export function HeatmapProvider({
   const [view, setView] = React.useState(IHeatmapView.HeatmapTracker);
 
   const defaultYear = useMemo(
-    () => trackerData.year ?? new Date().getFullYear(),
+    () => trackerData.year ?? new Date().getUTCFullYear(),
     [trackerData.year]
   );
 
