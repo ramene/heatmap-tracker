@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.11.1] - 2025-01-01
+
+### Fixed
+- Fix default year (2024 -> 2025).
+
+
 ## [1.11.0] - 2024-12-28
 
 ### Added
