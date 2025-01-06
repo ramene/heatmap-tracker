@@ -20,11 +20,9 @@ function DocumentationView() {
     // OPTIONAL: If you want to define your own intensity start/end values.
     // Use this if you want to have a custom intensity scale.
     // E.g. if you want to track book reading progress only from 30 minutes to 2 hours.
-    intensityConfig: {
-        defaultIntensity: 4,
-        scaleStart: 1,
-        scaleEnd: 5
-    }
+    defaultEntryIntensity: 4,
+    intensityScaleStart: 1,
+    intensityScaleEnd: 5
 }
   `;
 

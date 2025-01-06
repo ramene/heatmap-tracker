@@ -479,8 +479,13 @@
     align-items: center;
   }
 }
-
 /* END LEGEND VIEW */
+
+/* DOCUMENTATION VIEW */
+.documentation-view__container {
+  font-size: 0.8em;
+}
+/* END DOCUMENTATION VIEW */
 
 /* DONATION VIEW */
 .donation-view {
