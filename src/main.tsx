@@ -112,6 +112,10 @@ export default class HeatmapTracker extends Plugin {
     this.settings = {
       ...DEFAULT_SETTINGS,
       ...settingsData,
+      viewTabsVisibility: {
+        ...DEFAULT_SETTINGS?.viewTabsVisibility,
+        ...settingsData?.viewTabsVisibility,
+      },
       palettes: {
         ...DEFAULT_SETTINGS?.palettes,
         ...settingsData?.palettes,
