@@ -78,7 +78,7 @@
   column-gap: 2px;
 }
 
-.heatmap-tracker-boxes .heatmap-tracker-box {
+.heatmap-tracker-box {
   position: relative;
   font-size: 0.75em;
   width: 12px;
@@ -120,7 +120,7 @@
   margin: 0 12px;
 }
 
-.heatmap-tracker-boxes .heatmap-tracker-box:not(.task-list-item)::before {
+.heatmap-tracker-box:not(.task-list-item)::before {
   content: unset;
 }
 
@@ -179,7 +179,6 @@
   text-align: center;
 }
 
-
 @media screen and (max-width: 750px) {
   .heatmap-tracker-header__main-row {
     grid-template-rows: 1fr 1fr 1fr;
@@ -201,7 +200,6 @@
     grid-row: 1;
     grid-column: 2;
   }
-
 
   .heatmap-tracker-header__subtitle {
     grid-column: 1/-1;
@@ -425,7 +423,6 @@
   pointer-events: none;
 }
 
-
 /** SNOW **/
 .snow {
   position: absolute;
@@ -459,6 +456,33 @@
 }
 
 /** END SNOW **/
+
+/* LEGEND VIEW */
+.legend-view {
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th,
+    td {
+      padding: 8px;
+      text-align: center;
+      font-size: 0.8em;
+    }
+  }
+
+  &__color-cell {
+    display: flex;
+    align-items: center;
+  }
+}
+/* END LEGEND VIEW */
+
+/* DOCUMENTATION VIEW */
+.documentation-view__container {
+  font-size: 0.8em;
+}
+/* END DOCUMENTATION VIEW */
 
 /* DONATION VIEW */
 .donation-view {

@@ -1,4 +1,5 @@
-import { Box, ColorsList, Entry, Palettes, TrackerData, TrackerSettings } from "src/types";
+import { Box, ColorsList, Entry, TrackerData, TrackerSettings } from "src/types";
+import { getDayOfYear, getLastDayOfYear, getNumberOfEmptyDaysBeforeYearStarts, isValidDate } from "./date";
 
 export function clamp(input: number, min: number, max: number): number {
   return input < min ? min : input > max ? max : input;
@@ -16,47 +17,6 @@ export function mapRange(
   return clamp(mapped, outMin, outMax);
 }
 
-export function isValidDate(dateString: string): boolean {
-  const date = new Date(dateString);
-  return !isNaN(date.getTime());
-}
-
-export function getDayOfYear(date: Date): number {
-  const startOfYear = Date.UTC(date.getFullYear(), 0, 0);
-  const diff = date.getTime() - startOfYear;
-  return Math.floor(diff / (1000 * 60 * 60 * 24));
-}
-
-export function getShiftedWeekdays(weekdays: string[], weekStartDay: number): string[] {
-  if (weekStartDay < 0 || weekStartDay > 6) {
-    throw new Error('weekStartDay must be between 0 and 6');
-  }
-
-  return weekdays.slice(weekStartDay).concat(weekdays.slice(0, weekStartDay));
-}
-
-export function getFirstDayOfYear(year: number): Date {
-  return new Date(Date.UTC(year, 0, 1));
-}
-
-export function getNumberOfEmptyDaysBeforeYearStarts(year: number, weekStartDay: number): number {
-  if (isNaN(weekStartDay) || weekStartDay < 0 || weekStartDay > 6) {
-    throw new Error('weekStartDay must be a number between 0 and 6');
-  }
-
-  if (isNaN(year)) {
-    throw new Error('year must be a number');
-  }
-
-  const firstDayOfYear = getFirstDayOfYear(year);
-  const firstWeekday = firstDayOfYear.getUTCDay();
-  return (firstWeekday - weekStartDay + 7) % 7;
-}
-
-export function getLastDayOfYear(year: number): Date {
-  return new Date(Date.UTC(year, 11, 31));
-}
-
 export function getEntriesForYear(entries: Entry[], year: number): Entry[] {
   return entries.filter((e) => {
     if (!isValidDate(e.date)) {
@@ -65,23 +25,6 @@ export function getEntriesForYear(entries: Entry[], year: number): Entry[] {
 
     return new Date(e.date).getFullYear() === year;
   });
-}
-
-export function getMinMaxIntensities(intensities: number[]): [number, number] {
-  return [
-    Math.min(...intensities),
-    Math.max(...intensities),
-  ];
-}
-
-export function getColors(trackerData: TrackerData, settingsColors: Palettes): ColorsList {
-  const { paletteName, customColors } = trackerData?.colorScheme ?? {};
-
-  if (paletteName) {
-    return settingsColors[paletteName] ?? settingsColors['default'];
-  }
-
-  return customColors ?? settingsColors['default'];
 }
 
 export function getPrefilledBoxes(numberOfEmptyDaysBeforeYearBegins: number): Box[] {
@@ -93,70 +36,6 @@ export function getPrefilledBoxes(numberOfEmptyDaysBeforeYearBegins: number): Bo
     backgroundColor: "transparent",
     isSpaceBetweenBox: true,
   });
-}
-
-export function getEntriesIntensities(entries: Entry[]): number[] {
-  return entries.filter((e) => e.intensity).map((e) => e.intensity as number);
-}
-
-function getEntryIntensity(entry: Entry, intensities: number[], trackerData: TrackerData, colorsList: ColorsList): number {
-  // If we can't receive min/max intensities from entries,
-  // try to use them from user's config or use them from default settings.
-  const [minimumIntensity, maximumIntensity] = intensities.length
-    ? getMinMaxIntensities(intensities)
-    : [
-      trackerData.intensityScaleStart,
-      trackerData.intensityScaleEnd,
-    ];
-
-  // If user defined intensityScaleStart explicitly use them,
-  // otherwise minimum and maximum from entries will be used.
-  const intensityScaleStart =
-    trackerData.intensityScaleStart ?? minimumIntensity;
-  const intensityScaleEnd = trackerData.intensityScaleEnd ?? maximumIntensity;
-
-  const numberOfColorIntensities = colorsList.length;
-
-  if (
-    minimumIntensity === maximumIntensity &&
-    intensityScaleStart === intensityScaleEnd
-  ) {
-    return numberOfColorIntensities;
-  }
-
-  return Math.round(
-    mapRange(
-      entry.intensity ?? trackerData.defaultEntryIntensity,
-      intensityScaleStart,
-      intensityScaleEnd,
-      1,
-      numberOfColorIntensities
-    )
-  );
-
-}
-
-export function fillEntriesWithIntensity(
-  entries: Entry[],
-  trackerData: TrackerData,
-  colorsList: ColorsList,
-): Record<number, Entry> {
-  const entriesByDay: Record<number, Entry> = {};
-
-  const intensities = getEntriesIntensities(entries);
-
-  entries.forEach((e) => {
-    const newEntry = {
-      ...e,
-      intensity: getEntryIntensity(e, intensities, trackerData, colorsList),
-    };
-
-    const day = getDayOfYear(new Date(e.date));
-
-    entriesByDay[day] = newEntry;
-  });
-
-  return entriesByDay;
 }
 
 export function getBoxes(
@@ -213,7 +92,7 @@ export function getBoxes(
         box.content = entry.content;
       }
 
-      box.backgroundColor = entry?.customColor ?? colorsList[(entry.intensity as number) - 1];
+      box.backgroundColor = entry.customColor ?? (entry.intensity !== undefined ? colorsList[entry.intensity - 1] : undefined);
     } else {
       box.date = currentDate?.toISOString()?.split('T')[0];
       box.hasData = false;
@@ -223,4 +102,27 @@ export function getBoxes(
   }
 
   return boxes;
+}
+
+export function mergeTrackerData(defaultTrackerData: TrackerData, userTrackerData: TrackerData): TrackerData {
+  if (!userTrackerData) {
+    return defaultTrackerData;
+  }
+
+  return {
+    ...defaultTrackerData,
+    ...userTrackerData,
+    colorScheme: {
+      ...defaultTrackerData.colorScheme,
+      ...userTrackerData.colorScheme,
+    },
+    intensityConfig: {
+      ...defaultTrackerData.intensityConfig,
+      ...userTrackerData.intensityConfig,
+
+      scaleStart: userTrackerData.intensityScaleStart,
+      scaleEnd: userTrackerData.intensityScaleEnd,
+      defaultIntensity: userTrackerData.defaultEntryIntensity,
+    },
+  };
 }

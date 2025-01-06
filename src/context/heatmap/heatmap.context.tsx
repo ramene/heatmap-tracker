@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import { createContext, ReactNode, useContext, useMemo, useState } from "react";
 import {
   Box,
   ColorsList,
@@ -6,20 +6,16 @@ import {
   TrackerData,
   TrackerSettings,
   IHeatmapView,
+  IntensityConfig,
 } from "src/types";
-import {
-  fillEntriesWithIntensity,
-  getBoxes,
-  getColors,
-  getEntriesForYear,
-} from "src/utils/core";
+import { getColors } from "src/utils/colors";
+import { getBoxes, getEntriesForYear } from "src/utils/core";
+import { fillEntriesWithIntensity } from "src/utils/intensity";
 
-export const HeatmapContext = React.createContext<HeatmapContextProps | null>(
-  null
-);
+export const HeatmapContext = createContext<HeatmapContextProps | null>(null);
 
 interface HeatmapProviderProps {
-  children: React.ReactNode;
+  children: ReactNode;
   trackerData: TrackerData;
   settings: TrackerSettings;
 }
@@ -29,14 +25,14 @@ export function HeatmapProvider({
   trackerData,
   settings,
 }: HeatmapProviderProps) {
-  const [view, setView] = React.useState(IHeatmapView.HeatmapTracker);
+  const [view, setView] = useState(IHeatmapView.HeatmapTracker);
 
   const defaultYear = useMemo(
     () => trackerData.year ?? new Date().getUTCFullYear(),
     [trackerData.year]
   );
 
-  const [currentYear, setCurrentYear] = React.useState(defaultYear);
+  const [currentYear, setCurrentYear] = useState(defaultYear);
 
   const currentYearEntries = useMemo(
     () => getEntriesForYear(trackerData.entries, currentYear),
@@ -51,7 +47,7 @@ export function HeatmapProvider({
   }, [trackerData, settings]);
 
   const colorsList = useMemo(
-    () => getColors(trackerData, settings.palettes),
+    () => getColors(trackerData.colorScheme, settings.palettes),
     [trackerData, settings.palettes]
   );
 
@@ -59,10 +55,10 @@ export function HeatmapProvider({
     () =>
       fillEntriesWithIntensity(
         currentYearEntries,
-        mergedTrackerData,
+        mergedTrackerData.intensityConfig,
         colorsList
       ),
-    [currentYearEntries, mergedTrackerData, colorsList]
+    [currentYearEntries, mergedTrackerData.intensityConfig, colorsList]
   );
 
   const boxes = useMemo(
@@ -90,6 +86,7 @@ export function HeatmapProvider({
         colorsList,
         entriesWithIntensity,
         boxes,
+        intensityConfig: trackerData.intensityConfig,
       }}
     >
       {children}
@@ -102,6 +99,7 @@ interface HeatmapContextProps {
   setCurrentYear: React.Dispatch<React.SetStateAction<number>>;
   currentYearEntries: Entry[];
   trackerData: TrackerData;
+  intensityConfig: IntensityConfig;
   settings: TrackerSettings;
   view: IHeatmapView;
   setView: React.Dispatch<React.SetStateAction<IHeatmapView>>;
@@ -111,7 +109,7 @@ interface HeatmapContextProps {
 }
 
 export function useHeatmapContext(): HeatmapContextProps {
-  const context = React.useContext(HeatmapContext);
+  const context = useContext(HeatmapContext);
   if (!context) {
     throw new Error("useHeatmapContext must be used within a HeatmapProvider");
   }

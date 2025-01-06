@@ -16,6 +16,13 @@ export interface ColorScheme {
 
 export type Palettes = Record<string, ColorsList>;
 
+export interface IntensityConfig {
+  scaleStart: number | undefined;
+  scaleEnd: number | undefined;
+  defaultIntensity: number;
+  showOutOfRange: boolean;
+}
+
 /**
  * Represents the data structure for the heatmap tracker.
  */
@@ -37,19 +44,21 @@ export interface TrackerData {
   showCurrentDayBorder: boolean;
 
   /**
-   * The default intensity value for an entry.
-   */
+  * @deprecated The default intensity value for an entry.
+  */
   defaultEntryIntensity: number;
 
   /**
-   * The starting value for the intensity scale.
+   * @deprecated The starting value for the intensity scale.
    */
-  intensityScaleStart: number;
+  intensityScaleStart: number | undefined;
 
   /**
-   * The ending value for the intensity scale.
+   * @deprecated The ending value for the intensity scale.
    */
-  intensityScaleEnd: number;
+  intensityScaleEnd: number | undefined;
+
+  intensityConfig: IntensityConfig;
 
   /**
    * A flag indicating whether to separate the months in the heatmap.
@@ -85,4 +94,5 @@ export enum IHeatmapView {
   // HeatmapMenu = "heatmap-menu",
   Documentation = "documentation",
   Donation = "donation",
+  Legend = "legend"
 }
