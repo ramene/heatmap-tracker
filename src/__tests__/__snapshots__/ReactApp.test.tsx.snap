@@ -320,7 +320,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
           </div>
           <div
             aria-label="2024-01-06"
-            class="heatmap-tracker-box month-jan isEmpty"
+            class="heatmap-tracker-box month-jan today isEmpty"
             data-date="2024-01-06"
           >
             <span
@@ -1096,7 +1096,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-04-01"
             class="heatmap-tracker-box month-apr hasData"
             data-date="2024-04-01"
-            style="background-color: rgb(139, 139, 139);"
+            style="background-color: rgb(198, 228, 139);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1108,7 +1108,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-04-02"
             class="heatmap-tracker-box month-apr hasData"
             data-date="2024-04-02"
-            style="background-color: rgb(156, 156, 156);"
+            style="background-color: rgb(228, 242, 156);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1120,7 +1120,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-04-03"
             class="heatmap-tracker-box month-apr hasData"
             data-date="2024-04-03"
-            style="background-color: rgb(74, 74, 74);"
+            style="background-color: rgb(74, 176, 94);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1132,7 +1132,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-04-04"
             class="heatmap-tracker-box month-apr hasData"
             data-date="2024-04-04"
-            style="background-color: rgb(34, 34, 34);"
+            style="background-color: rgb(34, 114, 50);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1144,7 +1144,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-04-05"
             class="heatmap-tracker-box month-apr hasData"
             data-date="2024-04-05"
-            style="background-color: rgb(123, 123, 123);"
+            style="background-color: rgb(161, 213, 123);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1156,7 +1156,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-04-06"
             class="heatmap-tracker-box month-apr hasData"
             data-date="2024-04-06"
-            style="background-color: rgb(74, 74, 74);"
+            style="background-color: rgb(74, 176, 94);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1168,7 +1168,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-04-07"
             class="heatmap-tracker-box month-apr hasData"
             data-date="2024-04-07"
-            style="background-color: rgb(111, 111, 111);"
+            style="background-color: rgb(123, 200, 111);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1180,7 +1180,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-04-08"
             class="heatmap-tracker-box month-apr hasData"
             data-date="2024-04-08"
-            style="background-color: rgb(139, 139, 139);"
+            style="background-color: rgb(198, 228, 139);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1192,7 +1192,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-04-09"
             class="heatmap-tracker-box month-apr hasData"
             data-date="2024-04-09"
-            style="background-color: rgb(139, 139, 139);"
+            style="background-color: rgb(198, 228, 139);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1204,7 +1204,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-04-10"
             class="heatmap-tracker-box month-apr hasData"
             data-date="2024-04-10"
-            style="background-color: rgb(111, 111, 111);"
+            style="background-color: rgb(123, 200, 111);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1216,7 +1216,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-04-11"
             class="heatmap-tracker-box month-apr hasData"
             data-date="2024-04-11"
-            style="background-color: rgb(95, 95, 95);"
+            style="background-color: rgb(95, 191, 103);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1228,7 +1228,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-04-12"
             class="heatmap-tracker-box month-apr hasData"
             data-date="2024-04-12"
-            style="background-color: rgb(34, 34, 34);"
+            style="background-color: rgb(34, 114, 50);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1240,7 +1240,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-04-13"
             class="heatmap-tracker-box month-apr hasData"
             data-date="2024-04-13"
-            style="background-color: rgb(74, 74, 74);"
+            style="background-color: rgb(74, 176, 94);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1252,7 +1252,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-04-14"
             class="heatmap-tracker-box month-apr hasData"
             data-date="2024-04-14"
-            style="background-color: rgb(74, 74, 74);"
+            style="background-color: rgb(74, 176, 94);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1264,7 +1264,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-04-15"
             class="heatmap-tracker-box month-apr hasData"
             data-date="2024-04-15"
-            style="background-color: rgb(25, 25, 25);"
+            style="background-color: rgb(25, 97, 40);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1276,7 +1276,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-04-16"
             class="heatmap-tracker-box month-apr hasData"
             data-date="2024-04-16"
-            style="background-color: rgb(123, 123, 123);"
+            style="background-color: rgb(161, 213, 123);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1288,7 +1288,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-04-17"
             class="heatmap-tracker-box month-apr hasData"
             data-date="2024-04-17"
-            style="background-color: rgb(47, 47, 47);"
+            style="background-color: rgb(47, 137, 65);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1300,7 +1300,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-04-18"
             class="heatmap-tracker-box month-apr hasData"
             data-date="2024-04-18"
-            style="background-color: rgb(123, 123, 123);"
+            style="background-color: rgb(161, 213, 123);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1312,7 +1312,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-04-19"
             class="heatmap-tracker-box month-apr hasData"
             data-date="2024-04-19"
-            style="background-color: rgb(25, 25, 25);"
+            style="background-color: rgb(25, 97, 40);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1324,7 +1324,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-04-20"
             class="heatmap-tracker-box month-apr hasData"
             data-date="2024-04-20"
-            style="background-color: rgb(95, 95, 95);"
+            style="background-color: rgb(95, 191, 103);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1426,7 +1426,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-05-01"
             class="heatmap-tracker-box month-may hasData"
             data-date="2024-05-01"
-            style="background-color: rgb(123, 123, 123);"
+            style="background-color: rgb(161, 213, 123);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1438,7 +1438,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-05-02"
             class="heatmap-tracker-box month-may hasData"
             data-date="2024-05-02"
-            style="background-color: rgb(156, 156, 156);"
+            style="background-color: rgb(228, 242, 156);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1450,7 +1450,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-05-03"
             class="heatmap-tracker-box month-may hasData"
             data-date="2024-05-03"
-            style="background-color: rgb(25, 25, 25);"
+            style="background-color: rgb(25, 97, 40);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1462,7 +1462,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-05-04"
             class="heatmap-tracker-box month-may hasData"
             data-date="2024-05-04"
-            style="background-color: rgb(25, 25, 25);"
+            style="background-color: rgb(25, 97, 40);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1474,7 +1474,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-05-05"
             class="heatmap-tracker-box month-may hasData"
             data-date="2024-05-05"
-            style="background-color: rgb(95, 95, 95);"
+            style="background-color: rgb(95, 191, 103);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1486,7 +1486,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-05-06"
             class="heatmap-tracker-box month-may hasData"
             data-date="2024-05-06"
-            style="background-color: rgb(47, 47, 47);"
+            style="background-color: rgb(47, 137, 65);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1498,7 +1498,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-05-07"
             class="heatmap-tracker-box month-may hasData"
             data-date="2024-05-07"
-            style="background-color: rgb(111, 111, 111);"
+            style="background-color: rgb(123, 200, 111);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1510,7 +1510,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-05-08"
             class="heatmap-tracker-box month-may hasData"
             data-date="2024-05-08"
-            style="background-color: rgb(34, 34, 34);"
+            style="background-color: rgb(34, 114, 50);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1522,7 +1522,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-05-09"
             class="heatmap-tracker-box month-may hasData"
             data-date="2024-05-09"
-            style="background-color: rgb(34, 34, 34);"
+            style="background-color: rgb(34, 114, 50);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1534,7 +1534,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-05-10"
             class="heatmap-tracker-box month-may hasData"
             data-date="2024-05-10"
-            style="background-color: rgb(34, 34, 34);"
+            style="background-color: rgb(34, 114, 50);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1546,7 +1546,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-05-11"
             class="heatmap-tracker-box month-may hasData"
             data-date="2024-05-11"
-            style="background-color: rgb(95, 95, 95);"
+            style="background-color: rgb(95, 191, 103);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1558,7 +1558,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-05-12"
             class="heatmap-tracker-box month-may hasData"
             data-date="2024-05-12"
-            style="background-color: rgb(123, 123, 123);"
+            style="background-color: rgb(161, 213, 123);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1570,7 +1570,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-05-13"
             class="heatmap-tracker-box month-may hasData"
             data-date="2024-05-13"
-            style="background-color: rgb(74, 74, 74);"
+            style="background-color: rgb(74, 176, 94);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1582,7 +1582,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-05-14"
             class="heatmap-tracker-box month-may hasData"
             data-date="2024-05-14"
-            style="background-color: rgb(25, 25, 25);"
+            style="background-color: rgb(25, 97, 40);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1594,7 +1594,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-05-15"
             class="heatmap-tracker-box month-may hasData"
             data-date="2024-05-15"
-            style="background-color: rgb(74, 74, 74);"
+            style="background-color: rgb(74, 176, 94);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1606,7 +1606,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-05-16"
             class="heatmap-tracker-box month-may hasData"
             data-date="2024-05-16"
-            style="background-color: rgb(156, 156, 156);"
+            style="background-color: rgb(228, 242, 156);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1618,7 +1618,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-05-17"
             class="heatmap-tracker-box month-may hasData"
             data-date="2024-05-17"
-            style="background-color: rgb(123, 123, 123);"
+            style="background-color: rgb(161, 213, 123);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1630,7 +1630,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-05-18"
             class="heatmap-tracker-box month-may hasData"
             data-date="2024-05-18"
-            style="background-color: rgb(47, 47, 47);"
+            style="background-color: rgb(47, 137, 65);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1642,7 +1642,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-05-19"
             class="heatmap-tracker-box month-may hasData"
             data-date="2024-05-19"
-            style="background-color: rgb(111, 111, 111);"
+            style="background-color: rgb(123, 200, 111);"
           >
             <span
               class="heatmap-tracker-content"
@@ -1654,7 +1654,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             aria-label="2024-05-20"
             class="heatmap-tracker-box month-may hasData"
             data-date="2024-05-20"
-            style="background-color: rgb(95, 95, 95);"
+            style="background-color: rgb(95, 191, 103);"
           >
             <span
               class="heatmap-tracker-content"
@@ -3653,7 +3653,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
           </div>
           <div
             aria-label="2024-12-28"
-            class="heatmap-tracker-box month-dec today isEmpty"
+            class="heatmap-tracker-box month-dec isEmpty"
             data-date="2024-12-28"
           >
             <span
