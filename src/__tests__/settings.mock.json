@@ -11,11 +11,9 @@
     }
   ],
   "showCurrentDayBorder": true,
-  "intensityConfig": {
-    "scaleStart": 1,
-    "scaleEnd": 5,
-    "defaultIntensity": 4
-  },
+  "defaultEntryIntensity": 4,
+  "intensityScaleStart": 1,
+  "intensityScaleEnd": 5,
   "weekStartDay": 1,
   "separateMonths": false,
   "language": "en",

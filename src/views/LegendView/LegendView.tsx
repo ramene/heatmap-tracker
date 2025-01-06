@@ -1,5 +1,5 @@
 import { useHeatmapContext } from "src/context/heatmap/heatmap.context";
-import { getIntensitiesInfo, getEntriesIntensities } from "src/utils/core";
+import { getIntensitiesInfo, getEntriesIntensities } from "src/utils/intensity";
 
 function LegendView() {
   const { trackerData, colorsList, intensityConfig } = useHeatmapContext();

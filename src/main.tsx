@@ -9,6 +9,7 @@ import { HeatmapProvider } from "./context/heatmap/heatmap.context";
 import "./localization/i18n";
 import { useContext } from "react";
 import { IHeatmapView } from "src/types";
+import { mergeTrackerData } from "./utils/core";
 
 declare global {
   interface Window {
@@ -46,7 +47,7 @@ const DEFAULT_SETTINGS: TrackerSettings = {
   },
 };
 
-const DEFAULT_TRACKER_DATA: TrackerData = {
+export const DEFAULT_TRACKER_DATA: TrackerData = {
   year: new Date().getFullYear(),
   entries: [
     { date: "1900-01-01", color: "#7bc96f", intensity: 5, content: "" },
@@ -57,6 +58,9 @@ const DEFAULT_TRACKER_DATA: TrackerData = {
     scaleEnd: undefined,
     defaultIntensity: 4,
   },
+  intensityScaleStart: undefined,
+  intensityScaleEnd: undefined,
+  defaultEntryIntensity: 4,
   colorScheme: {
     paletteName: "default",
   },
@@ -71,7 +75,7 @@ export default class HeatmapTracker extends Plugin {
 
     window.renderHeatmapTracker = (
       el: HTMLElement,
-      trackerData: TrackerData
+      trackerData: TrackerData = DEFAULT_TRACKER_DATA
     ): void => {
       const container = el.createDiv({
         cls: "heatmap-tracker-container",
@@ -84,14 +88,7 @@ export default class HeatmapTracker extends Plugin {
         <StrictMode>
           <AppContext.Provider value={this.app}>
             <HeatmapProvider
-              trackerData={{
-                ...DEFAULT_TRACKER_DATA,
-                ...trackerData,
-                intensityConfig: {
-                  ...DEFAULT_TRACKER_DATA.intensityConfig,
-                  ...trackerData.intensityConfig,
-                },
-              }}
+              trackerData={mergeTrackerData(DEFAULT_TRACKER_DATA, trackerData)}
               settings={this.settings}
             >
               <ReactApp />

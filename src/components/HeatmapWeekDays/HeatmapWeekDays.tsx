@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useHeatmapContext } from "src/context/heatmap/heatmap.context";
-import { getShiftedWeekdays } from "src/utils/core";
+import { getShiftedWeekdays } from "src/utils/date";
 
 export function HeatmapWeekDays() {
   const { settings } = useHeatmapContext();

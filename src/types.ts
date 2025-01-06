@@ -42,6 +42,21 @@ export interface TrackerData {
    */
   showCurrentDayBorder: boolean;
 
+  /**
+  * @deprecated The default intensity value for an entry.
+  */
+  defaultEntryIntensity: number;
+
+  /**
+   * @deprecated The starting value for the intensity scale.
+   */
+  intensityScaleStart: number | undefined;
+
+  /**
+   * @deprecated The ending value for the intensity scale.
+   */
+  intensityScaleEnd: number | undefined;
+
   intensityConfig: IntensityConfig;
 
   /**

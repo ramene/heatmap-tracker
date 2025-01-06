@@ -3,8 +3,11 @@ import ReactApp from "../App";
 import { act, render, waitFor } from "@testing-library/react";
 import trackerDataMock from "./trackerData.mock.json";
 import settingsMock from "./settings.mock.json";
+import { mergeTrackerData } from "src/utils/core";
+import { DEFAULT_TRACKER_DATA } from "../main";
 
 jest.mock("react-i18next", () => ({
+  ...jest.requireActual("react-i18next"),
   useTranslation: jest.fn(() => ({
     t: (key: string) => key,
     i18n: {
@@ -17,7 +20,10 @@ describe("ReactApp component", () => {
   it("renders correctly and matches snapshot", async () => {
     const { asFragment } = await render(
       <HeatmapProvider
-        trackerData={trackerDataMock as any}
+        trackerData={mergeTrackerData(
+          DEFAULT_TRACKER_DATA,
+          trackerDataMock as any
+        )}
         settings={settingsMock as any}
       >
         <ReactApp />
