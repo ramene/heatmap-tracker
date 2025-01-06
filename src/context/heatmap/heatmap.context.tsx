@@ -55,10 +55,10 @@ export function HeatmapProvider({
     () =>
       fillEntriesWithIntensity(
         currentYearEntries,
-        mergedTrackerData,
+        mergedTrackerData.intensityConfig,
         colorsList
       ),
-    [currentYearEntries, mergedTrackerData, colorsList]
+    [currentYearEntries, mergedTrackerData.intensityConfig, colorsList]
   );
 
   const boxes = useMemo(

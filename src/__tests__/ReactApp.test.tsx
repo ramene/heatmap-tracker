@@ -1,6 +1,6 @@
 import { HeatmapProvider } from "../context/heatmap/heatmap.context";
 import ReactApp from "../App";
-import { act, render, waitFor } from "@testing-library/react";
+import { act, render } from "@testing-library/react";
 import trackerDataMock from "./trackerData.mock.json";
 import settingsMock from "./settings.mock.json";
 import { mergeTrackerData } from "src/utils/core";

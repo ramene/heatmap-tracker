@@ -20,6 +20,7 @@ export interface IntensityConfig {
   scaleStart: number | undefined;
   scaleEnd: number | undefined;
   defaultIntensity: number;
+  showOutOfRange: boolean;
 }
 
 /**

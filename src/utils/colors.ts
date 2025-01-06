@@ -31,5 +31,5 @@ export function getColors(colorScheme: ColorScheme, settingsColors: Palettes): C
     return customColors ?? settingsColors['default'];
   }
 
-  return paletteName ? settingsColors[paletteName] : settingsColors['default'];
+  return paletteName && settingsColors[paletteName] ? settingsColors[paletteName] : settingsColors['default'];
 }

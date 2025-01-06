@@ -92,7 +92,7 @@ export function getBoxes(
         box.content = entry.content;
       }
 
-      box.backgroundColor = entry?.customColor ?? colorsList[(entry.intensity as number) - 1];
+      box.backgroundColor = entry.customColor ?? (entry.intensity !== undefined ? colorsList[entry.intensity - 1] : undefined);
     } else {
       box.date = currentDate?.toISOString()?.split('T')[0];
       box.hasData = false;

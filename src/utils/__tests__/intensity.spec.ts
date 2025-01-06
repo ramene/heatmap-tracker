@@ -47,7 +47,6 @@ describe('getIntensitiesRanges', () => {
   test('6 - -10 - 10', () => {
     const result = getIntensitiesRanges(6, -10, 10);
 
-    console.log(result);
     expect(result).toEqual( [
       { min: -10, max: -6.666666666666666, intensity: 1 },
       { min: -6.666666666666666, max: -3.333333333333333, intensity: 2 },

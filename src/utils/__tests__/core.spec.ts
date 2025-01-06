@@ -74,6 +74,7 @@ describe('mergeTrackerData', () => {
         defaultIntensity: 2,
         scaleEnd: 8,
         scaleStart: 2,
+        showOutOfRange: true,
       },
     };
 
@@ -105,6 +106,7 @@ describe('mergeTrackerData', () => {
         defaultIntensity: 2,
         scaleEnd: 8,
         scaleStart: 2,
+        showOutOfRange: true,
       }
     }));
   });

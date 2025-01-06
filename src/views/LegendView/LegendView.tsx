@@ -6,19 +6,42 @@ function LegendView() {
 
   const intensities = getEntriesIntensities(trackerData.entries);
 
-  console.log("###", intensities, trackerData);
-
-  const l = getIntensitiesInfo(intensities, intensityConfig, colorsList);
+  const intensitiesInfo = getIntensitiesInfo(
+    intensities,
+    intensityConfig,
+    colorsList ?? []
+  );
 
   return (
-    <div className="legend-view__container">
-      {l.map((v, index) => (
-        <div key={index} style={{ display: "flex", alignItems: "center" }}>
-          <div className="heatmap-tracker-box" style={{ backgroundColor: colorsList[index], marginRight: '12px' }}></div>
-          Intensity: {v.intensity}; Range: {v.min.toFixed(2)} - {v.max.toFixed(2)}
-          <br />
-        </div>
-      ))}
+    <div className="legend-view">
+      <table>
+        <thead>
+          <tr>
+            <th>Intensity</th>
+            <th>Range</th>
+            <th>Color</th>
+          </tr>
+        </thead>
+        <tbody>
+          {intensitiesInfo.map((intensityInfo, index) => (
+            <tr key={index}>
+              <td>{intensityInfo.intensity}</td>
+              <td>
+                {intensityInfo.min.toFixed(2)} - {intensityInfo.max.toFixed(2)}
+              </td>
+              <td className="legend-view__color-cell">
+                <div
+                  style={{
+                    backgroundColor: colorsList[index],
+                  }}
+                  className="heatmap-tracker-box"
+                ></div>
+                <span style={{ marginLeft: "10px" }}>{colorsList[index]}</span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
