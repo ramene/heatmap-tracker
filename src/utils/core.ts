@@ -87,10 +87,7 @@ export function getBoxes(
       const entry = entriesWithIntensity[day];
 
       box.date = entry.date;
-
-      if (entry.content) {
-        box.content = entry.content;
-      }
+      box.content = entry.content || undefined;
 
       box.backgroundColor = entry.customColor ?? (entry.intensity !== undefined ? colorsList[entry.intensity - 1] : undefined);
     } else {

@@ -261,19 +261,6 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
         }));
   }
 
-  private displayChristmasSettings() {
-    const { containerEl } = this;
-    new Setting(containerEl)
-      .setName("🎄 Christmas mood")
-      .setDesc("Enable snowfall and Santa Claus hat on the heatmap tracker to have Christmas vibes in your Obsidian. Let it snow, let it snow, let it snow!")
-      .addToggle(toggle => toggle
-        .setValue(this.plugin.settings.enableChristmasMood)
-        .onChange(async (value) => {
-          this.plugin.settings.enableChristmasMood = value;
-          await this.plugin.saveSettings();
-        }));
-  }
-
   private displayViewTabsSettings() {
     const { containerEl } = this;
 
@@ -302,7 +289,6 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
     this.displayLanguageSettings();
     this.displayWeekStartDaySettings();
     this.displaySeparateMonthsSettings();
-    this.displayChristmasSettings();
     this.displayViewTabsSettings();
     this.displayPaletteSettings();
   }

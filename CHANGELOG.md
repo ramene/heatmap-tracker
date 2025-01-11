@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.12.3] - 2025-01-11
+
+### Removed
+- Remove snowfall.
+
 ## [1.12.0] - 2025-01-06
 
 ### Added

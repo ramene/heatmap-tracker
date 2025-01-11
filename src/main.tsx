@@ -37,7 +37,6 @@ const DEFAULT_SETTINGS: TrackerSettings = {
   weekStartDay: 1,
   separateMonths: false,
   language: "en",
-  enableChristmasMood: false,
   viewTabsVisibility: {
     [IHeatmapView.Documentation]: true,
     [IHeatmapView.Donation]: true,

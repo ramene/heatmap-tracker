@@ -62,17 +62,11 @@ export function fillEntriesWithIntensity(
     const currentIntensity = e.intensity ?? intensityConfig.defaultIntensity;
     const foundIntensityInfo = intensitiesMap.find((o) => currentIntensity >= o.min && currentIntensity <= o.max);
 
-    let newIntensity = undefined;
-
-    if (foundIntensityInfo) {
-      newIntensity = foundIntensityInfo.intensity;
-    } else {
-      if (intensityConfig.showOutOfRange) {
-        newIntensity = Math.round(mapRange(currentIntensity, minimumIntensity, maximumIntensity, 1, colorsList.length));
-      } else {
-        newIntensity = undefined;
-      }
-    }
+    const newIntensity = foundIntensityInfo
+      ? foundIntensityInfo.intensity
+      : intensityConfig.showOutOfRange
+        ? Math.round(mapRange(currentIntensity, minimumIntensity, maximumIntensity, 1, colorsList.length))
+        : undefined;
 
     const newEntry = {
       ...e,

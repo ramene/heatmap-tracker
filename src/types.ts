@@ -73,7 +73,6 @@ export interface TrackerSettings {
   weekStartDay: number;
   separateMonths: boolean;
   language: string;
-  enableChristmasMood: boolean;
   viewTabsVisibility: Partial<Record<IHeatmapView, boolean>>;
 }
 
@@ -91,7 +90,6 @@ export interface Box {
 export enum IHeatmapView {
   HeatmapTracker = "heatmap-tracker",
   HeatmapTrackerStatistics = "heatmap-tracker-statistics",
-  // HeatmapMenu = "heatmap-menu",
   Documentation = "documentation",
   Donation = "donation",
   Legend = "legend"

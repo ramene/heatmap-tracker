@@ -19,8 +19,6 @@ const DocumentationView = lazy(
 const DonationView = lazy(() => import("./views/DonationView/DonationView"));
 const LegendView = lazy(() => import("./views/LegendView/LegendView"));
 
-const SnowFall = lazy(() => import("./components/SnowFall/SnowFall"));
-
 function ReactApp() {
   const { i18n } = useTranslation();
   const { currentYear, settings, view } = useHeatmapContext();
@@ -56,12 +54,6 @@ function ReactApp() {
 
   return (
     <div className="heatmap-tracker__container">
-      {settings.enableChristmasMood ? (
-        <Suspense fallback={null}>
-          <SnowFall />
-        </Suspense>
-      ) : null}
-
       <HeatmapHeader />
       <Suspense fallback={null}>{content}</Suspense>
       <HeatmapFooter />
