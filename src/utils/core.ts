@@ -1,5 +1,5 @@
 import { Box, ColorsList, Entry, TrackerData, TrackerSettings } from "src/types";
-import { getDayOfYear, getLastDayOfYear, getNumberOfEmptyDaysBeforeYearStarts, isValidDate } from "./date";
+import { getDayOfYear, getLastDayOfYear, getNumberOfEmptyDaysBeforeYearStarts, isToday, isValidDate } from "src/utils/date";
 
 export function clamp(input: number, min: number, max: number): number {
   return input < min ? min : input > max ? max : input;
@@ -52,7 +52,6 @@ export function getBoxes(
 
   const lastDayOfYear = getLastDayOfYear(currentYear);
   const numberOfDaysInYear = getDayOfYear(lastDayOfYear);
-  const todaysDayNumberLocal = getDayOfYear(new Date());
 
   for (let day = 1; day <= numberOfDaysInYear; day++) {
     const box: Box = {};
@@ -77,7 +76,7 @@ export function getBoxes(
     const month = currentDate.toLocaleString("en-US", { month: "short" });
     box.name = `month-${month.toLowerCase()}`;
 
-    if (day === todaysDayNumberLocal) {
+    if (isToday(day)) {
       box.isToday = true;
       box.showBorder = trackerData.showCurrentDayBorder;
     }

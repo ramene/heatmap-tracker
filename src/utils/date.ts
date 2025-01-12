@@ -39,3 +39,9 @@ export function getNumberOfEmptyDaysBeforeYearStarts(year: number, weekStartDay:
 export function getLastDayOfYear(year: number): Date {
   return new Date(Date.UTC(year, 11, 31));
 }
+
+export function isToday(day: number) {
+  const todaysDayNumberLocal = getDayOfYear(new Date());
+
+  return day === todaysDayNumberLocal;
+}

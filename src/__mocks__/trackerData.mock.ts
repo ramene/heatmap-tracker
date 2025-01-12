@@ -1,4 +1,4 @@
-{
+export const trackerDataMock = {
   "year": 2024,
   "entries": [
     {
@@ -620,4 +620,4 @@
   "heatmapTitle": "👣 Steps Tracker 👣 (11 intensities instead of 5)",
   "intensityScaleStart": 1,
   "intensityScaleEnd": 10000
-}
+};

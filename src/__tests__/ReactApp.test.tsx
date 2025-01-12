@@ -1,10 +1,11 @@
 import { HeatmapProvider } from "../context/heatmap/heatmap.context";
 import ReactApp from "../App";
 import { act, render } from "@testing-library/react";
-import trackerDataMock from "./trackerData.mock.json";
-import settingsMock from "./settings.mock.json";
+import { settingsMock } from "../__mocks__/settings.mock";
 import { mergeTrackerData } from "src/utils/core";
 import { DEFAULT_TRACKER_DATA } from "../main";
+import { trackerDataMock } from "src/__mocks__/trackerData.mock";
+import { isToday } from "src/utils/date";
 
 jest.mock("react-i18next", () => ({
   ...jest.requireActual("react-i18next"),
@@ -16,7 +17,17 @@ jest.mock("react-i18next", () => ({
   })),
 }));
 
+jest.mock("src/utils/date", () => ({
+  ...jest.requireActual("src/utils/date"),
+  isToday: jest.fn(),
+}));
+
 describe("ReactApp component", () => {
+  beforeEach(() => {
+    // This is today date for tests: 2024-05-04
+    (isToday as jest.Mock).mockImplementation((day) => day === 125);
+  });
+
   it("renders correctly and matches snapshot", async () => {
     const { asFragment } = await render(
       <HeatmapProvider
@@ -24,7 +35,55 @@ describe("ReactApp component", () => {
           DEFAULT_TRACKER_DATA,
           trackerDataMock as any
         )}
-        settings={settingsMock as any}
+        settings={settingsMock}
+      >
+        <ReactApp />
+      </HeatmapProvider>
+    );
+
+    // Wait for all promises inside Suspense to resolve
+    await act(async () => {
+      // Simulate any asynchronous behavior like data fetching
+      await new Promise((resolve) => setTimeout(resolve, 0));
+    });
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it("renders correctly and matches snapshot for year 2022", async () => {
+    const trackerData = {
+      ...trackerDataMock,
+      year: 2022,
+    };
+
+    const { asFragment } = await render(
+      <HeatmapProvider
+        trackerData={mergeTrackerData(DEFAULT_TRACKER_DATA, trackerData as any)}
+        settings={settingsMock}
+      >
+        <ReactApp />
+      </HeatmapProvider>
+    );
+
+    // Wait for all promises inside Suspense to resolve
+    await act(async () => {
+      // Simulate any asynchronous behavior like data fetching
+      await new Promise((resolve) => setTimeout(resolve, 0));
+    });
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it("should use paletteName instead of customColors", async () => {
+    const trackerData = {
+      ...trackerDataMock,
+      colorScheme: undefined
+    };
+
+    const { asFragment } = await render(
+      <HeatmapProvider
+        trackerData={mergeTrackerData(DEFAULT_TRACKER_DATA, trackerData as any)}
+        settings={settingsMock}
       >
         <ReactApp />
       </HeatmapProvider>
