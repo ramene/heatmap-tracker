@@ -25,7 +25,9 @@ export function HeatmapWeekDays() {
   return (
     <div className="heatmap-tracker-days">
       {weekDays.map((day) => (
-        <div key={day}>{day}</div>
+        <div key={day} className="heatmap-tracker-days__week-day">
+          {day}
+        </div>
       ))}
     </div>
   );

@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.12.4] - 2025-01-12
+
+### Fixed
+- Fix week days alignment.
+
 ## [1.12.3] - 2025-01-11
 
 ### Removed

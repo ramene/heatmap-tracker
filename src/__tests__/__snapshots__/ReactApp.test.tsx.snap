@@ -275,25 +275,39 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
         <div
           class="heatmap-tracker-days"
         >
-          <div>
+          <div
+            class="heatmap-tracker-days__week-day"
+          >
             weekdaysShort.Monday
           </div>
-          <div>
+          <div
+            class="heatmap-tracker-days__week-day"
+          >
             weekdaysShort.Tuesday
           </div>
-          <div>
+          <div
+            class="heatmap-tracker-days__week-day"
+          >
             weekdaysShort.Wednesday
           </div>
-          <div>
+          <div
+            class="heatmap-tracker-days__week-day"
+          >
             weekdaysShort.Thursday
           </div>
-          <div>
+          <div
+            class="heatmap-tracker-days__week-day"
+          >
             weekdaysShort.Friday
           </div>
-          <div>
+          <div
+            class="heatmap-tracker-days__week-day"
+          >
             weekdaysShort.Saturday
           </div>
-          <div>
+          <div
+            class="heatmap-tracker-days__week-day"
+          >
             weekdaysShort.Sunday
           </div>
         </div>
@@ -347,7 +361,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
           </div>
           <div
             aria-label="2024-01-06"
-            class="heatmap-tracker-box month-jan today with-border isEmpty"
+            class="heatmap-tracker-box month-jan isEmpty"
             data-date="2024-01-06"
           >
             <span
@@ -401,7 +415,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
           </div>
           <div
             aria-label="2024-01-12"
-            class="heatmap-tracker-box month-jan isEmpty"
+            class="heatmap-tracker-box month-jan today with-border isEmpty"
             data-date="2024-01-12"
           >
             <span
