@@ -34,16 +34,20 @@ export function HeatmapHeader() {
             ▶
           </button>
         </div>
-        <div className="heatmap-tracker-header__title">
-          {trackerData?.heatmapTitle ?? ""}
-        </div>
+        <div
+          className="heatmap-tracker-header__title"
+          dangerouslySetInnerHTML={{ __html: trackerData?.heatmapTitle ?? "" }}
+        />
         <HeatmapTabs />
       </div>
       {trackerData?.heatmapSubtitle ? (
         <div className="heatmap-tracker-header__sub-row">
-          <div className="heatmap-tracker-header__subtitle">
-            {trackerData?.heatmapSubtitle ?? ""}
-          </div>
+          <div
+            className="heatmap-tracker-header__subtitle"
+            dangerouslySetInnerHTML={{
+              __html: trackerData?.heatmapSubtitle ?? "",
+            }}
+          />
         </div>
       ) : null}
     </div>
