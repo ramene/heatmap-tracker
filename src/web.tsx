@@ -14,6 +14,7 @@ const DEFAULT_SETTINGS: TrackerSettings = {
     danger: ["#fff33b", "#fdc70c", "#f3903f", "#ed683c", "#e93e3a"],
   },
   weekStartDay: 1,
+  weekDisplayMode: 'even',
   separateMonths: false,
   language: "en",
   viewTabsVisibility: {
