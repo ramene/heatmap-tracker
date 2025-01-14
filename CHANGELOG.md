@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.12.6] - 2025-01-14
+
+### Fixed
+   [Randomnerminox](https://github.com/Randomnerminox) spotted the issue related to Calendarium plugin. It ruined Heatmap tracker overview.
+
+
 ## [1.12.5] - 2025-01-14
 
 ### Added

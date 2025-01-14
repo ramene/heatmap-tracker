@@ -27,7 +27,7 @@ export function HeatmapBox({ box }: HeatmapBoxProps) {
 
   return (
     <div
-      data-date={box.date}
+      data-htp-date={box.date}
       style={{ backgroundColor: box.backgroundColor }}
       className={`${boxClassNames.filter(Boolean).join(" ")}`}
       // On Desktop it will show the date on hover.

@@ -79,7 +79,7 @@ export default class HeatmapTracker extends Plugin {
     ): void => {
       const container = el.createDiv({
         cls: "heatmap-tracker-container",
-        attr: { "data-name": trackerData?.heatmapTitle ?? "" },
+        attr: { "data-htp-name": trackerData?.heatmapTitle ?? "" },
       });
 
       const root = createRoot(container);
