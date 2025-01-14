@@ -122,3 +122,7 @@ export function mergeTrackerData(defaultTrackerData: TrackerData, userTrackerDat
     },
   };
 }
+
+export function isEmpty<T>(array?: T[]): boolean {
+  return !array || array.length === 0;
+}

@@ -1,4 +1,5 @@
 import { ColorScheme, ColorsList, Palettes } from "src/types";
+import { isEmpty } from "./core";
 
 /**
  * Retrieves the color scheme for the tracker data based on the provided settings.
@@ -27,8 +28,8 @@ import { ColorScheme, ColorsList, Palettes } from "src/types";
 export function getColors(colorScheme: ColorScheme, settingsColors: Palettes): ColorsList {
   const { paletteName, customColors } = colorScheme ?? {};
 
-  if (customColors) {
-    return customColors ?? settingsColors['default'];
+  if (!isEmpty(customColors)) {
+    return customColors as ColorsList;
   }
 
   return paletteName && settingsColors[paletteName] ? settingsColors[paletteName] : settingsColors['default'];

@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.13.1] - 2025-01-14
+### Fixed
+- Fix for empty `customColors`.
+
 ## [1.13.0] - 2025-01-14
 ### Added
 - Added missing translations.
