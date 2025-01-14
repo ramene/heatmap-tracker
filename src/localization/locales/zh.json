@@ -6,7 +6,6 @@
     "weekStartDayDescription": "选择一周的起始日。",
     "separateMonths": "分隔月份",
     "separateMonthsDescription": "在跟踪视图中全局分隔月份。",
-
     "palettes": "调色板",
     "paletteName": "调色板名称",
     "addNewColorToPalette": "将新颜色添加到{{paletteName}}调色板：",
@@ -15,7 +14,13 @@
     "addNewPalette": "添加新调色板",
     "enterPaletteName": "输入调色板名称以创建新调色板",
     "addPaletteNote": "添加可在您的热图渲染设置中使用的调色板。",
-    "colorsUsageNote": "您可以在热图渲染设置中通过名称引用这些颜色。"
+    "colorsUsageNote": "您可以在热图渲染设置中通过名称引用这些颜色。",
+    "weekDisplayMode": {
+      "description": "选择一周中要显示的日期：偶数天（例如星期二、星期四、星期六）、奇数天（例如星期一、星期三、星期五、星期日）、无（不显示任何日期）或全部（显示全部七个日期）\n一周中的几天）。",
+      "label": "星期显示模式"
+    },
+    "tabsVisibility": "选项卡可见性",
+    "tabsVisibilityDescription": "显示/隐藏 {{viewKey}} 视图的选项卡"
   },
   "statistics": {
     "title": "统计",
@@ -59,5 +64,19 @@
   "header": {
     "previousYear": "上一年",
     "nextYear": "下一年"
+  },
+  "weekDisplayMode": {
+    "all": "全部",
+    "even": "甚至",
+    "none": "没有任何",
+    "odd": "奇怪的"
+  },
+  "tab": "选项卡",
+  "view": {
+    "documentation": "文档",
+    "donation": "捐款",
+    "heatmap-tracker": "热图",
+    "heatmap-tracker-statistics": "统计数据",
+    "legend": "传奇"
   }
 }

@@ -1,5 +1,5 @@
 import { Box, ColorsList, Entry, TrackerData, TrackerSettings } from "src/types";
-import { getDayOfYear, getLastDayOfYear, getNumberOfEmptyDaysBeforeYearStarts, isToday, isValidDate } from "src/utils/date";
+import { formatDateToISO8601, getDayOfYear, getLastDayOfYear, getNumberOfEmptyDaysBeforeYearStarts, isToday, isValidDate } from "src/utils/date";
 
 export function clamp(input: number, min: number, max: number): number {
   return input < min ? min : input > max ? max : input;
@@ -90,7 +90,7 @@ export function getBoxes(
 
       box.backgroundColor = entry.customColor ?? (entry.intensity !== undefined ? colorsList[entry.intensity - 1] : undefined);
     } else {
-      box.date = currentDate?.toISOString()?.split('T')[0];
+      box.date = formatDateToISO8601(currentDate) ?? undefined;
       box.hasData = false;
     }
 

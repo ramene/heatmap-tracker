@@ -14,7 +14,13 @@
     "addNewPalette": "Agregar una nueva paleta",
     "enterPaletteName": "Ingrese un nombre de paleta para crear una nueva paleta",
     "addPaletteNote": "Agregue paletas de colores que estarán disponibles en sus configuraciones de renderizado de mapas de calor.",
-    "colorsUsageNote": "Puede usar estas paletas haciendo referencia a su nombre en sus configuraciones de renderizado de mapas de calor."
+    "colorsUsageNote": "Puede usar estas paletas haciendo referencia a su nombre en sus configuraciones de renderizado de mapas de calor.",
+    "weekDisplayMode": {
+      "description": "Elija qué días de la semana desea mostrar: Días pares (p. ej., martes, jueves, sábado), Días impares (p. ej., lunes, miércoles, viernes, domingo), Ninguno (No mostrar ningún día) o Todos (Mostrar los siete \ndías de la semana).",
+      "label": "Modo de visualización de la semana"
+    },
+    "tabsVisibility": "Visibilidad de pestañas",
+    "tabsVisibilityDescription": "Mostrar/Ocultar una pestaña para la vista {{viewKey}}"
   },
   "statistics": {
     "title": "Estadísticas",
@@ -58,5 +64,19 @@
   "header": {
     "previousYear": "Año anterior",
     "nextYear": "Siguiente año"
+  },
+  "weekDisplayMode": {
+    "all": "Todo",
+    "even": "Incluso",
+    "none": "Ninguno",
+    "odd": "Extraño"
+  },
+  "tab": "Pestaña",
+  "view": {
+    "documentation": "Documentación",
+    "donation": "Donación",
+    "heatmap-tracker": "Mapa de calor",
+    "heatmap-tracker-statistics": "Estadística",
+    "legend": "Leyenda"
   }
 }

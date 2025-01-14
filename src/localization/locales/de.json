@@ -6,7 +6,6 @@
     "weekStartDayDescription": "Wählen Sie, mit welchem Tag Ihre Woche beginnt.",
     "separateMonths": "Monate trennen",
     "separateMonthsDescription": "Aktivieren Sie die Trennung von Monaten in den Tracker-Ansichten.",
-
     "palettes": "Paletten",
     "paletteName": "Palettenname",
     "addNewColorToPalette": "Fügen Sie der Palette {{paletteName}} eine neue Farbe hinzu:",
@@ -15,7 +14,13 @@
     "addNewPalette": "Neue Palette hinzufügen",
     "enterPaletteName": "Geben Sie einen Palettennamen ein, um eine neue Palette zu erstellen",
     "addPaletteNote": "Fügen Sie Farbpaletten hinzu, die in Ihren Heatmap-Anzeigeneinstellungen verfügbar sein werden.",
-    "colorsUsageNote": "Sie können diese Paletten verwenden, indem Sie in Ihren Heatmap-Anzeigeneinstellungen auf ihren Namen verweisen."
+    "colorsUsageNote": "Sie können diese Paletten verwenden, indem Sie in Ihren Heatmap-Anzeigeneinstellungen auf ihren Namen verweisen.",
+    "weekDisplayMode": {
+      "description": "Wählen Sie aus, welche Wochentage angezeigt werden sollen: Gerade Tage (z. B. Dienstag, Donnerstag, Samstag), Ungerade Tage (z. B. Montag, Mittwoch, Freitag, Sonntag), Keine (keine Tage anzeigen) oder Alle (alle sieben anzeigen). \nWochentage).",
+      "label": "Wochenanzeigemodus"
+    },
+    "tabsVisibility": "Sichtbarkeit der Registerkarten",
+    "tabsVisibilityDescription": "Eine Registerkarte für die Ansicht „{{viewKey}}“ ein-/ausblenden"
   },
   "statistics": {
     "title": "Statistiken",
@@ -59,5 +64,19 @@
   "header": {
     "previousYear": "Vorheriges Jahr",
     "nextYear": "Nächstes Jahr"
+  },
+  "weekDisplayMode": {
+    "all": "Alle",
+    "even": "Sogar",
+    "none": "Keiner",
+    "odd": "Seltsam"
+  },
+  "tab": "Tab",
+  "view": {
+    "documentation": "Dokumentation",
+    "donation": "Spende",
+    "heatmap-tracker": "Heatmap",
+    "heatmap-tracker-statistics": "Statistiken",
+    "legend": "Legende"
   }
 }

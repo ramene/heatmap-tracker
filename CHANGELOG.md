@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.13.0] - 2025-01-14
+### Added
+- Added missing translations.
+- Added `weekDisplayMode` setting to display `even/odd/all/none` days.
+- Added start/end dates for streaks in statistics view.
+
 ## [1.12.7] - 2025-01-14
 ### Added
 - Now you can add Legend for tracker separately. Check [example](https://github.com/mokkiebear/heatmap-tracker/blob/main/EXAMPLE_VAULT/Documentation%20with%20Examples/2.%20Features/How%20to%20display%20legend%20separately%3F.md).

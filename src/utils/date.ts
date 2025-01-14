@@ -45,3 +45,13 @@ export function isToday(day: number) {
 
   return day === todaysDayNumberLocal;
 }
+
+export function formatDateToISO8601(date: Date | null): string | null {
+  if (!date) {
+    return null;
+  }
+
+  const formattedDate = date?.toISOString()?.split('T')[0];
+
+  return formattedDate;
+}

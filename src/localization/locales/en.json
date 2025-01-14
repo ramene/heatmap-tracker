@@ -2,7 +2,6 @@
   "settings": {
     "language": "Language",
     "chooseYourPreferredLanguage": "Choose your preferred language",
-
     "palettes": "Palettes",
     "paletteName": "Palette name",
     "addNewColorToPalette": "Add a new color to {{paletteName}} palette:",
@@ -12,11 +11,16 @@
     "enterPaletteName": "Enter a palette name to create a new palette",
     "addPaletteNote": "Add color palettes that will be available in your heatmap render settings.",
     "colorsUsageNote": "You can use these palettes by referencing their name in your heatmap render settings.",
-
     "weekStartDay": "Week start day",
     "weekStartDayDescription": "Select the day on which your week starts.",
     "separateMonths": "Separate months",
-    "separateMonthsDescription": "Separate months in your tracker views, globally."
+    "separateMonthsDescription": "Separate months in your tracker views, globally.",
+    "weekDisplayMode": {
+      "label": "Week display mode",
+      "description": "Choose which days of the week to display: Even days (e.g., Tuesday, Thursday, Saturday), Odd days (e.g., Monday, Wednesday, Friday, Sunday), None (Do not display any days), or All (Display all seven days of the week)."
+    },
+    "tabsVisibility": "Tabs visibility",
+    "tabsVisibilityDescription": "Show/Hide a tab for {{viewKey}} view"
   },
   "statistics": {
     "title": "Statistics",
@@ -60,5 +64,19 @@
   "header": {
     "previousYear": "Previous Year",
     "nextYear": "Next Year"
-  }
+  },
+  "weekDisplayMode": {
+    "even": "Even",
+    "odd": "Odd",
+    "all": "All",
+    "none": "None"
+  },
+  "view": {
+    "heatmap-tracker": "Heatmap",
+    "heatmap-tracker-statistics": "Statistics",
+    "documentation": "Documentation",
+    "donation": "Donation",
+    "legend": "Legend"
+  },
+  "tab": "Tab"
 }

@@ -41,7 +41,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
           class="heatmap-tracker-header__tabs"
         >
           <button
-            aria-label="Donate"
+            aria-label="view.donation"
             class="heatmap-tracker-tab clickable-icon "
           >
             <svg
@@ -78,7 +78,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             </svg>
           </button>
           <button
-            aria-label="Heatmap"
+            aria-label="view.heatmap-tracker"
             class="heatmap-tracker-tab clickable-icon is-active"
           >
             <svg
@@ -115,7 +115,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             </svg>
           </button>
           <button
-            aria-label="statistics.title"
+            aria-label="view.heatmap-tracker-statistics"
             class="heatmap-tracker-tab clickable-icon "
           >
             <svg
@@ -161,7 +161,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             </svg>
           </button>
           <button
-            aria-label="Documentation"
+            aria-label="view.documentation"
             class="heatmap-tracker-tab clickable-icon "
           >
             <svg
@@ -197,7 +197,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
             </svg>
           </button>
           <button
-            aria-label="Legend"
+            aria-label="view.legend"
             class="heatmap-tracker-tab clickable-icon "
           >
             <svg
@@ -273,7 +273,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
           </li>
         </ul>
         <div
-          class="heatmap-tracker-days"
+          class="heatmap-tracker-days heatmap-tracker-days--even"
         >
           <div
             class="heatmap-tracker-days__week-day"
@@ -3779,7 +3779,7 @@ exports[`ReactApp component renders correctly and matches snapshot for year 2022
           class="heatmap-tracker-header__tabs"
         >
           <button
-            aria-label="Donate"
+            aria-label="view.donation"
             class="heatmap-tracker-tab clickable-icon "
           >
             <svg
@@ -3816,7 +3816,7 @@ exports[`ReactApp component renders correctly and matches snapshot for year 2022
             </svg>
           </button>
           <button
-            aria-label="Heatmap"
+            aria-label="view.heatmap-tracker"
             class="heatmap-tracker-tab clickable-icon is-active"
           >
             <svg
@@ -3853,7 +3853,7 @@ exports[`ReactApp component renders correctly and matches snapshot for year 2022
             </svg>
           </button>
           <button
-            aria-label="statistics.title"
+            aria-label="view.heatmap-tracker-statistics"
             class="heatmap-tracker-tab clickable-icon "
           >
             <svg
@@ -3899,7 +3899,7 @@ exports[`ReactApp component renders correctly and matches snapshot for year 2022
             </svg>
           </button>
           <button
-            aria-label="Documentation"
+            aria-label="view.documentation"
             class="heatmap-tracker-tab clickable-icon "
           >
             <svg
@@ -3935,7 +3935,7 @@ exports[`ReactApp component renders correctly and matches snapshot for year 2022
             </svg>
           </button>
           <button
-            aria-label="Legend"
+            aria-label="view.legend"
             class="heatmap-tracker-tab clickable-icon "
           >
             <svg
@@ -4011,7 +4011,7 @@ exports[`ReactApp component renders correctly and matches snapshot for year 2022
           </li>
         </ul>
         <div
-          class="heatmap-tracker-days"
+          class="heatmap-tracker-days heatmap-tracker-days--even"
         >
           <div
             class="heatmap-tracker-days__week-day"
@@ -7548,7 +7548,7 @@ exports[`ReactApp component should use paletteName instead of customColors 1`] =
           class="heatmap-tracker-header__tabs"
         >
           <button
-            aria-label="Donate"
+            aria-label="view.donation"
             class="heatmap-tracker-tab clickable-icon "
           >
             <svg
@@ -7585,7 +7585,7 @@ exports[`ReactApp component should use paletteName instead of customColors 1`] =
             </svg>
           </button>
           <button
-            aria-label="Heatmap"
+            aria-label="view.heatmap-tracker"
             class="heatmap-tracker-tab clickable-icon is-active"
           >
             <svg
@@ -7622,7 +7622,7 @@ exports[`ReactApp component should use paletteName instead of customColors 1`] =
             </svg>
           </button>
           <button
-            aria-label="statistics.title"
+            aria-label="view.heatmap-tracker-statistics"
             class="heatmap-tracker-tab clickable-icon "
           >
             <svg
@@ -7668,7 +7668,7 @@ exports[`ReactApp component should use paletteName instead of customColors 1`] =
             </svg>
           </button>
           <button
-            aria-label="Documentation"
+            aria-label="view.documentation"
             class="heatmap-tracker-tab clickable-icon "
           >
             <svg
@@ -7704,7 +7704,7 @@ exports[`ReactApp component should use paletteName instead of customColors 1`] =
             </svg>
           </button>
           <button
-            aria-label="Legend"
+            aria-label="view.legend"
             class="heatmap-tracker-tab clickable-icon "
           >
             <svg
@@ -7780,7 +7780,7 @@ exports[`ReactApp component should use paletteName instead of customColors 1`] =
           </li>
         </ul>
         <div
-          class="heatmap-tracker-days"
+          class="heatmap-tracker-days heatmap-tracker-days--even"
         >
           <div
             class="heatmap-tracker-days__week-day"

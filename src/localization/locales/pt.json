@@ -14,7 +14,13 @@
     "weekStartDay": "Dia de início da semana",
     "weekStartDayDescription": "Selecione o dia que a semana começa.",
     "separateMonths": "Separar meses",
-    "separateMonthsDescription": "Separa os meses nos seus rastreadores, afeta todos."
+    "separateMonthsDescription": "Separa os meses nos seus rastreadores, afeta todos.",
+    "weekDisplayMode": {
+      "description": "Escolha quais dias da semana serão exibidos: dias pares (por exemplo, terça, quinta, sábado), dias ímpares (por exemplo, segunda, quarta, sexta, domingo), Nenhum (não exibir nenhum dia) ou Todos (exibir todos os sete dias). \ndias da semana).",
+      "label": "Modo de exibição semanal"
+    },
+    "tabsVisibility": "Visibilidade das guias",
+    "tabsVisibilityDescription": "Mostrar/ocultar uma guia para visualização {{viewKey}}"
   },
   "statistics": {
     "title": "Estatística",
@@ -58,5 +64,19 @@
   "header": {
     "previousYear": "Ano anterior",
     "nextYear": "Próximo ano"
+  },
+  "weekDisplayMode": {
+    "all": "Todos",
+    "even": "Até",
+    "none": "Nenhum",
+    "odd": "Chance"
+  },
+  "tab": "Guia",
+  "view": {
+    "documentation": "Documentação",
+    "donation": "Doação",
+    "heatmap-tracker": "Mapa de calor",
+    "heatmap-tracker-statistics": "Estatísticas",
+    "legend": "Lenda"
   }
 }
