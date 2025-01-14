@@ -2,7 +2,7 @@ import i18n from "./localization/i18n";
 import HeatmapTracker from "./main";
 import { App, PluginSettingTab, setIcon, Setting } from "obsidian";
 import languages from "./localization/languages.json";
-import { ColorsList, IHeatmapView } from "./types";
+import { ColorsList, IHeatmapView, WeekDisplayMode } from "./types";
 
 export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
   plugin: HeatmapTracker;
@@ -231,6 +231,27 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
       );
   }
 
+  private displayWeekDisplayModeSettings() {
+    const { containerEl, } = this;
+    new Setting(containerEl)
+      .setName(i18n.t('settings.weekDisplayMode.label'))
+      .setDesc(i18n.t('settings.weekDisplayMode.description'))
+      .addDropdown(dropdown =>
+        dropdown
+          .addOptions({
+            even: i18n.t('weekDisplayMode.even'),
+            odd: i18n.t('weekDisplayMode.odd'),
+            all: i18n.t('weekDisplayMode.all'),
+            none: i18n.t('weekDisplayMode.none'),
+          })
+          .setValue(this.plugin.settings.weekDisplayMode.toString())
+          .onChange(async (value) => {
+            this.plugin.settings.weekDisplayMode = value as WeekDisplayMode;
+            await this.plugin.saveSettings();
+          })
+      );
+  }
+
   private displayLanguageSettings() {
     new Setting(this.containerEl)
       .setName(i18n.t("settings.language"))
@@ -288,6 +309,7 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
 
     this.displayLanguageSettings();
     this.displayWeekStartDaySettings();
+    this.displayWeekDisplayModeSettings();
     this.displaySeparateMonthsSettings();
     this.displayViewTabsSettings();
     this.displayPaletteSettings();

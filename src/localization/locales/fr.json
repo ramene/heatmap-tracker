@@ -14,7 +14,11 @@
     "addNewPalette": "Ajouter une nouvelle palette",
     "enterPaletteName": "Entrez un nom de palette pour créer une nouvelle palette",
     "addPaletteNote": "Ajoutez des palettes de couleurs qui seront disponibles dans vos paramètres de rendu de carte thermique.",
-    "colorsUsageNote": "Vous pouvez utiliser ces palettes en référant leur nom dans vos paramètres de rendu de carte thermique."
+    "colorsUsageNote": "Vous pouvez utiliser ces palettes en référant leur nom dans vos paramètres de rendu de carte thermique.",
+    "weekDisplayMode": {
+      "description": "Choisissez les jours de la semaine à afficher : Jours pairs (par exemple, mardi, jeudi, samedi), Jours impairs (par exemple, lundi, mercredi, vendredi, dimanche), Aucun (ne pas afficher de jours) ou Tous (afficher les sept jours). \njours de la semaine).",
+      "label": "Mode d'affichage de la semaine"
+    }
   },
   "statistics": {
     "title": "Statistiques",
@@ -58,5 +62,11 @@
   "header": {
     "previousYear": "Année précédente",
     "nextYear": "Année suivante"
+  },
+  "weekDisplayMode": {
+    "all": "Tous",
+    "even": "Même",
+    "none": "Aucun",
+    "odd": "Impair"
   }
 }

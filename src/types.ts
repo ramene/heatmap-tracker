@@ -71,6 +71,7 @@ export interface TrackerData {
 export interface TrackerSettings {
   palettes: Palettes;
   weekStartDay: number;
+  weekDisplayMode: WeekDisplayMode;
   separateMonths: boolean;
   language: string;
   viewTabsVisibility: Partial<Record<IHeatmapView, boolean>>;
@@ -94,3 +95,5 @@ export enum IHeatmapView {
   Donation = "donation",
   Legend = "legend"
 }
+
+export type WeekDisplayMode = "even" | "odd" | "none" | "all";

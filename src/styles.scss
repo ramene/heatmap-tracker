@@ -48,6 +48,10 @@
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   width: 100%;
   padding: 12px; /* 0px caused overflow and scrollbars */
+
+  &--vertical {
+    grid-template-areas: "year days" "months boxes";
+  }
 }
 
 /* Months */
@@ -57,18 +61,47 @@
   grid-area: months;
   margin: 0.1em 0 0.3em;
   grid-gap: 0.3em;
+
+  &--vertical {
+    grid-template-rows: repeat(12, 1fr);
+    grid-template-columns: none;
+  }
 }
 
 /* Days */
 .heatmap-tracker-days {
   grid-area: days;
-  justify-self: end;
-  margin: 0 0.3em 0 0.1em;
+  text-align: end;
+  margin: 0 0.4em 0 0.1em;
   white-space: nowrap;
   line-height: 12px;
 
   &__week-day {
     padding-bottom: 2px;
+  }
+
+  &--even {
+    div:nth-child(odd) {
+      visibility: hidden;
+    }
+  }
+
+  &--odd {
+    div:nth-child(even) {
+      visibility: hidden;
+    }
+  }
+
+  &--all {
+    div {
+      visibility: visible;
+    }
+  }
+
+  &--none {
+    div {
+      visibility: hidden;
+    }
   }
 }
 
@@ -81,6 +114,12 @@
   grid-area: boxes;
   row-gap: 2px;
   column-gap: 2px;
+
+  &--vertical {
+    grid-template-rows: repeat(53, 12px);
+    grid-template-columns: repeat(7, 12px);
+    grid-auto-flow: row;
+  }
 }
 
 .heatmap-tracker-box {
@@ -103,8 +142,14 @@
 
 .heatmap-tracker-boxes.separate-months {
   grid-auto-flow: column;
-  grid-template-columns: repeat(64, 1fr);
+  grid-template-columns: repeat(64, 12px);
   grid-area: boxes;
+
+  &--vertical {
+    grid-template-rows: repeat(64, 12px);
+    grid-template-columns: repeat(7, 12px);
+    grid-auto-flow: row;
+  }
 }
 
 .heatmap-tracker-boxes .space-between-box {
@@ -226,12 +271,6 @@
 
 .heatmap-tracker-tab {
   cursor: pointer;
-}
-
-/* Days visibility */
-/* UPDATE IT TO DISPLAY NOT ALL WEEK DAYS */
-.heatmap-tracker-days div:nth-child(odd) {
-  visibility: hidden;
 }
 
 /* Settings */

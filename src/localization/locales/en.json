@@ -16,7 +16,12 @@
     "weekStartDay": "Week start day",
     "weekStartDayDescription": "Select the day on which your week starts.",
     "separateMonths": "Separate months",
-    "separateMonthsDescription": "Separate months in your tracker views, globally."
+    "separateMonthsDescription": "Separate months in your tracker views, globally.",
+
+    "weekDisplayMode": {
+      "label": "Week display mode",
+      "description": "Choose which days of the week to display: Even days (e.g., Tuesday, Thursday, Saturday), Odd days (e.g., Monday, Wednesday, Friday, Sunday), None (Do not display any days), or All (Display all seven days of the week)."
+    }
   },
   "statistics": {
     "title": "Statistics",
@@ -60,5 +65,11 @@
   "header": {
     "previousYear": "Previous Year",
     "nextYear": "Next Year"
+  },
+  "weekDisplayMode": {
+    "even": "Even",
+    "odd": "Odd",
+    "all": "All",
+    "none": "None"
   }
 }

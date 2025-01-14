@@ -1,10 +1,12 @@
+import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useHeatmapContext } from "src/context/heatmap/heatmap.context";
 import { Entry } from "src/types";
+import { formatDateToISO8601 } from "src/utils/date";
 
 interface StatisticsMetricProps {
   label: string;
-  value: number;
+  value: number | string;
 }
 
 interface StreakResult {
@@ -48,6 +50,7 @@ function calculateStreaks(entries: Entry[]): StreakResult {
 
     const diffDays =
       (currDate.getTime() - prevDate.getTime()) / (1000 * 60 * 60 * 24);
+
     if (diffDays === 1) {
       currentStreak++;
     } else {
@@ -105,7 +108,30 @@ function StatisticsView() {
     longestStreakStartDate,
     currentStreakStartDate,
     currentStreakEndDate,
-  } = calculateStreaks(trackerData.entries);
+  } = useMemo(
+    () => calculateStreaks(trackerData.entries),
+    [trackerData.entries]
+  );
+
+  const currentStreakValue = useMemo(() => {
+    if (!currentStreakStartDate || !currentStreakEndDate) {
+      return `${currentStreak}`;
+    }
+
+    return `${currentStreak} (${
+      formatDateToISO8601(currentStreakStartDate) ?? ""
+    } - ${formatDateToISO8601(currentStreakEndDate) ?? ""})`;
+  }, [currentStreak, currentStreakStartDate, currentStreakEndDate]);
+
+  const longestStreakValue = useMemo(() => {
+    if (!longestStreakStartDate || !longestStreakEndDate) {
+      return `${longestStreak}`;
+    }
+
+    return `${longestStreak} (${
+      formatDateToISO8601(longestStreakStartDate) ?? ""
+    } - ${formatDateToISO8601(longestStreakEndDate) ?? ""})`;
+  }, [longestStreak, longestStreakStartDate, longestStreakEndDate]);
 
   return (
     <div className="heatmap-statistics">
@@ -121,11 +147,11 @@ function StatisticsView() {
         <br />
         <StatisticsMetric
           label={t("statistics.currentStreak")}
-          value={currentStreak}
+          value={currentStreakValue}
         />
         <StatisticsMetric
           label={t("statistics.longestStreak")}
-          value={longestStreak}
+          value={longestStreakValue}
         />
       </div>
     </div>
