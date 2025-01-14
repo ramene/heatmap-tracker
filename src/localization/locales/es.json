@@ -18,7 +18,9 @@
     "weekDisplayMode": {
       "description": "Elija qué días de la semana desea mostrar: Días pares (p. ej., martes, jueves, sábado), Días impares (p. ej., lunes, miércoles, viernes, domingo), Ninguno (No mostrar ningún día) o Todos (Mostrar los siete \ndías de la semana).",
       "label": "Modo de visualización de la semana"
-    }
+    },
+    "tabsVisibility": "Visibilidad de pestañas",
+    "tabsVisibilityDescription": "Mostrar/Ocultar una pestaña para la vista {{viewKey}}"
   },
   "statistics": {
     "title": "Estadísticas",
@@ -68,5 +70,13 @@
     "even": "Incluso",
     "none": "Ninguno",
     "odd": "Extraño"
+  },
+  "tab": "Pestaña",
+  "view": {
+    "documentation": "Documentación",
+    "donation": "Donación",
+    "heatmap-tracker": "Mapa de calor",
+    "heatmap-tracker-statistics": "Estadística",
+    "legend": "Leyenda"
   }
 }

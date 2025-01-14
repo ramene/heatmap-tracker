@@ -286,13 +286,13 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
     const { containerEl } = this;
 
     containerEl.createEl('h3', {
-      text: "Tabs visibility"
+      text: i18n.t('settings.tabsVisibility')
     });
 
-    for (const [viewKey, view] of Object.entries(IHeatmapView)) {
+    for (const view of Object.values(IHeatmapView)) {
       new Setting(containerEl)
-        .setName(`${viewKey} tab`)
-        .setDesc(`Show/Hide a tab for ${viewKey} view`)
+        .setName(`${i18n.t('tab')}: ${i18n.t(`view.${view}`)}`)
+        .setDesc(i18n.t('settings.tabsVisibilityDescription', { viewKey: i18n.t(`view.${view}`) }))
         .addToggle(toggle => toggle
           .setValue(this.plugin.settings.viewTabsVisibility[view] ?? true)
           .onChange(async (value) => {

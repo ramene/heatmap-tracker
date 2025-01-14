@@ -18,7 +18,9 @@
     "weekDisplayMode": {
       "description": "Choisissez les jours de la semaine à afficher : Jours pairs (par exemple, mardi, jeudi, samedi), Jours impairs (par exemple, lundi, mercredi, vendredi, dimanche), Aucun (ne pas afficher de jours) ou Tous (afficher les sept jours). \njours de la semaine).",
       "label": "Mode d'affichage de la semaine"
-    }
+    },
+    "tabsVisibility": "Visibilité des onglets",
+    "tabsVisibilityDescription": "Afficher/Masquer un onglet pour la vue {{viewKey}}"
   },
   "statistics": {
     "title": "Statistiques",
@@ -68,5 +70,13 @@
     "even": "Même",
     "none": "Aucun",
     "odd": "Impair"
+  },
+  "tab": "Languette",
+  "view": {
+    "documentation": "Documentation",
+    "donation": "Donation",
+    "heatmap-tracker": "Carte thermique",
+    "heatmap-tracker-statistics": "Statistiques",
+    "legend": "Légende"
   }
 }

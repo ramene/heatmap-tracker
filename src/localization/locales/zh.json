@@ -18,7 +18,9 @@
     "weekDisplayMode": {
       "description": "选择一周中要显示的日期：偶数天（例如星期二、星期四、星期六）、奇数天（例如星期一、星期三、星期五、星期日）、无（不显示任何日期）或全部（显示全部七个日期）\n一周中的几天）。",
       "label": "星期显示模式"
-    }
+    },
+    "tabsVisibility": "选项卡可见性",
+    "tabsVisibilityDescription": "显示/隐藏 {{viewKey}} 视图的选项卡"
   },
   "statistics": {
     "title": "统计",
@@ -68,5 +70,13 @@
     "even": "甚至",
     "none": "没有任何",
     "odd": "奇怪的"
+  },
+  "tab": "选项卡",
+  "view": {
+    "documentation": "文档",
+    "donation": "捐款",
+    "heatmap-tracker": "热图",
+    "heatmap-tracker-statistics": "统计数据",
+    "legend": "传奇"
   }
 }

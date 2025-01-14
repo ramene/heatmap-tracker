@@ -18,7 +18,9 @@
     "weekDisplayMode": {
       "description": "Wählen Sie aus, welche Wochentage angezeigt werden sollen: Gerade Tage (z. B. Dienstag, Donnerstag, Samstag), Ungerade Tage (z. B. Montag, Mittwoch, Freitag, Sonntag), Keine (keine Tage anzeigen) oder Alle (alle sieben anzeigen). \nWochentage).",
       "label": "Wochenanzeigemodus"
-    }
+    },
+    "tabsVisibility": "Sichtbarkeit der Registerkarten",
+    "tabsVisibilityDescription": "Eine Registerkarte für die Ansicht „{{viewKey}}“ ein-/ausblenden"
   },
   "statistics": {
     "title": "Statistiken",
@@ -68,5 +70,13 @@
     "even": "Sogar",
     "none": "Keiner",
     "odd": "Seltsam"
+  },
+  "tab": "Tab",
+  "view": {
+    "documentation": "Dokumentation",
+    "donation": "Spende",
+    "heatmap-tracker": "Heatmap",
+    "heatmap-tracker-statistics": "Statistiken",
+    "legend": "Legende"
   }
 }

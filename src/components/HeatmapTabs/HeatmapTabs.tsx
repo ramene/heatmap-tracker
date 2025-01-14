@@ -7,14 +7,14 @@ export function HeatmapTabs() {
 
   return (
     <div className="heatmap-tracker-header__tabs">
-      <HeatmapTab view={IHeatmapView.Donation} label={"Donate"} />
-      <HeatmapTab view={IHeatmapView.HeatmapTracker} label={"Heatmap"} />
+      <HeatmapTab view={IHeatmapView.Donation} label={t('view.donation')} />
+      <HeatmapTab view={IHeatmapView.HeatmapTracker} label={t('view.heatmap-tracker')} />
       <HeatmapTab
         view={IHeatmapView.HeatmapTrackerStatistics}
-        label={t("statistics.title")}
+        label={t('view.heatmap-tracker-statistics')}
       />
-      <HeatmapTab view={IHeatmapView.Documentation} label="Documentation" />
-      <HeatmapTab view={IHeatmapView.Legend} label={"Legend"} />
+      <HeatmapTab view={IHeatmapView.Documentation} label={t('view.documentation')} />
+      <HeatmapTab view={IHeatmapView.Legend} label={t('view.legend')} />
     </div>
   );
 }
