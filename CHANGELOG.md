@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.12.5] - 2025-01-14
+
+### Added
+- Add Portuguese language. Thanks to [edusanzio](https://github.com/edusanzio) for provided translations.
+
 ## [1.12.4] - 2025-01-12
 
 ### Fixed
