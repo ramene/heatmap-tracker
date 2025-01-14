@@ -1,0 +1,62 @@
+{
+  "settings": {
+    "language": "Idioma",
+    "chooseYourPreferredLanguage": "Escolha o idioma preferido",
+    "palettes": "Paletas",
+    "paletteName": "Nome da paleta",
+    "addNewColorToPalette": "Adicione uma nova cor à paleta {{paletteName}}:",
+    "addColor": "Adicionar cor",
+    "removeColor": "Remover cor",
+    "addNewPalette": "Adicionar nova paleta",
+    "enterPaletteName": "Escolha o nome de uma paleta para criar uma nova",
+    "addPaletteNote": "Adicione paletas de cores que estarão disponíveis nas configurações do seu mapa de calor",
+    "colorsUsageNote": "Você pode usar essas paletas referenciando elas nas configurações dos seus mapas de calor.",
+    "weekStartDay": "Dia de início da semana",
+    "weekStartDayDescription": "Selecione o dia que a semana começa.",
+    "separateMonths": "Separar meses",
+    "separateMonthsDescription": "Separa os meses nos seus rastreadores, afeta todos."
+  },
+  "statistics": {
+    "title": "Estatística",
+    "totalTrackingDaysThisYear": "Total de dias rastreados esse ano",
+    "totalTrackingDays": "Total de dias rastreados",
+    "currentStreak": "Sequência atual",
+    "longestStreak": "Sequência mais longa"
+  },
+  "monthsShort": {
+    "January": "Jan",
+    "February": "Fev",
+    "March": "Mar",
+    "April": "Abr",
+    "May": "Mai",
+    "June": "Jun",
+    "July": "Jul",
+    "August": "Ago",
+    "September": "Set",
+    "October": "Out",
+    "November": "Nov",
+    "December": "Dez"
+  },
+  "weekdaysShort": {
+    "Sunday": "Dom",
+    "Monday": "Seg",
+    "Tuesday": "Ter",
+    "Wednesday": "Qua",
+    "Thursday": "Qui",
+    "Friday": "Sex",
+    "Saturday": "Sáb"
+  },
+  "weekdaysLong": {
+    "Sunday": "Domingo",
+    "Monday": "Segunda-feira",
+    "Tuesday": "Terça-feira",
+    "Wednesday": "Quarta-feira",
+    "Thursday": "Quinta-feira",
+    "Friday": "Sexta-feira",
+    "Saturday": "Sábado"
+  },
+  "header": {
+    "previousYear": "Ano anterior",
+    "nextYear": "Próximo ano"
+  }
+}

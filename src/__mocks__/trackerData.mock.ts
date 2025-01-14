@@ -1,4 +1,4 @@
-{
+export const trackerDataMock = {
   "year": 2024,
   "entries": [
     {
@@ -602,22 +602,22 @@
       "content": "some content"
     }
   ],
-  "colors": {
-    "oldGithubGreen11": [
-      "hsl(65, 83%, 88%)",
-      "hsl(70, 77%, 78%)",
-      "hsl(80, 62%, 72%)",
-      "hsl(95, 52%, 66%)",
-      "hsl(112, 45%, 61%)",
-      "hsl(125, 43%, 56%)",
-      "hsl(132, 41%, 49%)",
-      "hsl(132, 45%, 43%)",
-      "hsl(132, 49%, 36%)",
-      "hsl(132, 54%, 29%)",
-      "hsl(132, 59%, 24%)"
+  "colorScheme": {
+    "customColors": [
+      "rgb(246, 250, 199)",
+      "rgb(228, 242, 156)",
+      "rgb(198, 228, 139)",
+      "rgb(161, 213, 123)",
+      "rgb(123, 200, 111)",
+      "rgb(95, 191, 103)",
+      "rgb(74, 176, 94)",
+      "rgb(60, 159, 80)",
+      "rgb(47, 137, 65)",
+      "rgb(34, 114, 50)",
+      "rgb(25, 97, 40)"
     ]
   },
   "heatmapTitle": "👣 Steps Tracker 👣 (11 intensities instead of 5)",
   "intensityScaleStart": 1,
   "intensityScaleEnd": 10000
-}
+};

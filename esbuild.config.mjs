@@ -1,9 +1,10 @@
-import esbuild from 'esbuild';
-import process from 'process';
-import builtins from 'builtin-modules';
+import esbuild from "esbuild";
+import process from "process";
+import builtins from "builtin-modules";
+import { sassPlugin } from "esbuild-sass-plugin";
 
 // Determine if we're in production mode
-const isProd = process.argv.includes('--production');
+const isProd = process.argv.includes("--production");
 
 // Banner to include at the top of the generated file
 const banner = `/*
@@ -14,29 +15,32 @@ If you want to view the source, please visit the GitHub repository of this plugi
 
 // Define external dependencies that should not be bundled
 const externalDependencies = [
-  'obsidian',
-  'electron',
-  '@codemirror/*',
-  '@lezer/*',
+  "obsidian",
+  "electron",
+  "@codemirror/*",
+  "@lezer/*",
   ...builtins,
 ];
 
 // Build options common to both development and production
 const buildOptions = {
-  entryPoints: ['./src/main.tsx'],
+  entryPoints: ["./src/main.tsx", "./src/styles.scss"],
+  plugins: [sassPlugin({ type: "css" })],
   bundle: true,
-  platform: '',
-  target: 'es2017',
+  platform: "browser",
+  target: "es2017",
   external: externalDependencies,
-  format: 'cjs',
-  sourcemap: isProd ? false : 'inline',
+  format: "cjs",
+  sourcemap: isProd ? false : "inline",
   minify: isProd,
   banner: { js: banner },
-  logLevel: 'info',
-  outfile: 'build/main.js',
-  resolveExtensions: ['.js', '.jsx', '.ts', '.tsx'], // Ensure extensions are resolved
+  logLevel: "info",
+  outdir: "build",
+  resolveExtensions: [".js", ".jsx", ".ts", ".tsx"], // Ensure extensions are resolved
   alias: {
-    src: './src', // Add this to map the alias
+    src: "./src", // Add this to map the alias
+    react: 'preact/compat',
+    'react-dom': 'preact/compat',
   },
 };
 
@@ -48,7 +52,7 @@ async function build() {
     // Start watching for file changes
     await context.watch();
 
-    console.log('Watching for changes...');
+    console.log("Watching for changes...");
   } else {
     // Production build (one-time build)
     await esbuild.build(buildOptions);

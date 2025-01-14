@@ -2,6 +2,7 @@ import i18n from "./localization/i18n";
 import HeatmapTracker from "./main";
 import { App, PluginSettingTab, setIcon, Setting } from "obsidian";
 import languages from "./localization/languages.json";
+import { ColorsList, IHeatmapView } from "./types";
 
 export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
   plugin: HeatmapTracker;
@@ -12,8 +13,8 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
   }
 
 
-  private async deletePalette(key: keyof typeof this.plugin.settings.colors) {
-    delete this.plugin.settings.colors[key];
+  private async deletePalette(paletteName: string) {
+    delete this.plugin.settings.palettes[paletteName];
 
     await this.plugin.saveSettings();
 
@@ -37,7 +38,7 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
     }
   }
 
-  private renderAddColorSection(container: HTMLElement, paletteName: string, paletteColors: string[]) {
+  private renderAddColorSection(container: HTMLElement, paletteName: string, paletteColors: ColorsList) {
     container.createDiv({
       text: i18n.t('settings.addNewColorToPalette', { paletteName }),
       cls: "heatmap-tracker-settings-palettes__add-color-header",
@@ -67,7 +68,7 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
     });
 
     addColorButton.addEventListener("click", () => {
-      this.plugin.settings.colors[paletteName] = [...paletteColors, colorPreview.style.backgroundColor];
+      this.plugin.settings.palettes[paletteName] = [...paletteColors, colorPreview.style.backgroundColor];
 
       this.plugin.saveSettings();
 
@@ -76,7 +77,7 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
     );
   }
 
-  private displayColorSettings() {
+  private displayPaletteSettings() {
     const palettesContainer = this.containerEl.createDiv({
       cls: "heatmap-tracker-settings-palettes__container"
     });
@@ -84,7 +85,7 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
     palettesContainer.createEl("h3", { text: i18n.t('settings.palettes'), });
     this.displayColorHelp(palettesContainer);
 
-    for (const [paletteName, paletteColors] of Object.entries(this.plugin.settings.colors)) {
+    for (const [paletteName, paletteColors] of Object.entries(this.plugin.settings.palettes)) {
       const paletteContainer = palettesContainer.createDiv({
         cls: "heatmap-tracker-settings-palettes__palette-container",
       });
@@ -132,7 +133,7 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
 
             paletteColors.splice(colorIndex, 1);
 
-            this.plugin.settings.colors[paletteName] = paletteColors;
+            this.plugin.settings.palettes[paletteName] = paletteColors;
 
             this.plugin.saveSettings();
 
@@ -161,7 +162,7 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
       cls: "heatmap-tracker-settings-palettes__new-palette-header",
       text: i18n.t('settings.enterPaletteName'),
     });
-    
+
     const newPaletteContent = paletteContainer.createDiv({
       cls: "heatmap-tracker-settings-palettes__new-palette-content"
     });
@@ -187,7 +188,7 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
 
     addColorButton.addEventListener("click", async () => {
       if (newPaletteInput.value) {
-        this.plugin.settings.colors[newPaletteInput.value] = [];
+        this.plugin.settings.palettes[newPaletteInput.value] = [];
 
         await this.plugin.saveSettings();
 
@@ -260,17 +261,35 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
         }));
   }
 
+  private displayViewTabsSettings() {
+    const { containerEl } = this;
+
+    containerEl.createEl('h3', {
+      text: "Tabs visibility"
+    });
+
+    for (const [viewKey, view] of Object.entries(IHeatmapView)) {
+      new Setting(containerEl)
+        .setName(`${viewKey} tab`)
+        .setDesc(`Show/Hide a tab for ${viewKey} view`)
+        .addToggle(toggle => toggle
+          .setValue(this.plugin.settings.viewTabsVisibility[view] ?? true)
+          .onChange(async (value) => {
+            this.plugin.settings.viewTabsVisibility[view] = value;
+            await this.plugin.saveSettings();
+          }));
+    }
+  }
+
   display() {
     const { containerEl } = this;
 
     containerEl.empty();
 
     this.displayLanguageSettings();
-
     this.displayWeekStartDaySettings();
-
     this.displaySeparateMonthsSettings();
-
-    this.displayColorSettings();
+    this.displayViewTabsSettings();
+    this.displayPaletteSettings();
   }
 }

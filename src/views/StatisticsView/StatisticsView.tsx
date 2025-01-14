@@ -94,7 +94,7 @@ function StatisticsMetric({ label, value }: StatisticsMetricProps) {
   );
 }
 
-export function StatisticsView() {
+function StatisticsView() {
   const { t } = useTranslation();
   const { entriesWithIntensity, trackerData } = useHeatmapContext();
 
@@ -127,16 +127,12 @@ export function StatisticsView() {
           label={t("statistics.longestStreak")}
           value={longestStreak}
         />
-        {currentStreakStartDate?.toString()}
-        {currentStreakEndDate?.toString()}
-        {longestStreakStartDate?.toString()}
-        {longestStreakEndDate?.toString()}
-        <hr />
-        <div>{t("statistics.developmentNote")}</div>
       </div>
     </div>
   );
 }
+
+export default StatisticsView;
 
 /**
  *   const activityByMonth = Object.values(entriesWithIntensity).reduce(

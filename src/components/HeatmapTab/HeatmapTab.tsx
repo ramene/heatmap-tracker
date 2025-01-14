@@ -1,30 +1,25 @@
 import { useHeatmapContext } from "src/context/heatmap/heatmap.context";
-import { View } from "src/types";
-import { HeatmapIcon } from "../icons/HeatmapIcon";
-import { StatisticsIcon } from "../icons/StatisticsIcon";
-import { MenuIcon } from "../icons/MenuIcon";
+import { IHeatmapView } from "src/types";
+import { memo } from "react";
+import { TabIconForView } from "src/utils/tabs";
 
-const IconForView: Record<View, React.ReactNode> = {
-  [View.HeatmapTracker]: <HeatmapIcon />,
-  [View.HeatmapTrackerStatistics]: <StatisticsIcon />,
-  [View.HeatmapMenu]: <MenuIcon />,
-};
-
-export function HeatmapTab({
-  view,
-  label,
-  disabled,
-}: {
-  view: View;
+interface HeatmapTabProps {
+  view: IHeatmapView;
   label: string;
   disabled?: boolean;
-}) {
-  const { view: selectedView, setView } = useHeatmapContext();
+}
+
+function HeatmapTab({ view, label, disabled }: HeatmapTabProps) {
+  const { view: selectedView, setView, settings } = useHeatmapContext();
 
   const isSelected = view === selectedView;
 
   function handleClick() {
     setView(view);
+  }
+
+  if (!settings.viewTabsVisibility[view]) {
+    return null;
   }
 
   return (
@@ -36,7 +31,9 @@ export function HeatmapTab({
       disabled={disabled}
       onClick={handleClick}
     >
-      {IconForView[view]}
+      {TabIconForView[view]}
     </button>
   );
 }
+
+export default memo(HeatmapTab);

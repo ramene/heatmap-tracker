@@ -1,13 +1,21 @@
-import React, { useMemo } from "react";
-import { Colors, Entry, TrackerData, TrackerSettings, View } from "src/types";
-import { fillEntriesWithIntensity, getColors, getEntriesForYear } from "src/utils/core";
+import { createContext, ReactNode, useContext, useMemo, useState } from "react";
+import {
+  Box,
+  ColorsList,
+  Entry,
+  TrackerData,
+  TrackerSettings,
+  IHeatmapView,
+  IntensityConfig,
+} from "src/types";
+import { getColors } from "src/utils/colors";
+import { getBoxes, getEntriesForYear } from "src/utils/core";
+import { fillEntriesWithIntensity } from "src/utils/intensity";
 
-export const HeatmapContext = React.createContext<HeatmapContextProps | null>(
-  null
-);
+export const HeatmapContext = createContext<HeatmapContextProps | null>(null);
 
 interface HeatmapProviderProps {
-  children: React.ReactNode;
+  children: ReactNode;
   trackerData: TrackerData;
   settings: TrackerSettings;
 }
@@ -17,36 +25,53 @@ export function HeatmapProvider({
   trackerData,
   settings,
 }: HeatmapProviderProps) {
-  const [view, setView] = React.useState(View.HeatmapTracker);
+  const [view, setView] = useState(IHeatmapView.HeatmapTracker);
 
   const defaultYear = useMemo(
-    () => trackerData.year ?? new Date().getFullYear(),
+    () => trackerData.year ?? new Date().getUTCFullYear(),
     [trackerData.year]
   );
 
-  const [currentYear, setCurrentYear] = React.useState(defaultYear);
+  const [currentYear, setCurrentYear] = useState(defaultYear);
 
   const currentYearEntries = useMemo(
     () => getEntriesForYear(trackerData.entries, currentYear),
     [trackerData.entries, currentYear]
   );
 
-  const mergedTrackerData = useMemo(() => {
+  const mergedTrackerData: TrackerData = useMemo(() => {
     return {
-      ...settings,
+      separateMonths: settings.separateMonths,
       ...trackerData,
     };
   }, [trackerData, settings]);
 
-  const colors = useMemo( () => getColors(trackerData, settings.colors), [trackerData, settings.colors]);
+  const colorsList = useMemo(
+    () => getColors(trackerData.colorScheme, settings.palettes),
+    [trackerData, settings.palettes]
+  );
 
-  const entriesWithIntensity = useMemo(() => fillEntriesWithIntensity(
-    currentYearEntries,
-    mergedTrackerData,
-    colors,
-    settings
-  ), [currentYearEntries, mergedTrackerData, colors, settings]);
+  const entriesWithIntensity = useMemo(
+    () =>
+      fillEntriesWithIntensity(
+        currentYearEntries,
+        mergedTrackerData.intensityConfig,
+        colorsList
+      ),
+    [currentYearEntries, mergedTrackerData.intensityConfig, colorsList]
+  );
 
+  const boxes = useMemo(
+    () =>
+      getBoxes(
+        currentYear,
+        entriesWithIntensity,
+        colorsList,
+        trackerData,
+        settings
+      ),
+    [currentYear, entriesWithIntensity, colorsList, trackerData, settings]
+  );
 
   return (
     <HeatmapContext.Provider
@@ -54,13 +79,14 @@ export function HeatmapProvider({
         currentYear,
         setCurrentYear,
         currentYearEntries,
-        trackerData,
         settings,
-        mergedTrackerData,
+        trackerData: mergedTrackerData,
         view,
         setView,
-        colors,
+        colorsList,
         entriesWithIntensity,
+        boxes,
+        intensityConfig: trackerData.intensityConfig,
       }}
     >
       {children}
@@ -73,16 +99,17 @@ interface HeatmapContextProps {
   setCurrentYear: React.Dispatch<React.SetStateAction<number>>;
   currentYearEntries: Entry[];
   trackerData: TrackerData;
+  intensityConfig: IntensityConfig;
   settings: TrackerSettings;
-  mergedTrackerData: TrackerData;
-  view: View;
-  setView: React.Dispatch<React.SetStateAction<View>>;
-  colors: Colors;
+  view: IHeatmapView;
+  setView: React.Dispatch<React.SetStateAction<IHeatmapView>>;
+  colorsList: ColorsList;
   entriesWithIntensity: Record<number, Entry>;
+  boxes: Box[];
 }
 
 export function useHeatmapContext(): HeatmapContextProps {
-  const context = React.useContext(HeatmapContext);
+  const context = useContext(HeatmapContext);
   if (!context) {
     throw new Error("useHeatmapContext must be used within a HeatmapProvider");
   }

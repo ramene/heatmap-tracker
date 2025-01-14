@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useHeatmapContext } from "src/context/heatmap/heatmap.context";
-import { getShiftedWeekdays } from "src/utils/core";
+import { getShiftedWeekdays } from "src/utils/date";
 
 export function HeatmapWeekDays() {
   const { settings } = useHeatmapContext();
@@ -25,7 +25,9 @@ export function HeatmapWeekDays() {
   return (
     <div className="heatmap-tracker-days">
       {weekDays.map((day) => (
-        <div key={day}>{day}</div>
+        <div key={day} className="heatmap-tracker-days__week-day">
+          {day}
+        </div>
       ))}
     </div>
   );

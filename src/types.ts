@@ -7,7 +7,21 @@ export interface Entry {
   separateMonths?: boolean;
 }
 
-export type Colors = { [index: string | number]: string[] };
+export type ColorsList = string[];
+
+export interface ColorScheme {
+  paletteName?: string;
+  customColors?: ColorsList;
+}
+
+export type Palettes = Record<string, ColorsList>;
+
+export interface IntensityConfig {
+  scaleStart: number | undefined;
+  scaleEnd: number | undefined;
+  defaultIntensity: number;
+  showOutOfRange: boolean;
+}
 
 /**
  * Represents the data structure for the heatmap tracker.
@@ -17,12 +31,7 @@ export interface TrackerData {
    * The year for which the tracker data is relevant.
    */
   year: number;
-
-  /**
-   * A mapping of colors used in the heatmap. The keys can be either strings or numbers,
-   * and the values are arrays of strings representing color codes.
-   */
-  colors: { [index: string | number]: string[] } | string;
+  colorScheme: ColorScheme;
 
   /**
    * An array of entries representing the data points in the heatmap.
@@ -35,33 +44,36 @@ export interface TrackerData {
   showCurrentDayBorder: boolean;
 
   /**
-   * The default intensity value for an entry.
-   */
+  * @deprecated The default intensity value for an entry.
+  */
   defaultEntryIntensity: number;
 
   /**
-   * The starting value for the intensity scale.
+   * @deprecated The starting value for the intensity scale.
    */
-  intensityScaleStart: number;
+  intensityScaleStart: number | undefined;
 
   /**
-   * The ending value for the intensity scale.
+   * @deprecated The ending value for the intensity scale.
    */
-  intensityScaleEnd: number;
+  intensityScaleEnd: number | undefined;
+
+  intensityConfig: IntensityConfig;
 
   /**
    * A flag indicating whether to separate the months in the heatmap.
    */
-  separateMonths: boolean;
+  separateMonths?: boolean;
   heatmapTitle?: string;
   heatmapSubtitle?: string;
 }
 
-export interface TrackerSettings extends TrackerData {
-  colors: { [index: string | number]: string[] };
+export interface TrackerSettings {
+  palettes: Palettes;
   weekStartDay: number;
   separateMonths: boolean;
   language: string;
+  viewTabsVisibility: Partial<Record<IHeatmapView, boolean>>;
 }
 
 export interface Box {
@@ -75,8 +87,10 @@ export interface Box {
   isSpaceBetweenBox?: boolean;
 }
 
-export enum View {
+export enum IHeatmapView {
   HeatmapTracker = "heatmap-tracker",
   HeatmapTrackerStatistics = "heatmap-tracker-statistics",
-  HeatmapMenu = "heatmap-menu",
+  Documentation = "documentation",
+  Donation = "donation",
+  Legend = "legend"
 }

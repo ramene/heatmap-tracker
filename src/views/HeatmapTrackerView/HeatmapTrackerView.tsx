@@ -1,31 +1,15 @@
-import React from "react";
+import { useRef, useState } from "react";
 import { useEffect } from "react";
 import { HeatmapBoxesList } from "src/components/HeatmapBoxesList/HeatmapBoxesList";
 import { HeatmapMonthsList } from "src/components/HeatmapMonthsList/HeatmapMonthsList";
 import { HeatmapWeekDays } from "src/components/HeatmapWeekDays/HeatmapWeekDays";
 import { useHeatmapContext } from "src/context/heatmap/heatmap.context";
-import { getBoxes } from "src/utils/core";
 
-export function HeatmapTrackerView() {
-  const {
-    currentYear,
-    entriesWithIntensity,
-    colors,
-    settings,
-    mergedTrackerData,
-  } = useHeatmapContext();
+function HeatmapTrackerView() {
+  const { boxes } = useHeatmapContext();
 
-  const graphRef = React.useRef<HTMLDivElement>(null);
-  const [isLoading, setIsLoading] = React.useState(true);
-
-  const boxes = getBoxes(
-    currentYear,
-    entriesWithIntensity,
-    colors,
-    mergedTrackerData.separateMonths,
-    mergedTrackerData,
-    settings
-  );
+  const graphRef = useRef<HTMLDivElement>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     graphRef.current?.scrollTo?.({
@@ -54,17 +38,4 @@ export function HeatmapTrackerView() {
   );
 }
 
-/**
- * IN PROGRESS
- */
-function HeatmapWeekNumbers() {
-  return (
-    <div className="heatmap-tracker-week-numbers">
-      {Array.from({ length: 53 }, (_, i) => (
-        <div key={i} className="heatmap-tracker-week-number">
-          {i + 1}
-        </div>
-      ))}
-    </div>
-  );
-}
+export default HeatmapTrackerView;

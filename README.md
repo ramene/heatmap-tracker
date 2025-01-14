@@ -4,13 +4,14 @@
 
 The **Heatmap Tracker plugin for Obsidian** is a powerful and customizable tool designed to help you **track, visualize, and analyze data** over a calendar year. Perfect for habit tracking, project management, personal development, or any kind of data visualization, this plugin enables you to create beautiful, interactive heatmaps directly within Obsidian. Whether you’re **monitoring progress, visualizing trends, or staying on top of daily goals**, the Heatmap Tracker enhances your productivity and organization. Discover its intuitive features, flexible customization options, and seamless integration with Obsidian in the detailed guide below.
 
+> **Tip:** Check [Example Vault](https://github.com/mokkiebear/heatmap-tracker/tree/main/EXAMPLE_VAULT). There're lots of good examples (and I update it often).
+
 ## Watch video to start using this plugin in 30 seconds
 
 <img src="https://raw.githubusercontent.com/mokkiebear/heatmap-tracker/refs/heads/main/public/heatmap-how-to.gif" />
 
-
 ## Start with this code example
-> **Tip:** Replace `trackerData` with your own dataset to visualize custom data points.
+> **Tip:** Update `trackerData` with your own dataset to visualize custom data points.
 
 > **Tip:** Add `dataviewjs` in the beginning of your code block to enable DataviewJS functionality.
 
@@ -49,12 +50,13 @@ renderHeatmapTracker(this.container, trackerData);
 
 ---
 
-### `colors`
+### `colorScheme`
 - **Type:** `object`
 - **Default:**
 ```
 {
-  "default": ["#c6e48b", "#7bc96f", "#49af5d", "#2e8840", "#196127"]
+  "paletteName": "default",
+  "customColors": []
 }
 ```
 - **Description:** Defines the color scale used for representing different intensity levels in the heatmap. Each color corresponds to a specific range of data intensity.
@@ -109,16 +111,6 @@ renderHeatmapTracker(this.container, trackerData);
 - **Type:** `number`
 - **Default:** `5`
 - **Description:** The maximum value for the intensity scale. Represents the highest possible intensity that can be mapped to the color scale.
-
----
-
-### `weekStartDay`
-- **Type:** `number`
-- **Default:** `1`
-- **Description:** Specifies the first day of the week. Values correspond to:
-  - `0`: Sunday
-  - `1`: Monday
-  - `2`: Tuesday, and so on.
 
 ---
 

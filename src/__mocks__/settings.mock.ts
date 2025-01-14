@@ -1,6 +1,5 @@
-{
-  "year": 2024,
-  "colors": {
+export const settingsMock = {
+  "palettes": {
     "default": ["#c6e48b", "#7bc96f", "#49af5d", "#2e8840", "#196127"]
   },
   "entries": [
@@ -17,5 +16,13 @@
   "intensityScaleEnd": 5,
   "weekStartDay": 1,
   "separateMonths": false,
-  "language": "en"
-}
+  "language": "en",
+  "viewTabsVisibility": {
+    "heatmap-tracker": true,
+    "heatmap-tracker-statistics": true,
+    "documentation": true,
+    "donation": true,
+    "legend": true
+  }
+};
+

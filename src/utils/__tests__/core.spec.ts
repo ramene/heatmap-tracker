@@ -1,12 +1,5 @@
-import {
-  clamp,
-  mapRange,
-  isValidDate,
-  getDayOfYear,
-  getFirstDayOfYear,
-  getNumberOfEmptyDaysBeforeYearStarts,
-  getLastDayOfYear,
-} from '../core';
+import { DEFAULT_TRACKER_DATA } from 'src/main';
+import { clamp, mapRange, mergeTrackerData, } from '../core';
 
 describe('clamp', () => {
   test('Input Within Range', () => {
@@ -52,84 +45,137 @@ describe('mapRange', () => {
   });
 });
 
-describe('isValidDate', () => {
-  test('Valid Date String (ISO Format)', () => {
-    expect(isValidDate('2021-12-31')).toBe(true);
+describe('mergeTrackerData', () => {
+  it('should return default config when no user config is provided', () => {
+    const result = mergeTrackerData(DEFAULT_TRACKER_DATA, null as any);
+
+    expect(result).toEqual(DEFAULT_TRACKER_DATA);
   });
 
-  test('Non-Date String', () => {
-    expect(isValidDate('not a date')).toBe(false);
+  it('should return correct config', () => {
+    const userConfig = {
+      year: 2021,
+      entries: [
+        { date: '2021-01-01', color: '#7bc96f', intensity: 5, content: '' },
+      ],
+      showCurrentDayBorder: false,
+      intensityScaleStart: 2,
+      intensityScaleEnd: 8,
+      defaultEntryIntensity: 2,
+      colorScheme: {
+        paletteName: 'danger',
+        customColors: ['#fff33b', '#fdc70c', '#f3903f', '#ed683c', '#e93e3a'],
+      },
+    };
+
+    const expected = {
+      ...userConfig,
+      intensityConfig: {
+        defaultIntensity: 2,
+        scaleEnd: 8,
+        scaleStart: 2,
+        showOutOfRange: true,
+      },
+    };
+
+    const result = mergeTrackerData(DEFAULT_TRACKER_DATA, userConfig as any);
+
+    expect(result).toEqual(expected);
   });
 
-  test('Empty String', () => {
-    expect(isValidDate('')).toBe(false);
+  it('should return intensityConfig', () => {
+    const userConfig = {
+      year: 2021,
+      entries: [
+        { date: '2021-01-01', color: '#7bc96f', intensity: 5, content: '' },
+      ],
+      showCurrentDayBorder: false,
+      intensityScaleStart: 2,
+      intensityScaleEnd: 8,
+      defaultEntryIntensity: 2,
+      colorScheme: {
+        paletteName: 'danger',
+        customColors: ['#fff33b', '#fdc70c', '#f3903f', '#ed683c', '#e93e3a'],
+      },
+    };
+
+    const result = mergeTrackerData(DEFAULT_TRACKER_DATA, userConfig as any);
+
+    expect(result).toEqual(expect.objectContaining({
+      intensityConfig: {
+        defaultIntensity: 2,
+        scaleEnd: 8,
+        scaleStart: 2,
+        showOutOfRange: true,
+      }
+    }));
   });
 
-  test('Valid Date in Different Format', () => {
-    expect(isValidDate('12/31/2021')).toBe(true);
-  });
-});
+  it('should return deprecated intensity parameters', () => {
+    const userConfig = {
+      year: 2021,
+      entries: [
+        { date: '2021-01-01', color: '#7bc96f', intensity: 5, content: '' },
+      ],
+      showCurrentDayBorder: false,
+      intensityScaleStart: 2,
+      intensityScaleEnd: 8,
+      defaultEntryIntensity: 2,
+      colorScheme: {
+        paletteName: 'danger',
+        customColors: ['#fff33b', '#fdc70c', '#f3903f', '#ed683c', '#e93e3a'],
+      },
+    };
 
-describe('getDayOfYear', () => {
-  test('Regular Date (Non-Leap Year)', () => {
-    expect(getDayOfYear(new Date('2021-03-01'))).toBe(60);
-  });
+    const result = mergeTrackerData(DEFAULT_TRACKER_DATA, userConfig as any);
 
-  test('Beginning of the Year', () => {
-    expect(getDayOfYear(new Date('2021-01-01'))).toBe(1);
-  });
-
-  test('End of the Year (Non-Leap Year)', () => {
-    expect(getDayOfYear(new Date('2021-12-31'))).toBe(365);
-  });
-
-  test('End of the Year (Leap Year)', () => {
-    expect(getDayOfYear(new Date('2020-12-31'))).toBe(366);
-  });
-
-  test('Invalid Date Object', () => {
-    expect(getDayOfYear(new Date('invalid date'))).toBeNaN();
-  });
-});
-
-describe('getFirstDayOfYear', () => {
-  test('Typical Year Start', () => {
-    expect(getFirstDayOfYear(2021)).toEqual(new Date(Date.UTC(2021, 0, 1)));
+    expect(result.defaultEntryIntensity).toBeDefined();
+    expect(result.intensityScaleStart).toBeDefined();
+    expect(result.intensityScaleEnd).toBeDefined();
   });
 
-  test('Leap Year Start', () => {
-    expect(getFirstDayOfYear(2020)).toEqual(new Date(Date.UTC(2020, 0, 1)));
-  });
+  describe('colorScheme', () => {
+    it(
+      'should return default colorScheme if user did not provide one'
+      , () => {
+        const userConfig = {
+          year: 2021,
+          entries: [
+            { date: '2021-01-01', color: '#7bc96f', intensity: 5, content: '' },
+          ],
+          showCurrentDayBorder: false,
+          intensityScaleStart: 2,
+          intensityScaleEnd: 8,
+          defaultEntryIntensity: 2,
+        };
 
-  test('Negative Year (Before Common Era)', () => {
-    expect(getFirstDayOfYear(-1)).toEqual(new Date(Date.UTC(-1, 0, 1)));
-  });
-});
+        const result = mergeTrackerData(DEFAULT_TRACKER_DATA, userConfig as any);
 
-describe('getNumberOfEmptyDaysBeforeYearStarts', () => {
-  test('Year Starts on Week Start Day', () => {
-    expect(getNumberOfEmptyDaysBeforeYearStarts(2023, 0)).toBe(0);
-  });
+        expect(result.colorScheme).toEqual(DEFAULT_TRACKER_DATA.colorScheme);
+        expect(result.colorScheme.paletteName).toEqual('default');
+        expect(result.colorScheme.customColors).toBeUndefined();
+      });
 
-  test('Year Starts One Day After Week Start Day', () => {
-    expect(getNumberOfEmptyDaysBeforeYearStarts(2021, 0)).toBe(5);
-  });
+    it(
+      'should return default colorScheme when user set it to null'
+      , () => {
+        const userConfig = {
+          year: 2021,
+          entries: [
+            { date: '2021-01-01', color: '#7bc96f', intensity: 5, content: '' },
+          ],
+          showCurrentDayBorder: false,
+          intensityScaleStart: 2,
+          intensityScaleEnd: 8,
+          defaultEntryIntensity: 2,
+          colorScheme: null,
+        };
 
-  test('Week Starts on Monday', () => {
-    expect(getNumberOfEmptyDaysBeforeYearStarts(2021, 1)).toBe(4);
-  });
-});
+        const result = mergeTrackerData(DEFAULT_TRACKER_DATA, userConfig as any);
 
-describe('getLastDayOfYear', () => {
-  test('Typical Year End', () => {
-    expect(getLastDayOfYear(2021)).toEqual(new Date(Date.UTC(2021, 11, 31)));
-  });
-
-  test('Leap Year End', () => {
-    expect(getLastDayOfYear(2020)).toEqual(new Date(Date.UTC(2020, 11, 31)));
-  });
-
-  test('Far Future Year', () => {
-    expect(getLastDayOfYear(3000)).toEqual(new Date(Date.UTC(3000, 11, 31)));
+        expect(result.colorScheme).toEqual(DEFAULT_TRACKER_DATA.colorScheme);
+        expect(result.colorScheme.paletteName).toEqual('default');
+        expect(result.colorScheme.customColors).toBeUndefined();
+      });
   });
 });
