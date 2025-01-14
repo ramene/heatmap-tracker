@@ -7,11 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 ---
 
 ## [1.12.7] - 2025-01-14
-
 ### Added
-
-
-## [1.12.7] - 2025-01-14
 - Now you can add Legend for tracker separately. Check [example](https://github.com/mokkiebear/heatmap-tracker/blob/main/EXAMPLE_VAULT/Documentation%20with%20Examples/2.%20Features/How%20to%20display%20legend%20separately%3F.md).
 
 ## [1.12.6] - 2025-01-14
