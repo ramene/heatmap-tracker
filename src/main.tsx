@@ -10,10 +10,15 @@ import "./localization/i18n";
 import { useContext } from "react";
 import { IHeatmapView } from "src/types";
 import { mergeTrackerData } from "./utils/core";
+import LegendView from "./views/LegendView/LegendView";
 
 declare global {
   interface Window {
     renderHeatmapTracker?: (el: HTMLElement, trackerData: TrackerData) => void;
+    renderHeatmapTrackerLegend?: (
+      el: HTMLElement,
+      trackerData: TrackerData
+    ) => void;
   }
 }
 
@@ -97,11 +102,40 @@ export default class HeatmapTracker extends Plugin {
         </StrictMode>
       );
     };
+
+    window.renderHeatmapTrackerLegend = (
+      el: HTMLElement,
+      trackerData: TrackerData = DEFAULT_TRACKER_DATA
+    ): void => {
+      const container = el.createDiv({
+        cls: "heatmap-tracker-legend",
+        attr: { "data-htp-name": trackerData?.heatmapTitle ? `${trackerData?.heatmapTitle}-legend` : "" },
+      });
+
+      const root = createRoot(container);
+
+      root.render(
+        <StrictMode>
+          <AppContext.Provider value={this.app}>
+            <HeatmapProvider
+              trackerData={mergeTrackerData(DEFAULT_TRACKER_DATA, trackerData)}
+              settings={this.settings}
+            >
+              <LegendView />
+            </HeatmapProvider>
+          </AppContext.Provider>
+        </StrictMode>
+      );
+    };
   }
 
   onunload() {
     if (window.renderHeatmapTracker) {
       delete window.renderHeatmapTracker;
+    }
+
+    if (window.renderHeatmapTrackerLegend) {
+      delete window.renderHeatmapTrackerLegend;
     }
   }
 

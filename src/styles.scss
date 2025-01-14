@@ -7,7 +7,7 @@
   list-style: none;
 }
 
-.heatmap-tracker__container {
+.heatmap-tracker__container, .heatmap-tracker-legend {
   position: relative;
   margin: 24px 0;
   padding: 0.5em;
@@ -21,7 +21,7 @@
   }
 }
 
-.heatmap-tracker {
+.heatmap-tracker, .heatmap-tracker-legend {
   overflow-x: hidden;
 }
 
