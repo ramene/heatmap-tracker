@@ -40,7 +40,6 @@
 
   font-size: 0.65em;
   display: grid;
-  grid-template-columns: auto 1fr;
   grid-template-areas:
     "year months"
     "days boxes";
@@ -56,11 +55,13 @@
 
 /* Months */
 .heatmap-tracker-months {
+  grid-area: months;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-area: months;
   margin: 0.1em 0 0.3em;
-  grid-gap: 0.3em;
+  row-gap: 0.3em;
+  column-gap: 0.3em;
+  justify-items: stretch;
 
   &--vertical {
     grid-template-rows: repeat(12, 1fr);
