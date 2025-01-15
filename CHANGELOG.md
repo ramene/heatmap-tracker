@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.13.3] - 2025-01-15
+### Fixed
+- Flexible box size.
+
 ## [1.13.2] - 2025-01-14
 ### Added
 - `html` is allowed for `title` and `subtitle`.
