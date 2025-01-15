@@ -40,12 +40,9 @@
 
   font-size: 0.65em;
   display: grid;
-  grid-template-columns: auto 1fr;
   grid-template-areas:
     "year months"
     "days boxes";
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   width: 100%;
   padding: 12px; /* 0px caused overflow and scrollbars */
 
@@ -56,11 +53,11 @@
 
 /* Months */
 .heatmap-tracker-months {
+  grid-area: months;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-area: months;
   margin: 0.1em 0 0.3em;
-  grid-gap: 0.3em;
+  justify-items: center;
 
   &--vertical {
     grid-template-rows: repeat(12, 1fr);
@@ -71,14 +68,13 @@
 /* Days */
 .heatmap-tracker-days {
   grid-area: days;
-  text-align: end;
+  display: grid;
+  justify-items: end;
+  align-items: center;
   margin: 0 0.4em 0 0.1em;
   white-space: nowrap;
-  line-height: 12px;
-
-  &__week-day {
-    padding-bottom: 2px;
-  }
+  grid-template-rows: repeat(7, 1fr);
+  row-gap: 2px;
 
   &--even {
     div:nth-child(odd) {
@@ -109,8 +105,8 @@
 .heatmap-tracker-boxes {
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: repeat(53, 12px);
-  grid-template-rows: repeat(7, 12px);
+  grid-template-columns: repeat(53, 1fr);
+  grid-template-rows: repeat(7, 1fr);
   grid-area: boxes;
   row-gap: 2px;
   column-gap: 2px;
@@ -125,8 +121,7 @@
 .heatmap-tracker-box {
   position: relative;
   font-size: 0.75em;
-  width: 12px;
-  height: 12px;
+  aspect-ratio: 1;
   border-radius: 2px;
   background-color: #ebedf0;
   transition: transform 0.2s, border 0.2s;
@@ -142,7 +137,7 @@
 
 .heatmap-tracker-boxes.separate-months {
   grid-auto-flow: column;
-  grid-template-columns: repeat(64, 12px);
+  grid-template-columns: repeat(64, 1fr);
   grid-area: boxes;
 
   &--vertical {

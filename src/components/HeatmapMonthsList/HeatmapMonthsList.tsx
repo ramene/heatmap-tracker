@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 export function HeatmapMonthsList() {
   const { t } = useTranslation();
   return (
-    <ul className="heatmap-tracker-months">
+    <div className="heatmap-tracker-months">
       {[
         t("monthsShort.January"),
         t("monthsShort.February"),
@@ -18,8 +18,8 @@ export function HeatmapMonthsList() {
         t("monthsShort.November"),
         t("monthsShort.December"),
       ].map((month) => (
-        <li key={month}>{month}</li>
+        <div key={month}>{month}</div>
       ))}
-    </ul>
+    </div>
   );
 }

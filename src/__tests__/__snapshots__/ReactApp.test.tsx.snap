@@ -232,46 +232,46 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
       <div
         class="heatmap-tracker-graph"
       >
-        <ul
+        <div
           class="heatmap-tracker-months"
         >
-          <li>
+          <div>
             monthsShort.January
-          </li>
-          <li>
+          </div>
+          <div>
             monthsShort.February
-          </li>
-          <li>
+          </div>
+          <div>
             monthsShort.March
-          </li>
-          <li>
+          </div>
+          <div>
             monthsShort.April
-          </li>
-          <li>
+          </div>
+          <div>
             monthsShort.May
-          </li>
-          <li>
+          </div>
+          <div>
             monthsShort.June
-          </li>
-          <li>
+          </div>
+          <div>
             monthsShort.July
-          </li>
-          <li>
+          </div>
+          <div>
             monthsShort.August
-          </li>
-          <li>
+          </div>
+          <div>
             monthsShort.September
-          </li>
-          <li>
+          </div>
+          <div>
             monthsShort.October
-          </li>
-          <li>
+          </div>
+          <div>
             monthsShort.November
-          </li>
-          <li>
+          </div>
+          <div>
             monthsShort.December
-          </li>
-        </ul>
+          </div>
+        </div>
         <div
           class="heatmap-tracker-days heatmap-tracker-days--even"
         >
@@ -3970,46 +3970,46 @@ exports[`ReactApp component renders correctly and matches snapshot for year 2022
       <div
         class="heatmap-tracker-graph"
       >
-        <ul
+        <div
           class="heatmap-tracker-months"
         >
-          <li>
+          <div>
             monthsShort.January
-          </li>
-          <li>
+          </div>
+          <div>
             monthsShort.February
-          </li>
-          <li>
+          </div>
+          <div>
             monthsShort.March
-          </li>
-          <li>
+          </div>
+          <div>
             monthsShort.April
-          </li>
-          <li>
+          </div>
+          <div>
             monthsShort.May
-          </li>
-          <li>
+          </div>
+          <div>
             monthsShort.June
-          </li>
-          <li>
+          </div>
+          <div>
             monthsShort.July
-          </li>
-          <li>
+          </div>
+          <div>
             monthsShort.August
-          </li>
-          <li>
+          </div>
+          <div>
             monthsShort.September
-          </li>
-          <li>
+          </div>
+          <div>
             monthsShort.October
-          </li>
-          <li>
+          </div>
+          <div>
             monthsShort.November
-          </li>
-          <li>
+          </div>
+          <div>
             monthsShort.December
-          </li>
-        </ul>
+          </div>
+        </div>
         <div
           class="heatmap-tracker-days heatmap-tracker-days--even"
         >
@@ -7739,46 +7739,46 @@ exports[`ReactApp component should use paletteName instead of customColors 1`] =
       <div
         class="heatmap-tracker-graph"
       >
-        <ul
+        <div
           class="heatmap-tracker-months"
         >
-          <li>
+          <div>
             monthsShort.January
-          </li>
-          <li>
+          </div>
+          <div>
             monthsShort.February
-          </li>
-          <li>
+          </div>
+          <div>
             monthsShort.March
-          </li>
-          <li>
+          </div>
+          <div>
             monthsShort.April
-          </li>
-          <li>
+          </div>
+          <div>
             monthsShort.May
-          </li>
-          <li>
+          </div>
+          <div>
             monthsShort.June
-          </li>
-          <li>
+          </div>
+          <div>
             monthsShort.July
-          </li>
-          <li>
+          </div>
+          <div>
             monthsShort.August
-          </li>
-          <li>
+          </div>
+          <div>
             monthsShort.September
-          </li>
-          <li>
+          </div>
+          <div>
             monthsShort.October
-          </li>
-          <li>
+          </div>
+          <div>
             monthsShort.November
-          </li>
-          <li>
+          </div>
+          <div>
             monthsShort.December
-          </li>
-        </ul>
+          </div>
+        </div>
         <div
           class="heatmap-tracker-days heatmap-tracker-days--even"
         >
