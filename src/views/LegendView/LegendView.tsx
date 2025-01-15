@@ -33,10 +33,12 @@ function LegendView() {
                 <div
                   style={{
                     backgroundColor: colorsList[index],
+                    width: '12px',
+                    height: '12px'
                   }}
                   className="heatmap-tracker-box"
                 ></div>
-                <span style={{ marginLeft: "10px" }}>{colorsList[index]}</span>
+                <span style={{ marginLeft: "12px" }}>{colorsList[index]}</span>
               </td>
             </tr>
           ))}
