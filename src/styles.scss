@@ -40,6 +40,7 @@
 
   font-size: 0.65em;
   display: grid;
+  grid-template-columns: auto 1fr;
   grid-template-areas:
     "year months"
     "days boxes";
@@ -55,13 +56,11 @@
 
 /* Months */
 .heatmap-tracker-months {
-  grid-area: months;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  grid-area: months;
   margin: 0.1em 0 0.3em;
-  row-gap: 0.3em;
-  column-gap: 0.3em;
-  justify-items: stretch;
+  grid-gap: 0.3em;
 
   &--vertical {
     grid-template-rows: repeat(12, 1fr);
@@ -72,13 +71,14 @@
 /* Days */
 .heatmap-tracker-days {
   grid-area: days;
-  display: grid;
-  justify-items: end;
-  align-items: center;
+  text-align: end;
   margin: 0 0.4em 0 0.1em;
   white-space: nowrap;
-  grid-template-rows: repeat(7, 1fr);
-  row-gap: 2px;
+  line-height: 12px;
+
+  &__week-day {
+    padding-bottom: 2px;
+  }
 
   &--even {
     div:nth-child(odd) {
@@ -109,8 +109,8 @@
 .heatmap-tracker-boxes {
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: repeat(53, 1fr);
-  grid-template-rows: repeat(7, 1fr);
+  grid-template-columns: repeat(53, 12px);
+  grid-template-rows: repeat(7, 12px);
   grid-area: boxes;
   row-gap: 2px;
   column-gap: 2px;
@@ -125,7 +125,8 @@
 .heatmap-tracker-box {
   position: relative;
   font-size: 0.75em;
-  aspect-ratio: 1;
+  width: 12px;
+  height: 12px;
   border-radius: 2px;
   background-color: #ebedf0;
   transition: transform 0.2s, border 0.2s;
@@ -141,7 +142,7 @@
 
 .heatmap-tracker-boxes.separate-months {
   grid-auto-flow: column;
-  grid-template-columns: repeat(64, 1fr);
+  grid-template-columns: repeat(64, 12px);
   grid-area: boxes;
 
   &--vertical {
