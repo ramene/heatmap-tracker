@@ -118,7 +118,7 @@ export function mergeTrackerData(defaultTrackerData: TrackerData, userTrackerDat
 
       scaleStart: userTrackerData.intensityScaleStart,
       scaleEnd: userTrackerData.intensityScaleEnd,
-      defaultIntensity: userTrackerData.defaultEntryIntensity,
+      defaultIntensity: userTrackerData.defaultEntryIntensity ?? defaultTrackerData.intensityConfig.defaultIntensity,
     },
   };
 }

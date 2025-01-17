@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.13.9] - 2025-01-17
+### Fixed
+- Fix intensities function.
+- Fix defaultIntensity.
+- Update example notes.
+
 ## [1.13.8] - 2025-01-17
 ### Fixed
 - Fix heatmap tracker markup.

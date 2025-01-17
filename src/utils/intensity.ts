@@ -3,7 +3,9 @@ import { mapRange } from "./core";
 import { getDayOfYear } from "./date";
 
 export function getEntriesIntensities(entries: Entry[]): number[] {
-  return entries.filter((e) => e.intensity).map((e) => e.intensity as number);
+  return Array.from(
+    new Set(entries.filter((e) => e.intensity !== undefined).map((e) => e.intensity as number))
+  );
 }
 
 /**
@@ -56,6 +58,8 @@ export function fillEntriesWithIntensity(
 
   const intensities = getEntriesIntensities(entries);
   const intensitiesMap = getIntensitiesInfo(intensities, intensityConfig, colorsList);
+
+  console.log('###', intensitiesMap, intensities, colorsList, intensityConfig);
   const [minimumIntensity, maximumIntensity] = getMinMaxIntensities(intensities, intensityConfig);
 
   entries.forEach((e) => {
