@@ -21,8 +21,12 @@
   }
 }
 
-.heatmap-tracker, .heatmap-tracker-legend {
+.heatmap-tracker-legend {
   overflow-x: hidden;
+}
+
+.heatmap-tracker {
+  overflow-x: scroll;
 }
 
 .heatmap-tracker-loading::after {
@@ -36,7 +40,7 @@
 }
 
 .heatmap-tracker-graph {
-  overflow-x: scroll;
+  overflow-x: hidden;
 
   font-size: 0.65em;
   display: grid;
@@ -46,7 +50,7 @@
     "days boxes";
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  width: 100%;
+  width: max-content;
   padding: 12px; /* 0px caused overflow and scrollbars */
 
   &--vertical {
@@ -61,6 +65,7 @@
   grid-area: months;
   margin: 0.1em 0 0.3em;
   grid-gap: 0.3em;
+  justify-items: center;
 
   &--vertical {
     grid-template-rows: repeat(12, 1fr);
@@ -125,11 +130,10 @@
 .heatmap-tracker-box {
   position: relative;
   font-size: 0.75em;
-  width: 12px;
-  height: 12px;
   border-radius: 2px;
   background-color: #ebedf0;
   transition: transform 0.2s, border 0.2s;
+  aspect-ratio: 1;
 
   &:hover {
     transform: scale(1.4);

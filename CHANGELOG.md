@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.13.8] - 2025-01-17
+### Fixed
+- Fix heatmap tracker markup.
+
+
 ## [1.13.3] - 2025-01-15
 ### Fixed
 - Flexible box size.
