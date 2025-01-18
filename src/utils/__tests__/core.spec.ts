@@ -56,7 +56,7 @@ describe('mergeTrackerData', () => {
     const userConfig = {
       year: 2021,
       entries: [
-        { date: '2021-01-01', color: '#7bc96f', intensity: 5, content: '' },
+        { date: '2021-01-01', customColor: '#7bc96f', intensity: 5, content: '' },
       ],
       showCurrentDayBorder: false,
       intensityScaleStart: 2,
@@ -87,7 +87,7 @@ describe('mergeTrackerData', () => {
     const userConfig = {
       year: 2021,
       entries: [
-        { date: '2021-01-01', color: '#7bc96f', intensity: 5, content: '' },
+        { date: '2021-01-01', customColor: '#7bc96f', intensity: 5, content: '' },
       ],
       showCurrentDayBorder: false,
       intensityScaleStart: 2,
@@ -115,7 +115,7 @@ describe('mergeTrackerData', () => {
     const userConfig = {
       year: 2021,
       entries: [
-        { date: '2021-01-01', color: '#7bc96f', intensity: 5, content: '' },
+        { date: '2021-01-01', customColor: '#7bc96f', intensity: 5, content: '' },
       ],
       showCurrentDayBorder: false,
       intensityScaleStart: 2,
@@ -141,7 +141,7 @@ describe('mergeTrackerData', () => {
         const userConfig = {
           year: 2021,
           entries: [
-            { date: '2021-01-01', color: '#7bc96f', intensity: 5, content: '' },
+            { date: '2021-01-01', customColor: '#7bc96f', intensity: 5, content: '' },
           ],
           showCurrentDayBorder: false,
           intensityScaleStart: 2,
@@ -162,7 +162,7 @@ describe('mergeTrackerData', () => {
         const userConfig = {
           year: 2021,
           entries: [
-            { date: '2021-01-01', color: '#7bc96f', intensity: 5, content: '' },
+            { date: '2021-01-01', customColor: '#7bc96f', intensity: 5, content: '' },
           ],
           showCurrentDayBorder: false,
           intensityScaleStart: 2,

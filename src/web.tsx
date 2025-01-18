@@ -29,7 +29,7 @@ const DEFAULT_SETTINGS: TrackerSettings = {
 export const DEFAULT_TRACKER_DATA: TrackerData = {
   year: new Date().getFullYear(),
   entries: [
-    { date: "1900-01-01", color: "#7bc96f", intensity: 5, content: "" },
+    { date: "1900-01-01", customColor: "#7bc96f", intensity: 5, content: "" },
   ],
   showCurrentDayBorder: true,
   intensityConfig: {

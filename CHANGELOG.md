@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.13.10] - 2025-01-18
+### Removed
+- Remove entry color property. customColor is used instead.
+
 ## [1.13.9] - 2025-01-17
 ### Fixed
 - Fix intensities function.

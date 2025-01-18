@@ -75,12 +75,12 @@ renderHeatmapTracker(this.container, trackerData);
 - **Default:**
 ```
 [
-  { "date": "1900-01-01", "color": "#7bc96f", "intensity": 5, "content": "" }
+  { "date": "1900-01-01", "customColor": "#7bc96f", "intensity": 5, "content": "" }
 ]
 ```
 - **Description:** A list of data entries for the heatmap. Each entry includes:
   - `date`: The date of the entry (ISO string format).
-  - `color`: The color for that entry.
+  - `customColor`: The color for that entry.
   - `intensity`: The data intensity for that date.
   - `content`: Optional tooltip or note associated with the date.
 
