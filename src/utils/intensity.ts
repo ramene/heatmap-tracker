@@ -59,7 +59,6 @@ export function fillEntriesWithIntensity(
   const intensities = getEntriesIntensities(entries);
   const intensitiesMap = getIntensitiesInfo(intensities, intensityConfig, colorsList);
 
-  console.log('###', intensitiesMap, intensities, colorsList, intensityConfig);
   const [minimumIntensity, maximumIntensity] = getMinMaxIntensities(intensities, intensityConfig);
 
   entries.forEach((e) => {

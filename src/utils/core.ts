@@ -60,9 +60,7 @@ export function getBoxes(
 
     // We don't need to add padding before January.
     if (trackerData.separateMonths && day > 31) {
-      const dayInMonth = Number(
-        currentDate.toLocaleString("en-us", { day: "numeric" })
-      );
+      const dayInMonth = currentDate.getUTCDate();
       if (dayInMonth === 1) {
         for (let i = 0; i < 7; i++) {
           const emptyBox = {
@@ -73,8 +71,9 @@ export function getBoxes(
       }
     }
 
-    const month = currentDate.toLocaleString("en-US", { month: "short" });
+    const month = currentDate.toLocaleString("en-US", { month: "short", timeZone: "UTC" });
     box.name = `month-${month.toLowerCase()}`;
+    box.date = formatDateToISO8601(currentDate) ?? undefined;
 
     if (isToday(day)) {
       box.isToday = true;
@@ -85,12 +84,9 @@ export function getBoxes(
       box.hasData = true;
       const entry = entriesWithIntensity[day];
 
-      box.date = entry.date;
       box.content = entry.content || undefined;
-
       box.backgroundColor = entry.customColor ?? (entry.intensity !== undefined ? colorsList[entry.intensity - 1] : undefined);
     } else {
-      box.date = formatDateToISO8601(currentDate) ?? undefined;
       box.hasData = false;
     }
 
