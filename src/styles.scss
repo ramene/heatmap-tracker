@@ -7,7 +7,9 @@
   list-style: none;
 }
 
-.heatmap-tracker__container, .heatmap-tracker-legend {
+.heatmap-tracker__container,
+.heatmap-tracker-legend,
+.heatmap-tracker-statistics {
   position: relative;
   margin: 24px 0;
   padding: 0.5em;
@@ -191,6 +193,10 @@
 
 .heatmap-tracker-boxes .with-border {
   border: solid var(--border-width) rgb(61, 61, 61);
+}
+
+.theme-dark .heatmap-tracker-boxes .with-border {
+  border: solid var(--border-width) white;
 }
 
 .theme-dark .heatmap-tracker-boxes .isEmpty {
@@ -398,10 +404,6 @@
 }
 
 .heatmap-tracker-settings-palettes__add-color-input {
-}
-
-.theme-dark .heatmap-tracker-boxes .today {
-  border: solid 1px white;
 }
 
 /* Heatmap Statistics */

@@ -1,9 +1,16 @@
 export interface Entry {
   date: string;
+  /**
+   * This is the mapped intensity.
+   * The user set intensity, then I recalculate intensity and write here new intensity. User's value write to `value`.
+   */
   intensity?: number;
+  /**
+   * Initial user intensity (value).
+   */
+  value?: number;
   customColor?: string;
   content: string | HTMLElement;
-  separateMonths?: boolean;
 }
 
 export type ColorsList = string[];
@@ -22,24 +29,10 @@ export interface IntensityConfig {
   showOutOfRange: boolean;
 }
 
-/**
- * Represents the data structure for the heatmap tracker.
- */
 export interface TrackerData {
-  /**
-   * The year for which the tracker data is relevant.
-   */
   year: number;
   colorScheme: ColorScheme;
-
-  /**
-   * An array of entries representing the data points in the heatmap.
-   */
   entries: Entry[];
-
-  /**
-   * A flag indicating whether to show a border around the current day.
-   */
   showCurrentDayBorder: boolean;
 
   /**
@@ -56,12 +49,7 @@ export interface TrackerData {
    * @deprecated The ending value for the intensity scale.
    */
   intensityScaleEnd: number | undefined;
-
   intensityConfig: IntensityConfig;
-
-  /**
-   * A flag indicating whether to separate the months in the heatmap.
-   */
   separateMonths?: boolean;
   heatmapTitle?: string;
   heatmapSubtitle?: string;

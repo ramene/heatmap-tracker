@@ -1,6 +1,4 @@
-Hi!
-
-To display legend separately all you need to do is to call `renderHeatmapTrackerLegend(this.container, trackerData)`.
+To display statistics separately all you need to do is to call `renderHeatmapTrackerStatistics(this.container, trackerData)`.
 
 Check example below:
 
@@ -24,7 +22,7 @@ for(let page of dv.pages('"daily notes"').where(p=>p.steps)){
 
 renderHeatmapTracker(this.container, trackerData)
 
-dv.span('Steps tracker legend:')
+dv.span('Steps tracker statistics:')
 
-renderHeatmapTrackerLegend(this.container, trackerData)
+renderHeatmapTrackerStatistics(this.container, trackerData)
 ```
