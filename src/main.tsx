@@ -11,6 +11,7 @@ import { useContext } from "react";
 import { IHeatmapView } from "src/types";
 import { mergeTrackerData } from "./utils/core";
 import LegendView from "./views/LegendView/LegendView";
+import { getCurrentFullYear } from "./utils/date";
 
 declare global {
   interface Window {
@@ -40,7 +41,7 @@ const DEFAULT_SETTINGS: TrackerSettings = {
     danger: ["#fff33b", "#fdc70c", "#f3903f", "#ed683c", "#e93e3a"],
   },
   weekStartDay: 1,
-  weekDisplayMode: 'even',
+  weekDisplayMode: "even",
   separateMonths: false,
   language: "en",
   viewTabsVisibility: {
@@ -53,7 +54,7 @@ const DEFAULT_SETTINGS: TrackerSettings = {
 };
 
 export const DEFAULT_TRACKER_DATA: TrackerData = {
-  year: new Date().getFullYear(),
+  year: getCurrentFullYear(),
   entries: [
     { date: "1900-01-01", customColor: "#7bc96f", intensity: 5, content: "" },
   ],
@@ -110,7 +111,11 @@ export default class HeatmapTracker extends Plugin {
     ): void => {
       const container = el.createDiv({
         cls: "heatmap-tracker-legend",
-        attr: { "data-htp-name": trackerData?.heatmapTitle ? `${trackerData?.heatmapTitle}-legend` : "" },
+        attr: {
+          "data-htp-name": trackerData?.heatmapTitle
+            ? `${trackerData?.heatmapTitle}-legend`
+            : "",
+        },
       });
 
       const root = createRoot(container);

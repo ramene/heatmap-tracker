@@ -1,5 +1,5 @@
 import { Box, ColorsList, Entry, TrackerData, TrackerSettings } from "src/types";
-import { formatDateToISO8601, getDayOfYear, getLastDayOfYear, getNumberOfEmptyDaysBeforeYearStarts, isToday, isValidDate } from "src/utils/date";
+import { formatDateToISO8601, getDayOfYear, getFullYear, getLastDayOfYear, getNumberOfEmptyDaysBeforeYearStarts, isToday, isValidDate } from "src/utils/date";
 
 export function clamp(input: number, min: number, max: number): number {
   return input < min ? min : input > max ? max : input;
@@ -23,7 +23,7 @@ export function getEntriesForYear(entries: Entry[], year: number): Entry[] {
       return false;
     }
 
-    return new Date(e.date).getFullYear() === year;
+    return getFullYear(e.date) === year;
   });
 }
 
