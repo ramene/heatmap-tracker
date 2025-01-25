@@ -42,6 +42,7 @@ renderHeatmapTracker(this.container, trackerData);
 ```
 
 ## Tracker Settings Documentation
+> You can also read about parameters in [EXAMPLE_VAULT](https://github.com/mokkiebear/heatmap-tracker/tree/main/EXAMPLE_VAULT/Documentation%20with%20Examples/3.%20trackerData%20parameters) (there're examples).
 
 ### `year`
 - **Type:** `number`
@@ -119,6 +120,11 @@ renderHeatmapTracker(this.container, trackerData);
 - **Default:** `false`
 - **Description:** Determines whether months should be visually separated within the heatmap layout.
 
+### `insights`
+- **Type:** `array`
+- **Default:** `[]`
+- **Description:** Powerful property for calculating and displaying your own insights in `Statistics`. Check this [example](https://github.com/mokkiebear/heatmap-tracker/blob/main/EXAMPLE_VAULT/Documentation%20with%20Examples/3.%20trackerData%20parameters/6.%20insights.md).
+
 
 <img src="https://raw.githubusercontent.com/mokkiebear/heatmap-tracker/refs/heads/main/public/two-mac-mockup.png" />
 
@@ -135,18 +141,21 @@ To be used with [Obsidian Dataview](https://blacksmithgu.github.io/obsidian-data
    Define your own color schemes and intensity ranges to match your data's theme.
 
 3. **Interactive Navigation**  
-   Easily switch between years using left and right navigation arrows.
+  Easily switch between years using left and right navigation arrows, allowing you to explore data across multiple years effortlessly.
 
-4. **Flexible Data Entries**  
+4.	**User-Defined Insights**
+  Add your own insights to analyze data in ways that matter to you. Customize metrics such as the most productive day, the longest streak without breaks, the most active month, or even your average daily intensity.
+
+5. **Flexible Data Entries**  
    Add entries with customizable colors, intensity levels, and tooltips for detailed content.
 
-5. **Monthly Separation Option**  
+6. **Monthly Separation Option**  
    Choose whether to separate months visually within the heatmap.
 
-6. **Localization**  
+7. **Localization**  
    Plugin supports multiple languages, including English, German and Russian.
 
-7. **Statistics View**
+8. **Statistics View**
    Statistics view where you can see your progress.
 
 <img src="https://raw.githubusercontent.com/mokkiebear/heatmap-tracker/refs/heads/main/public/mac-mockup-dark.png" />
