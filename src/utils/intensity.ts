@@ -73,6 +73,7 @@ export function fillEntriesWithIntensity(
 
     const newEntry = {
       ...e,
+      value: e.intensity,
       intensity: newIntensity,
     };
 

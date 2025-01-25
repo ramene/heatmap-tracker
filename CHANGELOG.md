@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.14.0] - 2025-01-25
+### Removed
+- Hide donation view.
+
+### Added
+- Add user insights 🎉
+- Add more examples to EXAMPLE_VAULT.
+
+
 ## [1.13.12] - 2025-01-25
 ### Fixed
 - Use UTC consistently.

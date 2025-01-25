@@ -11,12 +11,17 @@ import { useContext } from "react";
 import { IHeatmapView } from "src/types";
 import { mergeTrackerData } from "./utils/core";
 import LegendView from "./views/LegendView/LegendView";
+import StatisticsView from "./views/StatisticsView/StatisticsView";
 import { getCurrentFullYear } from "./utils/date";
 
 declare global {
   interface Window {
     renderHeatmapTracker?: (el: HTMLElement, trackerData: TrackerData) => void;
     renderHeatmapTrackerLegend?: (
+      el: HTMLElement,
+      trackerData: TrackerData
+    ) => void;
+    renderHeatmapTrackerStatistics?: (
       el: HTMLElement,
       trackerData: TrackerData
     ) => void;
@@ -46,7 +51,7 @@ const DEFAULT_SETTINGS: TrackerSettings = {
   language: "en",
   viewTabsVisibility: {
     [IHeatmapView.Documentation]: true,
-    [IHeatmapView.Donation]: true,
+    // [IHeatmapView.Donation]: true,
     [IHeatmapView.HeatmapTracker]: true,
     [IHeatmapView.HeatmapTrackerStatistics]: true,
     [IHeatmapView.Legend]: true,
@@ -71,6 +76,7 @@ export const DEFAULT_TRACKER_DATA: TrackerData = {
   colorScheme: {
     paletteName: "default",
   },
+  insights: []
 };
 
 export default class HeatmapTracker extends Plugin {
@@ -133,6 +139,35 @@ export default class HeatmapTracker extends Plugin {
         </StrictMode>
       );
     };
+
+    window.renderHeatmapTrackerStatistics = (
+      el: HTMLElement,
+      trackerData: TrackerData = DEFAULT_TRACKER_DATA
+    ): void => {
+      const container = el.createDiv({
+        cls: "heatmap-tracker-statistics",
+        attr: {
+          "data-htp-name": trackerData?.heatmapTitle
+            ? `${trackerData?.heatmapTitle}-statistics`
+            : "",
+        },
+      });
+
+      const root = createRoot(container);
+
+      root.render(
+        <StrictMode>
+          <AppContext.Provider value={this.app}>
+            <HeatmapProvider
+              trackerData={mergeTrackerData(DEFAULT_TRACKER_DATA, trackerData)}
+              settings={this.settings}
+            >
+              <StatisticsView />
+            </HeatmapProvider>
+          </AppContext.Provider>
+        </StrictMode>
+      );
+    };
   }
 
   onunload() {
@@ -142,6 +177,10 @@ export default class HeatmapTracker extends Plugin {
 
     if (window.renderHeatmapTrackerLegend) {
       delete window.renderHeatmapTrackerLegend;
+    }
+
+    if (window.renderHeatmapTrackerStatistics) {
+      delete window.renderHeatmapTrackerStatistics;
     }
   }
 

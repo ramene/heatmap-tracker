@@ -15,12 +15,12 @@ const DEFAULT_SETTINGS: TrackerSettings = {
     danger: ["#fff33b", "#fdc70c", "#f3903f", "#ed683c", "#e93e3a"],
   },
   weekStartDay: 1,
-  weekDisplayMode: 'even',
+  weekDisplayMode: "even",
   separateMonths: false,
   language: "en",
   viewTabsVisibility: {
     [IHeatmapView.Documentation]: true,
-    [IHeatmapView.Donation]: true,
+    // [IHeatmapView.Donation]: true,
     [IHeatmapView.HeatmapTracker]: true,
     [IHeatmapView.HeatmapTrackerStatistics]: true,
     [IHeatmapView.Legend]: true,
@@ -45,6 +45,8 @@ export const DEFAULT_TRACKER_DATA: TrackerData = {
   colorScheme: {
     paletteName: "default",
   },
+
+  insights: [],
 };
 
 export function renderHeatmapTracker(
