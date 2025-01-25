@@ -165,7 +165,7 @@ function StatisticsView() {
         />
         <br />
         {Object.entries(userInsights).map(([key, value]) => (
-          <StatisticsMetric label={key} value={value} />
+          <StatisticsMetric key={key} label={key} value={value} />
         ))}
       </div>
     </div>
