@@ -10,7 +10,7 @@ export interface Entry {
    */
   value?: number;
   customColor?: string;
-  content: string | HTMLElement;
+  content?: string | HTMLElement;
 }
 
 export type ColorsList = string[];

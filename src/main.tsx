@@ -12,6 +12,7 @@ import { IHeatmapView } from "src/types";
 import { mergeTrackerData } from "./utils/core";
 import LegendView from "./views/LegendView/LegendView";
 import StatisticsView from "./views/StatisticsView/StatisticsView";
+import { getCurrentFullYear } from "./utils/date";
 
 declare global {
   interface Window {
@@ -58,7 +59,7 @@ const DEFAULT_SETTINGS: TrackerSettings = {
 };
 
 export const DEFAULT_TRACKER_DATA: TrackerData = {
-  year: new Date().getFullYear(),
+  year: getCurrentFullYear(),
   entries: [
     { date: "1900-01-01", customColor: "#7bc96f", intensity: 5, content: "" },
   ],

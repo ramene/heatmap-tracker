@@ -1,11 +1,10 @@
-
 export function isValidDate(dateString: string): boolean {
   const date = new Date(dateString);
   return !isNaN(date.getTime());
 }
 
 export function getDayOfYear(date: Date): number {
-  const startOfYear = Date.UTC(date.getFullYear(), 0, 0);
+  const startOfYear = Date.UTC(date.getUTCFullYear(), 0, 0);
   const diff = date.getTime() - startOfYear;
   return Math.floor(diff / (1000 * 60 * 60 * 24));
 }
@@ -51,7 +50,15 @@ export function formatDateToISO8601(date: Date | null): string | null {
     return null;
   }
 
-  const formattedDate = date?.toISOString()?.split('T')[0];
+  const formattedDate = date?.toISOString?.()?.split('T')?.[0];
 
   return formattedDate;
+}
+
+export function getFullYear(date: string) {
+  return  new Date(date).getUTCFullYear();
+}
+
+export function getCurrentFullYear() {
+  return new Date().getUTCFullYear();
 }

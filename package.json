@@ -1,6 +1,6 @@
 {
   "name": "heatmap-tracker",
-  "version": "1.13.10",
+  "version": "1.13.12",
   "description": "A heatmap tracker plugin for Obsidian",
   "main": "/build/main.js",
   "scripts": {
@@ -11,7 +11,9 @@
     "build": "rimraf build && tsc -noEmit -skipLibCheck && node esbuild.config.mjs --production && npm run copyToBuild",
     "copyToBuild": "cpx \"./build/styles.css\" \"build\" && cpx \"manifest.json\" \"build\"",
     "version": "node version-bump.mjs && git add manifest.json versions.json",
-    "test": "jest"
+    "test": "jest",
+    "test:utc": "TZ=utc jest",
+    "test:usa": "TZ=America/New_York jest"
   },
   "keywords": [
     "obsidian"

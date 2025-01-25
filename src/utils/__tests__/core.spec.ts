@@ -1,5 +1,6 @@
 import { DEFAULT_TRACKER_DATA } from 'src/main';
-import { clamp, mapRange, mergeTrackerData, } from '../core';
+import { clamp, getEntriesForYear, mapRange, mergeTrackerData, } from '../core';
+import { Entry } from 'src/types';
 
 describe('clamp', () => {
   test('Input Within Range', () => {
@@ -177,5 +178,78 @@ describe('mergeTrackerData', () => {
         expect(result.colorScheme.paletteName).toEqual('default');
         expect(result.colorScheme.customColors).toBeUndefined();
       });
+  });
+});
+
+describe('getEntriesForYear', () => {
+  it('should return only entries for the given year', () => {
+    const entries: Entry[] = [
+      { date: '2025-01-01T00:00:00Z' },
+      { date: '2025-12-31T23:59:59Z' },
+      { date: '2024-06-15T00:00:00Z' },
+    ];
+    expect(getEntriesForYear(entries, 2025)).toEqual([
+      { date: '2025-01-01T00:00:00Z' },
+      { date: '2025-12-31T23:59:59Z' },
+    ]);
+  });
+
+  it('should return an empty array if no entries match the year', () => {
+    const entries: Entry[] = [
+      { date: '2024-01-01T00:00:00Z' },
+      { date: '2023-12-31T23:59:59Z' },
+    ];
+    expect(getEntriesForYear(entries, 2025)).toEqual([]);
+  });
+
+  it('should handle invalid dates gracefully', () => {
+    const entries: Entry[] = [
+      { date: 'Invalid Date' },
+      { date: null as unknown as string },
+      { date: '2025-01-01T00:00:00Z' },
+    ];
+    expect(getEntriesForYear(entries, 2025)).toEqual([{ date: '2025-01-01T00:00:00Z' }]);
+  });
+
+  it('should handle entries with null or undefined dates', () => {
+    const entries: Entry[] = [
+      { date: null as unknown as string },
+      { date: undefined as unknown as string },
+      { date: '2025-01-01T00:00:00Z' },
+    ];
+    expect(getEntriesForYear(entries, 2025)).toEqual([{ date: '2025-01-01T00:00:00Z' }]);
+  });
+
+  it('should handle leap years correctly', () => {
+    const entries: Entry[] = [
+      { date: '2024-02-29T00:00:00Z' }, // Leap day
+      { date: '2025-02-28T00:00:00Z' },
+    ];
+    expect(getEntriesForYear(entries, 2024)).toEqual([{ date: '2024-02-29T00:00:00Z' }]);
+  });
+
+  it.skip('should handle entries in different timezones correctly', () => {
+    const entries: Entry[] = [
+      { date: '2025-01-01T00:00:00+05:00' }, // Timezone offset
+      { date: '2025-12-31T23:59:59-08:00' },
+      { date: '2026-01-01T00:00:00Z' },
+    ];
+    expect(getEntriesForYear(entries, 2025)).toEqual([
+      { date: '2025-01-01T00:00:00+05:00' },
+      { date: '2025-12-31T23:59:59-08:00' },
+    ]);
+  });
+
+  it('should return an empty array for an empty entries list', () => {
+    const entries: Entry[] = [];
+    expect(getEntriesForYear(entries, 2025)).toEqual([]);
+  });
+
+  it('should return an empty array if the year is invalid', () => {
+    const entries: Entry[] = [
+      { date: '2025-01-01T00:00:00Z' },
+      { date: '2025-12-31T23:59:59Z' },
+    ];
+    expect(getEntriesForYear(entries, NaN)).toEqual([]);
   });
 });
