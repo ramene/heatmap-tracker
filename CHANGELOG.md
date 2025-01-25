@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.13.12] - 2025-01-25
+### Fixed
+- Use UTC consistently.
+
+### Added
+- Improved test coverage.
+
+
 ## [1.13.11] - 2025-01-21
 ### Fixed
 - Fix date shift: [Issue](https://github.com/mokkiebear/heatmap-tracker/issues/25).
