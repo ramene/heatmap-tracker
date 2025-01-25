@@ -77,6 +77,7 @@ describe('mergeTrackerData', () => {
         scaleStart: 2,
         showOutOfRange: true,
       },
+      insights: [],
     };
 
     const result = mergeTrackerData(DEFAULT_TRACKER_DATA, userConfig as any);

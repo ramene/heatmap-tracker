@@ -1,17 +1,25 @@
-import { Entry } from "src/types";
+import { Entry, Insight } from "src/types";
 
-interface CustomMetric {
-  name: string;
-  calculate: (props: { entries: Entry[] }) => string;
+export function processCustomMetrics(insights: Insight[], yearEntries: Entry[]): Record<string, string> {
+  const results: Record<string, string> = {};
+
+  insights.forEach((insight) => {
+    // Calculate the result for the current metric
+    const result = insight.calculate({ yearEntries });
+    // Store the result with the metric name as the key
+    results[insight.name] = result?.toString() || "";
+  });
+
+  return results;
 }
 
-export const mostActiveDayMetric: CustomMetric = {
+const mostActiveDayMetric: Insight = {
   name: "The most active day of the week",
-  calculate: ({ entries }: { entries: Entry[] }): string => {
+  calculate: ({ yearEntries }: { yearEntries: Entry[] }): string => {
     const dayCounts: Record<string, number> = {};
 
     // Map each box to the day of the week
-    entries.forEach((entry) => {
+    yearEntries.forEach((entry) => {
       const date = new Date(entry.date);
       const day = date.toLocaleDateString("en-US", { weekday: "long" });
 
@@ -32,41 +40,28 @@ export const mostActiveDayMetric: CustomMetric = {
   },
 };
 
-export function processCustomMetrics(metrics: CustomMetric[], entries: Entry[]): Record<string, string> {
-  const results: Record<string, string> = {};
-
-  metrics.forEach((metric) => {
-    // Calculate the result for the current metric
-    const result = metric.calculate({ entries });
-    // Store the result with the metric name as the key
-    results[metric.name] = result;
-  });
-
-  return results;
-}
-
-export const totalValueMetric: CustomMetric = {
+const totalValueMetric: Insight = {
   name: "Total Value",
-  calculate: ({ entries }: { entries: Entry[] }) => {
-    const total = entries.reduce((sum, entry) => sum + (entry.value || 0), 0);
+  calculate: ({ yearEntries }: { yearEntries: Entry[] }) => {
+    const total = yearEntries.reduce((sum, entry) => sum + (entry.value || 0), 0);
     return total.toString();
   },
 };
 
-export const averageValueMetric: CustomMetric = {
+const averageValueMetric: Insight = {
   name: "Average Value",
-  calculate: ({ entries }: { entries: Entry[] }) => {
-    const total = entries.reduce((sum, entry) => sum + (entry.value || 0), 0);
-    return (total / entries.length).toFixed(2); // Two decimal places
+  calculate: ({ yearEntries }: { yearEntries: Entry[] }) => {
+    const total = yearEntries.reduce((sum, entry) => sum + (entry.value || 0), 0);
+    return (total / yearEntries.length).toFixed(2); // Two decimal places
   },
 };
 
-export const mostFrequentIntensityMetric: CustomMetric = {
+const mostFrequentIntensityMetric: Insight = {
   name: "Most Frequent Intensity",
-  calculate: ({ entries }: { entries: Entry[] }) => {
+  calculate: ({ yearEntries }: { yearEntries: Entry[] }) => {
     const intensityCounts: Record<number, number> = {};
 
-    entries.forEach((entry) => {
+    yearEntries.forEach((entry) => {
       const intensity = entry.intensity || 0;
       intensityCounts[intensity] = (intensityCounts[intensity] || 0) + 1;
     });
@@ -79,22 +74,22 @@ export const mostFrequentIntensityMetric: CustomMetric = {
   },
 };
 
-export const highestValueDayMetric: CustomMetric = {
+const highestValueDayMetric: Insight = {
   name: "Day with the Highest Value",
-  calculate: ({ entries }: { entries: Entry[] }) => {
-    const maxEntry = entries.reduce((max, entry) =>
+  calculate: ({ yearEntries }: { yearEntries: Entry[] }) => {
+    const maxEntry = yearEntries.reduce((max, entry) =>
       (entry.value || 0) > (max.value || 0) ? entry : max
     );
     return maxEntry.date || "No data";
   },
 };
 
-export const intensityDistributionMetric: CustomMetric = {
+const intensityDistributionMetric: Insight = {
   name: "Intensity Distribution",
-  calculate: ({ entries }: { entries: Entry[] }) => {
+  calculate: ({ yearEntries }: { yearEntries: Entry[] }) => {
     const distribution: Record<number, number> = {};
 
-    entries.forEach((entry) => {
+    yearEntries.forEach((entry) => {
       const intensity = entry.intensity || 0;
       distribution[intensity] = (distribution[intensity] || 0) + 1;
     });

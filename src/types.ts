@@ -22,6 +22,11 @@ export interface ColorScheme {
 
 export type Palettes = Record<string, ColorsList>;
 
+export interface Insight {
+  name: string;
+  calculate({ yearEntries }: { yearEntries: Entry[] }): string | number;
+}
+
 export interface IntensityConfig {
   scaleStart: number | undefined;
   scaleEnd: number | undefined;
@@ -53,6 +58,8 @@ export interface TrackerData {
   separateMonths?: boolean;
   heatmapTitle?: string;
   heatmapSubtitle?: string;
+
+  insights: Insight[];
 }
 
 export interface TrackerSettings {
@@ -79,7 +86,7 @@ export enum IHeatmapView {
   HeatmapTracker = "heatmap-tracker",
   HeatmapTrackerStatistics = "heatmap-tracker-statistics",
   Documentation = "documentation",
-  Donation = "donation",
+  // Donation = "donation",
   Legend = "legend"
 }
 

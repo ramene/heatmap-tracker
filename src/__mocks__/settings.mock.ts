@@ -12,7 +12,7 @@ export const settingsMock: TrackerSettings = {
     "heatmap-tracker": true,
     "heatmap-tracker-statistics": true,
     "documentation": true,
-    "donation": true,
+    // "donation": true,
     "legend": true
   }
 };

@@ -3,15 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useHeatmapContext } from "src/context/heatmap/heatmap.context";
 import { Entry } from "src/types";
 import { formatDateToISO8601 } from "src/utils/date";
-import {
-  averageValueMetric,
-  highestValueDayMetric,
-  intensityDistributionMetric,
-  mostActiveDayMetric,
-  mostFrequentIntensityMetric,
-  processCustomMetrics,
-  totalValueMetric,
-} from "src/utils/statistics";
+import { processCustomMetrics } from "src/utils/statistics";
 
 interface StatisticsMetricProps {
   label: string;
@@ -142,19 +134,15 @@ function StatisticsView() {
     } - ${formatDateToISO8601(longestStreakEndDate) ?? ""})`;
   }, [longestStreak, longestStreakStartDate, longestStreakEndDate]);
 
-  const userInsights = processCustomMetrics(
-    [
-      mostActiveDayMetric,
-      averageValueMetric,
-      totalValueMetric,
-      mostFrequentIntensityMetric,
-      highestValueDayMetric,
-      intensityDistributionMetric,
-    ],
-    Object.values(entriesWithIntensity)
+  const userInsights = useMemo(
+    () =>
+      processCustomMetrics(
+        trackerData.insights,
+        Object.values(entriesWithIntensity)
+      ),
+    [trackerData.insights, entriesWithIntensity]
   );
 
-  console.log("### result", userInsights);
   return (
     <div className="heatmap-statistics">
       <div className="heatmap-statistics__content">
