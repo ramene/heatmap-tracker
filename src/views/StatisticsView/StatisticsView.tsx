@@ -40,6 +40,7 @@ function calculateStreaks(entries: Entry[]): StreakResult {
 
   let currentStreakStartDate: Date | null = new Date(sortedEntries[0].date);
   let currentStreakEndDate: Date | null = new Date(sortedEntries[0].date);
+
   let longestStreakStartDate = new Date(sortedEntries[0].date);
   let longestStreakEndDate = new Date(sortedEntries[0].date);
 
@@ -70,8 +71,9 @@ function calculateStreaks(entries: Entry[]): StreakResult {
 
   const today = new Date();
   const lastEntryDate = new Date(sortedEntries[sortedEntries.length - 1].date);
-  const diffWithToday =
-    (today.getTime() - lastEntryDate.getTime()) / (1000 * 60 * 60 * 24);
+  const diffWithToday = Math.abs(
+    (today.getTime() - lastEntryDate.getTime()) / (1000 * 60 * 60 * 24)
+  );
 
   if (diffWithToday > 1) {
     currentStreak = 0;
