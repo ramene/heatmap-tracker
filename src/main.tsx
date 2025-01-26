@@ -13,6 +13,7 @@ import { mergeTrackerData } from "./utils/core";
 import LegendView from "./views/LegendView/LegendView";
 import StatisticsView from "./views/StatisticsView/StatisticsView";
 import { getCurrentFullYear } from "./utils/date";
+import { HeatmapHeader } from "./components/HeatmapHeader/HeatmapHeader";
 
 declare global {
   interface Window {
@@ -76,7 +77,7 @@ export const DEFAULT_TRACKER_DATA: TrackerData = {
   colorScheme: {
     paletteName: "default",
   },
-  insights: []
+  insights: [],
 };
 
 export default class HeatmapTracker extends Plugin {
@@ -162,7 +163,10 @@ export default class HeatmapTracker extends Plugin {
               trackerData={mergeTrackerData(DEFAULT_TRACKER_DATA, trackerData)}
               settings={this.settings}
             >
-              <StatisticsView />
+              <>
+                <HeatmapHeader hideTabs hideSubtitle />
+                <StatisticsView />
+              </>
             </HeatmapProvider>
           </AppContext.Provider>
         </StrictMode>

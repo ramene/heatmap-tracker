@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.14.2] - 2025-01-26
+### Fixed
+- Remove `font-family`.
+- Add header fro `StatisticsView`. Hide tabs.
+
 ## [1.14.1] - 2025-01-26
 ### Fixed
 - `overflow-x: auto;`

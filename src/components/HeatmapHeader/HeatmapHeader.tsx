@@ -2,7 +2,15 @@ import { useTranslation } from "react-i18next";
 import { useHeatmapContext } from "src/context/heatmap/heatmap.context";
 import { HeatmapTabs } from "../HeatmapTabs/HeatmapTabs";
 
-export function HeatmapHeader() {
+interface HeatmapHeaderProps {
+  hideTabs?: boolean;
+  hideSubtitle?: boolean;
+}
+
+export function HeatmapHeader({
+  hideTabs = false,
+  hideSubtitle = false,
+}: HeatmapHeaderProps) {
   const { t } = useTranslation();
   const { currentYear, setCurrentYear, trackerData } = useHeatmapContext();
 
@@ -38,9 +46,9 @@ export function HeatmapHeader() {
           className="heatmap-tracker-header__title"
           dangerouslySetInnerHTML={{ __html: trackerData?.heatmapTitle ?? "" }}
         />
-        <HeatmapTabs />
+        {hideTabs ? null : <HeatmapTabs />}
       </div>
-      {trackerData?.heatmapSubtitle ? (
+      {hideSubtitle ? null : trackerData?.heatmapSubtitle ? (
         <div className="heatmap-tracker-header__sub-row">
           <div
             className="heatmap-tracker-header__subtitle"
