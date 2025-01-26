@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.14.1] - 2025-01-26
+### Fixed
+- `overflow-x: auto;`
+
 ## [1.14.0] - 2025-01-25
 ### Removed
 - Hide donation view.
