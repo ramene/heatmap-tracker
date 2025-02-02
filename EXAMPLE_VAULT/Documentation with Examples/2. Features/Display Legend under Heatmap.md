@@ -1,5 +1,6 @@
 
 Request:
+https://github.com/mokkiebear/heatmap-tracker/issues/21
 https://github.com/Richardsl/heatmap-calendar-obsidian/discussions/103
 
 ```dataviewjs
