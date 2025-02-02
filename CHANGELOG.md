@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.14.4] - 2025-02-02
+### Added
+- Return container ref.
+- Change tabs order.
+- Update styles.
+
 ## [1.14.3] - 2025-01-26
 ### Fixed
 - Fix streak calculation.

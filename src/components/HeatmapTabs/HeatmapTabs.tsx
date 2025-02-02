@@ -13,8 +13,8 @@ export function HeatmapTabs() {
         view={IHeatmapView.HeatmapTrackerStatistics}
         label={t('view.heatmap-tracker-statistics')}
       />
-      <HeatmapTab view={IHeatmapView.Documentation} label={t('view.documentation')} />
       <HeatmapTab view={IHeatmapView.Legend} label={t('view.legend')} />
+      <HeatmapTab view={IHeatmapView.Documentation} label={t('view.documentation')} />
     </div>
   );
 }

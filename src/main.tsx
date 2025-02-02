@@ -90,7 +90,7 @@ export default class HeatmapTracker extends Plugin {
     window.renderHeatmapTracker = (
       el: HTMLElement,
       trackerData: TrackerData = DEFAULT_TRACKER_DATA
-    ): void => {
+    ) => {
       const container = el.createDiv({
         cls: "heatmap-tracker-container",
         attr: { "data-htp-name": trackerData?.heatmapTitle ?? "" },
@@ -110,12 +110,14 @@ export default class HeatmapTracker extends Plugin {
           </AppContext.Provider>
         </StrictMode>
       );
+
+      return container;
     };
 
     window.renderHeatmapTrackerLegend = (
       el: HTMLElement,
       trackerData: TrackerData = DEFAULT_TRACKER_DATA
-    ): void => {
+    ) => {
       const container = el.createDiv({
         cls: "heatmap-tracker-legend",
         attr: {
@@ -139,12 +141,14 @@ export default class HeatmapTracker extends Plugin {
           </AppContext.Provider>
         </StrictMode>
       );
+
+      return container;
     };
 
     window.renderHeatmapTrackerStatistics = (
       el: HTMLElement,
       trackerData: TrackerData = DEFAULT_TRACKER_DATA
-    ): void => {
+    ) => {
       const container = el.createDiv({
         cls: "heatmap-tracker-statistics",
         attr: {
@@ -171,6 +175,8 @@ export default class HeatmapTracker extends Plugin {
           </AppContext.Provider>
         </StrictMode>
       );
+
+      return container;
     };
   }
 

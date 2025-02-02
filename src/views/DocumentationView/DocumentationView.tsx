@@ -39,7 +39,6 @@ function DocumentationView() {
         </div>
       </div>
 
-      <p>You can enable/disable Christmas effect in plugin settings 🎄</p>
       <pre>
         <code>{codeString}</code>
       </pre>
