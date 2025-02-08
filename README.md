@@ -1,6 +1,7 @@
 # Heatmap Tracker plugin for Obsidian
 
-<img src="https://raw.githubusercontent.com/mokkiebear/heatmap-tracker/refs/heads/main/public/readme-cover.png" />
+<img alt="Heatmap Tracker Plugin" src="https://github.com/user-attachments/assets/fadbc2eb-8bf3-4e6a-bdf4-31b2dce6dcc6" />
+
 
 The **Heatmap Tracker plugin for Obsidian** is a powerful and customizable tool designed to help you **track, visualize, and analyze data** over a calendar year. Perfect for habit tracking, project management, personal development, or any kind of data visualization, this plugin enables you to create beautiful, interactive heatmaps directly within Obsidian. Whether you’re **monitoring progress, visualizing trends, or staying on top of daily goals**, the Heatmap Tracker enhances your productivity and organization. Discover its intuitive features, flexible customization options, and seamless integration with Obsidian in the detailed guide below.
 
@@ -135,30 +136,54 @@ To be used with [Obsidian Dataview](https://blacksmithgu.github.io/obsidian-data
 
 ## 📦 Plugin Features
 
-### ✅ Key Features:
-1. **Yearly Heatmap Visualization**  
-   Render a dynamic heatmap for the selected year, displaying data intensity for each day.
+<details>
+    <summary>1. <b>Easy switch between years.</b> Render a dynamic heatmap for the selected year, displaying data intensity for each day.</summary>
+    <p>Easily switch between years using left and right navigation arrows, allowing you to explore data across multiple years effortlessly.</p>
+</details>
    
-2. **Customizable Colors and Intensity**  
-   Define your own color schemes and intensity ranges to match your data's theme.
+<details>
+    <summary>2. <b>Customizable Colors and Intensity.</b> Define your own color schemes and intensity ranges to match your data's theme.</summary>
+    <p>You have lots of options for defining colors:</p>
+    <ol>
+        <li>Create your own palette in plugin settings (or use default one)</li>
+        <li>Use `customColors` to set your set of colors for specific plugin</li>
+        <li>Use `customColor` for specific entry</li>
+    </ol>
+     <img width="552" alt="Снимок экрана 2025-02-08 в 11 11 34" src="https://github.com/user-attachments/assets/48df34d5-66f3-478b-bc87-83b0b061aeec" />
+</details>
 
-3. **Interactive Navigation**  
-  Easily switch between years using left and right navigation arrows, allowing you to explore data across multiple years effortlessly.
+<details>
+    <summary>3. <b>User-Defined Insights.</b> This feature allows you to analyze data in ways that matter most to you.</summary>
+    <p>Customize insights such as:</p>
+    <ul>
+        <li>The most productive day</li>
+        <li>The longest streak without breaks</li>
+        <li>The most active month</li>
+        <li>Your average daily intensity</li>
+    </ul>
+    <p>Check this file for more information <a href="https://github.com/mokkiebear/heatmap-tracker/blob/main/EXAMPLE_VAULT/Documentation%20with%20Examples/3.%20trackerData%20parameters/6.%20insights.md">Insights</a></p>
+</details>
 
-4.	**User-Defined Insights**
-  Add your own insights to analyze data in ways that matter to you. Customize metrics such as the most productive day, the longest streak without breaks, the most active month, or even your average daily intensity.
+<details>
+    <summary>4. <b>Monthly Separation Option.</b> Choose whether to separate months visually within the heatmap for better clarity and structure.</summary>
+    <p></p>
+</details>
 
-5. **Flexible Data Entries**  
-   Add entries with customizable colors, intensity levels, and tooltips for detailed content.
+<details>
+    <summary>5. <b>Localization.</b> Plugin supports multiple languages, including English, German, and Russian.</summary>
+    <p></p>
+</details>
 
-6. **Monthly Separation Option**  
-   Choose whether to separate months visually within the heatmap.
+<details>
+    <summary>6. <b>Statistics View.</b> View your progress with an integrated statistics panel.</summary>
+    <p></p>
+</details>
 
-7. **Localization**  
-   Plugin supports multiple languages, including English, German and Russian.
-
-8. **Statistics View**
-   Statistics view where you can see your progress.
+<details>
+    <summary>7. <b>Customizable Font.</b> Use your favorite font with this plugin.</summary>
+    <p>Additionally, you can use <code>HTML</code> to further customize the plugin's appearance.</p>
+    <img width="400" alt="Font Customization" src="https://github.com/user-attachments/assets/09f79cbe-45e8-477e-8111-631f34b98cdb" />
+</details>
 
 <img src="https://raw.githubusercontent.com/mokkiebear/heatmap-tracker/refs/heads/main/public/mac-mockup-dark.png" />
 
