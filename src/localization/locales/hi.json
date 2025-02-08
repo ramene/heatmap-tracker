@@ -20,7 +20,8 @@
       "label": "सप्ताह प्रदर्शन मोड"
     },
     "tabsVisibility": "टैब दृश्यता",
-    "tabsVisibilityDescription": "{{viewKey}} दृश्य के लिए एक टैब दिखाएँ/छिपाएँ"
+    "tabsVisibilityDescription": "{{viewKey}} दृश्य के लिए एक टैब दिखाएँ/छिपाएँ",
+    "saveColor": "रंग बचाओ"
   },
   "statistics": {
     "title": "सांख्यिकी",

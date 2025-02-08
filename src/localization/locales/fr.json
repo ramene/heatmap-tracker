@@ -20,7 +20,8 @@
       "label": "Mode d'affichage de la semaine"
     },
     "tabsVisibility": "Visibilité des onglets",
-    "tabsVisibilityDescription": "Afficher/Masquer un onglet pour la vue {{viewKey}}"
+    "tabsVisibilityDescription": "Afficher/Masquer un onglet pour la vue {{viewKey}}",
+    "saveColor": "Sauver la couleur"
   },
   "statistics": {
     "title": "Statistiques",

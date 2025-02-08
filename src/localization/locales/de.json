@@ -20,7 +20,8 @@
       "label": "Wochenanzeigemodus"
     },
     "tabsVisibility": "Sichtbarkeit der Registerkarten",
-    "tabsVisibilityDescription": "Eine Registerkarte für die Ansicht „{{viewKey}}“ ein-/ausblenden"
+    "tabsVisibilityDescription": "Eine Registerkarte für die Ansicht „{{viewKey}}“ ein-/ausblenden",
+    "saveColor": "Farbe speichern"
   },
   "statistics": {
     "title": "Statistiken",

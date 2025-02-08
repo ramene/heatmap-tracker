@@ -20,7 +20,8 @@
       "label": "Режим отображения недели"
     },
     "tabsVisibility": "Видимость вкладок",
-    "tabsVisibilityDescription": "Показать/скрыть вкладку для просмотра {{viewKey}}"
+    "tabsVisibilityDescription": "Показать/скрыть вкладку для просмотра {{viewKey}}",
+    "saveColor": "Сохраните цвет"
   },
   "statistics": {
     "title": "Статистика",

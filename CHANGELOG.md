@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.15.0] - 2025-02-08
+### Added
+- Change the view of palettes in the settings.
+- Edit palette color in the settings.
+  
 ## [1.14.4] - 2025-02-02
 ### Added
 - Return container ref.

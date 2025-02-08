@@ -20,7 +20,8 @@
       "label": "星期显示模式"
     },
     "tabsVisibility": "选项卡可见性",
-    "tabsVisibilityDescription": "显示/隐藏 {{viewKey}} 视图的选项卡"
+    "tabsVisibilityDescription": "显示/隐藏 {{viewKey}} 视图的选项卡",
+    "saveColor": "保存颜色"
   },
   "statistics": {
     "title": "统计",

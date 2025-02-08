@@ -295,9 +295,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: var(--border-width) solid var(--background-modifier-border);
+  margin-bottom: 12px;
 }
 
-.heatmap-tracker-settings-palettes__palette-container {
+.heatmap-tracker-settings-palettes__palette-container, .heatmap-tracker-settings-palettes__new-palette-container {
+  background-color: var(--background-primary-alt);
+  border: var(--border-width) solid var(--background-modifier-border);
+  border-radius: 16px;
+  padding: 0 12px 12px 12px;
+  margin: 12px 0;
 }
 
 .heatmap-tracker-settings-palettes__new-palette-container {
@@ -315,16 +322,15 @@
 }
 
 .heatmap-tracker-settings-palettes__palette-color {
-  display: grid;
+  display: flex;
   align-items: center;
-  grid-template-columns: 1fr 1fr 7fr 1fr;
-  column-gap: 4px;
-  margin: 4px 0;
   justify-items: flex-start;
+  margin: 4px 0;
 }
 
 .heatmap-tracker-settings-palettes__color-box {
   width: 16px;
+  min-width: 16px;
   height: 16px;
   margin: 0 5px;
   border-radius: 4px;
@@ -340,8 +346,15 @@
   }
 }
 
-.heatmap-tracker-settings-palettes__delete-color {
-  cursor: pointer;
+.heatmap-tracker-settings-palettes {
+  &__delete-color, &__save-color {
+    cursor: pointer;
+    margin-left: 4px;
+
+    &:disabled {
+      opacity: 0.3;
+    }
+  }
 }
 
 .heatmap-tracker-settings-palettes__add-color-header {
@@ -467,17 +480,6 @@
   padding: 8px;
 }
 
-@keyframes animatedBackground {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 0px 300px;
-  }
-}
-
-/** END SNOW **/
-
 /* LEGEND VIEW */
 .legend-view {
   display: flex;
@@ -568,3 +570,21 @@
     font-size: 12px;
   }
 }
+
+// .heatmap-tracker-boxes .month-feb.isEmpty,
+// .heatmap-tracker-boxes .month-apr.isEmpty,
+// .heatmap-tracker-boxes .month-jun.isEmpty,
+// .heatmap-tracker-boxes .month-aug.isEmpty,
+// .heatmap-tracker-boxes .month-oct.isEmpty,
+// .heatmap-tracker-boxes .month-dec.isEmpty {
+//     background: #e2e2e2 !important;
+// }
+
+// .theme-dark .heatmap-tracker-boxes .month-feb.isEmpty,
+// .theme-dark .heatmap-tracker-boxes .month-apr.isEmpty,
+// .theme-dark .heatmap-tracker-boxes .month-jun.isEmpty,
+// .theme-dark .heatmap-tracker-boxes .month-aug.isEmpty,
+// .theme-dark .heatmap-tracker-boxes .month-oct.isEmpty,
+// .theme-dark .heatmap-tracker-boxes .month-dec.isEmpty {
+//     background: #424242 !important;
+// }

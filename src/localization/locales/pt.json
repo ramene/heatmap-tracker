@@ -20,7 +20,8 @@
       "label": "Modo de exibição semanal"
     },
     "tabsVisibility": "Visibilidade das guias",
-    "tabsVisibilityDescription": "Mostrar/ocultar uma guia para visualização {{viewKey}}"
+    "tabsVisibilityDescription": "Mostrar/ocultar uma guia para visualização {{viewKey}}",
+    "saveColor": "Salve a cor"
   },
   "statistics": {
     "title": "Estatística",

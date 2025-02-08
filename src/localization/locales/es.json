@@ -20,7 +20,8 @@
       "label": "Modo de visualización de la semana"
     },
     "tabsVisibility": "Visibilidad de pestañas",
-    "tabsVisibilityDescription": "Mostrar/Ocultar una pestaña para la vista {{viewKey}}"
+    "tabsVisibilityDescription": "Mostrar/Ocultar una pestaña para la vista {{viewKey}}",
+    "saveColor": "Guardar color"
   },
   "statistics": {
     "title": "Estadísticas",
