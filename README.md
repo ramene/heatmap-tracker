@@ -2,6 +2,8 @@
 
 <img alt="Heatmap Tracker Plugin" src="https://github.com/user-attachments/assets/fadbc2eb-8bf3-4e6a-bdf4-31b2dce6dcc6" />
 
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fmokkiebear%2Fheatmap-tracker&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Heatmap+Tracker+Plugin+Hits&edge_flat=false)](https://hits.seeyoufarm.com)
+
 
 The **Heatmap Tracker plugin for Obsidian** is a powerful and customizable tool designed to help you **track, visualize, and analyze data** over a calendar year. Perfect for habit tracking, project management, personal development, or any kind of data visualization, this plugin enables you to create beautiful, interactive heatmaps directly within Obsidian. Whether you’re **monitoring progress, visualizing trends, or staying on top of daily goals**, the Heatmap Tracker enhances your productivity and organization. Discover its intuitive features, flexible customization options, and seamless integration with Obsidian in the detailed guide below.
 
