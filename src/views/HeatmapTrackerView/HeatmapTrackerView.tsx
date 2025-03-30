@@ -28,9 +28,9 @@ function HeatmapTrackerView() {
         isLoading ? "heatmap-tracker-loading" : ""
       }`}
     >
+      <HeatmapWeekDays />
       <div className="heatmap-tracker-graph" ref={graphRef}>
         <HeatmapMonthsList />
-        <HeatmapWeekDays />
 
         <HeatmapBoxesList boxes={boxes} />
       </div>

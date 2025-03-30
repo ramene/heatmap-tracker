@@ -1,10 +1,11 @@
 {
   "name": "heatmap-tracker",
-  "version": "1.15.0",
+  "version": "1.15.1",
   "description": "A heatmap tracker plugin for Obsidian",
   "main": "/build/main.js",
   "scripts": {
     "dev": "concurrently \"node esbuild.config.mjs\" \"npm run copyAndWatchMainJS\" \"npm run copyAndWatchStylesJS\" \"npm run copyAndWatchManifestJS\"",
+    "dev:debug": "concurrently \"node esbuild.config.mjs --debug\" \"npm run copyAndWatchMainJS\" \"npm run copyAndWatchStylesJS\" \"npm run copyAndWatchManifestJS\"",
     "copyAndWatchMainJS": "cpx \"./build/main.js\" \"EXAMPLE_VAULT\\.obsidian\\plugins\\heatmap-tracker\" -w",
     "copyAndWatchStylesJS": "cpx \"./build/styles.css\" \"EXAMPLE_VAULT\\.obsidian\\plugins\\heatmap-tracker\" -w",
     "copyAndWatchManifestJS": "cpx \"manifest.json\" \"EXAMPLE_VAULT\\.obsidian\\plugins\\heatmap-tracker\" -w",

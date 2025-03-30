@@ -5,6 +5,7 @@ import { sassPlugin } from "esbuild-sass-plugin";
 
 // Determine if we're in production mode
 const isProd = process.argv.includes("--production");
+const isDebug = process.argv.includes("--debug");
 
 // Banner to include at the top of the generated file
 const banner = `/*
@@ -25,7 +26,15 @@ const externalDependencies = [
 // Build options common to both development and production
 const buildOptions = {
   entryPoints: ["./src/main.tsx", "./src/styles.scss"],
-  plugins: [sassPlugin({ type: "css" })],
+  plugins: [
+    sassPlugin({
+      type: "css",
+      precompile: (source) => {
+        const devFlag = isDebug ? "$isDev: true;" : "$isDev: false;";
+        return `${devFlag}\n${source}`;
+      },
+    }),
+  ],
   bundle: true,
   platform: "browser",
   target: "es2017",
@@ -39,8 +48,8 @@ const buildOptions = {
   resolveExtensions: [".js", ".jsx", ".ts", ".tsx"], // Ensure extensions are resolved
   alias: {
     src: "./src", // Add this to map the alias
-    react: 'preact/compat',
-    'react-dom': 'preact/compat',
+    react: "preact/compat",
+    "react-dom": "preact/compat",
   },
 };
 

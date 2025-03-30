@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.15.1] - 2025-03-30
+### Added
+- Frozen column with the days of the week.
+- Add CSS variables: `--heatmap-box-size` and `--heatmap-box-gap`.
+- Heatmap is centered in the container.
+  
 ## [1.15.0] - 2025-02-08
 ### Added
 - Change the view of palettes in the settings.

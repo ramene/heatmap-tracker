@@ -10,9 +10,33 @@
 .heatmap-tracker__container,
 .heatmap-tracker-legend,
 .heatmap-tracker-statistics {
+  --heatmap-box-size: 12px;
+  --heatmap-box-gap: 2px;
+
   position: relative;
   padding: 0.5em;
   overflow: hidden;
+
+  @if $isDev {
+    div:not(.heatmap-tracker-box) {
+      outline: 1px dashed red !important; /* Use outline instead of border */
+      position: relative;
+
+      &:hover::after {
+        content: attr(class);
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(255, 0, 0, 0.8);
+        color: white;
+        font-size: 10px;
+        padding: 2px 4px;
+        border-radius: 2px;
+        z-index: 9999;
+        white-space: nowrap;
+      }
+    }
+  }
 }
 
 .heatmap-tracker-container,
@@ -32,7 +56,11 @@
 }
 
 .heatmap-tracker {
-  overflow-x: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 12px;
 }
 
 .heatmap-tracker-loading::after {
@@ -46,7 +74,8 @@
 }
 
 .heatmap-tracker-graph {
-  overflow-x: hidden;
+  overflow-x: auto;
+  padding-bottom: 12px;
 
   font-size: 0.65em;
   display: grid;
@@ -55,7 +84,6 @@
     "year months"
     "days boxes";
   width: max-content;
-  padding: 12px; /* 0px caused overflow and scrollbars */
 
   &--vertical {
     grid-template-areas: "year days" "months boxes";
@@ -81,12 +109,14 @@
 .heatmap-tracker-days {
   grid-area: days;
   text-align: end;
-  margin: 0 0.4em 0 0.1em;
   white-space: nowrap;
-  line-height: 12px;
+  line-height: var(--heatmap-box-size);
+  font-size: 0.65em;
+  padding-right: 12px;
+  padding-bottom: 12px;
 
-  &__week-day {
-    padding-bottom: 2px;
+  &__week-day:not(:first-child) {
+    padding-top: var(--heatmap-box-gap);
   }
 
   &--even {
@@ -118,15 +148,15 @@
 .heatmap-tracker-boxes {
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: repeat(53, 12px);
-  grid-template-rows: repeat(7, 12px);
+  grid-template-columns: repeat(53, var(--heatmap-box-size));
+  grid-template-rows: repeat(7, var(--heatmap-box-size));
   grid-area: boxes;
-  row-gap: 2px;
-  column-gap: 2px;
+  row-gap: var(--heatmap-box-gap);
+  column-gap: var(--heatmap-box-gap);
 
   &--vertical {
-    grid-template-rows: repeat(53, 12px);
-    grid-template-columns: repeat(7, 12px);
+    grid-template-rows: repeat(53, var(--heatmap-box-size));
+    grid-template-columns: repeat(7, var(--heatmap-box-size));
     grid-auto-flow: row;
   }
 }
@@ -150,12 +180,12 @@
 
 .heatmap-tracker-boxes.separate-months {
   grid-auto-flow: column;
-  grid-template-columns: repeat(64, 12px);
+  grid-template-columns: repeat(64, var(--heatmap-box-size));
   grid-area: boxes;
 
   &--vertical {
-    grid-template-rows: repeat(64, 12px);
-    grid-template-columns: repeat(7, 12px);
+    grid-template-rows: repeat(64, var(--heatmap-box-size));
+    grid-template-columns: repeat(7, var(--heatmap-box-size));
     grid-auto-flow: row;
   }
 }
@@ -299,7 +329,8 @@
   margin-bottom: 12px;
 }
 
-.heatmap-tracker-settings-palettes__palette-container, .heatmap-tracker-settings-palettes__new-palette-container {
+.heatmap-tracker-settings-palettes__palette-container,
+.heatmap-tracker-settings-palettes__new-palette-container {
   background-color: var(--background-primary-alt);
   border: var(--border-width) solid var(--background-modifier-border);
   border-radius: 16px;
@@ -347,7 +378,8 @@
 }
 
 .heatmap-tracker-settings-palettes {
-  &__delete-color, &__save-color {
+  &__delete-color,
+  &__save-color {
     cursor: pointer;
     margin-left: 4px;
 

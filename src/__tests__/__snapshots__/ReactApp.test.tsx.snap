@@ -193,6 +193,45 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
       class="heatmap-tracker "
     >
       <div
+        class="heatmap-tracker-days heatmap-tracker-days--even"
+      >
+        <div
+          class="heatmap-tracker-days__week-day"
+        >
+          weekdaysShort.Monday
+        </div>
+        <div
+          class="heatmap-tracker-days__week-day"
+        >
+          weekdaysShort.Tuesday
+        </div>
+        <div
+          class="heatmap-tracker-days__week-day"
+        >
+          weekdaysShort.Wednesday
+        </div>
+        <div
+          class="heatmap-tracker-days__week-day"
+        >
+          weekdaysShort.Thursday
+        </div>
+        <div
+          class="heatmap-tracker-days__week-day"
+        >
+          weekdaysShort.Friday
+        </div>
+        <div
+          class="heatmap-tracker-days__week-day"
+        >
+          weekdaysShort.Saturday
+        </div>
+        <div
+          class="heatmap-tracker-days__week-day"
+        >
+          weekdaysShort.Sunday
+        </div>
+      </div>
+      <div
         class="heatmap-tracker-graph"
       >
         <div
@@ -233,45 +272,6 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
           </div>
           <div>
             monthsShort.December
-          </div>
-        </div>
-        <div
-          class="heatmap-tracker-days heatmap-tracker-days--even"
-        >
-          <div
-            class="heatmap-tracker-days__week-day"
-          >
-            weekdaysShort.Monday
-          </div>
-          <div
-            class="heatmap-tracker-days__week-day"
-          >
-            weekdaysShort.Tuesday
-          </div>
-          <div
-            class="heatmap-tracker-days__week-day"
-          >
-            weekdaysShort.Wednesday
-          </div>
-          <div
-            class="heatmap-tracker-days__week-day"
-          >
-            weekdaysShort.Thursday
-          </div>
-          <div
-            class="heatmap-tracker-days__week-day"
-          >
-            weekdaysShort.Friday
-          </div>
-          <div
-            class="heatmap-tracker-days__week-day"
-          >
-            weekdaysShort.Saturday
-          </div>
-          <div
-            class="heatmap-tracker-days__week-day"
-          >
-            weekdaysShort.Sunday
           </div>
         </div>
         <div
@@ -3894,6 +3894,45 @@ exports[`ReactApp component renders correctly and matches snapshot for year 2022
       class="heatmap-tracker "
     >
       <div
+        class="heatmap-tracker-days heatmap-tracker-days--even"
+      >
+        <div
+          class="heatmap-tracker-days__week-day"
+        >
+          weekdaysShort.Monday
+        </div>
+        <div
+          class="heatmap-tracker-days__week-day"
+        >
+          weekdaysShort.Tuesday
+        </div>
+        <div
+          class="heatmap-tracker-days__week-day"
+        >
+          weekdaysShort.Wednesday
+        </div>
+        <div
+          class="heatmap-tracker-days__week-day"
+        >
+          weekdaysShort.Thursday
+        </div>
+        <div
+          class="heatmap-tracker-days__week-day"
+        >
+          weekdaysShort.Friday
+        </div>
+        <div
+          class="heatmap-tracker-days__week-day"
+        >
+          weekdaysShort.Saturday
+        </div>
+        <div
+          class="heatmap-tracker-days__week-day"
+        >
+          weekdaysShort.Sunday
+        </div>
+      </div>
+      <div
         class="heatmap-tracker-graph"
       >
         <div
@@ -3934,45 +3973,6 @@ exports[`ReactApp component renders correctly and matches snapshot for year 2022
           </div>
           <div>
             monthsShort.December
-          </div>
-        </div>
-        <div
-          class="heatmap-tracker-days heatmap-tracker-days--even"
-        >
-          <div
-            class="heatmap-tracker-days__week-day"
-          >
-            weekdaysShort.Monday
-          </div>
-          <div
-            class="heatmap-tracker-days__week-day"
-          >
-            weekdaysShort.Tuesday
-          </div>
-          <div
-            class="heatmap-tracker-days__week-day"
-          >
-            weekdaysShort.Wednesday
-          </div>
-          <div
-            class="heatmap-tracker-days__week-day"
-          >
-            weekdaysShort.Thursday
-          </div>
-          <div
-            class="heatmap-tracker-days__week-day"
-          >
-            weekdaysShort.Friday
-          </div>
-          <div
-            class="heatmap-tracker-days__week-day"
-          >
-            weekdaysShort.Saturday
-          </div>
-          <div
-            class="heatmap-tracker-days__week-day"
-          >
-            weekdaysShort.Sunday
           </div>
         </div>
         <div
@@ -7626,6 +7626,45 @@ exports[`ReactApp component should use paletteName instead of customColors 1`] =
       class="heatmap-tracker "
     >
       <div
+        class="heatmap-tracker-days heatmap-tracker-days--even"
+      >
+        <div
+          class="heatmap-tracker-days__week-day"
+        >
+          weekdaysShort.Monday
+        </div>
+        <div
+          class="heatmap-tracker-days__week-day"
+        >
+          weekdaysShort.Tuesday
+        </div>
+        <div
+          class="heatmap-tracker-days__week-day"
+        >
+          weekdaysShort.Wednesday
+        </div>
+        <div
+          class="heatmap-tracker-days__week-day"
+        >
+          weekdaysShort.Thursday
+        </div>
+        <div
+          class="heatmap-tracker-days__week-day"
+        >
+          weekdaysShort.Friday
+        </div>
+        <div
+          class="heatmap-tracker-days__week-day"
+        >
+          weekdaysShort.Saturday
+        </div>
+        <div
+          class="heatmap-tracker-days__week-day"
+        >
+          weekdaysShort.Sunday
+        </div>
+      </div>
+      <div
         class="heatmap-tracker-graph"
       >
         <div
@@ -7666,45 +7705,6 @@ exports[`ReactApp component should use paletteName instead of customColors 1`] =
           </div>
           <div>
             monthsShort.December
-          </div>
-        </div>
-        <div
-          class="heatmap-tracker-days heatmap-tracker-days--even"
-        >
-          <div
-            class="heatmap-tracker-days__week-day"
-          >
-            weekdaysShort.Monday
-          </div>
-          <div
-            class="heatmap-tracker-days__week-day"
-          >
-            weekdaysShort.Tuesday
-          </div>
-          <div
-            class="heatmap-tracker-days__week-day"
-          >
-            weekdaysShort.Wednesday
-          </div>
-          <div
-            class="heatmap-tracker-days__week-day"
-          >
-            weekdaysShort.Thursday
-          </div>
-          <div
-            class="heatmap-tracker-days__week-day"
-          >
-            weekdaysShort.Friday
-          </div>
-          <div
-            class="heatmap-tracker-days__week-day"
-          >
-            weekdaysShort.Saturday
-          </div>
-          <div
-            class="heatmap-tracker-days__week-day"
-          >
-            weekdaysShort.Sunday
           </div>
         </div>
         <div
