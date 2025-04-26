@@ -1,33 +1,3 @@
-import moment from "moment";
-
-// Assume the user format is known (e.g. "DD/MM/YYYY")
-type UserDateFormat = string;
-
-class DateTransformer {
-  private userFormat: UserDateFormat;
-
-  constructor(userFormat: UserDateFormat) {
-    this.userFormat = userFormat;
-  }
-
-  // Parse user date input and convert to ISO
-  toISO(dateStr: string): string | null {
-    const parsed = moment(dateStr, this.userFormat, true);
-    return parsed.isValid() ? parsed.format("YYYY-MM-DD") : null;
-  }
-
-  // Convert internal ISO date to user-friendly format
-  fromISO(isoDateStr: string): string | null {
-    const parsed = moment(isoDateStr, "YYYY-MM-DD", true);
-    return parsed.isValid() ? parsed.format(this.userFormat) : null;
-  }
-
-  // Optional: validate user date
-  isValidUserDate(userDateStr: string): boolean {
-    return moment(userDateStr, this.userFormat, true).isValid();
-  }
-}
-
 export function isValidDate(dateString: string): boolean {
   const date = new Date(dateString);
   return !isNaN(date.getTime());
