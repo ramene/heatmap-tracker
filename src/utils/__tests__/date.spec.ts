@@ -6,7 +6,6 @@ import {
   getLastDayOfYear,
   getShiftedWeekdays,
   formatDateToISO8601,
-  isToday,
 } from '../date';
 
 describe('getShiftedWeekdays', () => {
@@ -192,54 +191,5 @@ describe('formatDateToISO8601', () => {
     const localDate = new Date('2025-04-15T00:00:00'); // Local time
     const utcDate = new Date(localDate.toISOString());
     expect(formatDateToISO8601(localDate)).toBe(formatDateToISO8601(utcDate));
-  });
-});
-
-describe('isToday', () => {
-  it('should return true for today\'s day of the year', () => {
-    const todaysDay = getDayOfYear(new Date());
-    expect(isToday(todaysDay)).toBe(true);
-  });
-
-  it('should return false for yesterday\'s day of the year', () => {
-    const todaysDay = getDayOfYear(new Date());
-    expect(isToday(todaysDay - 1)).toBe(false);
-  });
-
-  it('should return false for tomorrow\'s day of the year', () => {
-    const todaysDay = getDayOfYear(new Date());
-    expect(isToday(todaysDay + 1)).toBe(false);
-  });
-
-  it('should return false for null input', () => {
-    expect(isToday(null as unknown as number)).toBe(false);
-  });
-
-  it('should return false for undefined input', () => {
-    expect(isToday(undefined as unknown as number)).toBe(false);
-  });
-
-  it('should return false for NaN input', () => {
-    expect(isToday(NaN)).toBe(false);
-  });
-
-  it('should return false for negative day numbers', () => {
-    expect(isToday(-1)).toBe(false);
-  });
-
-  it('should return false for day numbers greater than 366', () => {
-    expect(isToday(367)).toBe(false);
-  });
-
-  it('should handle leap years correctly', () => {
-    const leapYearDate = new Date('2024-02-29');
-    const dayOfYear = getDayOfYear(leapYearDate);
-    expect(isToday(dayOfYear)).toBe(false); // Only true if tested on Feb 29, 2024
-  });
-
-  it('should handle dates in different timezones', () => {
-    const utcDate = new Date('2025-01-01T00:00:00Z'); // Jan 1 in UTC
-    const localDay = getDayOfYear(utcDate);
-    expect(isToday(localDay)).toBe(false); // Only true if local time matches UTC
   });
 });

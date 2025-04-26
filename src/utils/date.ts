@@ -1,12 +1,49 @@
+import moment from "moment";
+
+// Assume the user format is known (e.g. "DD/MM/YYYY")
+type UserDateFormat = string;
+
+class DateTransformer {
+  private userFormat: UserDateFormat;
+
+  constructor(userFormat: UserDateFormat) {
+    this.userFormat = userFormat;
+  }
+
+  // Parse user date input and convert to ISO
+  toISO(dateStr: string): string | null {
+    const parsed = moment(dateStr, this.userFormat, true);
+    return parsed.isValid() ? parsed.format("YYYY-MM-DD") : null;
+  }
+
+  // Convert internal ISO date to user-friendly format
+  fromISO(isoDateStr: string): string | null {
+    const parsed = moment(isoDateStr, "YYYY-MM-DD", true);
+    return parsed.isValid() ? parsed.format(this.userFormat) : null;
+  }
+
+  // Optional: validate user date
+  isValidUserDate(userDateStr: string): boolean {
+    return moment(userDateStr, this.userFormat, true).isValid();
+  }
+}
+
 export function isValidDate(dateString: string): boolean {
   const date = new Date(dateString);
   return !isNaN(date.getTime());
 }
 
 export function getDayOfYear(date: Date): number {
-  const startOfYear = Date.UTC(date.getUTCFullYear(), 0, 0);
-  const diff = date.getTime() - startOfYear;
-  return Math.floor(diff / (1000 * 60 * 60 * 24));
+  const startOfYear = Date.UTC(date.getUTCFullYear(), 0, 1);
+
+  const current = Date.UTC(
+    date.getUTCFullYear(),
+    date.getUTCMonth(),
+    date.getUTCDate()
+  );
+
+  const diff = current - startOfYear;
+  return Math.floor(diff / (1000 * 60 * 60 * 24)) + 1;
 }
 
 export function getShiftedWeekdays(weekdays: string[], weekStartDay: number): string[] {
@@ -39,10 +76,10 @@ export function getLastDayOfYear(year: number): Date {
   return new Date(Date.UTC(year, 11, 31));
 }
 
-export function isToday(day: number) {
-  const todaysDayNumberLocal = getDayOfYear(new Date());
+export function getToday() {
+  const todayUTC = new Date();
 
-  return day === todaysDayNumberLocal;
+  return todayUTC;
 }
 
 export function formatDateToISO8601(date: Date | null): string | null {
@@ -56,9 +93,17 @@ export function formatDateToISO8601(date: Date | null): string | null {
 }
 
 export function getFullYear(date: string) {
-  return  new Date(date).getUTCFullYear();
+  return new Date(date).getUTCFullYear();
 }
 
 export function getCurrentFullYear() {
   return new Date().getUTCFullYear();
+}
+
+export function isSameDate(d1: Date, d2: Date): boolean {
+  return (
+    d1.getUTCFullYear() === d2.getUTCFullYear() &&
+    d1.getUTCMonth() === d2.getUTCMonth() &&
+    d1.getUTCDate() === d2.getUTCDate()
+  );
 }

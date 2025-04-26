@@ -10,8 +10,9 @@
 .heatmap-tracker__container,
 .heatmap-tracker-legend,
 .heatmap-tracker-statistics {
-  --heatmap-box-size: 12px;
-  --heatmap-box-gap: 2px;
+  --heatmap-tracker-box-size: 12px;
+  --heatmap-tracker-box-gap: 2px;
+  --heatmap-tracker-months-height: 1.5em;
 
   position: relative;
   padding: 0.5em;
@@ -58,7 +59,7 @@
 .heatmap-tracker {
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: center;
   padding: 12px;
 }
@@ -79,44 +80,38 @@
 
   font-size: 0.65em;
   display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-areas:
-    "year months"
-    "days boxes";
+  grid-template-columns: auto;
+  grid-template-rows: auto 1fr;
   width: max-content;
-
-  &--vertical {
-    grid-template-areas: "year days" "months boxes";
-  }
 }
 
 /* Months */
 .heatmap-tracker-months {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-area: months;
-  margin: 0.1em 0 0.3em;
+  grid-column: 1;
+  margin: 2px 0 4px;
   grid-gap: 0.3em;
   justify-items: center;
-
-  &--vertical {
-    grid-template-rows: repeat(12, 1fr);
-    grid-template-columns: none;
-  }
+  line-height: var(--heatmap-tracker-months-height);
 }
 
 /* Days */
 .heatmap-tracker-days {
-  grid-area: days;
   text-align: end;
   white-space: nowrap;
-  line-height: var(--heatmap-box-size);
+  line-height: var(--heatmap-tracker-box-size);
   font-size: 0.65em;
   padding-right: 12px;
   padding-bottom: 12px;
 
-  &__week-day:not(:first-child) {
-    padding-top: var(--heatmap-box-gap);
+  &__week-day:not(:last-child) {
+    padding-bottom: var(--heatmap-tracker-box-gap);
+  }
+
+  &__filler {
+    height: var(--heatmap-tracker-months-height);
+    margin: 2px 0 4px;
   }
 
   &--even {
@@ -148,17 +143,11 @@
 .heatmap-tracker-boxes {
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: repeat(53, var(--heatmap-box-size));
-  grid-template-rows: repeat(7, var(--heatmap-box-size));
-  grid-area: boxes;
-  row-gap: var(--heatmap-box-gap);
-  column-gap: var(--heatmap-box-gap);
-
-  &--vertical {
-    grid-template-rows: repeat(53, var(--heatmap-box-size));
-    grid-template-columns: repeat(7, var(--heatmap-box-size));
-    grid-auto-flow: row;
-  }
+  grid-template-columns: repeat(53, var(--heatmap-tracker-box-size));
+  grid-template-rows: repeat(7, var(--heatmap-tracker-box-size));
+  grid-column: 1;
+  row-gap: var(--heatmap-tracker-box-gap);
+  column-gap: var(--heatmap-tracker-box-gap);
 }
 
 .heatmap-tracker-box {
@@ -180,14 +169,7 @@
 
 .heatmap-tracker-boxes.separate-months {
   grid-auto-flow: column;
-  grid-template-columns: repeat(64, var(--heatmap-box-size));
-  grid-area: boxes;
-
-  &--vertical {
-    grid-template-rows: repeat(64, var(--heatmap-box-size));
-    grid-template-columns: repeat(7, var(--heatmap-box-size));
-    grid-auto-flow: row;
-  }
+  grid-template-columns: repeat(64, var(--heatmap-tracker-box-size));
 }
 
 .heatmap-tracker-boxes .space-between-box {

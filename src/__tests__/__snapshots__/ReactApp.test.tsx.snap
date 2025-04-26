@@ -196,6 +196,9 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
         class="heatmap-tracker-days heatmap-tracker-days--even"
       >
         <div
+          class="heatmap-tracker-days__filler"
+        />
+        <div
           class="heatmap-tracker-days__week-day"
         >
           weekdaysShort.Monday
@@ -1464,7 +1467,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
           </div>
           <div
             aria-label="2024-05-04"
-            class="heatmap-tracker-box month-may today with-border hasData"
+            class="heatmap-tracker-box month-may hasData"
             data-htp-date="2024-05-04"
             style="background-color: rgb(25, 97, 40);"
           >
@@ -1476,7 +1479,7 @@ exports[`ReactApp component renders correctly and matches snapshot 1`] = `
           </div>
           <div
             aria-label="2024-05-05"
-            class="heatmap-tracker-box month-may hasData"
+            class="heatmap-tracker-box month-may today with-border hasData"
             data-htp-date="2024-05-05"
             style="background-color: rgb(95, 191, 103);"
           >
@@ -3897,6 +3900,9 @@ exports[`ReactApp component renders correctly and matches snapshot for year 2022
         class="heatmap-tracker-days heatmap-tracker-days--even"
       >
         <div
+          class="heatmap-tracker-days__filler"
+        />
+        <div
           class="heatmap-tracker-days__week-day"
         >
           weekdaysShort.Monday
@@ -5208,7 +5214,7 @@ exports[`ReactApp component renders correctly and matches snapshot for year 2022
           </div>
           <div
             aria-label="2022-05-05"
-            class="heatmap-tracker-box month-may today with-border hasData"
+            class="heatmap-tracker-box month-may hasData"
             data-htp-date="2022-05-05"
             style="background-color: rgb(47, 137, 65);"
           >
@@ -7629,6 +7635,9 @@ exports[`ReactApp component should use paletteName instead of customColors 1`] =
         class="heatmap-tracker-days heatmap-tracker-days--even"
       >
         <div
+          class="heatmap-tracker-days__filler"
+        />
+        <div
           class="heatmap-tracker-days__week-day"
         >
           weekdaysShort.Monday
@@ -8897,7 +8906,7 @@ exports[`ReactApp component should use paletteName instead of customColors 1`] =
           </div>
           <div
             aria-label="2024-05-04"
-            class="heatmap-tracker-box month-may today with-border hasData"
+            class="heatmap-tracker-box month-may hasData"
             data-htp-date="2024-05-04"
             style="background-color: rgb(25, 97, 39);"
           >
@@ -8909,7 +8918,7 @@ exports[`ReactApp component should use paletteName instead of customColors 1`] =
           </div>
           <div
             aria-label="2024-05-05"
-            class="heatmap-tracker-box month-may hasData"
+            class="heatmap-tracker-box month-may today with-border hasData"
             data-htp-date="2024-05-05"
             style="background-color: rgb(73, 175, 93);"
           >

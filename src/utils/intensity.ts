@@ -49,6 +49,11 @@ export function getIntensitiesInfo(intensities: number[], intensityConfig: Inten
   return getIntensitiesRanges(numberOfColorIntensities, minimumIntensity, maximumIntensity);
 }
 
+function parseDateOnly(input: string): Date {
+  // Only use first 10 characters (YYYY-MM-DD), ignore time/timezone
+  return new Date(input.slice(0, 10));
+}
+
 export function fillEntriesWithIntensity(
   entries: Entry[],
   intensityConfig: IntensityConfig,
@@ -77,6 +82,7 @@ export function fillEntriesWithIntensity(
       intensity: newIntensity,
     };
 
+    // const day = getDayOfYear(parseDateOnly(e.date));
     const day = getDayOfYear(new Date(e.date));
 
     entriesByDay[day] = newEntry;

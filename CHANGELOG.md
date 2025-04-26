@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.15.2] - 2025-04-26
+### Fixed
+- Fix week days vertical alignment. Bug was related to horizontal scroll. It's different when you connect mouse. Github issue: [Issue](https://github.com/mokkiebear/heatmap-tracker/issues/38).
+- Add `isSameDate`. Now the current date is highlighted only if the date is the same as the current date.
+  
+
 ## [1.15.1] - 2025-03-30
 ### Added
 - Frozen column with the days of the week.

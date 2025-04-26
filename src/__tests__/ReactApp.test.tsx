@@ -5,7 +5,7 @@ import { settingsMock } from "../__mocks__/settings.mock";
 import { mergeTrackerData } from "src/utils/core";
 import { DEFAULT_TRACKER_DATA } from "../main";
 import { trackerDataMock } from "src/__mocks__/trackerData.mock";
-import { isToday } from "src/utils/date";
+import { getToday } from "src/utils/date";
 
 jest.mock("react-i18next", () => ({
   ...jest.requireActual("react-i18next"),
@@ -19,13 +19,13 @@ jest.mock("react-i18next", () => ({
 
 jest.mock("src/utils/date", () => ({
   ...jest.requireActual("src/utils/date"),
-  isToday: jest.fn(),
+  getToday: jest.fn(),
 }));
 
 describe("ReactApp component", () => {
   beforeEach(() => {
-    // This is today date for tests: 2024-05-04
-    (isToday as jest.Mock).mockImplementation((day) => day === 125);
+    // This is today date for tests: 2024-05-05
+    (getToday as jest.Mock).mockImplementation(() => new Date("2024-05-05"));
   });
 
   it("renders correctly and matches snapshot", async () => {

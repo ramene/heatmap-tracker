@@ -22,8 +22,14 @@ export function HeatmapWeekDays() {
     );
   }, [settings.weekStartDay, i18n.language]);
 
+  const classNames = useMemo(() => {
+    return `heatmap-tracker-days heatmap-tracker-days--${settings.weekDisplayMode}`;
+  }, [settings.weekDisplayMode]);
+
   return (
-    <div className={`heatmap-tracker-days heatmap-tracker-days--${settings.weekDisplayMode}`}>
+    <div className={classNames}>
+      {/* This empty filler is needed to position the week days correctly */}
+      <div className="heatmap-tracker-days__filler"></div>
       {weekDays.map((day) => (
         <div key={day} className="heatmap-tracker-days__week-day">
           {day}
