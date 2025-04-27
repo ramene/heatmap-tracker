@@ -6,6 +6,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.15.6] - 2025-04-27
+- Add new support option: Ko-fi.
+
 ## [1.15.5] - 2025-04-27
 ### Fixed
 - Add support section in settings.

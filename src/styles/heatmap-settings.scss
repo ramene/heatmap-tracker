@@ -149,4 +149,15 @@
     margin-bottom: 12px;
     padding-bottom: 12px;
   }
+
+  &__options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    & > * {
+      margin: 0 8px;
+    }
+  }
 }
