@@ -39,6 +39,7 @@ git tag "$VERSION"
 
 # Step 6: Push changes and tags
 # echo "Pushing changes to the repository..."
-git push --follow-tags
+git push
+git push --tags
 
 echo "Version $VERSION updated and pushed successfully!"
