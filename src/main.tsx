@@ -48,7 +48,7 @@ const DEFAULT_SETTINGS: TrackerSettings = {
   },
   weekStartDay: 1,
   weekDisplayMode: "even",
-  separateMonths: false,
+  separateMonths: true,
   language: "en",
   viewTabsVisibility: {
     [IHeatmapView.Documentation]: true,

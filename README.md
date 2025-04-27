@@ -117,7 +117,7 @@ renderHeatmapTracker(this.container, trackerData);
 
 ### `separateMonths`
 - **Type:** `boolean`
-- **Default:** `false`
+- **Default:** `true`
 - **Description:** Determines whether months should be visually separated within the heatmap layout.
 
 ---

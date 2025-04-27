@@ -31,7 +31,7 @@ fi
 # Step 4: Commit updated files
 echo "Committing updated files..."
 git add package.json package-lock.json
-git commit -m "chore: bump version to $VERSION"
+git commit -m "chore(release): v$VERSION"
 
 # Step 5: Tag the new version
 echo "Creating git tag for version $VERSION..."
@@ -39,7 +39,6 @@ git tag "$VERSION"
 
 # Step 6: Push changes and tags
 # echo "Pushing changes to the repository..."
-git push
-git push --tags
+git push --follow-tags
 
 echo "Version $VERSION updated and pushed successfully!"

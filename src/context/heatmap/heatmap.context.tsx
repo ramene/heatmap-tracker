@@ -28,12 +28,12 @@ export function HeatmapProvider({
 }: HeatmapProviderProps) {
   const [view, setView] = useState(IHeatmapView.HeatmapTracker);
 
-  const defaultYear = useMemo(
+  const _defaultYear = useMemo(
     () => trackerData.year ?? getCurrentFullYear(),
     [trackerData.year]
   );
 
-  const [currentYear, setCurrentYear] = useState(defaultYear);
+  const [currentYear, setCurrentYear] = useState(_defaultYear);
 
   const currentYearEntries = useMemo(
     () => getEntriesForYear(trackerData.entries, currentYear),
@@ -68,10 +68,10 @@ export function HeatmapProvider({
         currentYear,
         entriesWithIntensity,
         colorsList,
-        trackerData,
+        mergedTrackerData,
         settings
       ),
-    [currentYear, entriesWithIntensity, colorsList, trackerData, settings]
+    [currentYear, entriesWithIntensity, colorsList, mergedTrackerData, settings]
   );
 
   return (
