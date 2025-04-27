@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.15.4] - 2025-04-27
+### Fixed
+- Set `separateMonths` to `true` by default.
+- Split styles to separate files
+
 ## [1.15.3] - 2025-04-26
 ### Fixed
 - Remove `moment` from bundle.
