@@ -1,0 +1,42 @@
+/* Days */
+.heatmap-tracker-days {
+  text-align: end;
+  white-space: nowrap;
+  line-height: var(--heatmap-tracker-box-size);
+  font-size: 0.65em;
+  padding-right: 12px;
+  padding-bottom: 12px;
+
+  &__week-day:not(:last-child) {
+    padding-bottom: var(--heatmap-tracker-box-gap);
+  }
+
+  &__filler {
+    height: var(--heatmap-tracker-months-height);
+    margin: 2px 0 4px;
+  }
+
+  &--even {
+    div:nth-child(odd) {
+      visibility: hidden;
+    }
+  }
+
+  &--odd {
+    div:nth-child(even) {
+      visibility: hidden;
+    }
+  }
+
+  &--all {
+    div {
+      visibility: visible;
+    }
+  }
+
+  &--none {
+    div {
+      visibility: hidden;
+    }
+  }
+}

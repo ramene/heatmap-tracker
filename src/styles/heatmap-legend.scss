@@ -1,0 +1,23 @@
+/* LEGEND VIEW */
+.legend-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  table {
+    border-collapse: collapse;
+
+    th,
+    td {
+      padding: 8px;
+      text-align: center;
+      font-size: 0.8em;
+    }
+  }
+
+  &__color-cell {
+    display: flex;
+    align-items: center;
+  }
+}
+/* END LEGEND VIEW */
