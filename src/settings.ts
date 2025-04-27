@@ -111,6 +111,23 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
     }
   }
 
+  private displaySupportSection() {
+    const { containerEl } = this;
+
+    const supportSection = containerEl.createEl('div', {
+      cls: 'heatmap-tracker-settings-support-section'
+    });
+
+    supportSection.createEl('h5', {
+      cls: 'heatmap-tracker-settings-support-section__header',
+      text: i18n.t(' ☕️ If this plugin adds value for you and you would like to support its development, please use the button below:')
+    });
+
+    const buyMeACoffee = '<a href="https://www.buymeacoffee.com/mrubanau" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 42px !important;width: 150px !important;" ></a>';
+    const buyMeACoffeeContainer = supportSection.createEl('div');
+    buyMeACoffeeContainer.innerHTML = buyMeACoffee;
+  }
+
   display() {
     const { containerEl } = this;
 
@@ -120,6 +137,9 @@ export default class HeatmapTrackerSettingsTab extends PluginSettingTab {
     this.displayWeekStartDaySettings();
     this.displayWeekDisplayModeSettings();
     this.displaySeparateMonthsSettings();
+
+    this.displaySupportSection();
+
     this.displayViewTabsSettings();
     this.paletteSettings.displayPaletteSettings();
   }

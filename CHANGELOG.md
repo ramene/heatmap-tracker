@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.15.5] - 2025-04-27
+### Fixed
+- Add support section in settings.
+
 ## [1.15.4] - 2025-04-27
 ### Fixed
 - Set `separateMonths` to `true` by default.
