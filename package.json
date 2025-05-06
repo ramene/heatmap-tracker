@@ -20,7 +20,7 @@
     "obsidian"
   ],
   "author": "Maksim Rubanau (mokkiebear)",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "devDependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.1.0",
