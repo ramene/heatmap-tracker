@@ -16,11 +16,10 @@ import LegendView from "./views/LegendView/LegendView";
 import StatisticsView from "./views/StatisticsView/StatisticsView";
 import { getCurrentFullYear } from "./utils/date";
 import { HeatmapHeader } from "./components/HeatmapHeader/HeatmapHeader";
-import { renderHeatmapTracker } from "./web";
 
 declare global {
   interface Window {
-    renderHeatmapTracker?: (el: HTMLElement, trackerData: TrackerData) => void;
+    renderHeatmapTracker?: (el: HTMLElement, trackerData: TrackerData, settings: TrackerSettings) => void;
     renderHeatmapTrackerLegend?: (
       el: HTMLElement,
       trackerData: TrackerData
@@ -140,8 +139,10 @@ export default class HeatmapTracker extends Plugin {
               content: el.createSpan(`[](${page.file.name})`)
             });
           }
-          // Append codeblock parameters to TrackerSettings object
-          renderHeatmapTracker(el, trackerData, {...this.settings, ...params});
+          if(window.renderHeatmapTracker) {
+            // Append codeblock parameters to TrackerSettings object
+            window.renderHeatmapTracker(el, trackerData, {...this.settings, ...params});
+          }
         } catch(e) {
           console.warn(e);
         }
@@ -150,7 +151,8 @@ export default class HeatmapTracker extends Plugin {
 
     window.renderHeatmapTracker = (
       el: HTMLElement,
-      trackerData: TrackerData = DEFAULT_TRACKER_DATA
+      trackerData: TrackerData = DEFAULT_TRACKER_DATA,
+      settings: TrackerSettings = this.settings
     ) => {
       const container = el.createDiv({
         cls: "heatmap-tracker-container",
@@ -164,7 +166,7 @@ export default class HeatmapTracker extends Plugin {
           <AppContext.Provider value={this.app}>
             <HeatmapProvider
               trackerData={mergeTrackerData(DEFAULT_TRACKER_DATA, trackerData)}
-              settings={this.settings}
+              settings={settings}
             >
               <ReactApp />
             </HeatmapProvider>
