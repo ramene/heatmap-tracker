@@ -1,8 +1,9 @@
-import { App, Plugin } from "obsidian";
+import { App, MarkdownPostProcessorContext, Notice, parseYaml, Plugin } from "obsidian";
+import { getAPI, Literal } from "obsidian-dataview";
 import { createRoot } from "react-dom/client";
 import { createContext, StrictMode } from "react";
 import HeatmapTrackerSettingsTab from "./settings";
-import { TrackerData, TrackerSettings } from "./types";
+import { TrackerData, TrackerParams, TrackerSettings } from "./types";
 import ReactApp from "./App";
 import { HeatmapProvider } from "./context/heatmap/heatmap.context";
 
@@ -14,6 +15,7 @@ import LegendView from "./views/LegendView/LegendView";
 import StatisticsView from "./views/StatisticsView/StatisticsView";
 import { getCurrentFullYear } from "./utils/date";
 import { HeatmapHeader } from "./components/HeatmapHeader/HeatmapHeader";
+import { renderHeatmapTracker } from "./web";
 
 declare global {
   interface Window {
@@ -86,6 +88,45 @@ export default class HeatmapTracker extends Plugin {
   async onload() {
     await this.loadSettings();
     this.addSettingTab(new HeatmapTrackerSettingsTab(this.app, this));
+
+    this.registerMarkdownCodeBlockProcessor(
+      "tracker-heatmap",
+      async (source: string, el: HTMLElement, ctx: MarkdownPostProcessorContext) => {
+        const params = parseYaml(source) as TrackerParams;
+        if(!('property' in params)) {
+          console.warn("Missing codeblock parameter: property");
+          return;
+        }
+        try {
+          const trackerData: TrackerData = {
+            ...DEFAULT_TRACKER_DATA,
+            entries: [],
+            ...params
+          };
+          const dv = getAPI();
+          const pages = dv.pages(`"${params.path}"`).where((p: Record<string, Literal>) => {
+            if(typeof params.property === 'string') {
+              return params.property in p;
+            }
+            for(const property of params.property) {
+              if(property in p) {
+                return true;
+              }
+            }
+            return false;
+          });
+          for (const page of pages) {
+            trackerData.entries.push({
+              date: page.file.name,
+              content: el.createSpan(`[](${page.file.name})`)
+            });
+          }
+          renderHeatmapTracker(el, trackerData, {...this.settings, ...params});
+        } catch(e) {
+          console.warn(e);
+        }
+      }
+    );
 
     window.renderHeatmapTracker = (
       el: HTMLElement,
