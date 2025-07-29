@@ -8,6 +8,7 @@ import fr from './locales/fr.json';
 import hi from './locales/hi.json';
 import zh from './locales/zh.json';
 import pt from './locales/pt.json';
+import pl from './locales/pl.json';
 
 import languages from './languages.json';
 
@@ -46,6 +47,9 @@ i18n
       },
       pt: {
         translation: pt,
+      },
+      pl: {
+        translation: pl,
       },
       hi: {
         translation: hi,

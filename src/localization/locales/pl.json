@@ -1,0 +1,83 @@
+{
+  "settings": {
+    "language": "Język",
+    "chooseYourPreferredLanguage": "Wybierz język",
+    "palettes": "Palety barw",
+    "paletteName": "Nazwa palety barw",
+    "addNewColorToPalette": "Dodaj nowy kolor do palety barw {{paletteName}}:",
+    "addColor": "Dodaj kolor",
+    "removeColor": "Usuń kolor",
+    "saveColor": "Zapisz kolor",
+    "addNewPalette": "Dodaj nową paletę barw",
+    "enterPaletteName": "Wprowadź nazwę palety, aby utworzyć nową paletę barw",
+    "addPaletteNote": "Dodaj palety barw, które będą dostępne w ustawieniach renderowania mapy cieplnej.",
+    "colorsUsageNote": "Możesz używać palet, odwołując się do ich nazw w ustawieniach renderowania mapy cieplnej.",
+    "weekStartDay": "Początek tygodnia",
+    "weekStartDayDescription": "Wybierz dzień, od którego zaczyna się tydzień.",
+    "separateMonths": "Oddziel miesiące",
+    "separateMonthsDescription": "Oddziel miesiące w widokach śledzenia, globalnie.",
+    "weekDisplayMode": {
+      "label": "Tryb wyświetlania tygodnia",
+      "description": "Wybierz, które dni tygodnia mają być wyświetlane: Parzyste dni (np. wtorek, czwartek, sobota), Nieparzyste dni (np. poniedziałek, środa, piątek, niedziela), Brak (nie wyświetlaj żadnych dni) lub Wszystkie (wyświetl wszystkie siedem dni tygodnia)."
+    },
+    "tabsVisibility": "Widoczność zakładek",
+    "tabsVisibilityDescription": "Pokaż/Ukryj zakładkę dla widoku {{viewKey}}"
+  },
+  "statistics": {
+    "title": "Statystyki",
+    "totalTrackingDaysThisYear": "Łączna liczba dni śledzenia w tym roku",
+    "totalTrackingDays": "Łączna liczba dni śledzenia",
+    "currentStreak": "Obecna seria",
+    "longestStreak": "Najdłuższa seria"
+  },
+  "monthsShort": {
+    "January": "Sty",
+    "February": "Lut",
+    "March": "Mar",
+    "April": "Kwi",
+    "May": "Maj",
+    "June": "Cze",
+    "July": "Lip",
+    "August": "Sie",
+    "September": "Wrz",
+    "October": "Paź",
+    "November": "Lis",
+    "December": "Gru"
+  },
+  "weekdaysShort": {
+    "Sunday": "Ndz",
+    "Monday": "Pon",
+    "Tuesday": "Wt",
+    "Wednesday": "Śr",
+    "Thursday": "Czw",
+    "Friday": "Pt",
+    "Saturday": "Sob"
+  },
+  "weekdaysLong": {
+    "Sunday": "Niedziela",
+    "Monday": "Poniedziałek",
+    "Tuesday": "Wtorek",
+    "Wednesday": "Środa",
+    "Thursday": "Czwartek",
+    "Friday": "Piątek",
+    "Saturday": "Sobota"
+  },
+  "header": {
+    "previousYear": "Poprzedni Rok",
+    "nextYear": "Następny Rok"
+  },
+  "weekDisplayMode": {
+    "even": "Parzyste",
+    "odd": "Nieparzyste",
+    "all": "Wszystkie",
+    "none": "Brak"
+  },
+  "view": {
+    "heatmap-tracker": "Mapa cieplna",
+    "heatmap-tracker-statistics": "Statystyki",
+    "documentation": "Dokumentacja",
+    "donation": "Darowizna",
+    "legend": "Legenda"
+  },
+  "tab": "Zakładka"
+}
