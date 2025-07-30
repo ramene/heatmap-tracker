@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.16.0] - 2025-07-30
+- Add Polish language. Contributed by [@qoqosz](https://github.com/qoqosz).
+
+
 ## [1.15.7] - 2025-07-28
 - Fix de.json. Contributed by [@LucEast](https://github.com/LucEast).
 
