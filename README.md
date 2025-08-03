@@ -16,10 +16,10 @@ The **Heatmap Tracker plugin for Obsidian** is a powerful and customizable tool 
 
 ## Basic Usage
 
-This plugin comes with frontmatter tracking out of the box. You can use the `tracker-heatmap` codeblock with the following parameters:
+This plugin comes with frontmatter tracking out of the box. You can use the `heatmap-tracker` codeblock with the following parameters:
 
 ````
-```tracker-heatmap
+```heatmap-tracker
 property: <frontmatter_property_key>
 ```
 ````
@@ -29,7 +29,7 @@ This will look for `frontmatter_property_key` in your daily notes and activate a
 You can also use an array of property names as such:
 
 ````
-```tracker-heatmap
+```heatmap-tracker
 property: [<frontmatter_property_key_1>, <frontmatter_property_key_2>, ...]
 ```
 ````

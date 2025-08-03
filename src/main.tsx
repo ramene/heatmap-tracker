@@ -90,7 +90,7 @@ export default class HeatmapTracker extends Plugin {
     this.addSettingTab(new HeatmapTrackerSettingsTab(this.app, this));
 
     this.registerMarkdownCodeBlockProcessor(
-      "tracker-heatmap",
+      "heatmap-tracker",
       async (source: string, el: HTMLElement, ctx: MarkdownPostProcessorContext) => {
         const params: any = parseYaml(source) as TrackerParams;
         if(params.property === undefined) {
