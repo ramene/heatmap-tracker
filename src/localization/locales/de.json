@@ -68,9 +68,9 @@
   },
   "weekDisplayMode": {
     "all": "Alle",
-    "even": "Sogar",
-    "none": "Keiner",
-    "odd": "Seltsam"
+    "even": "Gerade",
+    "none": "Keine",
+    "odd": "Ungerade"
   },
   "tab": "Tab",
   "view": {
