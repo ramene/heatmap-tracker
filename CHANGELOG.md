@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.17.0] - 2025-08-03
+- Add codeblock preprocessor for `heatmap-tracker`. This codeblock accepts parameter property and uses it to aggregate data across pages with that property. By default, the pages searched will be in the Daily Notes folder, but this can be overridden with the path parameter. Contributed by [@dsynkd](https://github.com/dsynkd).
+
+
 ## [1.16.0] - 2025-07-30
 - Add Polish language. Contributed by [@qoqosz](https://github.com/qoqosz).
 
