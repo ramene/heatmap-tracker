@@ -11,6 +11,40 @@
     border: solid var(--border-width) rgb(61, 61, 61);
     cursor: pointer;
   }
+
+  // Make internal-link cells behave like native Obsidian links
+  &.internal-link {
+    // Critical: prevent content from expanding beyond cell boundaries
+    overflow: hidden;
+    
+    .heatmap-tracker-content {
+      // Contain all content within the cell
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      
+      // Hide any visible text while preserving link functionality  
+      span, div {
+        display: block;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        
+        // Make text invisible but keep the link clickable
+        font-size: 0;
+        line-height: 0;
+        
+        // Ensure links fill the cell for clicking
+        a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          text-indent: -9999px;
+          overflow: hidden;
+        }
+      }
+    }
+  }
 }
 
 .heatmap-tracker-box:not(.task-list-item)::before {
