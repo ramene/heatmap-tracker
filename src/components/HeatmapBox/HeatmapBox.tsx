@@ -65,7 +65,7 @@ export function HeatmapBox({ box, onClick }: HeatmapBoxProps) {
         data-href={linkInfo.href || ''}
         style={{ backgroundColor: box.backgroundColor }}
         className={`${boxClassNames.filter(Boolean).join(" ")}`}
-        aria-label={`${box.date} - ${linkInfo.linkText || linkInfo.href}`}
+        aria-label={linkInfo.linkText || linkInfo.href}
         // No onClick handler - let Obsidian handle the link natively
       >
         <span className="heatmap-tracker-content">
