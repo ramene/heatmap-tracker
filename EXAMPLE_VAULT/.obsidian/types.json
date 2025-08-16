@@ -3,6 +3,8 @@
     "aliases": "aliases",
     "cssclasses": "multitext",
     "tags": "tags",
-    "tracking": "checkbox"
+    "tracking": "checkbox",
+    "draftPublishDate": "datetime",
+    "publishDraftDate": "text"
   }
 }
