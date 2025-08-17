@@ -1,0 +1,161 @@
+/* Enhanced Heatmap Styles for Multi-Document Support */
+
+/* Multi-document box styling */
+.heatmap-tracker-box.multi-document {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+  }
+  
+  &:focus {
+    outline: 2px solid var(--interactive-accent);
+    outline-offset: 2px;
+  }
+}
+
+/* Document count badge */
+.document-count-badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 10px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  min-width: 18px;
+  
+  /* Scale based on document count */
+  &[data-count="1"] { opacity: 0; }
+  &[data-count="2"] { background: rgba(59, 130, 246, 0.9); }
+  &[data-count="3"] { background: rgba(16, 185, 129, 0.9); }
+  &[data-count="4"] { background: rgba(245, 158, 11, 0.9); }
+  &[data-count="5"] { background: rgba(239, 68, 68, 0.9); }
+}
+
+/* Channel indicators */
+.channel-indicators {
+  position: absolute;
+  bottom: 2px;
+  left: 2px;
+  display: flex;
+  gap: 1px;
+  z-index: 5;
+}
+
+.channel-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  display: block;
+  
+  &.channel-twitter { background: #1DA1F2; }
+  &.channel-linkedin { background: #0077B5; }
+  &.channel-instagram { background: #E4405F; }
+  &.channel-tiktok { background: #000000; }
+  &.channel-facebook { background: #1877F2; }
+  &.channel-substack { background: #FF6719; }
+}
+
+/* Hover tooltip enhancement */
+.heatmap-tracker-box[aria-label] {
+  &::after {
+    content: attr(aria-label);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    z-index: 1000;
+    max-width: 200px;
+    word-wrap: break-word;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.2;
+  }
+  
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
+/* Dark mode adjustments */
+.theme-dark {
+  .document-count-badge {
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+  }
+  
+  .heatmap-tracker-box[aria-label]::after {
+    background: rgba(255, 255, 255, 0.95);
+    color: black;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .document-count-badge {
+    width: 16px;
+    height: 16px;
+    font-size: 9px;
+  }
+  
+  .channel-dot {
+    width: 3px;
+    height: 3px;
+  }
+}
+
+/* Animation for newly created elements */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.heatmap-tracker-box.multi-document {
+  animation: fadeInScale 0.3s ease-out;
+}
+
+/* Clean empty box styling */
+.heatmap-tracker-box.isEmpty {
+  .heatmap-tracker-content {
+    opacity: 0.3;
+    transition: opacity 0.2s;
+  }
+  
+  &:hover .heatmap-tracker-content {
+    opacity: 0.6;
+  }
+}
+
+/* Focus states for accessibility */
+.heatmap-tracker-box:focus-visible {
+  outline: 2px solid var(--interactive-accent, #007acc);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(0, 122, 204, 0.1);
+}

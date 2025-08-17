@@ -59,3 +59,75 @@ const trackerData = {
   }
   renderHeatmapTracker(this.container, trackerData)
 ```
+
+
+
+```dataviewjs
+const trackerData = {
+      year: 2025,
+      colorScheme: {
+          // Green gradient for publishing intensity
+          customColors: ["#e8f5e9","#a5d6a7","#66bb6a","#43a047","#2e7d32","#1b5e20"]
+      },
+      entries: [],
+      showCurrentDayBorder: true,
+      heatmapTitle: "📱 Multi-Channel Publishing Tracker"
+  }
+
+  // Configuration for channel weights
+  const CHANNEL_WEIGHTS = {
+      twitter: 1,
+      instagram: 1,
+      tiktok: 1,
+      facebook: 0.8,
+      linkedin: 1.2,
+      substack: 1.5  // Blog posts weighted higher
+  };
+
+  // Group pages by publishDraftDate
+  const pagesByDate = {};
+  for(let page of dv.pages().where(p => p.publishDraftDate)) {
+      const date = page.publishDraftDate;
+      if (!pagesByDate[date]) pagesByDate[date] = [];
+      pagesByDate[date].push(page);
+  }
+
+  // Calculate intensity for each date
+  for(let date in pagesByDate) {
+      const pages = pagesByDate[date];
+      const documentCount = pages.length;
+
+      // Track unique channels across all documents on this date
+      const channelsUsed = new Set();
+
+      for(let page of pages) {
+          // Check each social channel
+          if (page.twitter) channelsUsed.add('twitter');
+          if (page.instagram) channelsUsed.add('instagram');
+          if (page.tiktok) channelsUsed.add('tiktok');
+          if (page.facebook) channelsUsed.add('facebook');
+          if (page.linkedin) channelsUsed.add('linkedin');
+          if (page.substack) channelsUsed.add('substack');
+      }
+
+      // Calculate intensity based on:
+      // 1. Number of documents (base intensity)
+      // 2. Number of unique channels (multiplier effect)
+      const baseIntensity = documentCount;
+      const channelMultiplier = 1 + (channelsUsed.size * 0.5);
+      const intensity = Math.min(baseIntensity * channelMultiplier, 10);
+
+      // Create clickable links for all documents
+      const links = pages.map(p =>
+          `<a class="internal-link" data-href="${p.file.name}">${p.file.name}</a>`
+      ).join('<br>');
+
+      trackerData.entries.push({
+          date: date,
+          intensity: intensity,
+          content: await dv.span(`<div title="${documentCount} docs, ${channelsUsed.size} channels">${links}</div>`)
+      });
+  }
+
+  renderHeatmapTracker(this.container, trackerData);
+```
