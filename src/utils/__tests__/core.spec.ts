@@ -166,10 +166,10 @@ describe('Core Utilities', () => {
 
     it('should handle today\'s date correctly', () => {
       const currentYear = new Date().getFullYear();
-      const result = getBoxes(currentYear, {}, mockColorsList, mockTrackerData, {
-        ...mockSettings,
+      const result = getBoxes(currentYear, {}, mockColorsList, {
+        ...mockTrackerData,
         showCurrentDayBorder: true
-      });
+      }, mockSettings);
       
       // Should find today's box if we're testing current year
       const todayBox = result.find(box => box.isToday);

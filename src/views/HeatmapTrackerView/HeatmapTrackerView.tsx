@@ -126,14 +126,14 @@ function HeatmapTrackerView() {
     
     if (existingFile && !forceRegenerate) {
       // Check if source documents are newer than dashboard (auto-staleness detection)
-      const dashboardModified = existingFile.stat.mtime;
+      const dashboardModified = (existingFile as any).stat.mtime;
       const sourceDocuments = metadata.documents || [];
       
       let newestSourceTime = 0;
       for (const doc of sourceDocuments) {
         const sourceFile = app.vault.getAbstractFileByPath(doc.path);
-        if (sourceFile && sourceFile.stat.mtime > newestSourceTime) {
-          newestSourceTime = sourceFile.stat.mtime;
+        if (sourceFile && (sourceFile as any).stat.mtime > newestSourceTime) {
+          newestSourceTime = (sourceFile as any).stat.mtime;
         }
       }
       

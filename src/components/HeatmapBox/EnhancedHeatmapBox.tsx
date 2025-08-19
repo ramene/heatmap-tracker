@@ -38,7 +38,7 @@ export function EnhancedHeatmapBox({ box, onClick }: EnhancedHeatmapBoxProps) {
       const doc = box.metadata!.documents[0];
       return `${box.date}: ${doc.name}`;
     }
-    return box.date;
+    return box.date || '';
   };
 
   // Handle click based on document count
