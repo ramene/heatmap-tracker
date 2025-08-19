@@ -1,12 +1,12 @@
 ---
-publishDraftDate: 2025-08-31
+publishDraftDate: 2025-09-02
 learning: 123 minutes
 steps: "30000"
 exercise: 60 minutes
 twitter: true
-instagram: false
-tiktok: false
-facebook: false
+instagram: true
+tiktok: true
+facebook: true
 linkedin: true
 substack: true
 excerpt: Second test document to create a multi-document scenario for dashboard generation testing.
@@ -16,10 +16,7 @@ tags:
   - social-media
 created: 2025-08-19
 ---
-
-Based on the given content about apple tree cultivation and care, I've broken down the information into distinct thematic clusters:
-
-### Cluster 1: Apple Varieties and Selection
+### San Ramon
 
 - **Key Concepts and Ideas:** This cluster discusses the numerous varieties of apple trees, emphasizing the importance of choosing the right variety based on climate, disease resistance, and personal preferences.
   

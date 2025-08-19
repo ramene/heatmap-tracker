@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext, useMemo, useState } from "react";
+import { createContext, ReactNode, useContext, useMemo, useState, useCallback } from "react";
 import {
   Box,
   ColorsList,
@@ -27,6 +27,8 @@ export function HeatmapProvider({
   settings,
 }: HeatmapProviderProps) {
   const [view, setView] = useState(IHeatmapView.HeatmapTracker);
+  const [refreshTrigger, setRefreshTrigger] = useState(0);
+  const [statisticsStaleWarning, setStatisticsStaleWarning] = useState<string | null>(null);
 
   const _defaultYear = useMemo(
     () => trackerData.year ?? getCurrentFullYear(),
@@ -71,8 +73,24 @@ export function HeatmapProvider({
         mergedTrackerData,
         settings
       ),
-    [currentYear, entriesWithIntensity, colorsList, mergedTrackerData, settings]
+    [currentYear, entriesWithIntensity, colorsList, mergedTrackerData, settings, refreshTrigger]
   );
+
+  // Refresh and staleness management functions
+  const triggerRefresh = useCallback(() => {
+    setRefreshTrigger(prev => prev + 1);
+    setStatisticsStaleWarning(null);
+  }, []);
+
+  const notifyDashboardRegeneration = useCallback((date: string) => {
+    setStatisticsStaleWarning(
+      `Statistics may be outdated due to dashboard regeneration for ${date}. Consider refreshing the page to see latest data.`
+    );
+  }, []);
+
+  const clearStaleWarning = useCallback(() => {
+    setStatisticsStaleWarning(null);
+  }, []);
 
   return (
     <HeatmapContext.Provider
@@ -88,6 +106,11 @@ export function HeatmapProvider({
         entriesWithIntensity,
         boxes,
         intensityConfig: trackerData.intensityConfig,
+        triggerRefresh,
+        notifyDashboardRegeneration,
+        clearStaleWarning,
+        statisticsStaleWarning,
+        refreshTrigger,
       }}
     >
       {children}
@@ -107,6 +130,12 @@ interface HeatmapContextProps {
   colorsList: ColorsList;
   entriesWithIntensity: Record<number, Entry>;
   boxes: Box[];
+  // Refresh and staleness management
+  triggerRefresh: () => void;
+  notifyDashboardRegeneration: (date: string) => void;
+  clearStaleWarning: () => void;
+  statisticsStaleWarning: string | null;
+  refreshTrigger: number;
 }
 
 export function useHeatmapContext(): HeatmapContextProps {

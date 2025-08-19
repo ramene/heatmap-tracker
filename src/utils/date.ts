@@ -53,13 +53,17 @@ export function getToday() {
 }
 
 export function formatDateToISO8601(date: Date | null): string | null {
-  if (!date) {
+  if (!date || !(date instanceof Date) || isNaN(date.getTime())) {
     return null;
   }
 
-  const formattedDate = date?.toISOString?.()?.split('T')?.[0];
-
-  return formattedDate;
+  try {
+    const formattedDate = date.toISOString().split('T')[0];
+    return formattedDate;
+  } catch (error) {
+    console.error('Error formatting date to ISO8601:', error, date);
+    return null;
+  }
 }
 
 export function getFullYear(date: string) {

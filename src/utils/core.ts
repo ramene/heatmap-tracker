@@ -87,6 +87,9 @@ export function getBoxes(
 
       box.content = entry.content || undefined;
       box.backgroundColor = entry.customColor ?? (entry.intensity !== undefined ? colorsList[entry.intensity - 1] : undefined);
+      
+      // CRITICAL FIX: Pass metadata from entry to box
+      box.metadata = entry.metadata || undefined;
     } else {
       box.hasData = false;
     }

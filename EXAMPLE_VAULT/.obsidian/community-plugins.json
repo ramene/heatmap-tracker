@@ -2,5 +2,6 @@
   "dataview",
   "obsidian-metatable",
   "hot-reload",
-  "heatmap-tracker"
+  "heatmap-tracker",
+  "templater-obsidian"
 ]

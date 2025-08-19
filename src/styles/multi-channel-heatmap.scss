@@ -1,0 +1,573 @@
+/* Multi-Channel Heatmap Enhanced Styling */
+
+/* Multi-document box styling */
+.heatmap-tracker-box.multi-document {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+  }
+  
+  &:focus {
+    outline: 2px solid var(--interactive-accent, #007acc);
+    outline-offset: 2px;
+  }
+}
+
+/* Multi-document dashboard preview link - invisible, covers entire cell */
+.multi-doc-dashboard-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  text-decoration: none;
+  color: transparent;
+  z-index: 1; /* Below count number but above cell */
+  
+  /* Remove all link styling */
+  &:hover,
+  &:focus,
+  &:active {
+    color: transparent;
+    text-decoration: none;
+    outline: none;
+  }
+}
+
+/* Document count number - superscript style in upper corner */
+.document-count-number {
+  position: absolute;
+  top: 1px;
+  right: 3px;
+  font-size: 0.37rem; /* Smaller superscript size */
+  font-weight: 600;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  min-width: 10px;
+  z-index: 2;
+  pointer-events: none; /* Allow mouse events to pass through to dashboard link */
+  
+  .theme-dark & {
+    color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+/* Single document cell link - completely invisible, covers entire cell for preview */
+.heatmap-cell-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  text-decoration: none;
+  color: transparent;
+  font-size: 1px;
+  line-height: 1;
+  z-index: 1;
+  
+  /* Remove all link styling */
+  &:hover,
+  &:focus,
+  &:active {
+    color: transparent;
+    text-decoration: none;
+    outline: none;
+  }
+}
+
+/* Ensure cell is positioned relative for absolute link positioning */
+.heatmap-tracker-box {
+  position: relative;
+}
+
+/* Allow internal links to work normally for preview */
+
+/* Channel indicators removed from cells - now only in tooltips */
+
+/* Remove ALL custom CSS tooltips - use native title attribute only */
+.heatmap-tracker-box {
+  position: relative;
+  
+  /* Remove all custom tooltip styling to prevent conflicts */
+  &::after,
+  &::before {
+    display: none !important;
+    content: none !important;
+  }
+}
+
+/* Remove any other tooltip implementations */
+.tooltip,
+.heatmap-tooltip,
+[data-tooltip]::after,
+[data-tooltip]::before,
+.has-tooltip::after,
+.has-tooltip::before {
+  display: none !important;
+  content: none !important;
+}
+
+/* Dark mode adjustments */
+.theme-dark {
+  .document-count-badge {
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    
+    &[data-count="2"] { 
+      background: rgba(96, 165, 250, 0.9);
+      color: white;
+    }
+    
+    &[data-count="3"] { 
+      background: rgba(52, 211, 153, 0.9);
+      color: white;
+    }
+    
+    &[data-count="4"] { 
+      background: rgba(251, 191, 36, 0.9);
+      color: black;
+    }
+    
+    &[data-count="5"], 
+    &[data-count="6"],
+    &[data-count="7"],
+    &[data-count="8"],
+    &[data-count="9"] { 
+      background: rgba(248, 113, 113, 0.9);
+      color: white;
+    }
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .document-count-badge {
+    width: 16px;
+    height: 16px;
+    font-size: 9px;
+    top: 1px;
+    right: 1px;
+  }
+  
+  .channel-dot {
+    width: 3px;
+    height: 3px;
+  }
+  
+  .channel-indicators {
+    bottom: 1px;
+    left: 1px;
+  }
+  
+  .heatmap-tracker-box::after {
+    font-size: 10px;
+    padding: 4px 8px;
+    max-width: 200px;
+  }
+}
+
+/* Animation for newly created elements */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.heatmap-tracker-box.multi-document {
+  animation: fadeInScale 0.3s ease-out;
+}
+
+/* Clean empty box styling */
+.heatmap-tracker-box.isEmpty {
+  .heatmap-tracker-content {
+    opacity: 0.3;
+    transition: opacity 0.2s;
+  }
+  
+  &:hover .heatmap-tracker-content {
+    opacity: 0.6;
+  }
+}
+
+/* Focus states for accessibility */
+.heatmap-tracker-box:focus-visible {
+  outline: 2px solid var(--interactive-accent, #007acc);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(0, 122, 204, 0.1);
+}
+
+/* Publishing Dashboard specific styles */
+.publishing-dashboard {
+  /* These styles will be applied to generated dashboard pages */
+  
+  .dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .stat-card {
+    background: var(--background-secondary, #f5f5f5);
+    border: 1px solid var(--background-modifier-border, #ddd);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--text-accent, #007acc);
+    }
+    
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted, #666);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+  }
+}
+
+/* Channel badge styles for dashboard */
+.channel-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  margin: 0 2px;
+  
+  &.channel-twitter {
+    background: #1DA1F2;
+    color: white;
+  }
+  
+  &.channel-linkedin {
+    background: #0077B5;
+    color: white;
+  }
+  
+  &.channel-instagram {
+    background: #E4405F;
+    color: white;
+  }
+  
+  &.channel-tiktok {
+    background: #000000;
+    color: white;
+  }
+  
+  &.channel-facebook {
+    background: #1877F2;
+    color: white;
+  }
+  
+  &.channel-substack {
+    background: #FF6719;
+    color: white;
+  }
+}
+
+/* Statistics Staleness Warning Banner */
+.stats-staleness-banner {
+  background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+  border: 1px solid #ffc107;
+  border-radius: 8px;
+  margin: 1rem;
+  margin-bottom: 0;
+  box-shadow: 0 2px 4px rgba(255, 193, 7, 0.1);
+  
+  .theme-dark & {
+    background: linear-gradient(135deg, #2d1b00 0%, #3d2000 100%);
+    border-color: #b8860b;
+  }
+  
+  .staleness-content {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    gap: 1rem;
+  }
+  
+  .staleness-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+  
+  .staleness-message {
+    flex: 1;
+    
+    strong {
+      display: block;
+      color: #856404;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      
+      .theme-dark & {
+        color: #ffd700;
+      }
+    }
+    
+    p {
+      margin: 0;
+      font-size: 0.875rem;
+      color: #6c5700;
+      
+      .theme-dark & {
+        color: #d4c000;
+      }
+    }
+  }
+  
+  .staleness-actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  
+  .refresh-page-btn {
+    background: #ffc107;
+    color: #000;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      background: #e0a800;
+      transform: translateY(-1px);
+    }
+    
+    .theme-dark & {
+      background: #b8860b;
+      color: #fff;
+      
+      &:hover {
+        background: #9a7209;
+      }
+    }
+  }
+  
+  .dismiss-btn {
+    background: transparent;
+    color: #6c5700;
+    border: 1px solid #6c5700;
+    border-radius: 6px;
+    padding: 0.25rem 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      background: #6c5700;
+      color: white;
+    }
+    
+    .theme-dark & {
+      color: #d4c000;
+      border-color: #d4c000;
+      
+      &:hover {
+        background: #d4c000;
+        color: #000;
+      }
+    }
+  }
+}
+
+/* Modern Statistics View - Shadcn Inspired */
+.heatmap-statistics {
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .stats-card {
+    background: var(--background-primary, #ffffff);
+    border: 1px solid var(--background-modifier-border, #e5e7eb);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    transition: all 0.2s ease;
+
+    &:hover {
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    .theme-dark & {
+      background: var(--background-secondary, #1f2937);
+      border-color: var(--background-modifier-border, #374151);
+    }
+  }
+
+  .stats-card-header {
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--background-modifier-border, #e5e7eb);
+
+    .theme-dark & {
+      border-color: var(--background-modifier-border, #374151);
+    }
+  }
+
+  .stats-card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-normal, #111827);
+    margin: 0;
+
+    .theme-dark & {
+      color: var(--text-normal, #f9fafb);
+    }
+  }
+
+  .stats-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .stats-metric {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--background-modifier-border-focus, #f3f4f6);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .theme-dark & {
+      border-color: var(--background-modifier-border-focus, #4b5563);
+    }
+  }
+
+  .stats-label {
+    font-size: 0.875rem;
+    color: var(--text-muted, #6b7280);
+    font-weight: 500;
+
+    .theme-dark & {
+      color: var(--text-muted, #9ca3af);
+    }
+  }
+
+  .stats-value {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-normal, #111827);
+    text-align: right;
+
+    .theme-dark & {
+      color: var(--text-normal, #f9fafb);
+    }
+  }
+
+  .stats-highlight {
+    background: var(--background-secondary, #f8fafc);
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+
+    .theme-dark & {
+      background: var(--background-primary, #374151);
+    }
+
+    .stats-metric {
+      border-bottom: none;
+      padding: 0;
+    }
+
+    .stats-label {
+      color: var(--interactive-accent, #2563eb);
+      font-weight: 600;
+
+      .theme-dark & {
+        color: var(--interactive-accent, #60a5fa);
+      }
+    }
+
+    .stats-value {
+      color: var(--interactive-accent, #2563eb);
+      font-weight: 700;
+
+      .theme-dark & {
+        color: var(--interactive-accent, #60a5fa);
+      }
+    }
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .heatmap-statistics {
+    .stats-grid {
+      grid-template-columns: 1fr;
+      padding: 0.75rem;
+      gap: 0.75rem;
+    }
+
+    .stats-card {
+      padding: 1rem;
+    }
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .heatmap-statistics {
+    .stats-card {
+      border: 2px solid var(--text-normal, black);
+    }
+    
+    .stats-label,
+    .stats-value {
+      color: var(--text-normal, black);
+      
+      .theme-dark & {
+        color: var(--text-normal, white);
+      }
+    }
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .heatmap-statistics {
+    .stats-card {
+      transition: none;
+      
+      &:hover {
+        transform: none;
+        box-shadow: 0 0 0 2px var(--interactive-accent, #007acc);
+      }
+    }
+  }
+}
