@@ -11,6 +11,19 @@ export interface Entry {
   value?: number;
   customColor?: string;
   content?: string | HTMLElement;
+  /**
+   * Enhanced metadata for multi-channel support
+   */
+  metadata?: {
+    documentCount?: number;
+    channels?: string[];
+    documents?: Array<{
+      name: string;
+      path: string;
+      channels: string[];
+      excerpt?: string;
+    }>;
+  };
 }
 
 export type ColorsList = string[];
@@ -80,6 +93,19 @@ export interface Box {
   showBorder?: boolean;
   hasData?: boolean;
   isSpaceBetweenBox?: boolean;
+  /**
+   * Enhanced metadata for multi-channel support
+   */
+  metadata?: {
+    documentCount?: number;
+    channels?: string[];
+    documents?: Array<{
+      name: string;
+      path: string;
+      channels: string[];
+      excerpt?: string;
+    }>;
+  };
 }
 
 export enum IHeatmapView {

@@ -9,7 +9,7 @@ import { getDailyNote, createDailyNote, getAllDailyNotes } from "obsidian-daily-
 import moment from "moment";
 
 function HeatmapTrackerView() {
-  const { boxes } = useHeatmapContext();
+  const { boxes, notifyDashboardRegeneration } = useHeatmapContext();
   const app = useAppContext();
 
   const graphRef = useRef<HTMLDivElement>(null);
@@ -26,7 +26,40 @@ function HeatmapTrackerView() {
     setIsLoading(false);
   }, [boxes]);
 
-  const handleBoxClick = async (box: any) => {
+  // Regeneration confirmation dialog
+  const showRegenerationDialog = async (dateStr: string): Promise<boolean> => {
+    return new Promise((resolve) => {
+      const modal = new (window as any).Modal(app);
+      modal.contentEl.innerHTML = `
+        <div style="padding: 20px;">
+          <h3>📊 Dashboard Update Available</h3>
+          <p>Source documents for <strong>${dateStr}</strong> have been modified since the dashboard was last generated.</p>
+          <p>Would you like to regenerate the dashboard to reflect the latest changes?</p>
+          <div style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px;">
+            <button class="mod-cta regenerate-btn">🔄 Regenerate</button>
+            <button class="open-existing-btn">📖 Open Existing</button>
+          </div>
+        </div>
+      `;
+      
+      modal.contentEl.querySelector('.regenerate-btn')?.addEventListener('click', () => {
+        modal.close();
+        resolve(true);
+      });
+      
+      modal.contentEl.querySelector('.open-existing-btn')?.addEventListener('click', () => {
+        modal.close();
+        resolve(false);
+      });
+      
+      modal.open();
+    });
+  };
+
+  const handleBoxClick = async (box: any, event?: React.MouseEvent) => {
+    // Detect modifier keys for force regeneration
+    const forceRegenerate = event && (event.shiftKey || event.ctrlKey || event.metaKey);
+    
     // Only log for debugging if needed
     if (window.location.search.includes('debug')) {
       console.log('📅 HeatmapBox clicked:', { 
@@ -35,7 +68,13 @@ function HeatmapTrackerView() {
         documentCount: box.metadata?.documentCount,
         hasMetadata: !!box.metadata,
         isMultiDocument: box.metadata && box.metadata.documentCount > 1,
-        isSingleDocument: box.metadata && box.metadata.documentCount === 1
+        isSingleDocument: box.metadata && box.metadata.documentCount === 1,
+        forceRegenerate,
+        modifierKeys: {
+          shift: event?.shiftKey,
+          ctrl: event?.ctrlKey,
+          meta: event?.metaKey
+        }
       });
     }
     
@@ -44,8 +83,8 @@ function HeatmapTrackerView() {
     
     // Check if this is a multi-document date
     if (box.metadata && box.metadata.documentCount > 1) {
-      // Multi-document: create dashboard
-      await createPublishingDashboard(date, box.metadata);
+      // Multi-document: create dashboard (with optional force regeneration)
+      await createPublishingDashboard(date, box.metadata, !!forceRegenerate);
       return; // Important: exit here to prevent fallthrough
     } 
     
@@ -68,8 +107,8 @@ function HeatmapTrackerView() {
     app.workspace.openLinkText(file.basename, file.path);
   };
 
-  // Dashboard creation function using Templater
-  const createPublishingDashboard = async (date: moment.Moment, metadata: any) => {
+  // Enhanced dashboard creation with regeneration capabilities
+  const createPublishingDashboard = async (date: moment.Moment, metadata: any, forceRegenerate = false) => {
     const dashboardFolder = 'Dashboards/Publishing';
     const dashboardPath = `${dashboardFolder}/${date.format('YYYY-MM-DD')}.md`;
     
@@ -81,9 +120,42 @@ function HeatmapTrackerView() {
     
     // Check if dashboard already exists
     const existingFile = app.vault.getAbstractFileByPath(dashboardPath);
-    if (existingFile) {
+    
+    // Smart regeneration logic
+    let shouldRegenerate = forceRegenerate;
+    
+    if (existingFile && !forceRegenerate) {
+      // Check if source documents are newer than dashboard (auto-staleness detection)
+      const dashboardModified = existingFile.stat.mtime;
+      const sourceDocuments = metadata.documents || [];
+      
+      let newestSourceTime = 0;
+      for (const doc of sourceDocuments) {
+        const sourceFile = app.vault.getAbstractFileByPath(doc.path);
+        if (sourceFile && sourceFile.stat.mtime > newestSourceTime) {
+          newestSourceTime = sourceFile.stat.mtime;
+        }
+      }
+      
+      // If any source document is newer than dashboard, suggest regeneration
+      if (newestSourceTime > dashboardModified) {
+        shouldRegenerate = await showRegenerationDialog(date.format('YYYY-MM-DD'));
+      }
+    }
+    
+    // If existing dashboard and no regeneration needed, just open it
+    if (existingFile && !shouldRegenerate) {
       app.workspace.openLinkText(existingFile.name, existingFile.path);
       return;
+    }
+    
+    // Delete existing file if regenerating
+    if (existingFile && shouldRegenerate) {
+      await app.vault.delete(existingFile);
+      new (window as any).Notice(`Regenerating dashboard for ${date.format('YYYY-MM-DD')}...`);
+      
+      // Notify statistics view that data may be stale
+      notifyDashboardRegeneration(date.format('YYYY-MM-DD'));
     }
     
     // Try to use Templater plugin for dynamic generation
@@ -133,21 +205,42 @@ function HeatmapTrackerView() {
           app.workspace.openLinkText(newFile.basename, newFile.path);
         }
         
-        new (window as any).Notice(`Dashboard generated for ${date.format('YYYY-MM-DD')}`);
+        new (window as any).Notice(`Dashboard ${shouldRegenerate ? 'regenerated' : 'generated'} for ${date.format('YYYY-MM-DD')}`);
+        
+        // Additional notification for regenerated dashboards
+        if (shouldRegenerate) {
+          setTimeout(() => {
+            new (window as any).Notice('💡 Statistics view may show updated metrics after page refresh', 8000);
+          }, 2000);
+        }
       } catch (error) {
         console.error('Templater integration failed:', error);
         // Fallback to manual creation
         const dashboardContent = generateDashboardContent(date, metadata);
         const newFile = await app.vault.create(dashboardPath, dashboardContent);
         app.workspace.openLinkText(newFile.basename, newFile.path);
-        new (window as any).Notice(`Dashboard created for ${date.format('YYYY-MM-DD')} (fallback)`);
+        new (window as any).Notice(`Dashboard ${shouldRegenerate ? 'regenerated' : 'created'} for ${date.format('YYYY-MM-DD')} (fallback)`);
+        
+        // Additional notification for regenerated dashboards
+        if (shouldRegenerate) {
+          setTimeout(() => {
+            new (window as any).Notice('💡 Statistics view may show updated metrics after page refresh', 8000);
+          }, 2000);
+        }
       }
     } else {
       // Fallback if Templater not available
       const dashboardContent = generateDashboardContent(date, metadata);
       const newFile = await app.vault.create(dashboardPath, dashboardContent);
       app.workspace.openLinkText(newFile.basename, newFile.path);
-      new (window as any).Notice(`Dashboard created for ${date.format('YYYY-MM-DD')} (no Templater)`);
+      new (window as any).Notice(`Dashboard ${shouldRegenerate ? 'regenerated' : 'created'} for ${date.format('YYYY-MM-DD')} (no Templater)`);
+      
+      // Additional notification for regenerated dashboards
+      if (shouldRegenerate) {
+        setTimeout(() => {
+          new (window as any).Notice('💡 Statistics view may show updated metrics after page refresh', 8000);
+        }, 2000);
+      }
     }
   };
 
@@ -181,6 +274,8 @@ cssclass: publishing-dashboard
 ---
 
 # 📊 Publishing Dashboard - ${dayName}, ${dateStr}
+
+> 🔄 **Refresh Dashboard**: Hold **Shift** and click the date cell to regenerate with latest changes
 
 ## 📈 Summary
 - **Documents Published**: ${metadata.documentCount}

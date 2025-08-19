@@ -289,6 +289,116 @@
   }
 }
 
+/* Statistics Staleness Warning Banner */
+.stats-staleness-banner {
+  background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+  border: 1px solid #ffc107;
+  border-radius: 8px;
+  margin: 1rem;
+  margin-bottom: 0;
+  box-shadow: 0 2px 4px rgba(255, 193, 7, 0.1);
+  
+  .theme-dark & {
+    background: linear-gradient(135deg, #2d1b00 0%, #3d2000 100%);
+    border-color: #b8860b;
+  }
+  
+  .staleness-content {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    gap: 1rem;
+  }
+  
+  .staleness-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+  
+  .staleness-message {
+    flex: 1;
+    
+    strong {
+      display: block;
+      color: #856404;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      
+      .theme-dark & {
+        color: #ffd700;
+      }
+    }
+    
+    p {
+      margin: 0;
+      font-size: 0.875rem;
+      color: #6c5700;
+      
+      .theme-dark & {
+        color: #d4c000;
+      }
+    }
+  }
+  
+  .staleness-actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  
+  .refresh-page-btn {
+    background: #ffc107;
+    color: #000;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      background: #e0a800;
+      transform: translateY(-1px);
+    }
+    
+    .theme-dark & {
+      background: #b8860b;
+      color: #fff;
+      
+      &:hover {
+        background: #9a7209;
+      }
+    }
+  }
+  
+  .dismiss-btn {
+    background: transparent;
+    color: #6c5700;
+    border: 1px solid #6c5700;
+    border-radius: 6px;
+    padding: 0.25rem 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      background: #6c5700;
+      color: white;
+    }
+    
+    .theme-dark & {
+      color: #d4c000;
+      border-color: #d4c000;
+      
+      &:hover {
+        background: #d4c000;
+        color: #000;
+      }
+    }
+  }
+}
+
 /* Modern Statistics View - Shadcn Inspired */
 .heatmap-statistics {
   .stats-grid {

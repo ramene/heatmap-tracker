@@ -4,7 +4,7 @@ import { useHeatmapContext } from "src/context/heatmap/heatmap.context";
 
 interface HeatmapBoxesListProps {
   boxes: Box[];
-  onBoxClick?: (box: Box) => void;
+  onBoxClick?: (box: Box, event?: React.MouseEvent) => void;
 }
 
 export function HeatmapBoxesList({ boxes, onBoxClick }: HeatmapBoxesListProps) {

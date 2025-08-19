@@ -5,6 +5,6 @@
     "tags": "tags",
     "tracking": "checkbox",
     "draftPublishDate": "datetime",
-    "publishDraftDate": "text"
+    "publishDraftDate": "date"
   }
 }

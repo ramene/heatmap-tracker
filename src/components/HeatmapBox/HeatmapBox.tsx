@@ -3,7 +3,7 @@ import { Box } from "src/types";
 
 interface HeatmapBoxProps {
   box: Box;
-  onClick?: (box: Box) => void;
+  onClick?: (box: Box, event?: React.MouseEvent) => void;
 }
 
 // Helper function to extract link information from HTML content
@@ -112,14 +112,14 @@ export function HeatmapBox({ box, onClick }: HeatmapBoxProps) {
     if (isMultiDocument && onClick) {
       // Multi-document: trigger dashboard creation
       e.preventDefault();
-      onClick(box);
+      onClick(box, e);
     } else if (hasCustomLink && linkInfo) {
       // Legacy single link: let Obsidian handle natively
       return;
     } else if (onClick) {
       // Empty date: create daily note
       e.preventDefault();
-      onClick(box);
+      onClick(box, e);
     }
     // Note: Single documents with metadata are handled by native links - no React handling
   };

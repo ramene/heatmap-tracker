@@ -22,6 +22,9 @@ node_modules
 # obsidian
 data.json
 
+# claude code
+.claude/settings.local.json
+
 # Exclude macOS Finder (System Explorer) View States
 .DS_Store
 
