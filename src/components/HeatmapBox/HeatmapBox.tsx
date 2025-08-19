@@ -51,16 +51,21 @@ export function HeatmapBox({ box, onClick }: HeatmapBoxProps) {
   // Generate proper content for different scenarios
   const content = (() => {
     if (isMultiDocument) {
-      // Multi-document: show count number
+      // Multi-document: show count number with dashboard preview link
+      const dashboardPath = `Dashboards/Publishing/${box.date}`;
+      const dashboardLinkHtml = `<a class="internal-link multi-doc-dashboard-link" data-href="${dashboardPath}"></a>`;
       return (
-        <span className="document-count-number">
-          {box.metadata!.documentCount}
-        </span>
+        <>
+          <span dangerouslySetInnerHTML={{ __html: dashboardLinkHtml }} />
+          <span className="document-count-number">
+            {box.metadata!.documentCount}
+          </span>
+        </>
       );
     } else if (isSingleDocument) {
-      // Single document: create minimal link that covers entire cell (like working example)
+      // Single document: invisible link covering entire cell (blank pixel)
       const doc = box.metadata!.documents![0];
-      const linkHtml = `<a class="internal-link heatmap-cell-link" data-href="${doc.name}">•</a>`;
+      const linkHtml = `<a class="internal-link heatmap-cell-link" data-href="${doc.name}">&nbsp;</a>`;
       return <span dangerouslySetInnerHTML={{ __html: linkHtml }} />;
     } else if (box.content instanceof HTMLElement) {
       // Legacy: render existing HTML content
